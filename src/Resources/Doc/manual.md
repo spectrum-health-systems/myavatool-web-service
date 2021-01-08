@@ -345,14 +345,13 @@ The downloaded file is a .zip archive with (as of January 8th, 2021) the followi
 > MD5: **EC9445B70FD994A4453C4D0649208EC2**<br>
 > SHA2-256: **899617150FF9A69A6D3A7661CD4CAC304292D5F7BA775432C9B5C3FE6AA1D8F4**<br>
 
-
 ### Extracting the Netsmart ScriptLink Service
 The file you downloaded actually contains a bunch of stuff, most of which we don't need. 
 
 1. Extract the contents of **136_180_9_ScriptLinkTutorialWithOptionObject2.zip**
 2. Find the **NTST.ScriptLinkService.Objects/** folder in the extracted data:
 ```
-136_180_9_ScriptLinkTutorialWithOptionObject2/ScriptLinkTutorialWithOptionObject2/DotNetCode/ScriptLinkServiceComplete/NTST.ScriptLinkService.Objects/
+./136_180_9_ScriptLinkTutorialWithOptionObject2/ScriptLinkTutorialWithOptionObject2/DotNetCode/ScriptLinkServiceComplete/NTST.ScriptLinkService.Objects/
 ```
 3. Copy the **NTST.ScriptLinkService.Objects/** folder to the root of your project
 
@@ -368,7 +367,7 @@ When complete, the folder structure of the Avatool Web Service project should lo
 ...
 ```
 
-## ADDING THE NETSMART SCRIPTLINK SERVICE TO THE PROJECT
+### Adding the Netsmart ScriptLink Service to the project
 Now we need to add a reference to the Netsmart ScriptLink Service to our project.
 
 1. Right-click the **Avatool-Web-Service** *solution* and choose **Add** > **Existing Project..**
@@ -376,10 +375,10 @@ Now we need to add a reference to the Netsmart ScriptLink Service to our project
 3. Choose the  **NTST.ScriptLinkService.Objects.vbproj** file
 4. Click **Open**
 
-### Wrong .NET Framework version?
-If a message pops up letting you know that the Netsmart ScriptLink Service targets a .NET Framework version that's not installed (in this case, .NET 3.5), choose the **Change the target to .NET Framework 4.6.1...** option, then click **OK**.
+> **Wrong .NET Framework version?**
+> If a message pops up letting you know that the Netsmart ScriptLink Service targets a .NET Framework version that's not installed (in this case, .NET 3.5), choose the **Change the target to .NET Framework 4.6.1...** option, then click **OK**.
 
-## ADDING A REFERENCE TO THE NETSMART SCRIPTLINK SERVICE
+### Extracting the Netsmart ScriptLink Service
 Next we need to add a Netsmart ScriptLink Service reference to the Avatool Web Service project
 
 1. Right-click the **Avatool-Web-Service** *project* and choose **Add** > **Reference..**
