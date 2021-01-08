@@ -31,7 +31,7 @@
 
 <h4 align="center">
 
-  [MANUAL](src/Resources/Doc/manual.md)&nbsp;&bull;&nbsp;[CHANGELOG](src/Resources/Doc/changelog.md)&nbsp;&bull;&nbsp;[ROADMAP](src/Resources/Doc/roadmap.md)&nbsp;&bull;&nbsp;[KNOWN ISSUES](src/Resources/Doc/known-issues.md)&nbsp;&bull;&nbsp;[SUPPORT](src/Resources/Doc/support.md)
+  [MANUAL](doc/manual.md)&nbsp;&bull;&nbsp;[CHANGELOG](doc/changelog.md)&nbsp;&bull;&nbsp;[ROADMAP](doc/roadmap.md)&nbsp;&bull;&nbsp;[KNOWN ISSUES](doc/known-issues.md)&nbsp;&bull;&nbsp;[SUPPORT](doc/support.md)
   <br>
 
 </h4>
@@ -66,7 +66,7 @@ Archiwizator is a Graphical User Interface (GUI) front-end for [7-Zip](https://w
 
 # GETTING STARTED
 ### Before you begin
-Archiwizator is a work in progress. It does what it is supposed to do, but not...gracefully. I would suggest that you take a look at the [known issues](https://github.com/spectrum-health-systems/my-avatool-web-service/blob/development/src/Resources/Doc/known-issues.md) before using Archiwizinator.
+Archiwizator is a work in progress. It does what it is supposed to do, but not...gracefully. I would suggest that you take a look at the [known issues](https://github.com/spectrum-health-systems/my-avatool-web-service/blob/development/doc/known-issues.md) before using Archiwizinator.
 
 ### Prerequisites
 * .NET Core 5.x
@@ -86,7 +86,7 @@ To start Archiwizator:
 2. Double-click `Archiwizator.exe`
 
 ### There is a manual!
-The Archiwizator [manual](https://github.com/spectrum-health-systems/my-avatool-web-service/blob/development/src/Resources/Doc/Manual/manual.md) is updated when a new version is released, and is the best way to learn how to use Archiwizator.
+The Archiwizator [manual](https://github.com/spectrum-health-systems/my-avatool-web-service/blob/development/doc/Manual/manual.md) is updated when a new version is released, and is the best way to learn how to use Archiwizator.
 
 # UPDATING
 Since Archiwizator is portable, you just need to replace the old version with the new version.
@@ -98,16 +98,16 @@ Since Archiwizator is portable, you just need to delete the location where Archi
 Archiwizator is a front-end for [7-Zip](https://7-zip.org).
 
 # DEVELOPMENT
-Archiwizator is developed by [A Pretty Cool Program](https://aprettycoolprogram.com) and these [contributors](src/Resources/Doc/contributors.md), using these [third-party resources](https://github.com/spectrum-health-systems/my-avatool-web-service/blob/development/src/Resources/Doc/built-with.md).
+Archiwizator is developed by [A Pretty Cool Program](https://aprettycoolprogram.com) and these [contributors](doc/contributors.md), using these [third-party resources](https://github.com/spectrum-health-systems/my-avatool-web-service/blob/development/doc/built-with.md).
 
 You can find the development branch of Archiwizator [here](https://github.com/spectrum-health-systems/my-avatool-web-service/tree/development).
 
-To contribute to the development branch of Archiwizator, please see our [contributing guidelines](src/Resources/Doc/contributing.md)
+To contribute to the development branch of Archiwizator, please see our [contributing guidelines](doc/contributing.md)
 
 # ADDITIONAL INFORMATION
-* [Acknowledgements](src/Resources/Doc/acknowledgements.md)
-* [Related projects](src/Resources/Doc/related-projects.md)
-* [Additional reading](src/Resources/Doc/additional-reading.md)
+* [Acknowledgements](doc/acknowledgements.md)
+* [Related projects](doc/related-projects.md)
+* [Additional reading](doc/additional-reading.md)
 
 ***
 
