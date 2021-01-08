@@ -5,7 +5,7 @@
 
 <h1 align="center">
 
-  <img src="Image/archiwizator-logo.png" alt="Archiwizator logo" width="575">
+  <img src="../Asset/Image/Logo/maws-logo-800x150.png" alt="MyAvatar Web Service logo" width="800">
   <br>
   MANUAL
   <br>
