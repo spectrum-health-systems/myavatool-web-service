@@ -23,11 +23,10 @@
 <!-- The HTML indentations have to stay this way to work. -->
 <table>
 <tr>
-<td img src="RepositoryData/Asset/Image/Document/README/spacer.png" alt="blank-spacer" width="1000" height="1">
+<td>
 
   ### CONTENTS
   [ABOUT MAWS](#about-archiwizator)<br>
-
 
 </td>
 </tr>
