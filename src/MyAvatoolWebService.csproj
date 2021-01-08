@@ -68,12 +68,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="MyAvatoolWebService.asmx" />
+    <Content Include="Resources\Asset\Image\Doc\ntst-portal-app-exchange-01.png" />
+    <Content Include="Resources\Asset\Image\Doc\ntst-portal-app-exchange-02.png" />
     <Content Include="Resources\Asset\Image\Doc\scriptlink-form-designer-settings-button.png" />
     <Content Include="Resources\Asset\Image\Doc\scriptlink-options-blank.png" />
     <Content Include="Resources\Asset\Image\Doc\scriptlink-button.png" />
     <Content Include="Resources\Asset\Image\Doc\scriptlink-event-example.png" />
     <Content Include="Resources\Asset\Image\Doc\scriptlink-options-import-wsdl.png" />
     <Content Include="Resources\Asset\Image\Doc\vs2019-add-web-service-02.png" />
+    <Content Include="Resources\Asset\Image\Doc\vs2019-add-web-service-03.png" />
     <Content Include="Resources\Asset\Image\Doc\wsdl-xml-example.png" />
     <Content Include="Resources\Asset\Image\Logo\maws-logo-500x150.png" />
     <Content Include="Resources\Asset\Image\Logo\maws-logo-800x150.png" />
