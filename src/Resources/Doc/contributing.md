@@ -1,4 +1,4 @@
-# Contributing to the MyAvatool Web Service: 
+# Contributing to MAWS 
 
 ### CONTENTS
 [OVERVIEW](#overview)<br>

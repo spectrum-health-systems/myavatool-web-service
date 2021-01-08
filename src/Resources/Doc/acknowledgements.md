@@ -1,1 +1,1 @@
-# MyAvatool Web Service: Acknowledgements
+# MAWS: Acknowledgements

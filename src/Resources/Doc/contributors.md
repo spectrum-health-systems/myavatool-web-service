@@ -1,1 +1,1 @@
-# MyAvatool Web Service: Contributors
+# MAWS: Contributors

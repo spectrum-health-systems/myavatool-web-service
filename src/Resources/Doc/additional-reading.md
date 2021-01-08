@@ -1,1 +1,1 @@
-# MyAvatool Web Service: Additional reading
+# MAWS: Additional reading

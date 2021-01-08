@@ -1,1 +1,1 @@
-# MyAvatool Web Service: Related Projects
+# MAWS: Related Projects

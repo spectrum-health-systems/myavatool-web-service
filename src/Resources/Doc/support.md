@@ -1,1 +1,1 @@
-# MyAvatool Web Service: Support
+# MAWS: Support
