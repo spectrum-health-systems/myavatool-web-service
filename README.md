@@ -57,7 +57,7 @@
 </table>
 
 # ABOUT
-The **MyAvatool Web Service** (*MAWS*) is a custom web service for Netsmart's [myAvatar™ EHR](https://www.ntst.com/Solutions-and-Services/Offerings/myAvatar), which includes various tools and utilities that aren't included in the official release, and provides a solid foundation for building additional functionality quickly and efficiently.
+The **MyAvatool Web Service** (*MAWS*) is a custom web service for [Netsmart's myAvatar™ EHR](https://www.ntst.com/Solutions-and-Services/Offerings/myAvatar), which includes various tools and utilities that aren't included in the official release, and provides a solid foundation for building additional functionality quickly and efficiently.
 
 ### Features
 * Feature #1
