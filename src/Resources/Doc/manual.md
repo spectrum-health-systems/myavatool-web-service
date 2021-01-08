@@ -28,8 +28,8 @@
   ### CONTENTS
   * [ABOUT MAWS](#about-maws)<br>
   * [IMPORTING MAWS INTO MyAVATAR](#importing-maws-into-myavatar)<br>
-  * [USING MAWS](#using-maws)<br>
-  * [MAWS CALLS](#using-maws)<br>  
+  * [CREATING SCRIPTLINK EVENTS IN MyAVATAR](#creating-scriptlink-events-in-myavatar)<br>
+  * [USING MAWS](#using-maws)<br>  
     * [ADMISSION FORM](#admission-form)
     * [CROSS EPISODE FINANCIAL ELIGABLITY FORM](#cross-episode-financial-eligability-form)
   * [CUSTOM MyAVATAR™ WEB SERVICES](#custom-myavatar™-web-services)
@@ -77,7 +77,7 @@ For example, URL of `https://your-organization.com/MyAvatoolWebService.asmx?WSDL
   <br>
   An example of a WSDL file.
   <br>
-  
+
 </h6>
 
 If the WSDL file *is diplayed* in the browser, that URL is what you are going to need going forward.
@@ -118,7 +118,7 @@ We will use the *Admissions* form to import the MAWS WSDL:
 
 You should get a popup letting you know the WSDL was imported successfully.
 
-# USING MAWS
+# CREATING SCRIPTLINK EVENTS IN MyAVATAR
 Before you can use MAWS (or any custom web service) with myAvatar™, make sure you've [imported](#importing-maws-into-myavatar) it.
 
 To use the MAWS with myAvatar™, you will need to add a ScriptLink event to a form event. When that event takes place, myAvatar™ will pass information to MAWS (and potentiall recieve something back).
@@ -173,20 +173,16 @@ Next we will need to choose an event that will call the Avatool Web Service, and
 
 Now, when the Admission form is submitted, myAvatar™ will ask MAWS to VerifyInpatientAdmissionDate for a specific client.
 
-# MAWS CALLS
+# USING MAWS
+The following forms have MAWS stuff.
+
+## ADMISSION FORM
 Currently there is a single call in the Avatool Web Service:
 * [**VerifyInpatientAdmissionDate**](https://github.com/spectrum-health-systems/AvatoolWebService/blob/development/doc/using-VerifyInpatientAdmissionDate.md): verifies that a client's Pre-Admission Date is the same as the current date.
 
-## ADMISSION FORM
-
 ## CROSS EPISODE FINANCIAL ELIGABLITY FORM
-
-
-
-
-
-
-
+Currently there is a single call in the Avatool Web Service:
+* [**VerifyInpatientAdmissionDate**](https://github.com/spectrum-health-systems/AvatoolWebService/blob/development/doc/using-VerifyInpatientAdmissionDate.md): verifies that a client's Pre-Admission Date is the same as the current date.
 
 # CREATING A CUSTOM MyAVATAR WEB SERVICE
 
