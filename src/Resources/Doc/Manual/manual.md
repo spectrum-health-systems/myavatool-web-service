@@ -31,16 +31,16 @@
     * [ADMISSION FORM](#admission-form)
     * [CROSS EPISODE FINANCIAL ELIGABLITY FORM](#cross-episode-financial-eligability-form)
   * [CUSTOM MyAVATAR™ WEB SERVICES](#custom-myavatar™-web-services)
-    * [CREATING A CUSTOM MyAVATAR™ WEB SERVICE](#creating-a-custom-myavatar™-web-service)
-    * [HOSTING A CUSTOM MyAVATAR™ WEB SERVICE](#hosting-a-custom-myavatar™-web-service)
-    * [USING A CUSTOM MyAVATAR™ WEB SERVICE](#using-a-custom-myavatar™-web-service)
+    * [CREATING A CUSTOM MyAVATAR WEB SERVICE](#creating-a-custom-myavatar-web-service)
+    * [HOSTING A CUSTOM MyAVATAR WEB SERVICE](#hosting-a-custom-myavatar-web-service)
+    * [USING A CUSTOM MyAVATAR WEB SERVICE](#using-a-custom-myavatar-web-service)
 
 </td>
 </tr>
 </table>
 
 # ABOUT MAWS
-The MyAvatool Web Service (MAWS) is a custom web service for Netsmart's myAvatar™ EHR which includes various tools and utilities for myAvatar™ that aren't included in the official release, and provides a solid foundation for building additional functionality quickly and efficiently.
+The **MyAvatool Web Service** (*MAWS*) is a custom web service for Netsmart's myAvatar™ EHR which includes various tools and utilities for myAvatar™ that aren't included in the official release, and provides a solid foundation for building additional functionality quickly and efficiently.
 
 This is the MAWS manual.
 
@@ -58,6 +58,11 @@ If you fork MAWS for your own development, please do not remove the original com
 ## ADMISSION FORM
 
 ## CROSS EPISODE FINANCIAL ELIGABLITY FORM
+
+
+
+
+
 
 
 # CREATING A CUSTOM MyAVATAR WEB SERVICE
