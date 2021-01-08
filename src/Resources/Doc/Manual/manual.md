@@ -5,11 +5,11 @@
 
 <h1 align="center">
 
-  <img src="../Asset/Image/Logo/maws-logo-800x150.png" alt="MyAvatar Web Service logo" width="800">
+  <img src="../../Asset/Image/Logo/maws-logo-800x150.png" alt="MyAvatar Web Service logo" width="800">
   <br>
   MANUAL
   <br>
-
+https://github.com/spectrum-health-systems/my-avatool-web-service/blob/development-v1.0/src/Resources/Asset/Image/Logo/maws-logo-800x150.png
 </h1>
 
 <h4 align="center">
