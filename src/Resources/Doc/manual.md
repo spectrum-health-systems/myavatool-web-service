@@ -56,6 +56,75 @@ I know this goes against best practice, however since Netsmart doesn't do the be
 If you fork MAWS for your own development, please do not remove the original comments (and add nice, detailed comments for any functionality you add!
 
 # USING MAWS
+To use the MAWS with myAvatar™, you will need to add a ScriptLink event to a form event. When that event takes place, myAvatar™ will pass information to MAWS (and potentiall recieve something back).
+
+You can add a ScriptLink event to the following form events:
+* when the form loads ("Form Load")
+* after the submit button is clicked, but prior to filing the form ("Pre-File")
+* after the submit button is clicked and the form has been filed ("Post-File")
+
+#### What about other form events?
+You can also use custom web services with fields and controls, but that is beyond the scope of this documentation.
+
+## ADDING A SCRIPTLINK EVENT TO A FORM
+Let's say you wanted to have MAWS do something when you hit the **Submit** button on form. To do that you would:
+1. Open the **Form Designer** form
+2. Choose the myAvatar™ form you want to use from the **Forms** dropdown
+3. Choose the form tab from the **Tabs** dropdown
+4. Click the **Show Tab** button
+
+You will now see the form tab in designer mode. In the upper left of myAvatar™ you will see a **Settings** button:
+
+<h4 align="center">
+
+  <img src="../../Asset/Image/Doc/scriptlink-form-designer-settings-button.png" width="350">
+  <br>
+  The "Settings" button.
+  <br>
+</h4>
+
+![Form Designer settings](https://github.com/spectrum-health-systems/AvatoolWebService/blob/master/repo/image/readme/form-designer-settings-button.png)
+
+Clicking the **Settings** button will bring you to the ScriptLink options page:
+
+![Blank ScriptLink options](https://github.com/spectrum-health-systems/AvatoolWebService/blob/master/repo/image/readme/scriptlink-blank.png)
+
+The first thing you will need to do is import the Avatool Web Service WSDL. Before you actually click the **Import** button, you should make sure that the WSDL URL is correct. You can verify the WDSL URL by typing it into a web browser address bar.
+
+For example, URL of `https://your-organization.com/AvatoolWebService.asmx?WSDL` should display XML that looks something like this:
+
+![XML example](https://github.com/spectrum-health-systems/AvatoolWebService/blob/master/repo/image/readme/xml-example.png)
+
+If you see the XML:
+1. Copy/paste the URL from your browsers address bar into the **Import WSDL for ScriptLink** field in myAvatar™
+2. Click the **Import** button.
+
+You should get a popup letting you know the WSDL was imported successfully.
+
+Next we will need to choose an event that will call the Avatool Web Service, and determine the action that will take place. This will all be done on the ScriptLink options page:
+
+![ScriptLink options example](https://github.com/spectrum-health-systems/AvatoolWebService/blob/master/repo/image/readme/scriptlink-example.png)
+
+Our example will call the *VerifyInpatientAdmissionDate* action on the form's *Pre-File* event:
+1. Click the dropdown in the **Pre-File** row under the **Availble Scripts** column
+2. Choose **AvatoolWebService** (the *red* box)
+3. Type "VerifyInpatientAdmissionDate" in the **Pre-File** row under the **Script Parameter** column (the *purple* box)
+4. Uncheck the **Disable All Scripts For Form** and **Disable All Scripts on Error** boxes  (the *green* box)
+5. Click **Return to Designer** (the *yellow* box), and the ScriptLink options page will close, and you will be back on the **Tab Designer** page
+6. Click the **Save** button, and you bw returned to the **Form Designer** page
+7. Click **Submit**
+
+### AVATOOL WEB SERVICE CALLS
+Currently there is a single call in the Avatool Web Service:
+* [**VerifyInpatientAdmissionDate**](https://github.com/spectrum-health-systems/AvatoolWebService/blob/development/doc/using-VerifyInpatientAdmissionDate.md): verifies that a client's Pre-Admission Date is the same as the current date.
+
+
+
+
+
+
+
+
 
 ## ADMISSION FORM
 
