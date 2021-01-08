@@ -68,30 +68,30 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="MyAvatoolWebService.asmx" />
-    <Content Include="Resources\Doc\Manual\Image\add-existing-01.png" />
-    <Content Include="Resources\Doc\Manual\Image\add-ref-02.png" />
-    <Content Include="Resources\Doc\Manual\Image\add-ref.png" />
-    <Content Include="Resources\Doc\Manual\Image\appexchange-03.png" />
-    <Content Include="Resources\Doc\Manual\Image\appexchange-04.png" />
-    <Content Include="Resources\Doc\Manual\Image\appexchange-2.png" />
-    <Content Include="Resources\Doc\Manual\Image\appexchange.png" />
-    <Content Include="Resources\Doc\Manual\Image\maws-logo-500x150.png" />
-    <Content Include="Resources\Doc\Manual\Image\maws-logo-800x150.png" />
-    <Content Include="Resources\Doc\Manual\Image\maws-manual-vs2019-adding-a-webservice-01.png" />
-    <Content Include="Resources\Doc\Manual\Image\maws-manual-vs2019-adding-a-webservice-02.png" />
-    <Content Include="Resources\Doc\Manual\Image\maws-manual-vs2019-adding-a-webservice-03.png" />
-    <Content Include="Resources\Doc\Manual\Image\maws-manual-vs2019-adding-a-webservice-04.png" />
-    <Content Include="Resources\Doc\Manual\Image\maws-manual-vs2019-adding-a-webservice-05.png" />
-    <Content Include="Resources\Doc\Manual\Image\maws-manual-vs2019-adding-a-webservice-06.png" />
-    <Content Include="Resources\Doc\Manual\Image\maws-manual-vs2019-configure-project-highlight.png" />
-    <Content Include="Resources\Doc\Manual\Image\maws-manual-vs2019-configure-project-no-highlight.png" />
-    <Content Include="Resources\Doc\Manual\Image\maws-manual-vs2019-create-new-asp-app-highlight.png" />
-    <Content Include="Resources\Doc\Manual\Image\maws-manual-vs2019-create-new-asp-app-no-highlight.png" />
-    <Content Include="Resources\Doc\Manual\Image\maws-manual-vs2019-create-project-highlight.png" />
-    <Content Include="Resources\Doc\Manual\Image\maws-manual-vs2019-create-project-no-highlight.png" />
-    <Content Include="Resources\Doc\Manual\Image\maws-manual-vs2019-empty-app-no-highlight.png" />
-    <Content Include="Resources\Doc\Manual\Image\maws-manual-vs2019-new-project-template-highlight.png" />
-    <Content Include="Resources\Doc\Manual\Image\maws-manual-vs2019-new-project-template-no-highlight.png" />
+    <Content Include="Resources\Asset\Image\Logo\maws-logo-500x150.png" />
+    <Content Include="Resources\Asset\Image\Logo\maws-logo-800x150.png" />
+    <Content Include="Resources\Asset\Image\Doc\add-existing-01.png" />
+    <Content Include="Resources\Asset\Image\Doc\add-ref-02.png" />
+    <Content Include="Resources\Asset\Image\Doc\add-ref.png" />
+    <Content Include="Resources\Asset\Image\Doc\appexchange-03.png" />
+    <Content Include="Resources\Asset\Image\Doc\appexchange-04.png" />
+    <Content Include="Resources\Asset\Image\Doc\appexchange-2.png" />
+    <Content Include="Resources\Asset\Image\Doc\appexchange.png" />
+    <Content Include="Resources\Asset\Image\Doc\maws-manual-vs2019-adding-a-webservice-01.png" />
+    <Content Include="Resources\Asset\Image\Doc\maws-manual-vs2019-adding-a-webservice-02.png" />
+    <Content Include="Resources\Asset\Image\Doc\maws-manual-vs2019-adding-a-webservice-03.png" />
+    <Content Include="Resources\Asset\Image\Doc\maws-manual-vs2019-adding-a-webservice-04.png" />
+    <Content Include="Resources\Asset\Image\Doc\maws-manual-vs2019-adding-a-webservice-05.png" />
+    <Content Include="Resources\Asset\Image\Doc\maws-manual-vs2019-adding-a-webservice-06.png" />
+    <Content Include="Resources\Asset\Image\Doc\maws-manual-vs2019-configure-project-highlight.png" />
+    <Content Include="Resources\Asset\Image\Doc\maws-manual-vs2019-configure-project-no-highlight.png" />
+    <Content Include="Resources\Asset\Image\Doc\maws-manual-vs2019-create-new-asp-app-highlight.png" />
+    <Content Include="Resources\Asset\Image\Doc\maws-manual-vs2019-create-new-asp-app-no-highlight.png" />
+    <Content Include="Resources\Asset\Image\Doc\maws-manual-vs2019-create-project-highlight.png" />
+    <Content Include="Resources\Asset\Image\Doc\maws-manual-vs2019-create-project-no-highlight.png" />
+    <Content Include="Resources\Asset\Image\Doc\maws-manual-vs2019-empty-app-no-highlight.png" />
+    <Content Include="Resources\Asset\Image\Doc\maws-manual-vs2019-new-project-template-highlight.png" />
+    <Content Include="Resources\Asset\Image\Doc\maws-manual-vs2019-new-project-template-no-highlight.png" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -103,8 +103,19 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <Content Include="Resources\Doc\Manual\my-avatool-web-service-manual.md" />
     <Content Include="src.licenseheader" />
+    <Content Include="Resources\Doc\manual.md" />
+    <Content Include="Resources\Doc\acknowledgements.md" />
+    <Content Include="Resources\Doc\additional-reading.md" />
+    <Content Include="Resources\Doc\built-with.md" />
+    <Content Include="Resources\Doc\changelog.md" />
+    <Content Include="Resources\Doc\code-of-conduct.md" />
+    <Content Include="Resources\Doc\contributing.md" />
+    <Content Include="Resources\Doc\contributors.md" />
+    <Content Include="Resources\Doc\known-issues.md" />
+    <Content Include="Resources\Doc\related-projects.md" />
+    <Content Include="Resources\Doc\roadmap.md" />
+    <Content Include="Resources\Doc\support.md" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
