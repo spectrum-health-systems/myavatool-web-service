@@ -26,20 +26,39 @@
 <td img src="non-existant-spacer.png" alt="non-existant-spacer" width="1000" height="1">
 
   ### CONTENTS
-  [ABOUT MAWS](#about-archiwizator)<br>
+  [ABOUT MAWS](#about-maws)<br>
+  [USING MAWS](#using-maws)<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;[VERIFY INPATIENT ADMISSION DATE](#verify-inpatient-admission-date)<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;[VERIFY INPATIENT ADMISSION DATE](#verify-inpatient-admission-date)<br>
+  [CUSTOM MyAVATAR™ WEB SERVICES](#custom-myavatar™-web-services)<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;[CREATING A CUSTOM MyAVATAR™ WEB SERVICE](#creating-a-custom-myavatar™-web-service)<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;[HOSTING A CUSTOM MyAVATAR™ WEB SERVICE](#hosting-a-custom-myavatar™-web-service)<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;[USING A CUSTOM MyAVATAR™ WEB SERVICE](#using-a-custom-myavatar™-web-service)
 
 </td>
 </tr>
 </table>
 
+# ABOUT MAWS
+The MyAvatool Web Service (MAWS) is a custom web service for Netsmart's myAvatar™ EHR which includes various tools and utilities for myAvatar™ that aren't included in the official release, and provides a solid foundation for building additional functionality quickly and efficiently.
+
+This is the MAWS manual.
+
+For more information about MAWS, please visit the [MAWS repository](https://github.com/spectrum-health-systems/my-avatool-web-service/tree/main): (https://github.com/spectrum-health-systems/my-avatool-web-service/tree/main).
+
+#### A note about the sourcecode
+I've tried to make this sourcecode as human-readable as possible, but since other organizations may use MAWS I've decided to heavily comment everything as well.
+
+I know this goes against best practice, however since Netsmart doesn't do the best job of making everything *they* do transparent, I want to make it sure that *my* code is as clear as possible as to what it does, and how it does it.
+
+If you fork MAWS for your own development, please do not remove the original comments (and add nice, detailed comments for any functionality you add!
+
+# USING MAWS
 
 
 
 
-
-
-
-# CREATING A CUSTOM MyAVATAR™ WEB SERVICE
+# CREATING A CUSTOM MyAVATAR WEB SERVICE
 
 ### CONTENTS
 [INTRODUCTION](#introduction)<br>
