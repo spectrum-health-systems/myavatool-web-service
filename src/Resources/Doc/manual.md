@@ -210,9 +210,7 @@ First, we need to create an empty ASP.NET Web Application project. Using Visual 
 <h6 align="center">
 
   <img src="../Asset/Image/Doc/vs2019-create-new-project.png" width="700">
-  <br>
   Creating a new project in Visual Studio 2019
-  <br>
 
 </h6>
 
