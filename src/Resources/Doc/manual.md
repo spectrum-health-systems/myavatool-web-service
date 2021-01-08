@@ -59,10 +59,10 @@ If you fork MAWS for your own development, please do not remove the original com
 # IMPORTING MAWS INTO MyAVATAR
 In order for myAvatar™ to use MAWS, you'll need to import MAWS into myAvatar™.
 
-#### Where is MAWS located?
+### Where is MAWS located?
 MAWS has to be hosted somewhere. If you planning on self-hosting MAWS on an IIS server, I've put together some instructions that might help. 
 
-#### You have one shot at this!
+### You have one shot at this!
 Once you have imported a custom web service into myAvatar™, it's there to stay. If you are using your own custom web service, make sure you've named it exactly what you want, otherwise you may end up with the names of depreciated web services in your myAvatar™ environments.
 
 ## CONFIRMING THE MAWS WSDL
