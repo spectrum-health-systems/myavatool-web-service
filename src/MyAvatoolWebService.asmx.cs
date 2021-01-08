@@ -1,4 +1,11 @@
-﻿using NTST.ScriptLinkService.Objects;
+﻿/* PROJECT: MyAvatoolWebService (https://github.com/aprettycoolprogram/MyAvatoolWebService)
+ *    FILE: MyAvatoolWebService.MyAvatoolWebService.asmx.cs
+ * UPDATED: 1-8-2021-2:27 PM
+ * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
+ *          Copyright 2020 A Pretty Cool Program All rights reserved
+ */
+
+using NTST.ScriptLinkService.Objects;
 
 using System.Web.Services;
 
