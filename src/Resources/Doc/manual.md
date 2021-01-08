@@ -245,6 +245,15 @@ First, we need to create an empty ASP.NET Web Application project. Using Visual 
 9. Verify that **Configure for HTTPS** (under **Advanced**) is checked
 10. Click **Create**
 
+<h6 align="center">
+
+  <img src="../Asset/Image/Doc/vs2019-create-new-asp-app.png" width="700">
+  <br>
+  Choosing a project template
+  
+</h6>
+<br>
+
 It may take a few minutes for Visual Studio to create the project.
 
 ## ADDING A NEW WEB SERVICE
