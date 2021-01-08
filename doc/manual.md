@@ -56,14 +56,12 @@ Example
 
 # IMPLEMENTING MAWS IN YOUR ENVIRONMENTS
 
-## IMPORTING MAWS INTO MyAVATAR
+## IMPORTING MAWS
 In order for myAvatar™ to use MAWS, you'll need to import MAWS into myAvatar™. This section will walk your through the process.
 
 ### Before you begin
-#### Where is MAWS located?
+#### Do you know where is MAWS located?
 Custom web services need to be hosted, and MAWS is not exception. And to continue with this documentations, you will need to know where MAWS is installed in your environment.
-#### You have one shot at this!
-Once you have imported a custom web service into myAvatar™, it's there to stay. If you are using your own custom web service, make sure you've named it exactly what you want, otherwise you may end up with the names of depreciated web services in your myAvatar™ environments.
 
 ## CONFIRMING THE MAWS WSDL
 Before attempting to import MAWS into myAvatar™, you should make sure that you have a valid **W**eb **S**ervice **D**escription **L**anguage (WSDL) URL. To do this, paste the URL of the MAWS WSDL in a web browser and attempt to access the URL.
@@ -668,3 +666,9 @@ namespace MyAvatoolWebService
 
 ## NOW WHAT
 Modify!
+
+
+
+
+#### You have one shot at this!
+Once you have imported a custom web service into myAvatar™, it's there to stay. If you are using your own custom web service, make sure you've named it exactly what you want, otherwise you may end up with the names of depreciated web services in your myAvatar™ environments.
