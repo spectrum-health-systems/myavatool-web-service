@@ -51,22 +51,18 @@ This is the MAWS manual, which will cover:
 Example
 * **[Using MAWS](#using-maws)**<br>
 Example
-* **[Developing your own custom web services](#custom-myavatar™-web-services)** for myAvatar™<br>
+* **[Developing your own](#custom-myavatar™-web-services)** custom web services for myAvatar™<br>
 Example
 
 # IMPLEMENTING MAWS IN YOUR ENVIRONMENTS
 
+## IMPORTING MAWS INTO MyAVATAR
+In order for myAvatar™ to use MAWS, you'll need to import MAWS into myAvatar™. This section will walk your through the process.
 
-# IMPORTING MAWS INTO MyAVATAR
-In order for myAvatar™ to use MAWS, you'll need to import MAWS into myAvatar™.
-
-### Where is MAWS located?
+### Before you begin
+#### Where is MAWS located?
 Custom web services need to be hosted, and MAWS is not exception. And to continue with this documentations, you will need to know where MAWS is installed in your environment.
-
-
- If you planning on self-hosting MAWS on an IIS server, I've put together some instructions that might help. 
-
-### You have one shot at this!
+#### You have one shot at this!
 Once you have imported a custom web service into myAvatar™, it's there to stay. If you are using your own custom web service, make sure you've named it exactly what you want, otherwise you may end up with the names of depreciated web services in your myAvatar™ environments.
 
 ## CONFIRMING THE MAWS WSDL
