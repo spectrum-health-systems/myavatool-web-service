@@ -104,6 +104,7 @@
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Resources\Doc\Manual\my-avatool-web-service-manual.md" />
+    <Content Include="src.licenseheader" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
