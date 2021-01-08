@@ -318,7 +318,7 @@ The Netsmart ScriptLink Service is bundled with the "Brief ScriptLink Tutorial w
 
 <h6 align="center">
 
-  <img src="../Asset/Image/Doc/ntst-portal-app-exchange-01.png" width="200">
+  <img src="../Asset/Image/Doc/ntst-portal-app-exchange-01.png" width="300">
   <br>
   Navigating to the Netsmart Cares App Exchange
   
@@ -346,12 +346,13 @@ The downloaded file is a .zip archive with (as of January 8th, 2021) the followi
 > SHA2-256: **899617150FF9A69A6D3A7661CD4CAC304292D5F7BA775432C9B5C3FE6AA1D8F4**<br>
 
 
-## EXTRACTING THE NETSMART SCRIPTLINK SERVICE
+### Extracting the Netsmart ScriptLink Service
 The file you downloaded actually contains a bunch of stuff, most of which we don't need. 
 
-1. Extract the contents of *136_180_9_ScriptLinkTutorialWithOptionObject2.zip*
-2. Find this folder:
-136_180_9_ScriptLinkTutorialWithOptionObject2/ScriptLinkTutorialWithOptionObject2/DotNetCode/ScriptLinkServiceComplete/**NTST.ScriptLinkService.Objects/**
+1. Extract the contents of this file:
+> *136_180_9_ScriptLinkTutorialWithOptionObject2.zip*
+into this folder:
+> 136_180_9_ScriptLinkTutorialWithOptionObject2/ScriptLinkTutorialWithOptionObject2/DotNetCode/ScriptLinkServiceComplete/**NTST.ScriptLinkService.Objects/**
 3. Copy the **NTST.ScriptLinkService.Objects/** folder to the root of your project
 
 When complete, the folder structure of the Avatool Web Service project should look like this:
