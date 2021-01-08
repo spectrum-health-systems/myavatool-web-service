@@ -51,7 +51,7 @@ This is the MAWS manual, which will cover:
 Example
 * **[Using MAWS](#using-maws)**<br>
 Example
-* **[Custom MyAvatar™ web services](#custom-myavatar™-web-services)**<br>
+* **[Developing your own custom web services](#custom-myavatar™-web-services)** for myAvatar™<br>
 Example
 
 # IMPLEMENTING MAWS IN YOUR ENVIRONMENTS
