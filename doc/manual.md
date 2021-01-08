@@ -27,8 +27,10 @@
 
   ### CONTENTS
   * [ABOUT MAWS](#about-maws)<br>
-  * [IMPORTING MAWS INTO MyAVATAR](#importing-maws-into-myavatar)<br>
-  * [CREATING SCRIPTLINK EVENTS IN MyAVATAR](#creating-scriptlink-events-in-myavatar)<br>
+  * [IMPLEMENTING MAWS IN YOUR ENVIRONMENTS](#implementing-maws-in-your-environments)<br>
+    * [HOSTING MAWS](#hosting-maws)<br>
+    * [IMPORTING MAWS INTO MyAVATAR](#importing-maws-into-myavatar)<br>
+    * [CREATING SCRIPTLINK EVENTS](#creating-scriptlink-events)<br>
   * [USING MAWS](#using-maws)<br>  
     * [ADMISSION FORM](#admission-form)
     * [CROSS EPISODE FINANCIAL ELIGABLITY FORM](#cross-episode-financial-eligability-form)
@@ -44,16 +46,19 @@
 # ABOUT MAWS
 The **MyAvatool Web Service** (*MAWS*) is a custom web service for [Netsmart's myAvatar™ EHR](https://www.ntst.com/Solutions-and-Services/Offerings/myAvatar) which includes various tools and utilities that aren't included in the official release, and provides a solid foundation for building additional functionality quickly and efficiently.
 
-#### This is the MAWS manual
-The MAWS manual covers:
-* Using MAWS in your environment
-* Creating your own custom web services for myAvatar™
+This is the MAWS manual.
+
+# IMPLEMENTING MAWS IN YOUR ENVIRONMENTS
+
 
 # IMPORTING MAWS INTO MyAVATAR
 In order for myAvatar™ to use MAWS, you'll need to import MAWS into myAvatar™.
 
 ### Where is MAWS located?
-MAWS has to be hosted somewhere. If you planning on self-hosting MAWS on an IIS server, I've put together some instructions that might help. 
+Custom web services need to be hosted, and MAWS is not exception. And to continue with this documentations, you will need to know where MAWS is installed in your environment.
+
+
+ If you planning on self-hosting MAWS on an IIS server, I've put together some instructions that might help. 
 
 ### You have one shot at this!
 Once you have imported a custom web service into myAvatar™, it's there to stay. If you are using your own custom web service, make sure you've named it exactly what you want, otherwise you may end up with the names of depreciated web services in your myAvatar™ environments.
@@ -110,7 +115,7 @@ We will use the *Admissions* form to import the MAWS WSDL:
 
 You should get a popup letting you know the WSDL was imported successfully.
 
-# CREATING SCRIPTLINK EVENTS IN MyAVATAR
+# CREATING SCRIPTLINK EVENTS
 Before you can use MAWS (or any custom web service) with myAvatar™, make sure you've [imported](#importing-maws-into-myavatar) it.
 
 To use the MAWS with myAvatar™, you will need to add a ScriptLink event to a form event. When that event takes place, myAvatar™ will pass information to MAWS (and potentiall recieve something back).
