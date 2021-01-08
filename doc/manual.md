@@ -23,7 +23,7 @@
 <!-- The HTML indentations have to stay this way to work. -->
 <table>
 <tr>
-<td img src="non-existant-spacer.png" alt="non-existant-spacer" width="1000" height="1">
+<td img src="non-existant-spacer.png" alt="non-existant-spacer" width="1020" height="1">
 
   ### CONTENTS
   * [ABOUT MAWS](#about-maws)<br>
