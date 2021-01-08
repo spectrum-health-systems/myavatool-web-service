@@ -211,7 +211,7 @@ First, we need to create an empty ASP.NET Web Application project. Using Visual 
 
   <img src="../Asset/Image/Doc/vs2019-create-new-project.png" width="700">
   <br>
-  Creating a new project in Visual Studio 2019
+  Starting a new project in Visual Studio 2019
 
 </h6>
 <br>
@@ -236,7 +236,7 @@ First, we need to create an empty ASP.NET Web Application project. Using Visual 
 
   <img src="../Asset/Image/Doc/vs2019-configure-template.png" width="700">
   <br>
-  Choosing a project template
+  Configuring the project
   
 </h6>
 <br>
@@ -249,7 +249,7 @@ First, we need to create an empty ASP.NET Web Application project. Using Visual 
 
   <img src="../Asset/Image/Doc/vs2019-create-new-asp-app.png" width="700">
   <br>
-  Choosing a project template
+  Creating the project
   
 </h6>
 <br>
