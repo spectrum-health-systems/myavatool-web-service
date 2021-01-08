@@ -57,9 +57,28 @@ I know this goes against best practice, however since Netsmart doesn't do the be
 If you fork MAWS for your own development, please do not remove the original comments (and add nice, detailed comments for any functionality you add!
 
 # IMPORTING MAWS INTO MyAVATAR
-In order to use a custom web service with myAvatar™, the web service must be imported. Any form can be used to import a web service, and once a web service has been imported it can be used by any form that allows ScriptLink events.
 
-We will use the *Admissions* form to import MAWS:
+## CONFIRMING WSDL WSDL
+Before attempting to import MAWS, you should make sure that you have a valid **W**eb **S**ervice **D**escription **L**anguage (WSDL) URL. To do this, paste the URL of the MAWS WSDL in a web browser and attempt to access the URL.
+
+For example, URL of `https://your-organization.com/MyAvatoolWebService.asmx?WSDL` should display XML that looks something like this:
+
+<h6 align="center">
+
+  <img src="../Asset/Image/Doc/wsdl-xml-example.png" width="815">
+  <br>
+  An example of a WSDL file.
+  <br>
+</h6>
+
+If the WSDL file *is diplayed* in the browser, that URL is what you are going to need going forward.
+
+If the WSDL file *is not displayed*, you'll need to get a valid WSDL location before continuing.
+
+## IMPORTING THE WSDL
+Any form can be used to import a web service, and once a web service has been imported it can be used by any form that allows ScriptLink events.
+
+We will use the *Admissions* form to import the MAWS WSDL:
 1. Open the **Form Designer** form
 2. Choose the "Admissions" form from the **Forms** dropdown
 3. Choose the XXX tab from the **Tabs** dropdown
@@ -78,27 +97,14 @@ We will use the *Admissions* form to import MAWS:
 
 <h6 align="center">
 
-  <img src="../Asset/Image/Doc/scriptlink-options-blank.png" width="860">
+  <img src="../Asset/Image/Doc/scriptlink-options-import-wsdl.png" width="860">
   <br>
   The ScriptLink options page.
   <br>
 </h6>
 <br>
 
-
-You need to import the MAWS WSDL into myAvatar™ before you can use it. Here's how to do that:
-1. Confirm you have a valid WSDL file.
-
-
-Before you actually click the **Import** button, you should make sure that the WSDL URL is correct. You can verify the WDSL URL by typing it into a web browser address bar.
-
-
-For example, URL of `https://your-organization.com/AvatoolWebService.asmx?WSDL` should display XML that looks something like this:
-
-![XML example](https://github.com/spectrum-health-systems/AvatoolWebService/blob/master/repo/image/readme/xml-example.png)
-
-If you see the XML:
-1. Copy/paste the URL from your browsers address bar into the **Import WSDL for ScriptLink** field in myAvatar™
+7. Copy/paste the MAWS WSDL URL into the **Import WSDL for ScriptLink** field in myAvatar™
 2. Click the **Import** button.
 
 You should get a popup letting you know the WSDL was imported successfully.
