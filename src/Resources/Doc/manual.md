@@ -205,22 +205,42 @@ You can use any language to create a custom web service for myAvatar™. These i
 ## CREATING THE AVATOOL WEB SERVICE PROJECT
 First, we need to create an empty ASP.NET Web Application project. Using Visual Studio 2019:
 
+1. Click **Create a new project**
+
 <h6 align="center">
 
-  <img src="../Asset/Image/Doc/vs2019-create-new-project.png" width="500">
+  <img src="../Asset/Image/Doc/vs2019-create-new-project.png" width="700">
   <br>
   Creating a new project in Visual Studio 2019
   <br>
 
 </h6>
 
-1. Click **Create a new project**
-2. Select **ASP.NET Web Application (.NET Framework)**
-3. Click **Next**
+2. Select **ASP.NET Web Application (.NET Framework)**, then click **Next**
+
+<h6 align="center">
+
+  <img src="../Asset/Image/Doc/vs2019-new-project-template.png" width="700">
+  <br>
+  Choosing a project template
+  <br>
+
+</h6>
+
 4. Name the project (in this example, the name is "MyAvatoolWebService")
 5. Choose a **Location** for your project
 6. Verify that **.NET Framework 4.6** is selected
 7. Click **Create**
+
+<h6 align="center">
+
+  <img src="../Asset/Image/Doc/vs2019-configure-template.png" width="700">
+  <br>
+  Choosing a project template
+  <br>
+
+</h6>
+
 8. In the **Create a new ASP.NET Core Web Application** dialog, select **Empty**
 9. Verify that **Configure for HTTPS** (under **Advanced**) is checked
 10. Click **Create**
