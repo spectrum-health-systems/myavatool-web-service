@@ -75,17 +75,23 @@ Let's say you wanted to have MAWS do something when you hit the **Submit** butto
 
 You will now see the form tab in designer mode. In the upper left of myAvatar™ you will see a **Settings** button:
 
-<h4 align="center">
+<h6 align="center">
 
-  <img src="../Asset/Image/Doc/scriptlink-form-designer-settings-button.png" width="350">
+  <img src="../Asset/Image/Doc/scriptlink-form-designer-settings-button.png" width="384">
   <br>
   The "Settings" button.
   <br>
-</h4>
-
-![Form Designer settings](https://github.com/spectrum-health-systems/AvatoolWebService/blob/master/repo/image/readme/form-designer-settings-button.png)
+</h6>
 
 Clicking the **Settings** button will bring you to the ScriptLink options page:
+
+<h6 align="center">
+
+  <img src="../Asset/Image/Doc/scriptlink-options-blank.png" width="860">
+  <br>
+  The ScriptLink options page.
+  <br>
+</h6>
 
 ![Blank ScriptLink options](https://github.com/spectrum-health-systems/AvatoolWebService/blob/master/repo/image/readme/scriptlink-blank.png)
 
