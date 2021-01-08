@@ -5,7 +5,7 @@
 
 <h1 align="center">
 
-  <img src="../resources/asset/image/logo/maws-logo-800x150.png" alt="myAvatar Web Service logo" width="800">
+  <img src="../resources/asset/img/logo/maws-logo-800x150.png" alt="myAvatar Web Service logo" width="800">
   <br>
   MANUAL
   <br>
@@ -42,18 +42,14 @@
 </table>
 
 # ABOUT MAWS
-The **MyAvatool Web Service** (*MAWS*) is a custom web service for Netsmart's myAvatar™ EHR which includes various tools and utilities for myAvatar™ that aren't included in the official release, and provides a solid foundation for building additional functionality quickly and efficiently.
+The **MyAvatool Web Service** (*MAWS*) is a custom web service for [Netsmart's myAvatar™ EHR](https://www.ntst.com/Solutions-and-Services/Offerings/myAvatar) which includes various tools and utilities that aren't included in the official release, and provides a solid foundation for building additional functionality quickly and efficiently.
 
 This is the MAWS manual.
-
-For more information about MAWS, please visit the MAWS GitHub repository:<br>
-<br>
-&nbsp;&nbsp;&nbsp;&nbsp;https://github.com/spectrum-health-systems/my-avatool-web-service/
 
 ### A note about the MAWS sourcecode
 I've tried to make this sourcecode as human-readable as possible, but since other organizations may use MAWS I've decided to heavily comment everything as well.
 
-I know this goes against best practice, however since Netsmart doesn't do the best job of making everything *they* do transparent, I want to make it sure that *my* code is as clear as possible as to what it does, and how it does it.
+I know this goes against best practice, however since Netsmart doesn't do the best job of making everything ***they*** do transparent, I want to make it sure that ***my*** code is as clear as possible as to what it does, and how it does it.
 
 # IMPORTING MAWS INTO MyAVATAR
 In order for myAvatar™ to use MAWS, you'll need to import MAWS into myAvatar™.
@@ -71,7 +67,7 @@ For example, URL of `https://your-organization.com/MyAvatoolWebService.asmx?WSDL
 
 <h6 align="center">
 
-  <img src="../Asset/Image/Doc/wsdl-xml-example.png" width="815">
+  <img src="img/man/wsdl-xml-example.png" width="815">
   <br>
   An example of a WSDL file.
   <br>
