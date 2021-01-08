@@ -26,12 +26,12 @@
 <td img src="non-existant-spacer.png" alt="non-existant-spacer" width="1020" height="1">
 
   ### CONTENTS
-  * [ABOUT MAWS](#about-maws)<br>
-  * [IMPLEMENTING MAWS IN YOUR ENVIRONMENTS](#implementing-maws-in-your-environments)<br>
-    * [HOSTING MAWS](#hosting-maws)<br>
-    * [IMPORTING MAWS INTO MyAVATAR](#importing-maws-into-myavatar)<br>
-    * [CREATING SCRIPTLINK EVENTS](#creating-scriptlink-events)<br>
-  * [USING MAWS](#using-maws)<br>  
+  * [ABOUT MAWS](#about-maws)
+  * [IMPLEMENTING MAWS IN YOUR ENVIRONMENTS](#implementing-maws-in-your-environments)
+    * [HOSTING MAWS](#hosting-maws)
+    * [IMPORTING MAWS INTO MyAVATAR](#importing-maws-into-myavatar)
+    * [CREATING SCRIPTLINK EVENTS](#creating-scriptlink-events)
+  * [USING MAWS](#using-maws)
     * [ADMISSION FORM](#admission-form)
     * [CROSS EPISODE FINANCIAL ELIGABLITY FORM](#cross-episode-financial-eligability-form)
   * [CUSTOM MyAVATAR™ WEB SERVICES](#custom-myavatar™-web-services)
@@ -47,11 +47,11 @@
 The **MyAvatool Web Service** (*MAWS*) is a custom web service for [Netsmart's myAvatar™ EHR](https://www.ntst.com/Solutions-and-Services/Offerings/myAvatar) which includes various tools and utilities that aren't included in the official release, and provides a solid foundation for building additional functionality quickly and efficiently.
 
 This is the MAWS manual, which will cover:
-* **Implementing MAWS in your myAvatar™ environments**<br>
+* **[Implementing MAWS](#implementing-maws-in-your-environments) in your myAvatar™ environments**<br>
 Example
-* **Using MAWS**<br>
+* **[Using MAWS](#using-maws)**<br>
 Example
-* **Creating custom myAvatar™ web services**<br>
+* **[Custom MyAvatar™ web services](#custom-myavatar™-web-services)**<br>
 Example
 
 # IMPLEMENTING MAWS IN YOUR ENVIRONMENTS
