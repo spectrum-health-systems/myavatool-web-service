@@ -349,11 +349,9 @@ The downloaded file is a .zip archive with (as of January 8th, 2021) the followi
 ### Extracting the Netsmart ScriptLink Service
 The file you downloaded actually contains a bunch of stuff, most of which we don't need. 
 
-1. Extract the contents of this file:
-> *136_180_9_ScriptLinkTutorialWithOptionObject2.zip*
-into this folder:
-> 136_180_9_ScriptLinkTutorialWithOptionObject2/ScriptLinkTutorialWithOptionObject2/DotNetCode/ScriptLinkServiceComplete/**NTST.ScriptLinkService.Objects/**
-3. Copy the **NTST.ScriptLinkService.Objects/** folder to the root of your project
+1. Extract the contents of this file: `136_180_9_ScriptLinkTutorialWithOptionObject2.zip`
+2. Find this folder in the extracted data: `136_180_9_ScriptLinkTutorialWithOptionObject2/ScriptLinkTutorialWithOptionObject2/DotNetCode/ScriptLinkServiceComplete/NTST.ScriptLinkService.Objects/`
+3. Copy the `NTST.ScriptLinkService.Objects/` folder to the root of your project
 
 When complete, the folder structure of the Avatool Web Service project should look like this:
 ```
