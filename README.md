@@ -12,7 +12,7 @@
 
 <h3 align="center">
 
-  <img src="resources/asset/image/logo/maws-logo-800x150.png" alt="MyAvatool Web Service logo" width="800">
+  <img src="resources/asset/img/logo/maws-logo-800x150.png" alt="MyAvatool Web Service logo" width="800">
   <br>
   A custom web service for Netsmart's myAvatar™ EHR
   <br>
