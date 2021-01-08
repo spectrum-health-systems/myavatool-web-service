@@ -5,7 +5,7 @@
 
 <h1 align="center">
 
-  <img src="../../Asset/Image/Logo/maws-logo-800x150.png" alt="MyAvatar Web Service logo" width="800">
+  <img src="../Asset/Image/Logo/maws-logo-800x150.png" alt="MyAvatar Web Service logo" width="800">
   <br>
   MANUAL
   <br>
@@ -77,7 +77,7 @@ You will now see the form tab in designer mode. In the upper left of myAvatar™
 
 <h4 align="center">
 
-  <img src="../../Asset/Image/Doc/scriptlink-form-designer-settings-button.png" width="350">
+  <img src="../Asset/Image/Doc/scriptlink-form-designer-settings-button.png" width="350">
   <br>
   The "Settings" button.
   <br>
