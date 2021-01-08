@@ -5,7 +5,7 @@
 
 <h1 align="center">
 
-  <img src="../Asset/Image/Logo/maws-logo-800x150.png" alt="MyAvatar Web Service logo" width="800">
+  <img src="../resource/asset/image/logo/maws-logo-800x150.png" alt="myAvatar Web Service logo" width="800">
   <br>
   MANUAL
   <br>
