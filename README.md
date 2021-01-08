@@ -2,22 +2,17 @@
   GitHub repository template (b210103)
   https://github.com/APrettyCoolProgram/my-development-environment/tree/master/templates/github/
 -->
-
 <h6 align="center">
-
   <img src="https://img.shields.io/badge/WARNING:-THIS%20IS%20BETA%20SOFTWARE-%23990000?style=for-the-badge">
-
 </h6>
 
 ***
 
 <h3 align="center">
-
   <img src="src/Resources/Asset/Image/Logo/maws-logo-800x150.png" alt="MyAvatool Web Service logo" width="800">
   <br>
   A custom Web service for Netsmart's myAvatar™ EHR
   <br>
-
 </h3>
 
 <h3 align="center">
