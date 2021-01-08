@@ -375,7 +375,7 @@ Now we need to add a reference to the Netsmart ScriptLink Service to our project
 3. Choose the  **NTST.ScriptLinkService.Objects.vbproj** file
 4. Click **Open**
 
-> **Wrong .NET Framework version?**
+> **Wrong .NET Framework version?**<br>
 > If a message pops up letting you know that the Netsmart ScriptLink Service targets a .NET Framework version that's not installed (in this case, .NET 3.5), choose the **Change the target to .NET Framework 4.6.1...** option, then click **OK**.
 
 ### Extracting the Netsmart ScriptLink Service
