@@ -306,8 +306,10 @@ Since we created an empty project, there aren't any valid web services available
 </h6>
 <br>
 
-## ADDING THE NETSMART SCRIPTLINK SERVICE
+## ADDING THE NETSMART SCRIPTLINK SERVICE TO THE PROJECT
 In order for our new AvatoolWebService Web Service to work, we'll need to add the Netsmart ScriptLink Service to our project.
+
+### DOWNLOADING THE NETSMART SCRIPTLINK SERVICE
 
 The Netsmart ScriptLink Service is bundled with the "Brief ScriptLink Tutorial with OptionObject2", which you will need to download from the [Netsmart Cares portal](https://netsmartcares.force.com/s/login/)
 
@@ -316,7 +318,7 @@ The Netsmart ScriptLink Service is bundled with the "Brief ScriptLink Tutorial w
 
 <h6 align="center">
 
-  <img src="../Asset/Image/Doc/ntst-portal-app-exchange-01.png" width="400">
+  <img src="../Asset/Image/Doc/ntst-portal-app-exchange-01.png" width="200">
   <br>
   Navigating to the Netsmart Cares App Exchange
   
@@ -328,15 +330,14 @@ The Netsmart ScriptLink Service is bundled with the "Brief ScriptLink Tutorial w
 
 <h6 align="center">
 
-  <img src="../Asset/Image/Doc/ntst-portal-app-exchange-02.png" width="400">
+  <img src="../Asset/Image/Doc/ntst-portal-app-exchange-02.png" width="700">
   <br>
   Downloading the Netsmart ScriptLink Service
   
 </h6>
 <br>
 
-
-### Make sure you have the correct file!
+#### Make sure you have the correct file!
 The downloaded file is a .zip archive with (as of January 8th, 2021) the following details:
 * Name: **136_180_9_ScriptLinkTutorialWithOptionObject2.zip**
 * Size: **1.85MB**
