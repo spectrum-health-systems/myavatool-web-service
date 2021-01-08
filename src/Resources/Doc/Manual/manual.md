@@ -26,14 +26,14 @@
 <td img src="non-existant-spacer.png" alt="non-existant-spacer" width="1000" height="1">
 
   ### CONTENTS
-  [ABOUT MAWS](#about-maws)<br>
-  [USING MAWS](#using-maws)<br>
-  &nbsp;&nbsp;&nbsp;&nbsp;[VERIFY INPATIENT ADMISSION DATE](#verify-inpatient-admission-date)<br>
-  &nbsp;&nbsp;&nbsp;&nbsp;[VERIFY INPATIENT ADMISSION DATE](#verify-inpatient-admission-date)<br>
-  [CUSTOM MyAVATAR™ WEB SERVICES](#custom-myavatar™-web-services)<br>
-  &nbsp;&nbsp;&nbsp;&nbsp;[CREATING A CUSTOM MyAVATAR™ WEB SERVICE](#creating-a-custom-myavatar™-web-service)<br>
-  &nbsp;&nbsp;&nbsp;&nbsp;[HOSTING A CUSTOM MyAVATAR™ WEB SERVICE](#hosting-a-custom-myavatar™-web-service)<br>
-  &nbsp;&nbsp;&nbsp;&nbsp;[USING A CUSTOM MyAVATAR™ WEB SERVICE](#using-a-custom-myavatar™-web-service)
+  * [ABOUT MAWS](#about-maws)<br>
+  * [USING MAWS](#using-maws)<br>
+    * [VERIFY INPATIENT ADMISSION DATE](#verify-inpatient-admission-date)
+    * [VERIFY INPATIENT ADMISSION DATE](#verify-inpatient-admission-date)
+  * [CUSTOM MyAVATAR™ WEB SERVICES](#custom-myavatar™-web-services)
+    * [CREATING A CUSTOM MyAVATAR™ WEB SERVICE](#creating-a-custom-myavatar™-web-service)
+    * [HOSTING A CUSTOM MyAVATAR™ WEB SERVICE](#hosting-a-custom-myavatar™-web-service)
+    * [USING A CUSTOM MyAVATAR™ WEB SERVICE](#using-a-custom-myavatar™-web-service)
 
 </td>
 </tr>
