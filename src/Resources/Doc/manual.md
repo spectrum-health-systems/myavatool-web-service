@@ -200,7 +200,7 @@ Personally, I would rather use .NET Core 5, but as of .NET Core 5.1, SOAP web se
 ### What language?
 You can use any language to create a custom web service for myAvatar™. These instructions will walk through creating a web service in C#.
 
-## CREATING THE AVATOOL WEB SERVICE PROJECT
+## CREATING A NEW PROJECT
 First, we need to create an empty ASP.NET Web Application project. Using Visual Studio 2019:
 
 1. Click **Create a new project**
@@ -254,7 +254,7 @@ First, we need to create an empty ASP.NET Web Application project. Using Visual 
 
 It may take a few minutes for Visual Studio to create the project.
 
-### ADDING A NEW WEB SERVICE TO THE PROJECT
+## ADDING A NEW WEB SERVICE TO THE PROJECT
 Now you have a brand new, clean ASP.NET Web Application that you can use to build your custom web service for myAvatar™!
 
 <h6 align="center">
@@ -308,7 +308,6 @@ Since we created an empty project, there aren't any valid web services available
 In order for our new AvatoolWebService Web Service to work, we'll need to add the Netsmart ScriptLink Service to our project.
 
 ### Downloading the Netsmart ScriptLink Service
-
 The Netsmart ScriptLink Service is bundled with the "Brief ScriptLink Tutorial with OptionObject2", which you will need to download from the [Netsmart Cares portal](https://netsmartcares.force.com/s/login/)
 
 1. Login to the *[Netsmart Cares portal](https://netsmartcares.force.com/s/login/)*
