@@ -44,7 +44,7 @@ The **MyAvatool Web Service** (*MAWS*) is a custom web service for Netsmart's my
 
 This is the MAWS manual.
 
-For more information about MAWS, please visit the MAWS GitHub repository:
+For more information about MAWS, please visit the MAWS GitHub repository:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;https://github.com/spectrum-health-systems/my-avatool-web-service/.
 
 #### A note about the sourcecode
