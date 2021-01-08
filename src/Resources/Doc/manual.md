@@ -57,9 +57,16 @@ I know this goes against best practice, however since Netsmart doesn't do the be
 If you fork MAWS for your own development, please do not remove the original comments (and add nice, detailed comments for any functionality you add!
 
 # IMPORTING MAWS INTO MyAVATAR
+In order for myAvatar™ to use MAWS, you'll need to import MAWS into myAvatar™.
 
-## CONFIRMING WSDL WSDL
-Before attempting to import MAWS, you should make sure that you have a valid **W**eb **S**ervice **D**escription **L**anguage (WSDL) URL. To do this, paste the URL of the MAWS WSDL in a web browser and attempt to access the URL.
+#### Where is MAWS located?
+MAWS has to be hosted somewhere. If you planning on self-hosting MAWS on an IIS server, I've put together some instructions that might help. 
+
+#### You have one shot at this!
+Once you have imported a custom web service into myAvatar™, it's there to stay. If you are using your own custom web service, make sure you've named it exactly what you want, otherwise you may end up with the names of depreciated web services in your myAvatar™ environments.
+
+## CONFIRMING THE MAWS WSDL
+Before attempting to import MAWS into myAvatar™, you should make sure that you have a valid **W**eb **S**ervice **D**escription **L**anguage (WSDL) URL. To do this, paste the URL of the MAWS WSDL in a web browser and attempt to access the URL.
 
 For example, URL of `https://your-organization.com/MyAvatoolWebService.asmx?WSDL` should display XML that looks something like this:
 
@@ -75,7 +82,7 @@ If the WSDL file *is diplayed* in the browser, that URL is what you are going to
 
 If the WSDL file *is not displayed*, you'll need to get a valid WSDL location before continuing.
 
-## IMPORTING THE WSDL
+## IMPORTING THE MAWS WSDL
 Any form can be used to import a web service, and once a web service has been imported it can be used by any form that allows ScriptLink events.
 
 We will use the *Admissions* form to import the MAWS WSDL:
@@ -93,7 +100,7 @@ We will use the *Admissions* form to import the MAWS WSDL:
   <br>
 </h6>
 
-6. Clicking the **Settings** button will bring you to the ScriptLink options page:
+6. Clicking the **Settings** button will bring you to the ScriptLink options page. Right now we are interested in the **Import WSDL for ScriptLink** section:
 
 <h6 align="center">
 
@@ -111,12 +118,6 @@ You should get a popup letting you know the WSDL was imported successfully.
 
 
 
-
-#### Where is MAWS?
-MAWS has to be hosted somewhere. If you planning on self-hosting MAWS on an IIS server, I've put together some instructions that might help. 
-
-
-#### Careful!
 
 
 

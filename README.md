@@ -14,7 +14,7 @@
 
   <img src="src/Resources/Asset/Image/Logo/maws-logo-800x150.png" alt="MyAvatool Web Service logo" width="800">
   <br>
-  A custom Web service for Netsmart's myAvatar™ EHR
+  A custom web service for Netsmart's myAvatar™ EHR
   <br>
 
 </h3>
