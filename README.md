@@ -12,7 +12,8 @@
 
 <h3 align="center">
 
-  <img src="src/Resources/Asset/Image/Logo/maws-logo-800x150.png" alt="MyAvatool Web Service logo" width="800">
+  <img src="resources/asset/img/logo/maws-logo-800x150.png" alt="MyAvatool Web Service logo" width="800">
+  <br>
   <br>
   A custom web service for Netsmart's myAvatar™ EHR
   <br>
@@ -56,53 +57,50 @@
 </table>
 
 # ABOUT
-Archiwizator is a Graphical User Interface (GUI) front-end for [7-Zip](https://www.7-zip.org/).
+The **MyAvatool Web Service** (*MAWS*) is a custom web service for Netsmart's [myAvatar™ EHR](https://www.ntst.com/Solutions-and-Services/Offerings/myAvatar), which includes various tools and utilities that aren't included in the official release, and provides a solid foundation for building additional functionality quickly and efficiently.
 
 ### Features
-* Batch archiving!
-* Simple file/folder cleanup prior to archiving data
-* Metal music soundrack (coming soon!)
-* Portable
+* Feature #1
+* Feature #2
+* Feature #3
 
 # GETTING STARTED
 ### Before you begin
-Archiwizator is a work in progress. It does what it is supposed to do, but not...gracefully. I would suggest that you take a look at the [known issues](https://github.com/spectrum-health-systems/my-avatool-web-service/blob/development/doc/known-issues.md) before using Archiwizinator.
+Things you should do/know before you begin.
 
 ### Prerequisites
-* .NET Core 5.x
+* A location to host the Avatool Web Service that has:
+  * .NET Framework 4.6+
+* Access to your myAvatar™ environments from the Avatool Web Service via HTTPS
 
 # INSTALLING
-
 ### Windows
-1. Download the current [Archiwizinator-X.x.zip](https://github.com/spectrum-health-systems/my-avatool-web-service/releases/tag/v0.905-beta) file
-2. Extract `Archiwizator-X.x.zip` to whatever directory you want it to reside
+TBD
 
 #### Other operating systems
-While Archiwizator is written in .NET Core C#, and much of it is cross-platform, it does utilize WPF technology, and is therefore Windows-only.
+TBD
 
 # USING
-To start Archiwizator:
-1. Go to your Archiwizator directory
-2. Double-click `Archiwizator.exe`
+TBD
 
 ### There is a manual!
-The Archiwizator [manual](https://github.com/spectrum-health-systems/my-avatool-web-service/blob/development/doc/Manual/manual.md) is updated when a new version is released, and is the best way to learn how to use Archiwizator.
+The [MAWS Manual](url) is updated when a new version is released, and is the best way to learn how to use MAWS.
 
 # UPDATING
-Since Archiwizator is portable, you just need to replace the old version with the new version.
+TBD
 
 # UNINSTALLING
-Since Archiwizator is portable, you just need to delete the location where Archiwizator resides.
+TBD
 
 # HOW IT WORKS
-Archiwizator is a front-end for [7-Zip](https://7-zip.org).
+TBD
 
 # DEVELOPMENT
-Archiwizator is developed by [A Pretty Cool Program](https://aprettycoolprogram.com) and these [contributors](doc/contributors.md), using these [third-party resources](https://github.com/spectrum-health-systems/my-avatool-web-service/blob/development/doc/built-with.md).
+MAWS is developed by [A Pretty Cool Program](https://aprettycoolprogram.com) and these [contributors](doc/contributors.md), using these [third-party resources](https://github.com/spectrum-health-systems/my-avatool-web-service/blob/development/doc/built-with.md).
 
-You can find the development branch of Archiwizator [here](https://github.com/spectrum-health-systems/my-avatool-web-service/tree/development).
+You can find the development branch of MAWS [here](URL).
 
-To contribute to the development branch of Archiwizator, please see our [contributing guidelines](doc/contributing.md)
+To contribute to the development branch of MAWS, please see our [contributing guidelines](doc/contributing.md)
 
 # ADDITIONAL INFORMATION
 * [Acknowledgements](doc/acknowledgements.md)
