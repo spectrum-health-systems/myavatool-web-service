@@ -185,18 +185,6 @@ Currently there is a single call in the Avatool Web Service:
 * [**VerifyInpatientAdmissionDate**](https://github.com/spectrum-health-systems/AvatoolWebService/blob/development/doc/using-VerifyInpatientAdmissionDate.md): verifies that a client's Pre-Admission Date is the same as the current date.
 
 # CREATING A CUSTOM MyAVATAR WEB SERVICE
-
-### CONTENTS
-[INTRODUCTION](#introduction)<br>
-[BEFORE YOU BEGIN](#before-you-begin)<br>
-[CREATING THE AVATOOL WEB SERVICE PROJECT](#creating-the-avatool-web-service-project)<br>
-[ADDING A NEW WEB SERVICE TO THE PROJECT](#adding-a-new-web-service-to-the-project)<br>
-[ADDING THE NETSMART SCRIPTLINK SERVICE TO THE PROJECT](#adding-the-netsmart-scriptLink-service-to-the-project)<br>
-[ADDING REQUIRED METHODS](#adding-required-methods)<br>
-[CLEANUP](#cleanup)<br>
-[ADDITIONAL READING](#additional-reading)<br>
-
-# INTRODUCTION
 If you are curious as to how the [My Avatool Web Service](https://github.com/spectrum-health-systems/my-avatool-web-service) was created, or you are looking for some information on creating your own custom web service for myAvatar™, these are the steps I took.
 
 ## BEFORE YOU BEGIN
@@ -206,13 +194,13 @@ To create the Avatool Web Service, I used:
 * [GitHub Desktop](https://desktop.github.com/)
 * [.NET Framework 4.6](https://dotnet.microsoft.com/download/dotnet-framework)
 
-#### Why .NET Framework 4.6?
+### Why .NET Framework 4.6?
 Personally, I would rather use .NET Core 5, but as of .NET Core 5.1, SOAP web services are not supported. I would imagine other versions of the .NET Framework would be fine, but most of my Avatool-related development has been using v4.6, so I'm sticking with that.
 
-#### What language?
+### What language?
 You can use any language to create a custom web service for myAvatar™. These instructions will walk through creating a web service in C#.
 
-# CREATING THE AVATOOL WEB SERVICE PROJECT
+## CREATING THE AVATOOL WEB SERVICE PROJECT
 First, we need to create an empty ASP.NET Web Application project. Using Visual Studio 2019:
 
 ![Screenshot](link)
@@ -230,7 +218,7 @@ First, we need to create an empty ASP.NET Web Application project. Using Visual 
 
 It may take a few minutes for Visual Studio to create the project.
 
-# ADDING A NEW WEB SERVICE
+## ADDING A NEW WEB SERVICE
 Now you have a brand new, clean ASP.NET Web Application that you can use to build your custom web service for myAvatar™!
 
 ![Screenshot](link)
@@ -244,10 +232,9 @@ Since we created an empty project, there aren't any valid web services available
 5. Click **Add**
 6. Right click the **AvatoolWebService.asmx** file and choose **Set as Start Page**
 
-# ADDING THE NETSMART SCRIPTLINK SERVICE
+## ADDING THE NETSMART SCRIPTLINK SERVICE
 In order for our new AvatoolWebService Web Service to work, we'll need to add the Netsmart ScriptLink Service to our project. The Netsmart ScriptLink Service can be found in the Application Exchange on the Netsmart Cares portal.
 
-## OBTAINING THE NETSMART SCRIPTLINK SERVICE
 The Netsmart ScriptLink Service is bundled with the "Brief ScriptLink Tutorial with OptionObject2", which you will need to download from the [Netsmart Cares portal](https://netsmartcares.force.com/s/login/)
 
 1. Login to the *[Netsmart Cares portal](https://netsmartcares.force.com/s/login/)*
@@ -255,7 +242,7 @@ The Netsmart ScriptLink Service is bundled with the "Brief ScriptLink Tutorial w
 3. Under **Quick Links** choose **Avatar ScriptLink Library**
 4. Find the "Brief ScriptLink Tutorial with OptionObject2" entry, and click **Download**
 
-#### Make sure you have the correct file!
+### Make sure you have the correct file!
 The downloaded file is a .zip archive with (as of January 8th, 2021) the following details:
 * Name: **136_180_9_ScriptLinkTutorialWithOptionObject2.zip**
 * Size: **1.85MB**
@@ -290,7 +277,7 @@ Now we need to add a reference to the Netsmart ScriptLink Service to our project
 3. Choose the  **NTST.ScriptLinkService.Objects.vbproj** file
 4. Click **Open**
 
-#### Wrong .NET Framework version?
+### Wrong .NET Framework version?
 If a message pops up letting you know that the Netsmart ScriptLink Service targets a .NET Framework version that's not installed (in this case, .NET 3.5), choose the **Change the target to .NET Framework 4.6.1...** option, then click **OK**.
 
 ## ADDING A REFERENCE TO THE NETSMART SCRIPTLINK SERVICE
@@ -300,10 +287,10 @@ Next we need to add a Netsmart ScriptLink Service reference to the Avatool Web S
 2. Under **Projects**, check the box that says **NTST.ScriptLinkService.Objects**
 3. Click **OK**
 
-# ADDING REQUIRED METHODS
+## ADDING REQUIRED METHODS
 Custom web services that interface with myAvatar™ require two methods to be present.
 
-## THE DEFAULT ASMX.CS FILE
+### THE DEFAULT ASMX.CS FILE
 Your *MyAvatoolWebService.asmx.cs* file should look like this:
 
 ```
@@ -353,7 +340,7 @@ namespace MyAvatoolWebService
 }
 ```
 
-## ADDING THE GetVersion() METHOD
+### ADDING THE GetVersion() METHOD
 The first of the required methods is called `GetVersion()`. It looks like this:
 ```
 [WebMethod]
@@ -392,7 +379,7 @@ namespace MyAvatoolWebService
 }
 ```
 
-## ADDING THE RunScript() METHOD
+### ADDING THE RunScript() METHOD
 
 The second required method is called `RunScript()`. It looks like this:
 ```
@@ -450,7 +437,7 @@ namespace MyAvatoolWebService
 }
 ```
 
-#### Why the red lines?
+### Why the red lines?
 Once you have completed the above steps, you will probably notice some warnings in your code in the form of red underlines. Most likely you are getting these warnings under the text for `OptionObject2` and `MethodName`.
 
 You are getting these warnings becuase your project doesn't know what `OptionObject2` and `MethodName` are. Let's fix that.
@@ -502,7 +489,7 @@ namespace MyAvatoolWebService
 }
 ```
 
-## ADDING THE MethodName METHOD
+## ADDING THE MethodName() METHOD
 When myAvatar™ reaches out to your custom web service, it's going to ask it to perform some *action*.
 
 You'll notice in the `RunScript()` method there is an `action` parameter that is passed. That is the *action* myAvatar™ is requesting. For this tutorial, let's pretend that the action myAvatar™ is requesting is to "doSomething".
