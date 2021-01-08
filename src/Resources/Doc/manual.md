@@ -309,7 +309,7 @@ Since we created an empty project, there aren't any valid web services available
 ## ADDING THE NETSMART SCRIPTLINK SERVICE TO THE PROJECT
 In order for our new AvatoolWebService Web Service to work, we'll need to add the Netsmart ScriptLink Service to our project.
 
-### DOWNLOADING THE NETSMART SCRIPTLINK SERVICE
+### Downloading the Netsmart ScriptLink Service
 
 The Netsmart ScriptLink Service is bundled with the "Brief ScriptLink Tutorial with OptionObject2", which you will need to download from the [Netsmart Cares portal](https://netsmartcares.force.com/s/login/)
 
@@ -337,12 +337,14 @@ The Netsmart ScriptLink Service is bundled with the "Brief ScriptLink Tutorial w
 </h6>
 <br>
 
-#### Make sure you have the correct file!
+### Make sure you have the correct file!
 The downloaded file is a .zip archive with (as of January 8th, 2021) the following details:
+```
 * Name: **136_180_9_ScriptLinkTutorialWithOptionObject2.zip**
 * Size: **1.85MB**
 * MD5: **EC9445B70FD994A4453C4D0649208EC2**
 * SHA2-256: **899617150FF9A69A6D3A7661CD4CAC304292D5F7BA775432C9B5C3FE6AA1D8F4**
+```
 
 ## EXTRACTING THE NETSMART SCRIPTLINK SERVICE
 The file you downloaded actually contains a bunch of stuff, most of which we don't need. 
