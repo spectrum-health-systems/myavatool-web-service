@@ -340,10 +340,10 @@ The Netsmart ScriptLink Service is bundled with the "Brief ScriptLink Tutorial w
 ### Make sure you have the correct file!
 The downloaded file is a .zip archive with (as of January 8th, 2021) the following details:
 
-> Name: **136_180_9_ScriptLinkTutorialWithOptionObject2.zip**
-> Size: **1.85MB**
-> MD5: **EC9445B70FD994A4453C4D0649208EC2**
-> SHA2-256: **899617150FF9A69A6D3A7661CD4CAC304292D5F7BA775432C9B5C3FE6AA1D8F4**
+> Name: **136_180_9_ScriptLinkTutorialWithOptionObject2.zip**<br>
+> Size: **1.85MB**<br>
+> MD5: **EC9445B70FD994A4453C4D0649208EC2**<br>
+> SHA2-256: **899617150FF9A69A6D3A7661CD4CAC304292D5F7BA775432C9B5C3FE6AA1D8F4**<br>
 
 
 ## EXTRACTING THE NETSMART SCRIPTLINK SERVICE
