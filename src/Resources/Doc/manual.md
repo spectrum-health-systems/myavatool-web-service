@@ -259,16 +259,53 @@ It may take a few minutes for Visual Studio to create the project.
 ## ADDING A NEW WEB SERVICE
 Now you have a brand new, clean ASP.NET Web Application that you can use to build your custom web service for myAvatar™!
 
-![Screenshot](link)
+<h6 align="center">
+
+  <img src="../Asset/Image/Doc/vs2019-empty-app.png" width="500">
+  <br>
+  A nice new, clean app!
+  
+</h6>
+<br>
 
 Since we created an empty project, there aren't any valid web services available. Let's create one.
 
 1. Right click the **Avatool-Web-Service** *project*
 2. Choose **Add** > **New Item...**
+
+<h6 align="center">
+
+  <img src="../Asset/Image/Doc/vs2019-add-web-service-01.png" width="700">
+  <br>
+  Adding a new item to the project
+  
+</h6>
+<br>
+
 3. Choose **Visual C** > **Web** > **web Service (ASMX**)
 4. Name the Web Service **AvatoolWebService.asmx**
 5. Click **Add**
+
+<h6 align="center">
+
+  <img src="../Asset/Image/Doc/vs2019-add-web-service-02.png" width="700">
+  <br>
+  Adding a new web service to the project
+  
+</h6>
+<br>
+
 6. Right click the **AvatoolWebService.asmx** file and choose **Set as Start Page**
+
+<h6 align="center">
+
+  <img src="../Asset/Image/Doc/vs2019-add-web-service-03.png" width="700">
+  <br>
+  Adding a new web service to the project
+  
+</h6>
+<br>
+
 
 ## ADDING THE NETSMART SCRIPTLINK SERVICE
 In order for our new AvatoolWebService Web Service to work, we'll need to add the Netsmart ScriptLink Service to our project. The Netsmart ScriptLink Service can be found in the Application Exchange on the Netsmart Cares portal.
