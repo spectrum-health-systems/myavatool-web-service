@@ -50,10 +50,9 @@ For more information about MAWS, please visit the MAWS GitHub repository:<br>
 <br>
 &nbsp;&nbsp;&nbsp;&nbsp;https://github.com/spectrum-health-systems/my-avatool-web-service/
 
-> **A note about the MAWS sourcecode**<br>
-> I've tried to make this sourcecode as human-readable as possible, but since other organizations may use MAWS I've decided to heavily comment everything as well.
+> **A NOTE ABOUT THE MAWS SOURCECODE**<br>
+> I've tried to make this sourcecode as human-readable as possible, but since other organizations may use MAWS I've decided to heavily comment everything as well.<br>
 > I know this goes against best practice, however since Netsmart doesn't do the best job of making everything *they* do transparent, I want to make it sure that *my* code is as clear as possible as to what it does, and how it does it.
-> If you fork MAWS for your own development, please do not remove the original comments (and add nice, detailed comments for any functionality you add!
 
 # IMPORTING MAWS INTO MyAVATAR
 In order for myAvatar™ to use MAWS, you'll need to import MAWS into myAvatar™.
