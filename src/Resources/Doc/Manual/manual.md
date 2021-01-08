@@ -28,8 +28,8 @@
   ### CONTENTS
   * [ABOUT MAWS](#about-maws)<br>
   * [USING MAWS](#using-maws)<br>
-    * [VERIFY INPATIENT ADMISSION DATE](#verify-inpatient-admission-date)
-    * [VERIFY INPATIENT ADMISSION DATE](#verify-inpatient-admission-date)
+    * [ADMISSION FORM](#admission-form)
+    * [CROSS EPISODE FINANCIAL ELIGABLITY FORM](#cross-episode-financial-eligability-form)
   * [CUSTOM MyAVATAR™ WEB SERVICES](#custom-myavatar™-web-services)
     * [CREATING A CUSTOM MyAVATAR™ WEB SERVICE](#creating-a-custom-myavatar™-web-service)
     * [HOSTING A CUSTOM MyAVATAR™ WEB SERVICE](#hosting-a-custom-myavatar™-web-service)
@@ -55,7 +55,9 @@ If you fork MAWS for your own development, please do not remove the original com
 
 # USING MAWS
 
+## ADMISSION FORM
 
+## CROSS EPISODE FINANCIAL ELIGABLITY FORM
 
 
 # CREATING A CUSTOM MyAVATAR WEB SERVICE
