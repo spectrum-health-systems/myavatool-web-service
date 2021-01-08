@@ -148,6 +148,7 @@ Let's say you wanted to have MAWS do something when you hit the **Submit** butto
   <br>
   The "Settings" button.
   <br>
+
 </h6>
 
 6. Clicking the **Settings** button will bring you to the ScriptLink options page:
@@ -158,6 +159,7 @@ Let's say you wanted to have MAWS do something when you hit the **Submit** butto
   <br>
   The ScriptLink options page.
   <br>
+
 </h6>
 <br>
 
@@ -185,10 +187,10 @@ Currently there is a single call in the Avatool Web Service:
 * [**VerifyInpatientAdmissionDate**](https://github.com/spectrum-health-systems/AvatoolWebService/blob/development/doc/using-VerifyInpatientAdmissionDate.md): verifies that a client's Pre-Admission Date is the same as the current date.
 
 # CREATING A CUSTOM MyAVATAR WEB SERVICE
-If you are curious as to how the [My Avatool Web Service](https://github.com/spectrum-health-systems/my-avatool-web-service) was created, or you are looking for some information on creating your own custom web service for myAvatar™, these are the steps I took.
+If you are curious as to how the MAWS was created, or you are looking for some information on creating your own custom web service for myAvatar™, these are the steps I took. I'll be using the same naming conventions that I did with MAWS, so you should modify things as you see fit.
 
 ## BEFORE YOU BEGIN
-To create the Avatool Web Service, I used:
+To create MAWS, I used:
 * [Visual Studio Community 2019](https://visualstudio.microsoft.com/vs/) (including the extensions listed [here](https://github.com/APrettyCoolProgram/my-development-environment))
 * [Visual Studio Code](https://code.visualstudio.com/?wt.mc_id=DX_841432) (including the extensions listed [here](https://github.com/APrettyCoolProgram/my-development-environment))
 * [GitHub Desktop](https://desktop.github.com/)
@@ -203,7 +205,14 @@ You can use any language to create a custom web service for myAvatar™. These i
 ## CREATING THE AVATOOL WEB SERVICE PROJECT
 First, we need to create an empty ASP.NET Web Application project. Using Visual Studio 2019:
 
-![Screenshot](link)
+<h6 align="center">
+
+  <img src="../Asset/Image/Doc/vs2019-create-new-project.png" width="500">
+  <br>
+  Creating a new project in Visual Studio 2019
+  <br>
+
+</h6>
 
 1. Click **Create a new project**
 2. Select **ASP.NET Web Application (.NET Framework)**
