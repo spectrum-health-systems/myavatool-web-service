@@ -9,12 +9,12 @@
   <br>
   MANUAL
   <br>
-https://github.com/spectrum-health-systems/my-avatool-web-service/blob/development-v1.0/src/Resources/Asset/Image/Logo/maws-logo-800x150.png
+
 </h1>
 
 <h4 align="center">
 
-  Archiwizator v0.905-beta&nbsp;&bull;&nbsp;Last updated January 4, 2021
+  MAWS v0.1&nbsp;&bull;&nbsp;Last updated January 8, 2021
 
 </h4>
 
@@ -26,14 +26,8 @@ https://github.com/spectrum-health-systems/my-avatool-web-service/blob/developme
 <td img src="RepositoryData/Asset/Image/Document/README/spacer.png" alt="blank-spacer" width="1000" height="1">
 
   ### CONTENTS
-  [ABOUT ARCHIWIZATOR](#about-archiwizator)<br>
-  [THE MAIN WINDOW](#the-main-window)<br>
-  &nbsp;&nbsp;&nbsp;&nbsp;[ARCHIWIZATOR OPTIONS](#1-archiwizator-options)<br>
-  &nbsp;&nbsp;&nbsp;&nbsp;[7ZIP OPTIONS](#2-7zip-options)<br>
-  &nbsp;&nbsp;&nbsp;&nbsp;[SOURCE DETAILS](#3-source-details)<br>
-  &nbsp;&nbsp;&nbsp;&nbsp;[THE ARCHIWIZATE BUTTON](#4-the-archiwizate-button)<br>
-  &nbsp;&nbsp;&nbsp;&nbsp;[THE PROGRESS OVERVIEW DISPLAY](#5-progress-overview-display)<br>
-  &nbsp;&nbsp;&nbsp;&nbsp;[THE PROGRESS DETAILS DISPLAY](#6-progress-details-display)<br>
+  [ABOUT MAWS](#about-archiwizator)<br>
+
 
 </td>
 </tr>
