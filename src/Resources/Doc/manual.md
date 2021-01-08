@@ -211,10 +211,10 @@ First, we need to create an empty ASP.NET Web Application project. Using Visual 
 
   <img src="../Asset/Image/Doc/vs2019-create-new-project.png" width="700">
   <br>
-  Creating a new project in Visual Studio 2019
-  <br>
+  Starting a new project in Visual Studio 2019
 
 </h6>
+<br>
 
 2. Select **ASP.NET Web Application (.NET Framework)**, then click **Next**
 
@@ -223,9 +223,9 @@ First, we need to create an empty ASP.NET Web Application project. Using Visual 
   <img src="../Asset/Image/Doc/vs2019-new-project-template.png" width="700">
   <br>
   Choosing a project template
-  <br>
 
 </h6>
+<br>
 
 4. Name the project (in this example, the name is "MyAvatoolWebService")
 5. Choose a **Location** for your project
@@ -236,14 +236,23 @@ First, we need to create an empty ASP.NET Web Application project. Using Visual 
 
   <img src="../Asset/Image/Doc/vs2019-configure-template.png" width="700">
   <br>
-  Choosing a project template
-  <br>
-
+  Configuring the project
+  
 </h6>
+<br>
 
 8. In the **Create a new ASP.NET Core Web Application** dialog, select **Empty**
 9. Verify that **Configure for HTTPS** (under **Advanced**) is checked
 10. Click **Create**
+
+<h6 align="center">
+
+  <img src="../Asset/Image/Doc/vs2019-create-new-asp-app.png" width="700">
+  <br>
+  Creating the project
+  
+</h6>
+<br>
 
 It may take a few minutes for Visual Studio to create the project.
 
