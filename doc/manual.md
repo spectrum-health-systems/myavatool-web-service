@@ -55,7 +55,11 @@ Example
 Example
 
 # IMPLEMENTING MAWS IN YOUR ENVIRONMENTS
-In order for myAvatar™ to use MAWS, you'll need to import MAWS into myAvatar™. This section will walk your through the process.
+In order for myAvatar™ to use MAWS, you'll need to import MAWS into myAvatar™. This section will walk your through the following process:
+
+1. first
+2. second
+3. third
 
 ### Before you begin...
 #### Do you know where is MAWS located?
