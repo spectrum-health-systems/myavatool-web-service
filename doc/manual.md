@@ -23,13 +23,15 @@
 <!-- The HTML indentations have to stay this way to work. -->
 <table>
 <tr>
-<td img src="non-existant-spacer.png" alt="non-existant-spacer" width="1000" height="1">
+<td img src="non-existant-spacer.png" alt="non-existant-spacer" width="1020" height="1">
 
   ### CONTENTS
-  * [ABOUT MAWS](#about-maws)<br>
-  * [IMPORTING MAWS INTO MyAVATAR](#importing-maws-into-myavatar)<br>
-  * [CREATING SCRIPTLINK EVENTS IN MyAVATAR](#creating-scriptlink-events-in-myavatar)<br>
-  * [USING MAWS](#using-maws)<br>  
+  * [ABOUT MAWS](#about-maws)
+  * [IMPLEMENTING MAWS IN YOUR ENVIRONMENTS](#implementing-maws-in-your-environments)
+    * [HOSTING MAWS](#hosting-maws)
+    * [IMPORTING MAWS INTO MyAVATAR](#importing-maws-into-myavatar)
+    * [CREATING SCRIPTLINK EVENTS](#creating-scriptlink-events)
+  * [USING MAWS](#using-maws)
     * [ADMISSION FORM](#admission-form)
     * [CROSS EPISODE FINANCIAL ELIGABLITY FORM](#cross-episode-financial-eligability-form)
   * [CUSTOM MyAVATAR™ WEB SERVICES](#custom-myavatar™-web-services)
@@ -44,30 +46,34 @@
 # ABOUT MAWS
 The **MyAvatool Web Service** (*MAWS*) is a custom web service for [Netsmart's myAvatar™ EHR](https://www.ntst.com/Solutions-and-Services/Offerings/myAvatar) which includes various tools and utilities that aren't included in the official release, and provides a solid foundation for building additional functionality quickly and efficiently.
 
-This is the MAWS manual.
+This is the MAWS manual, which will cover:
+* **[Implementing MAWS](#implementing-maws-in-your-environments) in your myAvatar™ environments**<br>
+Example
+* **[Using MAWS](#using-maws)**<br>
+Example
+* **[Developing your own](#custom-myavatar™-web-services)** custom web services for myAvatar™<br>
+Example
 
-### A note about the MAWS sourcecode
-I've tried to make this sourcecode as human-readable as possible, but since other organizations may use MAWS I've decided to heavily comment everything as well.
+# IMPLEMENTING MAWS IN YOUR ENVIRONMENTS
+In order for myAvatar™ to use MAWS, you'll need to import MAWS into myAvatar™. This section will walk your through the following process:
 
-I know this goes against best practice, however since Netsmart doesn't do the best job of making everything ***they*** do transparent, I want to make it sure that ***my*** code is as clear as possible as to what it does, and how it does it.
+1. first
+2. second
+3. third
 
-# IMPORTING MAWS INTO MyAVATAR
-In order for myAvatar™ to use MAWS, you'll need to import MAWS into myAvatar™.
+### Before you begin...
+#### Do you know where is MAWS located?
+Custom web services need to be hosted, and MAWS is not an exception. To continue with this documentations, you will need to know where MAWS is installed in your environment.
 
-### Where is MAWS located?
-MAWS has to be hosted somewhere. If you planning on self-hosting MAWS on an IIS server, I've put together some instructions that might help. 
-
-### You have one shot at this!
-Once you have imported a custom web service into myAvatar™, it's there to stay. If you are using your own custom web service, make sure you've named it exactly what you want, otherwise you may end up with the names of depreciated web services in your myAvatar™ environments.
-
-## CONFIRMING THE MAWS WSDL
+## IMPORTING MAWS
+### CONFIRMING THE MAWS WSDL
 Before attempting to import MAWS into myAvatar™, you should make sure that you have a valid **W**eb **S**ervice **D**escription **L**anguage (WSDL) URL. To do this, paste the URL of the MAWS WSDL in a web browser and attempt to access the URL.
 
-For example, URL of `https://your-organization.com/MyAvatoolWebService.asmx?WSDL` should display XML that looks something like this:
+For example, pointing a browser to `https://your-organization.com/MyAvatoolWebService.asmx?WSDL` should display XML that looks something like this:
 
 <h6 align="center">
 
-  <img src="img/man/wsdl-xml-example.png" width="815">
+  <img src="img/man/wsdl-xml-example-799x393.png" width="600">
   <br>
   An example of a WSDL file.
   <br>
@@ -90,7 +96,7 @@ We will use the *Admissions* form to import the MAWS WSDL:
 
 <h6 align="center">
 
-  <img src="../Asset/Image/Doc/scriptlink-form-designer-settings-button.png" width="384">
+  <img src="img/man/scriptlink-form-designer-settings-button-364x335.png" width="300">
   <br>
   The "Settings" button.
   <br>
@@ -100,7 +106,7 @@ We will use the *Admissions* form to import the MAWS WSDL:
 
 <h6 align="center">
 
-  <img src="../Asset/Image/Doc/scriptlink-options-import-wsdl.png" width="860">
+  <img src="img/man/scriptlink-options-import-wsdl-847x375.png" width="747">
   <br>
   The ScriptLink options page.
   <br>
@@ -112,7 +118,7 @@ We will use the *Admissions* form to import the MAWS WSDL:
 
 You should get a popup letting you know the WSDL was imported successfully.
 
-# CREATING SCRIPTLINK EVENTS IN MyAVATAR
+# CREATING SCRIPTLINK EVENTS
 Before you can use MAWS (or any custom web service) with myAvatar™, make sure you've [imported](#importing-maws-into-myavatar) it.
 
 To use the MAWS with myAvatar™, you will need to add a ScriptLink event to a form event. When that event takes place, myAvatar™ will pass information to MAWS (and potentiall recieve something back).
@@ -138,9 +144,9 @@ Let's say you wanted to have MAWS do something when you hit the **Submit** butto
 
 <h6 align="center">
 
-  <img src="../Asset/Image/Doc/scriptlink-form-designer-settings-button.png" width="384">
+  <img src="img/man/scriptlink-form-designer-settings-button-364x335.png" width="300">
   <br>
-  The "Settings" button.
+  The "Settings" button (again)
   <br>
 
 </h6>
@@ -149,9 +155,9 @@ Let's say you wanted to have MAWS do something when you hit the **Submit** butto
 
 <h6 align="center">
 
-  <img src="../Asset/Image/Doc/scriptlink-event-example.png" width="860">
+  <img src="img/man/scriptlink-event-example-839x369.png" width="739">
   <br>
-  The ScriptLink options page.
+  The ScriptLink options page (again, but this time for something different)
   <br>
 
 </h6>
@@ -203,7 +209,7 @@ First, we need to create an empty ASP.NET Web Application project. Using Visual 
 
 <h6 align="center">
 
-  <img src="../Asset/Image/Doc/vs2019-create-new-project.png" width="700">
+  <img src="img/man/vs2019-create-new-project-800x535.png" width="800">
   <br>
   Starting a new project in Visual Studio 2019
 
@@ -214,7 +220,7 @@ First, we need to create an empty ASP.NET Web Application project. Using Visual 
 
 <h6 align="center">
 
-  <img src="../Asset/Image/Doc/vs2019-new-project-template.png" width="700">
+  <img src="img/man/vs2019-new-project-template-800x535.png" width="400">
   <br>
   Choosing a project template
 
@@ -228,7 +234,7 @@ First, we need to create an empty ASP.NET Web Application project. Using Visual 
 
 <h6 align="center">
 
-  <img src="../Asset/Image/Doc/vs2019-configure-template.png" width="700">
+  <img src="img/man/vs2019-configure-template.png" width="700">
   <br>
   Configuring the project
   
@@ -241,7 +247,7 @@ First, we need to create an empty ASP.NET Web Application project. Using Visual 
 
 <h6 align="center">
 
-  <img src="../Asset/Image/Doc/vs2019-create-new-asp-app.png" width="700">
+  <img src="img/man/vs2019-create-new-asp-app.png" width="700">
   <br>
   Creating the project
   
@@ -255,7 +261,7 @@ Now you have a brand new, clean ASP.NET Web Application that you can use to buil
 
 <h6 align="center">
 
-  <img src="../Asset/Image/Doc/vs2019-empty-app.png" width="700">
+  <img src="img/man/vs2019-empty-app.png" width="700">
   <br>
   A nice new, clean app!
   
@@ -269,7 +275,7 @@ Since we created an empty project, there aren't any valid web services available
 
 <h6 align="center">
 
-  <img src="../Asset/Image/Doc/vs2019-add-web-service-01.png" width="700">
+  <img src="img/man/vs2019-add-web-service-01.png" width="700">
   <br>
   Adding a new item to the project
   
@@ -282,7 +288,7 @@ Since we created an empty project, there aren't any valid web services available
 
 <h6 align="center">
 
-  <img src="../Asset/Image/Doc/vs2019-add-web-service-02.png" width="700">
+  <img src="img/man/vs2019-add-web-service-02.png" width="700">
   <br>
   Adding a new web service to the project
   
@@ -293,7 +299,7 @@ Since we created an empty project, there aren't any valid web services available
 
 <h6 align="center">
 
-  <img src="../Asset/Image/Doc/vs2019-add-web-service-03.png" width="700">
+  <img src="img/man/vs2019-add-web-service-03.png" width="700">
   <br>
   Adding a new web service to the project
   
@@ -311,7 +317,7 @@ The Netsmart ScriptLink Service is bundled with the "Brief ScriptLink Tutorial w
 
 <h6 align="center">
 
-  <img src="../Asset/Image/Doc/ntst-portal-app-exchange-01.png" width="300">
+  <img src="img/man/ntst-portal-app-exchange-01.png" width="300">
   <br>
   Navigating to the Netsmart Cares App Exchange
   
@@ -323,7 +329,7 @@ The Netsmart ScriptLink Service is bundled with the "Brief ScriptLink Tutorial w
 
 <h6 align="center">
 
-  <img src="../Asset/Image/Doc/ntst-portal-app-exchange-02.png" width="700">
+  <img src="img/man/ntst-portal-app-exchange-02.png" width="700">
   <br>
   Downloading the Netsmart ScriptLink Service
   
@@ -663,3 +669,9 @@ namespace MyAvatoolWebService
 
 ## NOW WHAT
 Modify!
+
+
+
+
+#### You have one shot at this!
+Once you have imported a custom web service into myAvatar™, it's there to stay. If you are using your own custom web service, make sure you've named it exactly what you want, otherwise you may end up with the names of depreciated web services in your myAvatar™ environments.
