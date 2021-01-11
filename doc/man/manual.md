@@ -18,6 +18,7 @@
 
 </h4>
 
+***
 
 # CONTENTS
 * [ABOUT MAWS](manual-about-maws.md)
