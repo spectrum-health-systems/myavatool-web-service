@@ -26,12 +26,7 @@
   * [IMPORTING MAWS](#importing-maws)
   * [CREATING SCRIPTLINK EVENTS](#creating-scriptlink-events)
   * [USING MAWS](#using-maws)
-    * [ADMISSION FORM](#admission-form)
-    * [CROSS EPISODE FINANCIAL ELIGABLITY FORM](#cross-episode-financial-eligability-form)
-  * [CUSTOM myAvatar™ WEB SERVICES](#custom-myAvatar™-web-services)
-    * [CREATING A CUSTOM myAvatar WEB SERVICE](#creating-a-custom-myAvatar-web-service)
-    * [HOSTING A CUSTOM myAvatar WEB SERVICE](#hosting-a-custom-myAvatar-web-service)
-    * [USING A CUSTOM myAvatar WEB SERVICE](#using-a-custom-myAvatar-web-service)
+  * [CUSTOM MYAVATAR™ WEB SERVICES](#custom-myavatar™-web-services)
 
 
 # ABOUT MAWS
