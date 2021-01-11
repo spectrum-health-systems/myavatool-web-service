@@ -42,7 +42,7 @@ More information about MAWS, from the README, will go here.
 
 
 # HOSTING MAWS
-<h6 align="center">
+<h6 align="left">
 
   [CREATE AN APPLICATION POOL](#about-maws)<br>
   [CREATE A NEW SITE](#about-maws)<br>
