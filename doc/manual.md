@@ -44,7 +44,10 @@ This manual will cover:
 * The stuff from the contents above
 
 # HOSTING MAWS
-> [CREATING AN APPLICATION POOL](#about-maws)&nbsp;&bull;&nbsp;[CREATE A NEW SITE](#about-maws)&nbsp;&bull;&nbsp;[DISABLE THE DEFAULT SITE](#about-maws)&nbsp;&bull;&nbsp;[VERIFY THE NEW SITE](#about-maws)&nbsp;&bull;&nbsp;
+> [CREATING AN APPLICATION POOL](#about-maws)
+> [CREATE A NEW SITE](#about-maws)
+> [DISABLE THE DEFAULT SITE](#about-maws)
+> [VERIFY THE NEW SITE](#about-maws)
 
 Web services that interface with myAvatar™ need to be hosted at a location where myAvatar™ can access them, and MAWS is no exception. There are two options for hosting MAWS:
 
