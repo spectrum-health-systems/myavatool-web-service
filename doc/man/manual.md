@@ -18,19 +18,11 @@
 
 </h4>
 
-<!-- The HTML indentations have to stay this way to work. -->
-<table>
-<tr>
-<td img src="non-existant-spacer.png" alt="non-existant-spacer" width="1000" height="1">
 
-  ### CONTENTS
-  * [ABOUT MAWS](#manual-about-maws.md)
-  * [HOSTING MAWS](#manual-hosting-maws.md)
-  * [IMPORTING MAWS](#manual-importing-maws.md)
-  * [CREATING SCRIPTLINK EVENTS](#manual-creating-scriptlink-events.md)
-  * [MAWS CALLS](#manual-maws-calls.md)
-  * [CUSTOM MYAVATAR WEB SERVICES](#manual-custom-myavatar-web-services.md)
-
-</td>
-</tr>
-</table>
+# CONTENTS
+* [ABOUT MAWS](#manual-about-maws.md)
+* [HOSTING MAWS](#manual-hosting-maws.md)
+* [IMPORTING MAWS](#manual-importing-maws.md)
+* [CREATING SCRIPTLINK EVENTS](#manual-creating-scriptlink-events.md)
+* [MAWS CALLS](#manual-maws-calls.md)
+* [CUSTOM MYAVATAR WEB SERVICES](#manual-custom-myavatar-web-services.md)
