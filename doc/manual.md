@@ -47,14 +47,14 @@
 The myAvatool Web Service (**MAWS**) is a custom web service for [Netsmart's myAvatar™ EHR](https://www.ntst.com/Solutions-and-Services/Offerings/myAvatar) which includes various tools and utilities that aren't included in the official release, and provides a solid foundation for building additional functionality quickly and efficiently.
 
 This is the MAWS manual, which will cover:
-* **[Implementing MAWS](#implementing-maws-in-your-environments)** in your myAvatar™ environments<br>
-  * Hosting MAWS in your environment
-  * Importing MAWS intor your myAvatar™ environments
+* **[Implementing MAWS](#implementing-maws-in-your-environments)** in your myAvatar™ environments, including:<br>
+  * Hosting MAWS
+  * Importing MAWS into your myAvatar™ environment(s)
 * **[Using MAWS](#using-maws)**<br>
-  * Creating myAvatar™ ScriptLink events
+  * Creating ScriptLink events in myAvatar™ 
   * Calling MAWS functionality
-* **[Developing your own](#custom-myAvatar™-web-services)** custom web services for myAvatar™<br>
-Example
+
+This manual will also walk your through **[developing your own](#custom-myAvatar™-web-services)** custom web services for myAvatar™, in the event you want to start from scratch.
 
 # IMPLEMENTING MAWS IN YOUR ENVIRONMENTS
 In order for myAvatar™ to use MAWS, you'll need to import MAWS into myAvatar™. This section will walk your through the following process:
