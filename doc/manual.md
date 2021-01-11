@@ -27,10 +27,9 @@
 
   ### CONTENTS
   * [ABOUT MAWS](#about-maws)
-  * [IMPLEMENTING MAWS](#implementing-maws)
-    * [HOSTING MAWS](#hosting-maws)
-    * [IMPORTING MAWS INTO MYAVATAR](#importing-maws-into-myAvatar)
-    * [CREATING SCRIPTLINK EVENTS](#creating-scriptlink-events)
+  * [HOSTING MAWS](#hosting-maws)
+  * [IMPORTING MAWS](#importing-maws)
+  * [CREATING SCRIPTLINK EVENTS](#creating-scriptlink-events)
   * [USING MAWS](#using-maws)
     * [ADMISSION FORM](#admission-form)
     * [CROSS EPISODE FINANCIAL ELIGABLITY FORM](#cross-episode-financial-eligability-form)
@@ -50,21 +49,15 @@ More information about MAWS, from the README, will go here.
 
 ### This is the MAWS manual
 This manual will cover:
-* **[Implementing MAWS](#implementing-maws-in-your-environments)** at your organization<br>
-* **[Using MAWS](#using-maws)**<br> in your myAvatar™ environment(s)
-* **[Developing your own](#custom-myAvatar™-web-services)** custom web services for myAvatar™, in the event you want to start from scratch.
+* The stuff from the contents above
 
-# IMPLEMENTING MAWS
-In order for myAvatar™ to use MAWS, you'll need to import MAWS into myAvatar™. This section will walk your through the following process:
+# HOSTING MAWS
+Web services that interface with myAvatar™ need to be hosted at a location where myAvatar™ can access them, and MAWS is no exception. There are two options for hosting MAWS:
 
-1. Hosting MAWS
-2. Importing MAWS into your myAvatar™ environment(s)
-3. Maybe something else?
+1. Have Netsmart host MAWS
+This is a test
 
-## HOSTING MAWS
-Web services that interface with myAvatar™ need to be hosted at a location where myAvatar™ can access them. Netsmart has a number of their own, "official" web services which are hosted on myAvatar™ CSP servers. You can read more about them [here](URL).
 
-Custom web services like MAWS also need to be hosted at a location where myAvatar™ can access them. There are two options to do so:
 1. If your myAvatar™ environments are hosted by Netsmart, you can have them (for a price) host your custom web services as well.
 2. If you self-host your myAvatar™ environments, or would rather have complete control over your custom web services, you can self-host them.
 
@@ -225,7 +218,7 @@ I'm going to try to put together some documentation for the following, but for n
 
 , and MAWS is not an exception. To continue with this documentations, you will need to know where MAWS is installed in your environment.
 
-
+In order for myAvatar™ to use MAWS, you'll need to import MAWS into myAvatar™. This section will walk your through the following process:
 
 ## IMPORTING MAWS
 ### Before you begin...
