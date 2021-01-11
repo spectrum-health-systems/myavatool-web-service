@@ -317,7 +317,7 @@ The Netsmart ScriptLink Service is bundled with the "Brief ScriptLink Tutorial w
 
 <h6 align="center">
 
-  <img src="img/man/ntst-portal-app-exchange-01.png" width="300">
+  <img src="img/man/ntst-portal-app-exchange-01-490x550.png" width="300">
   <br>
   Navigating to the Netsmart Cares App Exchange
   
@@ -329,7 +329,7 @@ The Netsmart ScriptLink Service is bundled with the "Brief ScriptLink Tutorial w
 
 <h6 align="center">
 
-  <img src="img/man/ntst-portal-app-exchange-02.png" width="700">
+  <img src="img/man/ntst-portal-app-exchange-02-710x554.png" width="710">
   <br>
   Downloading the Netsmart ScriptLink Service
   
