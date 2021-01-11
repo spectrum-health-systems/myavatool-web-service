@@ -29,22 +29,22 @@
   * [ABOUT MAWS](#about-maws)
   * [IMPLEMENTING MAWS IN YOUR ENVIRONMENTS](#implementing-maws-in-your-environments)
     * [HOSTING MAWS](#hosting-maws)
-    * [IMPORTING MAWS INTO MyAVATAR](#importing-maws-into-myavatar)
+    * [IMPORTING MAWS INTO myAvatar](#importing-maws-into-myAvatar)
     * [CREATING SCRIPTLINK EVENTS](#creating-scriptlink-events)
   * [USING MAWS](#using-maws)
     * [ADMISSION FORM](#admission-form)
     * [CROSS EPISODE FINANCIAL ELIGABLITY FORM](#cross-episode-financial-eligability-form)
-  * [CUSTOM MyAVATAR™ WEB SERVICES](#custom-myavatar™-web-services)
-    * [CREATING A CUSTOM MyAVATAR WEB SERVICE](#creating-a-custom-myavatar-web-service)
-    * [HOSTING A CUSTOM MyAVATAR WEB SERVICE](#hosting-a-custom-myavatar-web-service)
-    * [USING A CUSTOM MyAVATAR WEB SERVICE](#using-a-custom-myavatar-web-service)
+  * [CUSTOM myAvatar™ WEB SERVICES](#custom-myAvatar™-web-services)
+    * [CREATING A CUSTOM myAvatar WEB SERVICE](#creating-a-custom-myAvatar-web-service)
+    * [HOSTING A CUSTOM myAvatar WEB SERVICE](#hosting-a-custom-myAvatar-web-service)
+    * [USING A CUSTOM myAvatar WEB SERVICE](#using-a-custom-myAvatar-web-service)
 
 </td>
 </tr>
 </table>
 
 # ABOUT MAWS
-The **MyAvatool Web Service** (*MAWS*) is a custom web service for [Netsmart's myAvatar™ EHR](https://www.ntst.com/Solutions-and-Services/Offerings/myAvatar) which includes various tools and utilities that aren't included in the official release, and provides a solid foundation for building additional functionality quickly and efficiently.
+The **myAvatool Web Service** (*MAWS*) is a custom web service for [Netsmart's myAvatar™ EHR](https://www.ntst.com/Solutions-and-Services/Offerings/myAvatar) which includes various tools and utilities that aren't included in the official release, and provides a solid foundation for building additional functionality quickly and efficiently.
 
 This is the MAWS manual, which will cover:
 * **[Implementing MAWS]** (#implementing-maws-in-your-environments) in your myAvatar™ environments<br>
@@ -52,7 +52,7 @@ This is the MAWS manual, which will cover:
   * Importing MAWS intor your myAvatar™ environments
 * **[Using MAWS]**(#using-maws)<br>
 Example
-* **[Developing your own]**(#custom-myavatar™-web-services) custom web services for myAvatar™<br>
+* **[Developing your own]**(#custom-myAvatar™-web-services) custom web services for myAvatar™<br>
 Example
 
 # IMPLEMENTING MAWS IN YOUR ENVIRONMENTS
@@ -120,7 +120,7 @@ We will use the *Admissions* form to import the MAWS WSDL:
 You should get a popup letting you know the WSDL was imported successfully.
 
 # CREATING SCRIPTLINK EVENTS
-Before you can use MAWS (or any custom web service) with myAvatar™, make sure you've [imported](#importing-maws-into-myavatar) it.
+Before you can use MAWS (or any custom web service) with myAvatar™, make sure you've [imported](#importing-maws-into-myAvatar) it.
 
 To use the MAWS with myAvatar™, you will need to add a ScriptLink event to a form event. When that event takes place, myAvatar™ will pass information to MAWS (and potentiall recieve something back).
 
@@ -187,7 +187,7 @@ Currently there is a single call in the Avatool Web Service:
 Currently there is a single call in the Avatool Web Service:
 * [**VerifyInpatientAdmissionDate**](https://github.com/spectrum-health-systems/AvatoolWebService/blob/development/doc/using-VerifyInpatientAdmissionDate.md): verifies that a client's Pre-Admission Date is the same as the current date.
 
-# CREATING A CUSTOM MyAVATAR WEB SERVICE
+# CREATING A CUSTOM myAvatar WEB SERVICE
 If you are curious as to how the MAWS was created, or you are looking for some information on creating your own custom web service for myAvatar™, these are the steps I took. I'll be using the same naming conventions that I did with MAWS, so you should modify things as you see fit.
 
 ## BEFORE YOU BEGIN
