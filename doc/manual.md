@@ -14,7 +14,7 @@
 
 <h4 align="center">
 
-  MAWS v0.1&nbsp;&bull;&nbsp;Last updated January 8, 2021
+  MAWS v0.1&nbsp;&bull;&nbsp;Last updated January 11, 2021
 
 </h4>
 
@@ -27,46 +27,148 @@
 
   ### CONTENTS
   * [ABOUT MAWS](#about-maws)
-  * [IMPLEMENTING MAWS IN YOUR ENVIRONMENTS](#implementing-maws-in-your-environments)
-    * [HOSTING MAWS](#hosting-maws)
-    * [IMPORTING MAWS INTO MyAVATAR](#importing-maws-into-myavatar)
-    * [CREATING SCRIPTLINK EVENTS](#creating-scriptlink-events)
+  * [HOSTING MAWS](#hosting-maws)
+  * [IMPORTING MAWS](#importing-maws)
+  * [CREATING SCRIPTLINK EVENTS](#creating-scriptlink-events)
   * [USING MAWS](#using-maws)
     * [ADMISSION FORM](#admission-form)
     * [CROSS EPISODE FINANCIAL ELIGABLITY FORM](#cross-episode-financial-eligability-form)
-  * [CUSTOM MyAVATAR™ WEB SERVICES](#custom-myavatar™-web-services)
-    * [CREATING A CUSTOM MyAVATAR WEB SERVICE](#creating-a-custom-myavatar-web-service)
-    * [HOSTING A CUSTOM MyAVATAR WEB SERVICE](#hosting-a-custom-myavatar-web-service)
-    * [USING A CUSTOM MyAVATAR WEB SERVICE](#using-a-custom-myavatar-web-service)
+  * [CUSTOM myAvatar™ WEB SERVICES](#custom-myAvatar™-web-services)
+    * [CREATING A CUSTOM myAvatar WEB SERVICE](#creating-a-custom-myAvatar-web-service)
+    * [HOSTING A CUSTOM myAvatar WEB SERVICE](#hosting-a-custom-myAvatar-web-service)
+    * [USING A CUSTOM myAvatar WEB SERVICE](#using-a-custom-myAvatar-web-service)
 
 </td>
 </tr>
 </table>
 
 # ABOUT MAWS
-The **MyAvatool Web Service** (*MAWS*) is a custom web service for [Netsmart's myAvatar™ EHR](https://www.ntst.com/Solutions-and-Services/Offerings/myAvatar) which includes various tools and utilities that aren't included in the official release, and provides a solid foundation for building additional functionality quickly and efficiently.
+The myAvatool Web Service (**MAWS**) is a custom web service for [Netsmart's myAvatar™ EHR](https://www.ntst.com/Solutions-and-Services/Offerings/myAvatar) which includes various tools and utilities that aren't included in the official release, and provides a solid foundation for building additional functionality quickly and efficiently.
 
-This is the MAWS manual, which will cover:
-* **[Implementing MAWS](#implementing-maws-in-your-environments) in your myAvatar™ environments**<br>
-Example
-* **[Using MAWS](#using-maws)**<br>
-Example
-* **[Developing your own](#custom-myavatar™-web-services)** custom web services for myAvatar™<br>
-Example
+More information about MAWS, from the README, will go here.
 
-# IMPLEMENTING MAWS IN YOUR ENVIRONMENTS
+### The MAWS manual
+This manual will cover:
+* The stuff from the contents above
+
+# HOSTING MAWS
+Web services that interface with myAvatar™ need to be hosted at a location where myAvatar™ can access them, and MAWS is no exception. There are two options for hosting MAWS:
+
+1. Have Netsmart host MAWS<br>
+If your myAvatar™ environments are hosted by Netsmart, you can have Netsmart - for an additional cost - host MAWS (and other custom web services) as well. If you choose to have Netsmart host MAWS, you can skip this section of the manual, and go straight to the section that discusses [importing MAWS](#importing-maws) into your myAvatar™ environment(s).
+
+2. If you self-host your myAvatar™ environments, or would rather have complete control over your custom web services, you can self-host them. This section will offer some guidance, if that's they way you want to do it.
+
+### A note about hosting MAWS with Netsmart
+MAWS has not been tested in a hosted environment, just self-hosted!
+
+### Before you begin
+These are the steps that I used - twice! - to host MAWS in our environment, but they are more of a *guideline* than a perfect set of instructions. It's quite possible that I didn't follow best-practices, or maybe I have something setup incorrectly, so please use caution when following these steps. And since I (hopefully?) won't have to do this again, this section will probably not be updated.
+
+### What I used
+* Microsoft Windows 2019
+* Microsoft Internet Information Services (IIS) version 10
+
+*This document assumes that you already have a Windows Server with IIS up and running.*
+
+## CREATING AN IIS APPLICATION POOL
+I’m not sure this step is necessary, but it helps to make things a little more organized…maybe? I’m not an IIS expert, so I’m not sure.
+
+From within IIS:
+1. Right-click the **Application Pools** connection
+2. Choose **Add Application Pool…**
+
+The new application pool should be a *.NET 4.0 CLR (.NET 4.5)* pool. I’ve chosen .NET 4.5, since it lines up with the Netsmart ScriptLink Objects that we will be using, but you can choose another .NET version.
+
+I’ve named the application pool *AvatoolWebService*.
+
+<h6 align="center">
+
+  <img src="img/man/iis-application-pool-633x187.png" width="633">
+  <br>
+  What my Application Pools setup looks like
+  <br>
+
+</h6>
+
+## CREATE A NEW SITE
+From within IIS:
+1. Right-click the **Sites** connection
+2. Choose **Add Website**
+3. The **Site name** should be: *AvatoolWebService*
+4. The **Application pool** should be: *AvatoolWebService*
+5. The **Physical path** should be: */path/to/your/files/*
+6. Set the binding for port :80
+6. Set the binding for port :443
+
+<h6 align="center">
+
+  <img src="img/man/iis-add-website-362x414.png" width="362">
+  <br>
+  Adding a new website
+  <br>
+
+</h6>
+
+## DISABLE THE DEFAULT WEBSITE
+Might as well do this? Probably?
+
+From within IIS:
+1. Right-click the Default Web Site
+2. Choose **Manage Web Site**
+3. Choose **Stop**
+
+## INSTALL THE ASP.NET ROLE
+ASP.NET is required by Web Services, so add the ASP.NET role to IIS.
+
+Once that’s done, your IIS roles should look like this:
+
+<h6 align="center">
+
+  <img src="img/man/iis-roles-295x650.png" width="295">
+  <br>
+  Probably?
+  <br>
+
+</h6>
+
+## Verifying the AvatoolWebService site
+Your AvatoolWebService site should look like this:
+
+<h6 align="center">
+
+  <img src="img/man/iis-site-home-633x206.png" width="633">
+  <br>
+  Maybe?
+  <br>
+
+</h6>
+
+## ENABLE DIRECTORY BROWSING
+From within IIS:
+1. Double-click on the **Directory Browsing** icon
+2. Choose **Enable**
+3. Click **Apply**
+
+<h6 align="center">
+
+  <img src="img/man/iis-directory-browsing-633x204.png" width="633">
+  <br>
+  Maybe?
+  <br>
+
+</h6>
+
+At this point, you should be able to point a browser to your website, and see the landing page.
+
+# IMPORTING MAWS
 In order for myAvatar™ to use MAWS, you'll need to import MAWS into myAvatar™. This section will walk your through the following process:
 
-1. first
-2. second
-3. third
-
-### Before you begin...
+### Before you begin
 #### Do you know where is MAWS located?
-Custom web services need to be hosted, and MAWS is not an exception. To continue with this documentations, you will need to know where MAWS is installed in your environment.
+To continue with this documentations, you will need to know the location of MAWS in your environment.
 
-## IMPORTING MAWS
-### CONFIRMING THE MAWS WSDL
+## CONFIRMING THE MAWS WSDL
 Before attempting to import MAWS into myAvatar™, you should make sure that you have a valid **W**eb **S**ervice **D**escription **L**anguage (WSDL) URL. To do this, paste the URL of the MAWS WSDL in a web browser and attempt to access the URL.
 
 For example, pointing a browser to `https://your-organization.com/MyAvatoolWebService.asmx?WSDL` should display XML that looks something like this:
@@ -119,7 +221,7 @@ We will use the *Admissions* form to import the MAWS WSDL:
 You should get a popup letting you know the WSDL was imported successfully.
 
 # CREATING SCRIPTLINK EVENTS
-Before you can use MAWS (or any custom web service) with myAvatar™, make sure you've [imported](#importing-maws-into-myavatar) it.
+Before you can use MAWS (or any custom web service) with myAvatar™, make sure you've [imported](#importing-maws-into-myAvatar) it.
 
 To use the MAWS with myAvatar™, you will need to add a ScriptLink event to a form event. When that event takes place, myAvatar™ will pass information to MAWS (and potentiall recieve something back).
 
@@ -186,7 +288,7 @@ Currently there is a single call in the Avatool Web Service:
 Currently there is a single call in the Avatool Web Service:
 * [**VerifyInpatientAdmissionDate**](https://github.com/spectrum-health-systems/AvatoolWebService/blob/development/doc/using-VerifyInpatientAdmissionDate.md): verifies that a client's Pre-Admission Date is the same as the current date.
 
-# CREATING A CUSTOM MyAVATAR WEB SERVICE
+# CREATING A CUSTOM myAvatar WEB SERVICE
 If you are curious as to how the MAWS was created, or you are looking for some information on creating your own custom web service for myAvatar™, these are the steps I took. I'll be using the same naming conventions that I did with MAWS, so you should modify things as you see fit.
 
 ## BEFORE YOU BEGIN
