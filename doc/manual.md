@@ -63,8 +63,6 @@ These are the steps that I used - twice! - to host MAWS in our environment, but 
 
 ### Steps to setup IIS
 
-<h6>
-
   [CREATE AN APPLICATION POOL](#about-maws)<br>
   [CREATE A NEW SITE](#about-maws)<br>
   [INSTALL THE ASP.NET ROLE](#about-maws)<br>
@@ -72,7 +70,6 @@ These are the steps that I used - twice! - to host MAWS in our environment, but 
   [VERIFY THE NEW SITE](#about-maws)<br>
   [ENABLE DIRECTORY BROWSING](#about-maws)
 
-</h6>
 
 ## CREATE AN IIS APPLICATION POOL
 I’m not sure this step is necessary, but it helps to make things a little more organized…maybe? I’m not an IIS expert, so I’m not sure.
