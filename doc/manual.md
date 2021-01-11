@@ -42,7 +42,6 @@ More information about MAWS, from the README, will go here.
 
 
 # HOSTING MAWS
-
 <h6 align="center">
 
   [CREATING AN APPLICATION POOL](#about-maws)&nbsp;&bull;&nbsp;[CREATING AN APPLICATION POOL](#about-maws)&nbsp;&bull;&nbsp;[CREATING AN APPLICATION POOL](#about-maws)&nbsp;&bull;&nbsp;[CREATING AN APPLICATION POOL](#about-maws)&nbsp;&bull;&nbsp;[CREATING AN APPLICATION POOL](#about-maws)&nbsp;&bull;&nbsp;[CREATING AN APPLICATION POOL](#about-maws)&nbsp;&bull;&nbsp;
