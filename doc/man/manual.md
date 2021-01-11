@@ -22,8 +22,8 @@
 
 <h1>
 
-  # CONTENTS
-  * [a MAWS](manual-about-maws.md)
+  CONTENTS
+  * [ABOUT MAWS](manual-about-maws.md)
   * [HOSTING MAWS](manual-hosting-maws.md)
   * [IMPORTING MAWS](manual-importing-maws.md)
   * [CREATING SCRIPTLINK EVENTS](manual-creating-scriptlink-events.md)
