@@ -44,7 +44,7 @@ More information about MAWS, from the README, will go here.
 # HOSTING MAWS
 <h6 align="center">
 
-  [CREATING AN APPLICATION POOL](#about-maws)&nbsp;&bull;&nbsp;[CREATING AN APPLICATION POOL](#about-maws)&nbsp;&bull;&nbsp;[CREATING AN APPLICATION POOL](#about-maws)&nbsp;&bull;&nbsp;[CREATING AN APPLICATION POOL](#about-maws)&nbsp;&bull;&nbsp;[CREATING AN APPLICATION POOL](#about-maws)&nbsp;&bull;&nbsp;[CREATING AN APPLICATION POOL](#about-maws)&nbsp;&bull;&nbsp;
+  [CREATE AN APPLICATION POOL](#about-maws)&nbsp;&bull;&nbsp;[CREATE A NEW SITE](#about-maws)&nbsp;&bull;&nbsp;[INSTALL THE ASP.NET ROLE](#about-maws)&nbsp;&bull;&nbsp;[DISABLE THE DEFAULT SITE](#about-maws)&nbsp;&bull;&nbsp;[VERIFY THE NEW SITE](#about-maws)&nbsp;&bull;&nbsp;[ENABLE DIRECTORY BROWSING](#about-maws)&nbsp;&bull;&nbsp;
 
 </h6>
 
