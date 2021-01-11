@@ -32,7 +32,7 @@
 
 <h4 align="center">
 
-  [MANUAL](doc/manual.md)&nbsp;&bull;&nbsp;[CHANGELOG](doc/changelog.md)&nbsp;&bull;&nbsp;[ROADMAP](doc/roadmap.md)&nbsp;&bull;&nbsp;[KNOWN ISSUES](doc/known-issues.md)&nbsp;&bull;&nbsp;[SUPPORT](doc/support.md)
+  [MANUAL](doc/man/manual.md)&nbsp;&bull;&nbsp;[CHANGELOG](doc/changelog.md)&nbsp;&bull;&nbsp;[ROADMAP](doc/roadmap.md)&nbsp;&bull;&nbsp;[KNOWN ISSUES](doc/known-issues.md)&nbsp;&bull;&nbsp;[SUPPORT](doc/support.md)
   <br>
 
 </h4>
