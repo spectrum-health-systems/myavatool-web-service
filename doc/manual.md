@@ -47,21 +47,17 @@ The myAvatool Web Service (**MAWS**) is a custom web service for [Netsmart's myA
 
 More information about MAWS, from the README, will go here.
 
-### This is the MAWS manual
+### The MAWS manual
 This manual will cover:
 * The stuff from the contents above
 
 # HOSTING MAWS
 Web services that interface with myAvatar™ need to be hosted at a location where myAvatar™ can access them, and MAWS is no exception. There are two options for hosting MAWS:
 
-1. Have Netsmart host MAWS
-This is a test
+1. Have Netsmart host MAWS<br>
+If your myAvatar™ environments are hosted by Netsmart, you can have Netsmart - for an additional cost - host MAWS (and other custom web services) as well. If you choose to have Netsmart host MAWS, you can skip this section of the manual, and go straight to the section that discusses [importing MAWS](#importing-maws) into your myAvatar™ environment(s).
 
-
-1. If your myAvatar™ environments are hosted by Netsmart, you can have them (for a price) host your custom web services as well.
-2. If you self-host your myAvatar™ environments, or would rather have complete control over your custom web services, you can self-host them.
-
-This manual focuses on the second option, self hosting MAWS. If you are interested in the first option, you should contact your Netsmart Account Manager for more information.
+2. If you self-host your myAvatar™ environments, or would rather have complete control over your custom web services, you can self-host them. This section will offer some guidance, if that's they way you want to do it.
 
 ### A note about hosting MAWS with Netsmart
 MAWS has not been tested in a hosted environment, just self-hosted!
@@ -73,159 +69,106 @@ These are the steps that I used - twice! - to host MAWS in our environment, but 
 * Microsoft Windows 2019
 * Microsoft Internet Information Services (IIS) version 10
 
-##
+*This document assumes that you already have a Windows Server with IIS up and running.*
 
-
-
-
-# SETTING UP IIS v10 FOR THE AVATAR WEB SERVICE
-
-### CONTENTS
-[INTRODUCTION](#introduction)<br>
-[BEFORE YOU BEGIN](#before-you-begin)<br>
-[SETTING UP IIS](#setting-up-iis)<br>
-[ADDITIONAL FUNCTIONALITY](#additional-functionality)<br>
-
-## INTRODUCTION
-You'll also need a location to host the Avatool Web Service. In our environment, the Avatool Web Service resides on a Microsoft Windows Server 2019 with IIS. These are the notes I took when setting up IIS.
-You can also have Netsmart host your custom web services (for a fee), but the Avatool Web Service has not been tested in a hosted environment.
-
-## BEFORE YOU BEGIN
-These notes/steps aren't perfect, and I don't plan on updating them, so YMMV.
-
-## SETTING UP IIS
-### INSTALLING IIS
-I'm not going to document the procedure for adding the IIS role to a server, as it's pretty straight forward.
-
-### CREATING AN APPLICATION POOL
+## CREATING AN IIS APPLICATION POOL
 I’m not sure this step is necessary, but it helps to make things a little more organized…maybe? I’m not an IIS expert, so I’m not sure.
 
-Right-click the **Application Pools** connection, and choose **Add Application Pool…**.
+From within IIS:
+1. Right-click the **Application Pools** connection
+2. Choose **Add Application Pool…**
 
 The new application pool should be a *.NET 4.0 CLR (.NET 4.5)* pool. I’ve chosen .NET 4.5, since it lines up with the Netsmart ScriptLink Objects that we will be using, but you can choose another .NET version.
 
 I’ve named the application pool *AvatoolWebService*.
 
-This is what my application pool setup looks like:
+<h6 align="center">
 
-![Application Pool example](https://github.com/spectrum-health-systems/avatoolwebservice/blob/master/doc/image/setup-iis/application-pool-example.png)
+  <img src="img/man/iis-application-pool-633x187.png" width="633">
+  <br>
+  What my Application Pools setup looks like
+  <br>
 
-Again, I’m sure that all of these are not necessary, nor do all of the application pools need to be started.
+</h6>
 
-### CREATE A NEW SITE
-Right-click the **Sites** connection, and choose **Add Website…**.
+## CREATE A NEW SITE
+From within IIS:
+1. Right-click the **Sites** connection
+2. Choose **Add Website**
+3. The **Site name** should be: *AvatoolWebService*
+4. The **Application pool** should be: *AvatoolWebService*
+5. The **Physical path** should be: */path/to/your/files/*
+6. Set the binding for port :80
+6. Set the binding for port :443
 
-![New Site example](https://github.com/spectrum-health-systems/avatoolwebservice/blob/master/doc/image/setup-iis/new-site-example.png)
+<h6 align="center">
 
-Complete the following fields:
-* Site name: *AvatoolWebService*
-* Application pool: *AvatoolWebService*
-* Physical path: */path/to/your/files/*
+  <img src="img/man/iis-add-website-362x414.png" width="362">
+  <br>
+  Adding a new website
+  <br>
 
-You will also need to setup the site bindings for both port 80 and 443.
+</h6>
 
-### DISABLE THE DEFAULT WEBSITE
-Might as well.
+## DISABLE THE DEFAULT WEBSITE
+Might as well do this? Probably?
 
-Right-click the Default Web Site, then **Manage Web Site** > **Stop**
+From within IIS:
+1. Right-click the Default Web Site
+2. Choose **Manage Web Site**
+3. Choose **Stop**
 
-### INSTALL THE ASP.NET ROLE
+## INSTALL THE ASP.NET ROLE
 ASP.NET is required by Web Services, so add the ASP.NET role to IIS.
 
 Once that’s done, your IIS roles should look like this:
 
-![Roles example](https://github.com/spectrum-health-systems/avatoolwebservice/blob/master/doc/image/setup-iis/roles-example.png)
+<h6 align="center">
 
-And your AvatoolWebService site should look like this:
+  <img src="img/man/iis-roles-295x650.png" width="295">
+  <br>
+  Probably?
+  <br>
 
-![Home example](https://github.com/spectrum-health-systems/avatoolwebservice/blob/master/doc/image/setup-iis/home-example.png)
+</h6>
 
-### ENABLE DIRECTORY BROWSING
-Double-click on the **Directory Browsing** icon
+## Verifying the AvatoolWebService site
+Your AvatoolWebService site should look like this:
 
-![Directory Browsing example](https://github.com/spectrum-health-systems/avatoolwebservice/blob/master/doc/image/setup-iis/directory-browsing-example.png)
+<h6 align="center">
 
-Choose **Enable**, then **Apply**.
+  <img src="img/man/iis-site-home-633x206.png" width="633">
+  <br>
+  Maybe?
+  <br>
+
+</h6>
+
+## ENABLE DIRECTORY BROWSING
+From within IIS:
+1. Double-click on the **Directory Browsing** icon
+2. Choose **Enable**
+3. Click **Apply**
+
+<h6 align="center">
+
+  <img src="img/man/iis-directory-browsing-633x204.png" width="633">
+  <br>
+  Maybe?
+  <br>
+
+</h6>
 
 At this point, you should be able to point a browser to your website, and see the landing page.
 
-### ADDITIONAL FUNCTIONALITY
-I'm going to try to put together some documentation for the following, but for now you will also need to:
-* Add the FTP Server Role to IIS
-* Install an SSL Certificate
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-, and MAWS is not an exception. To continue with this documentations, you will need to know where MAWS is installed in your environment.
-
+# IMPORTING MAWS
 In order for myAvatar™ to use MAWS, you'll need to import MAWS into myAvatar™. This section will walk your through the following process:
 
-## IMPORTING MAWS
-### Before you begin...
+### Before you begin
 #### Do you know where is MAWS located?
-Custom web services need to be hosted, and MAWS is not an exception. To continue with this documentations, you will need to know where MAWS is installed in your environment.
+To continue with this documentations, you will need to know the location of MAWS in your environment.
 
-### CONFIRMING THE MAWS WSDL
+## CONFIRMING THE MAWS WSDL
 Before attempting to import MAWS into myAvatar™, you should make sure that you have a valid **W**eb **S**ervice **D**escription **L**anguage (WSDL) URL. To do this, paste the URL of the MAWS WSDL in a web browser and attempt to access the URL.
 
 For example, pointing a browser to `https://your-organization.com/MyAvatoolWebService.asmx?WSDL` should display XML that looks something like this:
