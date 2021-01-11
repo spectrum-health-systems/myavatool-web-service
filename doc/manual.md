@@ -69,7 +69,7 @@ Custom web services need to be hosted, and MAWS is not an exception. To continue
 ### CONFIRMING THE MAWS WSDL
 Before attempting to import MAWS into myAvatar™, you should make sure that you have a valid **W**eb **S**ervice **D**escription **L**anguage (WSDL) URL. To do this, paste the URL of the MAWS WSDL in a web browser and attempt to access the URL.
 
-For example, URL of `https://your-organization.com/MyAvatoolWebService.asmx?WSDL` should display XML that looks something like this:
+For example, pointing a browser to `https://your-organization.com/MyAvatoolWebService.asmx?WSDL` should display XML that looks something like this:
 
 <h6 align="center">
 
@@ -96,7 +96,7 @@ We will use the *Admissions* form to import the MAWS WSDL:
 
 <h6 align="center">
 
-  <img src="../Asset/Image/Doc/scriptlink-form-designer-settings-button.png" width="384">
+  <img src="img/man/scriptlink-form-designer-settings-button.png" width="384">
   <br>
   The "Settings" button.
   <br>
@@ -106,7 +106,7 @@ We will use the *Admissions* form to import the MAWS WSDL:
 
 <h6 align="center">
 
-  <img src="../Asset/Image/Doc/scriptlink-options-import-wsdl.png" width="860">
+  <img src="img/man/scriptlink-options-import-wsdl.png" width="860">
   <br>
   The ScriptLink options page.
   <br>
