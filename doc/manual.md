@@ -209,7 +209,7 @@ First, we need to create an empty ASP.NET Web Application project. Using Visual 
 
 <h6 align="center">
 
-  <img src="../Asset/Image/Doc/vs2019-create-new-project.png" width="700">
+  <img src="img/man/vs2019-create-new-project-800x535.png" width="800">
   <br>
   Starting a new project in Visual Studio 2019
 
@@ -220,7 +220,7 @@ First, we need to create an empty ASP.NET Web Application project. Using Visual 
 
 <h6 align="center">
 
-  <img src="../Asset/Image/Doc/vs2019-new-project-template.png" width="700">
+  <img src="img/man/vs2019-new-project-template-800x535.png" width="400">
   <br>
   Choosing a project template
 
@@ -234,7 +234,7 @@ First, we need to create an empty ASP.NET Web Application project. Using Visual 
 
 <h6 align="center">
 
-  <img src="../Asset/Image/Doc/vs2019-configure-template.png" width="700">
+  <img src="img/man/vs2019-configure-template.png" width="700">
   <br>
   Configuring the project
   
@@ -247,7 +247,7 @@ First, we need to create an empty ASP.NET Web Application project. Using Visual 
 
 <h6 align="center">
 
-  <img src="../Asset/Image/Doc/vs2019-create-new-asp-app.png" width="700">
+  <img src="img/man/vs2019-create-new-asp-app.png" width="700">
   <br>
   Creating the project
   
@@ -261,7 +261,7 @@ Now you have a brand new, clean ASP.NET Web Application that you can use to buil
 
 <h6 align="center">
 
-  <img src="../Asset/Image/Doc/vs2019-empty-app.png" width="700">
+  <img src="img/man/vs2019-empty-app.png" width="700">
   <br>
   A nice new, clean app!
   
@@ -275,7 +275,7 @@ Since we created an empty project, there aren't any valid web services available
 
 <h6 align="center">
 
-  <img src="../Asset/Image/Doc/vs2019-add-web-service-01.png" width="700">
+  <img src="img/man/vs2019-add-web-service-01.png" width="700">
   <br>
   Adding a new item to the project
   
@@ -288,7 +288,7 @@ Since we created an empty project, there aren't any valid web services available
 
 <h6 align="center">
 
-  <img src="../Asset/Image/Doc/vs2019-add-web-service-02.png" width="700">
+  <img src="img/man/vs2019-add-web-service-02.png" width="700">
   <br>
   Adding a new web service to the project
   
@@ -299,7 +299,7 @@ Since we created an empty project, there aren't any valid web services available
 
 <h6 align="center">
 
-  <img src="../Asset/Image/Doc/vs2019-add-web-service-03.png" width="700">
+  <img src="img/man/vs2019-add-web-service-03.png" width="700">
   <br>
   Adding a new web service to the project
   
@@ -317,7 +317,7 @@ The Netsmart ScriptLink Service is bundled with the "Brief ScriptLink Tutorial w
 
 <h6 align="center">
 
-  <img src="../Asset/Image/Doc/ntst-portal-app-exchange-01.png" width="300">
+  <img src="img/man/ntst-portal-app-exchange-01.png" width="300">
   <br>
   Navigating to the Netsmart Cares App Exchange
   
@@ -329,7 +329,7 @@ The Netsmart ScriptLink Service is bundled with the "Brief ScriptLink Tutorial w
 
 <h6 align="center">
 
-  <img src="../Asset/Image/Doc/ntst-portal-app-exchange-02.png" width="700">
+  <img src="img/man/ntst-portal-app-exchange-02.png" width="700">
   <br>
   Downloading the Netsmart ScriptLink Service
   
