@@ -42,25 +42,6 @@ More information about MAWS, from the README, will go here.
 
 
 # HOSTING MAWS
-<h6 align="left">
-
-  [CREATE AN APPLICATION POOL](#about-maws)<br>
-  [CREATE A NEW SITE](#about-maws)<br>
-  [INSTALL THE ASP.NET ROLE](#about-maws)<br>
-  [DISABLE THE DEFAULT SITE](#about-maws)<br>
-  [VERIFY THE NEW SITE](#about-maws)<br>
-  [ENABLE DIRECTORY BROWSING](#about-maws)
-
-</h6>
-
-
-
-> [CREATING AN APPLICATION POOL](#about-maws)<br>
-> [CREATE A NEW SITE](#about-maws)<br>
-> [DISABLE THE DEFAULT SITE](#about-maws)<br>
-> [VERIFY THE NEW SITE](#about-maws)<br>
-
-#
 Web services that interface with myAvatar™ need to be hosted at a location where myAvatar™ can access them, and MAWS is no exception. There are two options for hosting MAWS:
 
 1. **Have Netsmart host MAWS**<br>
@@ -79,6 +60,19 @@ These are the steps that I used - twice! - to host MAWS in our environment, but 
 * Microsoft Internet Information Services (IIS) version 10
 
 *This document assumes that you already have a Windows Server with IIS up and running.*
+
+### Steps to setup IIS
+
+<h6>
+
+  [CREATE AN APPLICATION POOL](#about-maws)<br>
+  [CREATE A NEW SITE](#about-maws)<br>
+  [INSTALL THE ASP.NET ROLE](#about-maws)<br>
+  [DISABLE THE DEFAULT SITE](#about-maws)<br>
+  [VERIFY THE NEW SITE](#about-maws)<br>
+  [ENABLE DIRECTORY BROWSING](#about-maws)
+
+</h6>
 
 ## CREATE AN IIS APPLICATION POOL
 I’m not sure this step is necessary, but it helps to make things a little more organized…maybe? I’m not an IIS expert, so I’m not sure.
