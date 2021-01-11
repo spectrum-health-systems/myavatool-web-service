@@ -7,7 +7,7 @@
 
   <img src="../../resources/asset/img/logo/maws-logo-800x150.png" alt="myAvatar Web Service logo" width="800">
   <br>
-  MANUAL: ABOUT MAWS
+  MANUAL: HOSTING MAWS
   <br>
 
 </h1>
@@ -43,7 +43,7 @@ If your myAvatar™ environments are hosted by Netsmart, you can have Netsmart -
 2. **Self-host MAWS**<br> 
 If you self-host your myAvatar™ environments, or would rather have complete control over your custom web services, you can self-host them. This section will offer some guidance, if that's they way you want to do it.
 
-## SETTING UP IIS
+# SETTING UP IIS
 These are the steps that I used - twice! - to host MAWS in our environment, but they are more of a *guideline* than a perfect set of instructions. It's quite possible that I didn't follow best-practices, or maybe I have something setup incorrectly, so please use caution when following these steps. And since I (hopefully?) won't have to do this again, this section will probably not be updated.
 
 ### What I used
@@ -91,14 +91,6 @@ From within IIS:
 
 </h6>
 
-## DISABLE THE DEFAULT WEBSITE
-Might as well do this? Probably?
-
-From within IIS:
-1. Right-click the Default Web Site
-2. Choose **Manage Web Site**
-3. Choose **Stop**
-
 ## INSTALL THE ASP.NET ROLE
 ASP.NET is required by Web Services, so add the ASP.NET role to IIS.
 
@@ -112,6 +104,14 @@ Once that’s done, your IIS roles should look like this:
   <br>
 
 </h6>
+
+## DISABLE THE DEFAULT WEBSITE
+Might as well do this? Probably?
+
+From within IIS:
+1. Right-click the Default Web Site
+2. Choose **Manage Web Site**
+3. Choose **Stop**
 
 ## VERIFY THE NEW SITE
 Your AvatoolWebService site should look like this:
