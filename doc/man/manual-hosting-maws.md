@@ -65,7 +65,7 @@ I’ve named the application pool *AvatoolWebService*.
 
 <h6 align="center">
 
-  <img src="img/man/iis-application-pool-633x187.png" width="633">
+  <img src="img/iis-application-pool-633x187.png" width="633">
   <br>
   What my Application Pools setup looks like
   <br>
@@ -84,7 +84,7 @@ From within IIS:
 
 <h6 align="center">
 
-  <img src="img/man/iis-add-website-362x414.png" width="362">
+  <img src="img/iis-add-website-362x414.png" width="362">
   <br>
   Adding a new website
   <br>
@@ -106,7 +106,7 @@ Once that’s done, your IIS roles should look like this:
 
 <h6 align="center">
 
-  <img src="img/man/iis-roles-295x650.png" width="295">
+  <img src="img/iis-roles-295x650.png" width="295">
   <br>
   Probably?
   <br>
@@ -118,7 +118,7 @@ Your AvatoolWebService site should look like this:
 
 <h6 align="center">
 
-  <img src="img/man/iis-site-home-633x206.png" width="633">
+  <img src="img/iis-site-home-633x206.png" width="633">
   <br>
   Maybe?
   <br>
@@ -133,7 +133,7 @@ From within IIS:
 
 <h6 align="center">
 
-  <img src="img/man/iis-directory-browsing-633x204.png" width="633">
+  <img src="img/iis-directory-browsing-633x204.png" width="633">
   <br>
   Enabling directory browsing
   <br>
@@ -155,7 +155,7 @@ For example, pointing a browser to `https://your-organization.com/MyAvatoolWebSe
 
 <h6 align="center">
 
-  <img src="img/man/wsdl-xml-example-799x393.png" width="600">
+  <img src="img/wsdl-xml-example-799x393.png" width="600">
   <br>
   An example of a WSDL file
   <br>
@@ -178,7 +178,7 @@ We will use the *Admissions* form to import the MAWS WSDL:
 
 <h6 align="center">
 
-  <img src="img/man/scriptlink-form-designer-settings-button-364x335.png" width="300">
+  <img src="img/scriptlink-form-designer-settings-button-364x335.png" width="300">
   <br>
   The "Settings" button.
   <br>
@@ -188,7 +188,7 @@ We will use the *Admissions* form to import the MAWS WSDL:
 
 <h6 align="center">
 
-  <img src="img/man/scriptlink-options-import-wsdl-847x375.png" width="747">
+  <img src="img/scriptlink-options-import-wsdl-847x375.png" width="747">
   <br>
   The ScriptLink options page.
   <br>
@@ -226,7 +226,7 @@ Let's say you wanted to have MAWS do something when you hit the **Submit** butto
 
 <h6 align="center">
 
-  <img src="img/man/scriptlink-form-designer-settings-button-364x335.png" width="300">
+  <img src="img/scriptlink-form-designer-settings-button-364x335.png" width="300">
   <br>
   The "Settings" button (again)
   <br>
@@ -237,7 +237,7 @@ Let's say you wanted to have MAWS do something when you hit the **Submit** butto
 
 <h6 align="center">
 
-  <img src="img/man/scriptlink-event-example-839x369.png" width="739">
+  <img src="img/scriptlink-event-example-839x369.png" width="739">
   <br>
   The ScriptLink options page (again, but this time for something different)
   <br>
@@ -394,7 +394,7 @@ First, we need to create an empty ASP.NET Web Application project. Using Visual 
 
 <h6 align="center">
 
-  <img src="img/man/vs2019-create-new-project-800x535.png" width="800">
+  <img src="img/vs2019-create-new-project-800x535.png" width="800">
   <br>
   Starting a new project in Visual Studio 2019
 
@@ -405,7 +405,7 @@ First, we need to create an empty ASP.NET Web Application project. Using Visual 
 
 <h6 align="center">
 
-  <img src="img/man/vs2019-new-project-template-800x535.png" width="800">
+  <img src="img/vs2019-new-project-template-800x535.png" width="800">
   <br>
   Choosing a project template
 
@@ -419,7 +419,7 @@ First, we need to create an empty ASP.NET Web Application project. Using Visual 
 
 <h6 align="center">
 
-  <img src="img/man/vs2019-configure-new-project-800x535.png" width="800">
+  <img src="img/vs2019-configure-new-project-800x535.png" width="800">
   <br>
   Configuring the project
   
@@ -432,7 +432,7 @@ First, we need to create an empty ASP.NET Web Application project. Using Visual 
 
 <h6 align="center">
 
-  <img src="img/man/vs2019-create-new-asp-app-800x540.png" width="800">
+  <img src="img/vs2019-create-new-asp-app-800x540.png" width="800">
   <br>
   Creating the project
   
@@ -446,7 +446,7 @@ Now you have a brand new, clean ASP.NET Web Application that you can use to buil
 
 <h6 align="center">
 
-  <img src="img/man/vs2019-empty-app-800x655.png" width="800">
+  <img src="img/vs2019-empty-app-800x655.png" width="800">
   <br>
   A nice new, clean app!
   
@@ -460,7 +460,7 @@ Since we created an empty project, there aren't any valid web services available
 
 <h6 align="center">
 
-  <img src="img/man/vs2019-add-web-service-01-710x742.png" width="710">
+  <img src="img/vs2019-add-web-service-01-710x742.png" width="710">
   <br>
   Adding a new item to the project
   
@@ -473,7 +473,7 @@ Since we created an empty project, there aren't any valid web services available
 
 <h6 align="center">
 
-  <img src="img/man/vs2019-add-web-service-02-710x496.png" width="710">
+  <img src="img/vs2019-add-web-service-02-710x496.png" width="710">
   <br>
   Adding a new web service to the project
   
@@ -484,7 +484,7 @@ Since we created an empty project, there aren't any valid web services available
 
 <h6 align="center">
 
-  <img src="img/man/vs2019-add-web-service-02-710x496.png" width="710">
+  <img src="img/vs2019-add-web-service-02-710x496.png" width="710">
   <br>
   Adding a new web service to the project
   
@@ -502,7 +502,7 @@ The Netsmart ScriptLink Service is bundled with the "Brief ScriptLink Tutorial w
 
 <h6 align="center">
 
-  <img src="img/man/ntst-portal-app-exchange-01-490x550.png" width="300">
+  <img src="img/ntst-portal-app-exchange-01-490x550.png" width="300">
   <br>
   Navigating to the Netsmart Cares App Exchange
   
@@ -514,7 +514,7 @@ The Netsmart ScriptLink Service is bundled with the "Brief ScriptLink Tutorial w
 
 <h6 align="center">
 
-  <img src="img/man/ntst-portal-app-exchange-02-710x554.png" width="710">
+  <img src="img/ntst-portal-app-exchange-02-710x554.png" width="710">
   <br>
   Downloading the Netsmart ScriptLink Service
   
