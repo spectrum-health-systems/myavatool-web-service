@@ -46,29 +46,192 @@
 # ABOUT MAWS
 The myAvatool Web Service (**MAWS**) is a custom web service for [Netsmart's myAvatar™ EHR](https://www.ntst.com/Solutions-and-Services/Offerings/myAvatar) which includes various tools and utilities that aren't included in the official release, and provides a solid foundation for building additional functionality quickly and efficiently.
 
-#### This is the MAWS manual
-This manual will cover:
-* **[Implementing MAWS](#implementing-maws-in-your-environments)** at your organization, including:<br>
-  * Hosting MAWS
-  * Importing MAWS into your myAvatar™ environment(s)
-* **[Using MAWS](#using-maws)**<br> in your myAvatar™ environment(s)
-  * Creating ScriptLink events in myAvatar™ 
-  * Calling MAWS functionality
+More information about MAWS, from the README, will go here.
 
-It will also walk your through **[developing your own](#custom-myAvatar™-web-services)** custom web services for myAvatar™, in the event you want to start from scratch.
+### This is the MAWS manual
+This manual will cover:
+* **[Implementing MAWS](#implementing-maws-in-your-environments)** at your organization<br>
+* **[Using MAWS](#using-maws)**<br> in your myAvatar™ environment(s)
+* **[Developing your own](#custom-myAvatar™-web-services)** custom web services for myAvatar™, in the event you want to start from scratch.
 
 # IMPLEMENTING MAWS
 In order for myAvatar™ to use MAWS, you'll need to import MAWS into myAvatar™. This section will walk your through the following process:
 
-1. first
-2. second
-3. third
+1. Hosting MAWS
+2. Importing MAWS into your myAvatar™ environment(s)
+3. Maybe something else?
 
+## HOSTING MAWS
+Web services that interface with myAvatar™ need to be hosted at a location where myAvatar™ can access them. Netsmart has a number of their own, "official" web services which are hosted on myAvatar™ CSP servers. You can read more about them [here](URL).
+
+Custom web services like MAWS also need to be hosted at a location where myAvatar™ can access them. There are two options to do so:
+1. If your myAvatar™ environments are hosted by Netsmart, you can have them (for a price) host your custom web services as well.
+2. If you self-host your myAvatar™ environments, or would rather have complete control over your custom web services, you can self-host them.
+
+This manual focuses on the second option, self hosting MAWS. If you are interested in the first option, you should contact your Netsmart Account Manager for more information.
+
+### A note about hosting MAWS with Netsmart
+MAWS has not been tested in a hosted environment, just self-hosted!
+
+### Before you begin
+These are the steps that I used - twice! - to host MAWS in our environment, but they are more of a *guideline* than a perfect set of instructions. It's quite possible that I didn't follow best-practices, or maybe I have something setup incorrectly, so please use caution when following these steps. And since I (hopefully?) won't have to do this again, this section will probably not be updated.
+
+### What I used
+* Microsoft Windows 2019
+* Microsoft Internet Information Services (IIS) version 10
+
+##
+
+
+
+
+# SETTING UP IIS v10 FOR THE AVATAR WEB SERVICE
+
+### CONTENTS
+[INTRODUCTION](#introduction)<br>
+[BEFORE YOU BEGIN](#before-you-begin)<br>
+[SETTING UP IIS](#setting-up-iis)<br>
+[ADDITIONAL FUNCTIONALITY](#additional-functionality)<br>
+
+## INTRODUCTION
+You'll also need a location to host the Avatool Web Service. In our environment, the Avatool Web Service resides on a Microsoft Windows Server 2019 with IIS. These are the notes I took when setting up IIS.
+You can also have Netsmart host your custom web services (for a fee), but the Avatool Web Service has not been tested in a hosted environment.
+
+## BEFORE YOU BEGIN
+These notes/steps aren't perfect, and I don't plan on updating them, so YMMV.
+
+## SETTING UP IIS
+### INSTALLING IIS
+I'm not going to document the procedure for adding the IIS role to a server, as it's pretty straight forward.
+
+### CREATING AN APPLICATION POOL
+I’m not sure this step is necessary, but it helps to make things a little more organized…maybe? I’m not an IIS expert, so I’m not sure.
+
+Right-click the **Application Pools** connection, and choose **Add Application Pool…**.
+
+The new application pool should be a *.NET 4.0 CLR (.NET 4.5)* pool. I’ve chosen .NET 4.5, since it lines up with the Netsmart ScriptLink Objects that we will be using, but you can choose another .NET version.
+
+I’ve named the application pool *AvatoolWebService*.
+
+This is what my application pool setup looks like:
+
+![Application Pool example](https://github.com/spectrum-health-systems/avatoolwebservice/blob/master/doc/image/setup-iis/application-pool-example.png)
+
+Again, I’m sure that all of these are not necessary, nor do all of the application pools need to be started.
+
+### CREATE A NEW SITE
+Right-click the **Sites** connection, and choose **Add Website…**.
+
+![New Site example](https://github.com/spectrum-health-systems/avatoolwebservice/blob/master/doc/image/setup-iis/new-site-example.png)
+
+Complete the following fields:
+* Site name: *AvatoolWebService*
+* Application pool: *AvatoolWebService*
+* Physical path: */path/to/your/files/*
+
+You will also need to setup the site bindings for both port 80 and 443.
+
+### DISABLE THE DEFAULT WEBSITE
+Might as well.
+
+Right-click the Default Web Site, then **Manage Web Site** > **Stop**
+
+### INSTALL THE ASP.NET ROLE
+ASP.NET is required by Web Services, so add the ASP.NET role to IIS.
+
+Once that’s done, your IIS roles should look like this:
+
+![Roles example](https://github.com/spectrum-health-systems/avatoolwebservice/blob/master/doc/image/setup-iis/roles-example.png)
+
+And your AvatoolWebService site should look like this:
+
+![Home example](https://github.com/spectrum-health-systems/avatoolwebservice/blob/master/doc/image/setup-iis/home-example.png)
+
+### ENABLE DIRECTORY BROWSING
+Double-click on the **Directory Browsing** icon
+
+![Directory Browsing example](https://github.com/spectrum-health-systems/avatoolwebservice/blob/master/doc/image/setup-iis/directory-browsing-example.png)
+
+Choose **Enable**, then **Apply**.
+
+At this point, you should be able to point a browser to your website, and see the landing page.
+
+### ADDITIONAL FUNCTIONALITY
+I'm going to try to put together some documentation for the following, but for now you will also need to:
+* Add the FTP Server Role to IIS
+* Install an SSL Certificate
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+, and MAWS is not an exception. To continue with this documentations, you will need to know where MAWS is installed in your environment.
+
+
+
+## IMPORTING MAWS
 ### Before you begin...
 #### Do you know where is MAWS located?
 Custom web services need to be hosted, and MAWS is not an exception. To continue with this documentations, you will need to know where MAWS is installed in your environment.
 
-## IMPORTING MAWS
 ### CONFIRMING THE MAWS WSDL
 Before attempting to import MAWS into myAvatar™, you should make sure that you have a valid **W**eb **S**ervice **D**escription **L**anguage (WSDL) URL. To do this, paste the URL of the MAWS WSDL in a web browser and attempt to access the URL.
 
