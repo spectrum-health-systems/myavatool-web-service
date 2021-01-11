@@ -26,7 +26,7 @@
   * [IMPORTING MAWS](#importing-maws)
   * [CREATING SCRIPTLINK EVENTS](#creating-scriptlink-events)
   * [USING MAWS](#using-maws)
-  * [CUSTOM MYAVATAR™ WEB SERVICES](#custom-myavatar™-web-services)
+  * [CUSTOM MYAVATAR™ WEB SERVICES](#custom-myavatar-web-services)
 
 
 # ABOUT MAWS
@@ -382,7 +382,7 @@ if (typeOfAdmission == preAdmission)
 
 
 
-# CUSTOM MYAVATAR™ WEB SERVICES
+# CUSTOM MYAVATAR WEB SERVICES
 If you are curious as to how the MAWS was created, or you are looking for some information on creating your own custom web service for myAvatar™, these are the steps I took. I'll be using the same naming conventions that I did with MAWS, so you should modify things as you see fit.
 
 ## BEFORE YOU BEGIN
