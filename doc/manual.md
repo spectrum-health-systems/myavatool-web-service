@@ -52,6 +52,19 @@ This manual will cover:
 * The stuff from the contents above
 
 # HOSTING MAWS
+### CONTENTS
+* [ABOUT MAWS](#about-maws)
+* [HOSTING MAWS](#hosting-maws)
+* [IMPORTING MAWS](#importing-maws)
+* [CREATING SCRIPTLINK EVENTS](#creating-scriptlink-events)
+* [USING MAWS](#using-maws)
+  * [ADMISSION FORM](#admission-form)
+  * [CROSS EPISODE FINANCIAL ELIGABLITY FORM](#cross-episode-financial-eligability-form)
+* [CUSTOM myAvatar™ WEB SERVICES](#custom-myAvatar™-web-services)
+  * [CREATING A CUSTOM myAvatar WEB SERVICE](#creating-a-custom-myAvatar-web-service)
+  * [HOSTING A CUSTOM myAvatar WEB SERVICE](#hosting-a-custom-myAvatar-web-service)
+  * [USING A CUSTOM myAvatar WEB SERVICE](#using-a-custom-myAvatar-web-service)
+
 Web services that interface with myAvatar™ need to be hosted at a location where myAvatar™ can access them, and MAWS is no exception. There are two options for hosting MAWS:
 
 1. **Have Netsmart host MAWS**<br>
@@ -276,20 +289,21 @@ Next we will need to choose an event that will call the Avatool Web Service, and
 
 Now, when the Admission form is submitted, myAvatar™ will ask MAWS to VerifyInpatientAdmissionDate for a specific client.
 
-# USING MAWS
+# USING MAWS - FORMS
 The following forms have MAWS stuff.
 
-## FORMS
-The following forms have the following calls:
-
-### ADMISSION FORM
+## ADMISSION FORM
 * [**VerifyInpatientAdmissionDate**](#verifyinpatientadmissiondate)
 
-## CALLS
+# MAWS CALLS
+These are the calls
+
+## VVERIFY INPATIENT ADMISSION DATE()
+`VerifyInpatientAdmissionDate()`
+
 ### Before you begin
 I would recommend that you review the sourcecode for these.
 
-### VerifyInpatientAdmissionDate
 When an Admission form is submitted, The Avatool Web Service *VerifyInpatientAdmissionDate* call compares a client Pre-Admission date with the system (current) date.
 If the dates *match*, the form is submitted normally.
 If the dates *do not match*, the user is notified and returned to the Admission form to correct the Pre-Admission date.
