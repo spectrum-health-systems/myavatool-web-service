@@ -18,49 +18,39 @@
 
 </h4>
 
-***
-
 <!-- The HTML indentations have to stay this way to work. -->
 <table>
 <tr>
-<td img src="non-existant-spacer.png" alt="non-existant-spacer" width="1020" height="1">
+<td img src="RepositoryData/Asset/Image/Document/README/spacer.png" alt="blank-spacer" width="1000" height="1">
 
   ### CONTENTS
   * [ABOUT MAWS](#about-maws)
   * [HOSTING MAWS](#hosting-maws)
   * [IMPORTING MAWS](#importing-maws)
   * [CREATING SCRIPTLINK EVENTS](#creating-scriptlink-events)
-  * [USING MAWS](#using-maws)
-    * [ADMISSION FORM](#admission-form)
-    * [CROSS EPISODE FINANCIAL ELIGABLITY FORM](#cross-episode-financial-eligability-form)
-  * [CUSTOM myAvatar™ WEB SERVICES](#custom-myAvatar™-web-services)
-    * [CREATING A CUSTOM myAvatar WEB SERVICE](#creating-a-custom-myAvatar-web-service)
-    * [HOSTING A CUSTOM myAvatar WEB SERVICE](#hosting-a-custom-myAvatar-web-service)
-    * [USING A CUSTOM myAvatar WEB SERVICE](#using-a-custom-myAvatar-web-service)
+  * [MAWS CALLS](#maws-calls)
+  * [CUSTOM MYAVATAR WEB SERVICES](#custom-myavatar-web-services)
 
 </td>
 </tr>
 </table>
 
 # ABOUT MAWS
-The myAvatool Web Service (**MAWS**) is a custom web service for [Netsmart's myAvatar™ EHR](https://www.ntst.com/Solutions-and-Services/Offerings/myAvatar) which includes various tools and utilities that aren't included in the official release, and provides a solid foundation for building additional functionality quickly and efficiently.
+The myAvatool Web Service (**MAWS**) is a custom web service for [Netsmart's myAvatar™ EHR](https://www.ntst.com/Solutions-and-Services/Offerings/myAvatar) which includes various tools and utilities that aren't included in the official release, and provides a solid foundation for building additional functionality quickly and efficiently. 
 
 More information about MAWS, from the README, will go here.
 
-### The MAWS manual
-This manual will cover:
-* The stuff from the contents above
 
 # HOSTING MAWS
 Web services that interface with myAvatar™ need to be hosted at a location where myAvatar™ can access them, and MAWS is no exception. There are two options for hosting MAWS:
 
-1. Have Netsmart host MAWS<br>
-If your myAvatar™ environments are hosted by Netsmart, you can have Netsmart - for an additional cost - host MAWS (and other custom web services) as well. If you choose to have Netsmart host MAWS, you can skip this section of the manual, and go straight to the section that discusses [importing MAWS](#importing-maws) into your myAvatar™ environment(s).
+1. **Have Netsmart host MAWS**<br>
+If your myAvatar™ environments are hosted by Netsmart, you can have Netsmart - for an additional cost - host MAWS (and other custom web services) as well. If you choose to have Netsmart host MAWS, you can skip this section of the manual, and go straight to the section that discusses [importing MAWS](#importing-maws) into your myAvatar™ environment(s).<br>
+<br>
+*Please note: MAWS has not been tested in a hosted environment, just self-hosted!*
 
-2. If you self-host your myAvatar™ environments, or would rather have complete control over your custom web services, you can self-host them. This section will offer some guidance, if that's they way you want to do it.
-
-### A note about hosting MAWS with Netsmart
-MAWS has not been tested in a hosted environment, just self-hosted!
+2. **Self-host MAWS**<br> 
+If you self-host your myAvatar™ environments, or would rather have complete control over your custom web services, you can self-host them. This section will offer some guidance, if that's they way you want to do it.
 
 ### Before you begin
 These are the steps that I used - twice! - to host MAWS in our environment, but they are more of a *guideline* than a perfect set of instructions. It's quite possible that I didn't follow best-practices, or maybe I have something setup incorrectly, so please use caution when following these steps. And since I (hopefully?) won't have to do this again, this section will probably not be updated.
@@ -71,14 +61,24 @@ These are the steps that I used - twice! - to host MAWS in our environment, but 
 
 *This document assumes that you already have a Windows Server with IIS up and running.*
 
-## CREATING AN IIS APPLICATION POOL
+### Steps to setup IIS
+
+  [CREATE AN APPLICATION POOL](#about-maws)<br>
+  [CREATE A NEW SITE](#about-maws)<br>
+  [INSTALL THE ASP.NET ROLE](#about-maws)<br>
+  [DISABLE THE DEFAULT SITE](#about-maws)<br>
+  [VERIFY THE NEW SITE](#about-maws)<br>
+  [ENABLE DIRECTORY BROWSING](#about-maws)
+
+
+## CREATE AN IIS APPLICATION POOL
 I’m not sure this step is necessary, but it helps to make things a little more organized…maybe? I’m not an IIS expert, so I’m not sure.
 
 From within IIS:
 1. Right-click the **Application Pools** connection
 2. Choose **Add Application Pool…**
 
-The new application pool should be a *.NET 4.0 CLR (.NET 4.5)* pool. I’ve chosen .NET 4.5, since it lines up with the Netsmart ScriptLink Objects that we will be using, but you can choose another .NET version.
+The new application pool should be a **".NET 4.0 CLR (.NET 4.5)"** pool. I’ve chosen .NET 4.5, since it lines up with the Netsmart ScriptLink Objects that we will be using.
 
 I’ve named the application pool *AvatoolWebService*.
 
@@ -132,7 +132,7 @@ Once that’s done, your IIS roles should look like this:
 
 </h6>
 
-## Verifying the AvatoolWebService site
+## VERIFY THE NEW SITE
 Your AvatoolWebService site should look like this:
 
 <h6 align="center">
@@ -154,7 +154,7 @@ From within IIS:
 
   <img src="img/man/iis-directory-browsing-633x204.png" width="633">
   <br>
-  Maybe?
+  Enabling directory browsing
   <br>
 
 </h6>
@@ -165,11 +165,10 @@ At this point, you should be able to point a browser to your website, and see th
 In order for myAvatar™ to use MAWS, you'll need to import MAWS into myAvatar™. This section will walk your through the following process:
 
 ### Before you begin
-#### Do you know where is MAWS located?
 To continue with this documentations, you will need to know the location of MAWS in your environment.
 
 ## CONFIRMING THE MAWS WSDL
-Before attempting to import MAWS into myAvatar™, you should make sure that you have a valid **W**eb **S**ervice **D**escription **L**anguage (WSDL) URL. To do this, paste the URL of the MAWS WSDL in a web browser and attempt to access the URL.
+Before attempting to import MAWS into myAvatar™, you should make sure that you have a valid **W**eb **S**ervice **D**escription **L**anguage (**WSDL**) URL. To do this, paste the URL of the MAWS WSDL in a web browser and attempt to access the URL.
 
 For example, pointing a browser to `https://your-organization.com/MyAvatoolWebService.asmx?WSDL` should display XML that looks something like this:
 
@@ -177,7 +176,7 @@ For example, pointing a browser to `https://your-organization.com/MyAvatoolWebSe
 
   <img src="img/man/wsdl-xml-example-799x393.png" width="600">
   <br>
-  An example of a WSDL file.
+  An example of a WSDL file
   <br>
 
 </h6>
@@ -277,18 +276,121 @@ Next we will need to choose an event that will call the Avatool Web Service, and
 
 Now, when the Admission form is submitted, myAvatar™ will ask MAWS to VerifyInpatientAdmissionDate for a specific client.
 
-# USING MAWS
+# USING MAWS - FORMS
 The following forms have MAWS stuff.
 
 ## ADMISSION FORM
-Currently there is a single call in the Avatool Web Service:
-* [**VerifyInpatientAdmissionDate**](https://github.com/spectrum-health-systems/AvatoolWebService/blob/development/doc/using-VerifyInpatientAdmissionDate.md): verifies that a client's Pre-Admission Date is the same as the current date.
+* [**VerifyInpatientAdmissionDate**](#verifyinpatientadmissiondate)
 
-## CROSS EPISODE FINANCIAL ELIGABLITY FORM
-Currently there is a single call in the Avatool Web Service:
-* [**VerifyInpatientAdmissionDate**](https://github.com/spectrum-health-systems/AvatoolWebService/blob/development/doc/using-VerifyInpatientAdmissionDate.md): verifies that a client's Pre-Admission Date is the same as the current date.
+# MAWS CALLS
+These are the calls
 
-# CREATING A CUSTOM myAvatar WEB SERVICE
+## VVERIFY INPATIENT ADMISSION DATE()
+`VerifyInpatientAdmissionDate()`
+
+### Before you begin
+I would recommend that you review the sourcecode for these.
+
+When an Admission form is submitted, The Avatool Web Service *VerifyInpatientAdmissionDate* call compares a client Pre-Admission date with the system (current) date.
+If the dates *match*, the form is submitted normally.
+If the dates *do not match*, the user is notified and returned to the Admission form to correct the Pre-Admission date.
+
+#### HOW IT WORKS
+The VerifyInpatientAdmissionDate() call verifies that an existing Pre-Admission date is the same as the system date.
+
+Here is how it works:
+* When a completed Admission form is submitted, we check to if the "Admission Type" is "Pre-Admission".
+* If the "Admission Type" is set to  "Pre-Admission" and the "Pre-Admission Date" is not the same as the system date, a pop-up will notify the user that they need to modify the Pre-Admission Date field to equal the system time, and the user will be returned to the form to modify the Pre-Admission Date.
+* If the "Admission Type" is not set to "Pre-Admission", or if it is and the Pre-Admission Date is the same as the system date, the form is submitted normally.
+
+## INSTALLATION
+You don't *install* the VerifyInpatientAdmissionDate() call, you create a *ScriptLink event* for it.
+
+The VerifyInpatientAdmissionDate() call is designed to be used on the **Pre-File** event of the **Admission Form**. The ScriptLink event should be added to the **Admission tab** of the form.
+
+## CONFIGURATION
+### REQUIRED
+The VerifyInpatientAdmissionDate() call will require some customization, which will need to be done in the sourcecode.
+
+First, you will need to verify that the following lines contain the **typeOfAdmission** and **preAdmitToAdmissionDate** FieldIDs:
+```
+const string typeOfAdmissionField         = "####";
+const string preAdmitToAdmissionDateField = "####";
+```
+
+Next, you will need to verify that the following line contains the dictionary entry for the **PreAdmission** admission type:
+```
+const int preAdmission = #####;
+```
+
+### OPTIONAL
+The default behavoir of the VerifyInpatientAdmissionDate() call is to display a warning that the *Pre-Admission date* does not match the *system date*, and require the user to return to the form and correct enter the correct Pre-Admit date.
+
+This is because the Error Code, by default, is "1"
+```
+if (typeOfAdmission == preAdmission)
+{
+    if (preAdmitToAdmissionDate != systemDate)
+    {
+        errorMessageBody = "WARNING\nThe Pre-Admission date does not match today's date";
+        errorMessageCode = 1;
+    }
+}
+```
+
+If you want to give users the option of ignoring the warning, and submitting the Admission form with a Pre-Admit date that doesn't match the system date, just change the Error Code to "4":
+```
+if (typeOfAdmission == preAdmission)
+{
+    if (preAdmitToAdmissionDate != systemDate)
+    {
+        errorMessageBody = "WARNING\nThe Pre-Admission date does not match today's date";
+        errorMessageCode = 4;
+    }
+}
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# CUSTOM MYAVATAR WEB SERVICES
 If you are curious as to how the MAWS was created, or you are looking for some information on creating your own custom web service for myAvatar™, these are the steps I took. I'll be using the same naming conventions that I did with MAWS, so you should modify things as you see fit.
 
 ## BEFORE YOU BEGIN
