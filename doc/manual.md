@@ -55,14 +55,12 @@ This manual will cover:
 Web services that interface with myAvatar™ need to be hosted at a location where myAvatar™ can access them, and MAWS is no exception. There are two options for hosting MAWS:
 
 1. **Have Netsmart host MAWS**<br>
-If your myAvatar™ environments are hosted by Netsmart, you can have Netsmart - for an additional cost - host MAWS (and other custom web services) as well. If you choose to have Netsmart host MAWS, you can skip this section of the manual, and go straight to the section that discusses [importing MAWS](#importing-maws) into your myAvatar™ environment(s). <br>
+If your myAvatar™ environments are hosted by Netsmart, you can have Netsmart - for an additional cost - host MAWS (and other custom web services) as well. If you choose to have Netsmart host MAWS, you can skip this section of the manual, and go straight to the section that discusses [importing MAWS](#importing-maws) into your myAvatar™ environment(s).<br>
+<br>
 *Please note: MAWS has not been tested in a hosted environment, just self-hosted!*
 
 2. **Self-host MAWS**<br> 
 If you self-host your myAvatar™ environments, or would rather have complete control over your custom web services, you can self-host them. This section will offer some guidance, if that's they way you want to do it.
-
-### A note about hosting MAWS with Netsmart
-MAWS has not been tested in a hosted environment, just self-hosted!
 
 ### Before you begin
 These are the steps that I used - twice! - to host MAWS in our environment, but they are more of a *guideline* than a perfect set of instructions. It's quite possible that I didn't follow best-practices, or maybe I have something setup incorrectly, so please use caution when following these steps. And since I (hopefully?) won't have to do this again, this section will probably not be updated.
@@ -80,7 +78,7 @@ From within IIS:
 1. Right-click the **Application Pools** connection
 2. Choose **Add Application Pool…**
 
-The new application pool should be a *.NET 4.0 CLR (.NET 4.5)* pool. I’ve chosen .NET 4.5, since it lines up with the Netsmart ScriptLink Objects that we will be using, but you can choose another .NET version.
+The new application pool should be a **".NET 4.0 CLR (.NET 4.5)"** pool. I’ve chosen .NET 4.5, since it lines up with the Netsmart ScriptLink Objects that we will be using.
 
 I’ve named the application pool *AvatoolWebService*.
 
@@ -134,7 +132,7 @@ Once that’s done, your IIS roles should look like this:
 
 </h6>
 
-## Verifying the AvatoolWebService site
+## VERIFY THE NEW SITE
 Your AvatoolWebService site should look like this:
 
 <h6 align="center">
@@ -156,7 +154,7 @@ From within IIS:
 
   <img src="img/man/iis-directory-browsing-633x204.png" width="633">
   <br>
-  Maybe?
+  Enabling directory browsing
   <br>
 
 </h6>
@@ -167,11 +165,10 @@ At this point, you should be able to point a browser to your website, and see th
 In order for myAvatar™ to use MAWS, you'll need to import MAWS into myAvatar™. This section will walk your through the following process:
 
 ### Before you begin
-#### Do you know where is MAWS located?
 To continue with this documentations, you will need to know the location of MAWS in your environment.
 
 ## CONFIRMING THE MAWS WSDL
-Before attempting to import MAWS into myAvatar™, you should make sure that you have a valid **W**eb **S**ervice **D**escription **L**anguage (WSDL) URL. To do this, paste the URL of the MAWS WSDL in a web browser and attempt to access the URL.
+Before attempting to import MAWS into myAvatar™, you should make sure that you have a valid **W**eb **S**ervice **D**escription **L**anguage (**WSDL**) URL. To do this, paste the URL of the MAWS WSDL in a web browser and attempt to access the URL.
 
 For example, pointing a browser to `https://your-organization.com/MyAvatoolWebService.asmx?WSDL` should display XML that looks something like this:
 
@@ -179,7 +176,7 @@ For example, pointing a browser to `https://your-organization.com/MyAvatoolWebSe
 
   <img src="img/man/wsdl-xml-example-799x393.png" width="600">
   <br>
-  An example of a WSDL file.
+  An example of a WSDL file
   <br>
 
 </h6>
@@ -282,13 +279,15 @@ Now, when the Admission form is submitted, myAvatar™ will ask MAWS to VerifyIn
 # USING MAWS
 The following forms have MAWS stuff.
 
-## ADMISSION FORM
-Currently there is a single call in the Avatool Web Service:
-* [**VerifyInpatientAdmissionDate**](https://github.com/spectrum-health-systems/AvatoolWebService/blob/development/doc/using-VerifyInpatientAdmissionDate.md): verifies that a client's Pre-Admission Date is the same as the current date.
+## FORMS
+The following forms have the following calls:
 
-## CROSS EPISODE FINANCIAL ELIGABLITY FORM
-Currently there is a single call in the Avatool Web Service:
-* [**VerifyInpatientAdmissionDate**](https://github.com/spectrum-health-systems/AvatoolWebService/blob/development/doc/using-VerifyInpatientAdmissionDate.md): verifies that a client's Pre-Admission Date is the same as the current date.
+### ADMISSION FORM
+* [**VerifyInpatientAdmissionDate**](#verifyinpatientadmissiondate)
+
+## CALLS
+### VerifyInpatientAdmissionDate
+Verifies that a client's Pre-Admission Date is the same as the current date.
 
 # CREATING A CUSTOM myAvatar WEB SERVICE
 If you are curious as to how the MAWS was created, or you are looking for some information on creating your own custom web service for myAvatar™, these are the steps I took. I'll be using the same naming conventions that I did with MAWS, so you should modify things as you see fit.
