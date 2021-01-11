@@ -18,16 +18,22 @@
 
 </h4>
 
-***
+<!-- The HTML indentations have to stay this way to work. -->
+<table>
+<tr>
+<td img src="RepositoryData/Asset/Image/Document/README/spacer.png" alt="blank-spacer" width="1000" height="1">
 
   ### CONTENTS
   * [ABOUT MAWS](#about-maws)
   * [HOSTING MAWS](#hosting-maws)
   * [IMPORTING MAWS](#importing-maws)
   * [CREATING SCRIPTLINK EVENTS](#creating-scriptlink-events)
-  * [USING MAWS](#using-maws)
-  * [CUSTOM MYAVATAR™ WEB SERVICES](#custom-myavatar-web-services)
+  * [MAWS CALLS](#maws-calls)
+  * [CUSTOM MYAVATAR WEB SERVICES](#custom-myavatar-web-services)
 
+</td>
+</tr>
+</table>
 
 # ABOUT MAWS
 The myAvatool Web Service (**MAWS**) is a custom web service for [Netsmart's myAvatar™ EHR](https://www.ntst.com/Solutions-and-Services/Offerings/myAvatar) which includes various tools and utilities that aren't included in the official release, and provides a solid foundation for building additional functionality quickly and efficiently. 
