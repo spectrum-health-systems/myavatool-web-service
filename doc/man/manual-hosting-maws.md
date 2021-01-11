@@ -16,7 +16,7 @@
 
 <h4 align="center">
 
-  [RETURN TO MANUAL CONTENTS](manual.md)
+  [RETURN TO CONTENTS](manual.md)
 
 </h4>
 

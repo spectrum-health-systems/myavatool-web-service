@@ -16,7 +16,7 @@
 
 <h4 align="center">
 
-  [RETURN TO MANUAL CONTENTS](manual.md)
+  [RETURN TO CONTENTS](manual.md)
 
 </h4>
 
@@ -40,7 +40,7 @@ For example, pointing a browser to `https://your-organization.com/MyAvatoolWebSe
 
 <h6 align="center">
 
-  <img src="img/man/wsdl-xml-example-799x393.png" width="600">
+  <img src="img/wsdl-xml-example-799x393.png" width="600">
   <br>
   An example of a WSDL file
   <br>
@@ -63,7 +63,7 @@ We will use the *Admissions* form to import the MAWS WSDL:
 
 <h6 align="center">
 
-  <img src="img/man/scriptlink-form-designer-settings-button-364x335.png" width="300">
+  <img src="img/scriptlink-form-designer-settings-button-364x335.png" width="300">
   <br>
   The "Settings" button.
   <br>
@@ -73,7 +73,7 @@ We will use the *Admissions* form to import the MAWS WSDL:
 
 <h6 align="center">
 
-  <img src="img/man/scriptlink-options-import-wsdl-847x375.png" width="747">
+  <img src="img/scriptlink-options-import-wsdl-847x375.png" width="747">
   <br>
   The ScriptLink options page.
   <br>
