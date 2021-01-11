@@ -20,14 +20,10 @@
 
 ***
 
-<h3>
-
-  CONTENTS
-  * [ABOUT MAWS](manual-about-maws.md)
-  * [HOSTING MAWS](manual-hosting-maws.md)
-  * [IMPORTING MAWS](manual-importing-maws.md)
-  * [CREATING SCRIPTLINK EVENTS](manual-creating-scriptlink-events.md)
-  * [MAWS CALLS](manual-maws-calls.md)
-  * [CUSTOM MYAVATAR WEB SERVICES](manual-custom-myavatar-web-services.md)
-
-</h3>
+# CONTENTS
+[ABOUT MAWS](manual-about-maws.md)<br>
+[HOSTING MAWS](manual-hosting-maws.md)<br>
+[IMPORTING MAWS](manual-importing-maws.md)<br>
+[CREATING SCRIPTLINK EVENTS](manual-creating-scriptlink-events.md)<br>
+[MAWS CALLS](manual-maws-calls.md)<br>
+[CUSTOM MYAVATAR WEB SERVICES](manual-custom-myavatar-web-services.md)
