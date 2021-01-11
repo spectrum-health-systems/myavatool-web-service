@@ -275,7 +275,7 @@ Since we created an empty project, there aren't any valid web services available
 
 <h6 align="center">
 
-  <img src="img/man/vs2019-add-web-service-01.png" width="700">
+  <img src="img/man/vs2019-add-web-service-01-710x742.png" width="710">
   <br>
   Adding a new item to the project
   
@@ -288,7 +288,7 @@ Since we created an empty project, there aren't any valid web services available
 
 <h6 align="center">
 
-  <img src="img/man/vs2019-add-web-service-02.png" width="700">
+  <img src="img/man/vs2019-add-web-service-02-710x496.png" width="710">
   <br>
   Adding a new web service to the project
   
@@ -299,7 +299,7 @@ Since we created an empty project, there aren't any valid web services available
 
 <h6 align="center">
 
-  <img src="img/man/vs2019-add-web-service-03.png" width="700">
+  <img src="img/man/vs2019-add-web-service-02-710x496.png" width="710">
   <br>
   Adding a new web service to the project
   
