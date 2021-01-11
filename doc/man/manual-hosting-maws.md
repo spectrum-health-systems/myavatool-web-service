@@ -5,41 +5,32 @@
 
 <h1 align="center">
 
-  <img src="../resources/asset/img/logo/maws-logo-800x150.png" alt="myAvatar Web Service logo" width="800">
+  <img src="../../resources/asset/img/logo/maws-logo-800x150.png" alt="myAvatar Web Service logo" width="800">
   <br>
-  MANUAL: HOSTING MAWS
+  MANUAL: ABOUT MAWS
   <br>
 
 </h1>
 
+***
+
 <h4 align="center">
 
-  [RETURN TO MANUAL CONTENTS]()
+  [RETURN TO MANUAL CONTENTS](manual.md)
 
 </h4>
 
-<!-- The HTML indentations have to stay this way to work. -->
-<table>
-<tr>
-<td img src="RepositoryData/Asset/Image/Document/README/spacer.png" alt="blank-spacer" width="1000" height="1">
+***
 
-  ### CONTENTS
-  * [ABOUT MAWS](#about-maws)
-  * [HOSTING MAWS](#hosting-maws)
-  * [IMPORTING MAWS](#importing-maws)
-  * [CREATING SCRIPTLINK EVENTS](#creating-scriptlink-events)
-  * [MAWS CALLS](#maws-calls)
-  * [CUSTOM MYAVATAR WEB SERVICES](#custom-myavatar-web-services)
-
-</td>
-</tr>
-</table>
-
-# ABOUT MAWS
-The myAvatool Web Service (**MAWS**) is a custom web service for [Netsmart's myAvatar™ EHR](https://www.ntst.com/Solutions-and-Services/Offerings/myAvatar) which includes various tools and utilities that aren't included in the official release, and provides a solid foundation for building additional functionality quickly and efficiently. 
-
-More information about MAWS, from the README, will go here.
-
+# CONTENTS
+[HOSTING MAWS](#hosting-maws)<br>
+[SETTING UP IIS](#importing-maws)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[CREATE AN APPLICATION POOL](#about-maws)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[CREATE A NEW SITE](#about-maws)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[INSTALL THE ASP.NET ROLE](#about-maws)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[DISABLE THE DEFAULT SITE](#about-maws)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[VERIFY THE NEW SITE](#about-maws)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[ENABLE DIRECTORY BROWSING](#about-maws)
 
 # HOSTING MAWS
 Web services that interface with myAvatar™ need to be hosted at a location where myAvatar™ can access them, and MAWS is no exception. There are two options for hosting MAWS:
@@ -52,7 +43,7 @@ If your myAvatar™ environments are hosted by Netsmart, you can have Netsmart -
 2. **Self-host MAWS**<br> 
 If you self-host your myAvatar™ environments, or would rather have complete control over your custom web services, you can self-host them. This section will offer some guidance, if that's they way you want to do it.
 
-### Before you begin
+## SETTING UP IIS
 These are the steps that I used - twice! - to host MAWS in our environment, but they are more of a *guideline* than a perfect set of instructions. It's quite possible that I didn't follow best-practices, or maybe I have something setup incorrectly, so please use caution when following these steps. And since I (hopefully?) won't have to do this again, this section will probably not be updated.
 
 ### What I used
@@ -60,16 +51,6 @@ These are the steps that I used - twice! - to host MAWS in our environment, but 
 * Microsoft Internet Information Services (IIS) version 10
 
 *This document assumes that you already have a Windows Server with IIS up and running.*
-
-### Steps to setup IIS
-
-  [CREATE AN APPLICATION POOL](#about-maws)<br>
-  [CREATE A NEW SITE](#about-maws)<br>
-  [INSTALL THE ASP.NET ROLE](#about-maws)<br>
-  [DISABLE THE DEFAULT SITE](#about-maws)<br>
-  [VERIFY THE NEW SITE](#about-maws)<br>
-  [ENABLE DIRECTORY BROWSING](#about-maws)
-
 
 ## CREATE AN IIS APPLICATION POOL
 I’m not sure this step is necessary, but it helps to make things a little more organized…maybe? I’m not an IIS expert, so I’m not sure.
