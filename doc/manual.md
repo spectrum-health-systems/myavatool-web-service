@@ -73,7 +73,7 @@ For example, pointing a browser to `https://your-organization.com/MyAvatoolWebSe
 
 <h6 align="center">
 
-  <img src="img/man/wsdl-xml-example-799x393.png" width="500">
+  <img src="img/man/wsdl-xml-example-799x393.png" width="600">
   <br>
   An example of a WSDL file.
   <br>
@@ -106,7 +106,7 @@ We will use the *Admissions* form to import the MAWS WSDL:
 
 <h6 align="center">
 
-  <img src="img/man/scriptlink-options-import-wsdl-847x375.png" width="800">
+  <img src="img/man/scriptlink-options-import-wsdl-847x375.png" width="747">
   <br>
   The ScriptLink options page.
   <br>
@@ -144,7 +144,7 @@ Let's say you wanted to have MAWS do something when you hit the **Submit** butto
 
 <h6 align="center">
 
-  <img src="img/man/scriptlink-form-designer-settings-button-364x335.png" width="364">
+  <img src="img/man/scriptlink-form-designer-settings-button-364x335.png" width="300">
   <br>
   The "Settings" button (again)
   <br>
@@ -155,7 +155,7 @@ Let's say you wanted to have MAWS do something when you hit the **Submit** butto
 
 <h6 align="center">
 
-  <img src="img/man/scriptlink-event-example-839x369.png" width="839">
+  <img src="img/man/scriptlink-event-example-839x369.png" width="739">
   <br>
   The ScriptLink options page (again, but this time for something different)
   <br>
