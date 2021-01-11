@@ -7,10 +7,20 @@
 
   <img src="../../resources/asset/img/logo/maws-logo-800x150.png" alt="myAvatar Web Service logo" width="800">
   <br>
-  MANUAL: ABOUT MAWS
+  MANUAL
   <br>
 
 </h1>
+
+***
+
+<h4 align="center">
+
+  [RETURN TO MANUAL CONTENTS](manual.md)
+
+</h4>
+
+***
 
 # CONTENTS
 [ABOUT MAWS](#manual-about-maws.md)<br>
