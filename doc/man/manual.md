@@ -20,7 +20,7 @@
 
 ***
 
-<h1>
+<h3>
 
   CONTENTS
   * [ABOUT MAWS](manual-about-maws.md)
@@ -30,4 +30,4 @@
   * [MAWS CALLS](manual-maws-calls.md)
   * [CUSTOM MYAVATAR WEB SERVICES](manual-custom-myavatar-web-services.md)
 
-</h1>
+</h3>
