@@ -40,16 +40,23 @@ The myAvatool Web Service (**MAWS**) is a custom web service for [Netsmart's myA
 
 More information about MAWS, from the README, will go here.
 
-### The MAWS manual
-This manual will cover:
-* The stuff from the contents above
 
 # HOSTING MAWS
+
+<h6 align="center">
+
+  [CREATING AN APPLICATION POOL](#about-maws)&nbsp;&bull;&nbsp;[CREATING AN APPLICATION POOL](#about-maws)&nbsp;&bull;&nbsp;[CREATING AN APPLICATION POOL](#about-maws)&nbsp;&bull;&nbsp;[CREATING AN APPLICATION POOL](#about-maws)&nbsp;&bull;&nbsp;[CREATING AN APPLICATION POOL](#about-maws)&nbsp;&bull;&nbsp;[CREATING AN APPLICATION POOL](#about-maws)&nbsp;&bull;&nbsp;
+
+</h6>
+
+
+
 > [CREATING AN APPLICATION POOL](#about-maws)<br>
 > [CREATE A NEW SITE](#about-maws)<br>
 > [DISABLE THE DEFAULT SITE](#about-maws)<br>
 > [VERIFY THE NEW SITE](#about-maws)<br>
 
+#
 Web services that interface with myAvatar™ need to be hosted at a location where myAvatar™ can access them, and MAWS is no exception. There are two options for hosting MAWS:
 
 1. **Have Netsmart host MAWS**<br>
