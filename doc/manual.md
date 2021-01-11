@@ -220,7 +220,7 @@ First, we need to create an empty ASP.NET Web Application project. Using Visual 
 
 <h6 align="center">
 
-  <img src="img/man/vs2019-new-project-template-800x535.png" width="400">
+  <img src="img/man/vs2019-new-project-template-800x535.png" width="600">
   <br>
   Choosing a project template
 
