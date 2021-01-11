@@ -44,18 +44,7 @@ This manual will cover:
 * The stuff from the contents above
 
 # HOSTING MAWS
-### CONTENTS
-* [ABOUT MAWS](#about-maws)
-* [HOSTING MAWS](#hosting-maws)
-* [IMPORTING MAWS](#importing-maws)
-* [CREATING SCRIPTLINK EVENTS](#creating-scriptlink-events)
-* [USING MAWS](#using-maws)
-  * [ADMISSION FORM](#admission-form)
-  * [CROSS EPISODE FINANCIAL ELIGABLITY FORM](#cross-episode-financial-eligability-form)
-* [CUSTOM myAvatar™ WEB SERVICES](#custom-myAvatar™-web-services)
-  * [CREATING A CUSTOM myAvatar WEB SERVICE](#creating-a-custom-myAvatar-web-service)
-  * [HOSTING A CUSTOM myAvatar WEB SERVICE](#hosting-a-custom-myAvatar-web-service)
-  * [USING A CUSTOM myAvatar WEB SERVICE](#using-a-custom-myAvatar-web-service)
+[CREATING AN APPLICATION POOL](#about-maws)&nbsp;&bull;&nbsp;[CREATE A NEW SITE](#about-maws)&nbsp;&bull;&nbsp;[DISABLE THE DEFAULT SITE](#about-maws)&nbsp;&bull;&nbsp;[VERIFY THE NEW SITE](#about-maws)&nbsp;&bull;&nbsp;
 
 Web services that interface with myAvatar™ need to be hosted at a location where myAvatar™ can access them, and MAWS is no exception. There are two options for hosting MAWS:
 
@@ -76,7 +65,7 @@ These are the steps that I used - twice! - to host MAWS in our environment, but 
 
 *This document assumes that you already have a Windows Server with IIS up and running.*
 
-## CREATING AN IIS APPLICATION POOL
+## CREATE AN IIS APPLICATION POOL
 I’m not sure this step is necessary, but it helps to make things a little more organized…maybe? I’m not an IIS expert, so I’m not sure.
 
 From within IIS:
