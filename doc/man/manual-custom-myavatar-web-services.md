@@ -92,10 +92,7 @@ First, we need to create an empty ASP.NET Web Application project. Using Visual 
 </h6>
 <br>
 
-It may take a few minutes for Visual Studio to create the project.
-
-# ADDING A NEW .ASMX WEB SERVICE TO THE PROJECT
-Now you have a brand new, clean ASP.NET Web Application that you can use to build your custom web service for myAvatar™!
+Once the project is created (it may take a few minutes), you will have a brand new, clean ASP.NET Web Application that you can use to build your custom web service for myAvatar™!
 
 <h6 align="center">
 
@@ -106,6 +103,7 @@ Now you have a brand new, clean ASP.NET Web Application that you can use to buil
 </h6>
 <br>
 
+# ADDING A NEW .ASMX WEB SERVICE TO THE PROJECT
 Since we created an empty project, there aren't any valid web services available. Let's create one.
 
 1. Right click the **Avatool-Web-Service** *project*
