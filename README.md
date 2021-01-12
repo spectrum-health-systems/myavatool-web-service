@@ -120,7 +120,6 @@ To contribute to the development branch of MAWS, please see our [contributing gu
 [![GitHub release date](https://img.shields.io/github/release-date/spectrum-health-systems/myavatool-web-service?style=flat-square)](https://github.com/spectrum-health-systems/myavatool-web-service/releases)&nbsp;![Release downloads](https://img.shields.io/github/downloads/spectrum-health-systems/myavatool-web-service/total?style=flat-square)&nbsp;![Language count](https://img.shields.io/github/languages/count/spectrum-health-systems/myavatool-web-service?style=flat-square)&nbsp;
 ![Top language](https://img.shields.io/github/languages/top/spectrum-health-systems/myavatool-web-service?style=flat-square)&nbsp;
 ![Repository size](https://img.shields.io/github/repo-size/spectrum-health-systems/myavatool-web-service?style=flat-square)&nbsp;
-![Lines of code](https://img.shields.io/tokei/lines/github/spectrum-health-systems/myavatool-web-service?style=flat-square)
 [![Developed by](https://img.shields.io/badge/developed%20by-a%20pretty%20cool%20program-17806D?style=flat-square)](https://aprettycoolprogram.com)&nbsp;
 [![Feedback](https://img.shields.io/badge/feedback@aprettycoolprogram.com-17806D?style=flat-square)](mailto:feedback@aprettycoolprogram.com)&nbsp;
 [![GitHub](https://img.shields.io/github/followers/aprettycoolprogram.svg?label=GitHub&style=social)](https://github.com/aprettycoolprogram)&nbsp;
