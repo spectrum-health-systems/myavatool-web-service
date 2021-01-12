@@ -7,8 +7,7 @@
 
   <img src="../../resources/asset/img/logo/maws-logo-800x150.png" alt="myAvatar Web Service logo" width="800">
   <br>
-  MANUAL<br>
-  MAWS v0.1&nbsp;&bull;&nbsp;Last updated January 12, 2021<br>
+  MAWS v0.1 MANUAL
   <br>
 
 </h1>
