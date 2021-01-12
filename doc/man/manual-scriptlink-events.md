@@ -61,7 +61,7 @@ Let's say you wanted to have MAWS do something when you hit the **Submit** butto
 
 <h6 align="center">
 
-  <img src="img/man/scriptlink-form-designer-settings-button-364x335.png" width="300">
+  <img src="img/scriptlink-form-designer-settings-button-364x335.png" width="300">
   <br>
   The "Settings" button (again)
   <br>
@@ -72,7 +72,7 @@ Let's say you wanted to have MAWS do something when you hit the **Submit** butto
 
 <h6 align="center">
 
-  <img src="img/man/scriptlink-event-example-839x369.png" width="739">
+  <img src="img/scriptlink-event-example-839x369.png" width="739">
   <br>
   The ScriptLink options page (again, but this time for something different)
   <br>
