@@ -5,71 +5,56 @@
 
 <h1 align="center">
 
-  <img src="../resources/asset/img/logo/maws-logo-800x150.png" alt="myAvatar Web Service logo" width="800">
+  <img src="../../resources/asset/img/logo/maws-logo-800x150.png" alt="myAvatar Web Service logo" width="800">
   <br>
-  MANUAL: HOSTING MAWS
+  MANUAL: HOSTING MAWS WITH IIS
   <br>
 
 </h1>
 
+***
+
 <h4 align="center">
 
-  [RETURN TO MANUAL CONTENTS]()
+  [RETURN TO CONTENTS](manual.md)
 
 </h4>
 
-<!-- The HTML indentations have to stay this way to work. -->
-<table>
-<tr>
-<td img src="RepositoryData/Asset/Image/Document/README/spacer.png" alt="blank-spacer" width="1000" height="1">
+***
 
-  ### CONTENTS
-  * [ABOUT MAWS](#about-maws)
-  * [HOSTING MAWS](#hosting-maws)
-  * [IMPORTING MAWS](#importing-maws)
-  * [CREATING SCRIPTLINK EVENTS](#creating-scriptlink-events)
-  * [MAWS CALLS](#maws-calls)
-  * [CUSTOM MYAVATAR WEB SERVICES](#custom-myavatar-web-services)
+# CONTENTS
+[HOSTING MAWS WITH IIS](#hosting-maws)<br>
+[SETTING UP IIS](#importing-maws)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[CREATE AN APPLICATION POOL](#about-maws)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[CREATE A NEW SITE](#about-maws)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[INSTALL THE ASP.NET ROLE](#about-maws)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[DISABLE THE DEFAULT SITE](#about-maws)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[VERIFY THE NEW SITE](#about-maws)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[ENABLE DIRECTORY BROWSING](#about-maws)
 
-</td>
-</tr>
-</table>
-
-# ABOUT MAWS
-The myAvatool Web Service (**MAWS**) is a custom web service for [Netsmart's myAvatar™ EHR](https://www.ntst.com/Solutions-and-Services/Offerings/myAvatar) which includes various tools and utilities that aren't included in the official release, and provides a solid foundation for building additional functionality quickly and efficiently. 
-
-More information about MAWS, from the README, will go here.
-
-
-# HOSTING MAWS
+# HOSTING MAWS WITH IIS
 Web services that interface with myAvatar™ need to be hosted at a location where myAvatar™ can access them, and MAWS is no exception. There are two options for hosting MAWS:
 
 1. **Have Netsmart host MAWS**<br>
 If your myAvatar™ environments are hosted by Netsmart, you can have Netsmart - for an additional cost - host MAWS (and other custom web services) as well. If you choose to have Netsmart host MAWS, you can skip this section of the manual, and go straight to the section that discusses [importing MAWS](#importing-maws) into your myAvatar™ environment(s).<br>
 <br>
 *Please note: MAWS has not been tested in a hosted environment, just self-hosted!*
-
+<br>
 2. **Self-host MAWS**<br> 
 If you self-host your myAvatar™ environments, or would rather have complete control over your custom web services, you can self-host them. This section will offer some guidance, if that's they way you want to do it.
 
 ### Before you begin
-These are the steps that I used - twice! - to host MAWS in our environment, but they are more of a *guideline* than a perfect set of instructions. It's quite possible that I didn't follow best-practices, or maybe I have something setup incorrectly, so please use caution when following these steps. And since I (hopefully?) won't have to do this again, this section will probably not be updated.
+A few things before you begin:
+
+* I'm sure you can host MAWS, and other myAvatar™ custom web services, using other web servers like [Apache]() and [NGINX](), but these steps focus on Microsoft Internet Information Services (IIS), specifically version 10.
+
+* These are the steps that I used - twice! - to host MAWS in our environment, but they are more of a *guideline* than a perfect set of instructions. It's quite possible that I didn't follow best-practices, or maybe I have something setup incorrectly, so please use caution when following these steps. And since I (hopefully?) won't have to do this again, this section will probably not be updated.
+
+* This document assumes that you already have a Windows Server with IIS up and running.
 
 ### What I used
 * Microsoft Windows 2019
 * Microsoft Internet Information Services (IIS) version 10
-
-*This document assumes that you already have a Windows Server with IIS up and running.*
-
-### Steps to setup IIS
-
-  [CREATE AN APPLICATION POOL](#about-maws)<br>
-  [CREATE A NEW SITE](#about-maws)<br>
-  [INSTALL THE ASP.NET ROLE](#about-maws)<br>
-  [DISABLE THE DEFAULT SITE](#about-maws)<br>
-  [VERIFY THE NEW SITE](#about-maws)<br>
-  [ENABLE DIRECTORY BROWSING](#about-maws)
-
 
 ## CREATE AN IIS APPLICATION POOL
 I’m not sure this step is necessary, but it helps to make things a little more organized…maybe? I’m not an IIS expert, so I’m not sure.
@@ -84,7 +69,7 @@ I’ve named the application pool *AvatoolWebService*.
 
 <h6 align="center">
 
-  <img src="img/man/iis-application-pool-633x187.png" width="633">
+  <img src="img/iis-application-pool-633x187.png" width="633">
   <br>
   What my Application Pools setup looks like
   <br>
@@ -103,9 +88,23 @@ From within IIS:
 
 <h6 align="center">
 
-  <img src="img/man/iis-add-website-362x414.png" width="362">
+  <img src="img/iis-add-website-362x414.png" width="362">
   <br>
   Adding a new website
+  <br>
+
+</h6>
+
+## INSTALL THE ASP.NET ROLE
+ASP.NET is required by Web Services, so add the ASP.NET role to IIS.
+
+Once that’s done, your IIS roles should look like this:
+
+<h6 align="center">
+
+  <img src="img/iis-roles-295x650.png" width="295">
+  <br>
+  Probably?
   <br>
 
 </h6>
@@ -118,26 +117,12 @@ From within IIS:
 2. Choose **Manage Web Site**
 3. Choose **Stop**
 
-## INSTALL THE ASP.NET ROLE
-ASP.NET is required by Web Services, so add the ASP.NET role to IIS.
-
-Once that’s done, your IIS roles should look like this:
-
-<h6 align="center">
-
-  <img src="img/man/iis-roles-295x650.png" width="295">
-  <br>
-  Probably?
-  <br>
-
-</h6>
-
 ## VERIFY THE NEW SITE
 Your AvatoolWebService site should look like this:
 
 <h6 align="center">
 
-  <img src="img/man/iis-site-home-633x206.png" width="633">
+  <img src="img/iis-site-home-633x206.png" width="633">
   <br>
   Maybe?
   <br>
@@ -152,7 +137,7 @@ From within IIS:
 
 <h6 align="center">
 
-  <img src="img/man/iis-directory-browsing-633x204.png" width="633">
+  <img src="img/iis-directory-browsing-633x204.png" width="633">
   <br>
   Enabling directory browsing
   <br>
@@ -174,7 +159,7 @@ For example, pointing a browser to `https://your-organization.com/MyAvatoolWebSe
 
 <h6 align="center">
 
-  <img src="img/man/wsdl-xml-example-799x393.png" width="600">
+  <img src="img/wsdl-xml-example-799x393.png" width="600">
   <br>
   An example of a WSDL file
   <br>
@@ -197,7 +182,7 @@ We will use the *Admissions* form to import the MAWS WSDL:
 
 <h6 align="center">
 
-  <img src="img/man/scriptlink-form-designer-settings-button-364x335.png" width="300">
+  <img src="img/scriptlink-form-designer-settings-button-364x335.png" width="300">
   <br>
   The "Settings" button.
   <br>
@@ -207,7 +192,7 @@ We will use the *Admissions* form to import the MAWS WSDL:
 
 <h6 align="center">
 
-  <img src="img/man/scriptlink-options-import-wsdl-847x375.png" width="747">
+  <img src="img/scriptlink-options-import-wsdl-847x375.png" width="747">
   <br>
   The ScriptLink options page.
   <br>
@@ -245,7 +230,7 @@ Let's say you wanted to have MAWS do something when you hit the **Submit** butto
 
 <h6 align="center">
 
-  <img src="img/man/scriptlink-form-designer-settings-button-364x335.png" width="300">
+  <img src="img/scriptlink-form-designer-settings-button-364x335.png" width="300">
   <br>
   The "Settings" button (again)
   <br>
@@ -256,7 +241,7 @@ Let's say you wanted to have MAWS do something when you hit the **Submit** butto
 
 <h6 align="center">
 
-  <img src="img/man/scriptlink-event-example-839x369.png" width="739">
+  <img src="img/scriptlink-event-example-839x369.png" width="739">
   <br>
   The ScriptLink options page (again, but this time for something different)
   <br>
@@ -413,7 +398,7 @@ First, we need to create an empty ASP.NET Web Application project. Using Visual 
 
 <h6 align="center">
 
-  <img src="img/man/vs2019-create-new-project-800x535.png" width="800">
+  <img src="img/vs2019-create-new-project-800x535.png" width="800">
   <br>
   Starting a new project in Visual Studio 2019
 
@@ -424,7 +409,7 @@ First, we need to create an empty ASP.NET Web Application project. Using Visual 
 
 <h6 align="center">
 
-  <img src="img/man/vs2019-new-project-template-800x535.png" width="800">
+  <img src="img/vs2019-new-project-template-800x535.png" width="800">
   <br>
   Choosing a project template
 
@@ -438,7 +423,7 @@ First, we need to create an empty ASP.NET Web Application project. Using Visual 
 
 <h6 align="center">
 
-  <img src="img/man/vs2019-configure-new-project-800x535.png" width="800">
+  <img src="img/vs2019-configure-new-project-800x535.png" width="800">
   <br>
   Configuring the project
   
@@ -451,7 +436,7 @@ First, we need to create an empty ASP.NET Web Application project. Using Visual 
 
 <h6 align="center">
 
-  <img src="img/man/vs2019-create-new-asp-app-800x540.png" width="800">
+  <img src="img/vs2019-create-new-asp-app-800x540.png" width="800">
   <br>
   Creating the project
   
@@ -465,7 +450,7 @@ Now you have a brand new, clean ASP.NET Web Application that you can use to buil
 
 <h6 align="center">
 
-  <img src="img/man/vs2019-empty-app-800x655.png" width="800">
+  <img src="img/vs2019-empty-app-800x655.png" width="800">
   <br>
   A nice new, clean app!
   
@@ -479,7 +464,7 @@ Since we created an empty project, there aren't any valid web services available
 
 <h6 align="center">
 
-  <img src="img/man/vs2019-add-web-service-01-710x742.png" width="710">
+  <img src="img/vs2019-add-web-service-01-710x742.png" width="710">
   <br>
   Adding a new item to the project
   
@@ -492,7 +477,7 @@ Since we created an empty project, there aren't any valid web services available
 
 <h6 align="center">
 
-  <img src="img/man/vs2019-add-web-service-02-710x496.png" width="710">
+  <img src="img/vs2019-add-web-service-02-710x496.png" width="710">
   <br>
   Adding a new web service to the project
   
@@ -503,7 +488,7 @@ Since we created an empty project, there aren't any valid web services available
 
 <h6 align="center">
 
-  <img src="img/man/vs2019-add-web-service-02-710x496.png" width="710">
+  <img src="img/vs2019-add-web-service-02-710x496.png" width="710">
   <br>
   Adding a new web service to the project
   
@@ -521,7 +506,7 @@ The Netsmart ScriptLink Service is bundled with the "Brief ScriptLink Tutorial w
 
 <h6 align="center">
 
-  <img src="img/man/ntst-portal-app-exchange-01-490x550.png" width="300">
+  <img src="img/ntst-portal-app-exchange-01-490x550.png" width="300">
   <br>
   Navigating to the Netsmart Cares App Exchange
   
@@ -533,7 +518,7 @@ The Netsmart ScriptLink Service is bundled with the "Brief ScriptLink Tutorial w
 
 <h6 align="center">
 
-  <img src="img/man/ntst-portal-app-exchange-02-710x554.png" width="710">
+  <img src="img/ntst-portal-app-exchange-02-710x554.png" width="710">
   <br>
   Downloading the Netsmart ScriptLink Service
   
