@@ -21,7 +21,9 @@
 ***
 
 # CUSTOM MYAVATAR WEB SERVICES
-If you are curious as to how the MAWS was created, or you are looking for some information on creating your own custom web service for myAvatar™, these are the steps I took. I'll be using the same naming conventions that I did with MAWS, so you should modify things as you see fit.
+If you are curious as to how the MAWS was created, or you are looking for some information on creating your own custom web service for myAvatar™, these are the steps I took.
+
+I'll be using the same naming conventions that I did with MAWS, so you should modify things as you see fit.
 
 ## BEFORE YOU BEGIN
 To create MAWS, I used:
@@ -31,10 +33,10 @@ To create MAWS, I used:
 * [.NET Framework 4.6](https://dotnet.microsoft.com/download/dotnet-framework)
 
 ### Why .NET Framework 4.6?
-Personally, I would rather use .NET Core 5, but as of .NET Core 5.1, SOAP web services are not supported. I would imagine other versions of the .NET Framework would be fine, but most of my Avatool-related development has been using v4.6, so I'm sticking with that.
+Personally, I would rather use .NET Core 5, but as of .NET Core 5.1, SOAP web services are not supported. I would imagine other versions of the .NET Framework would be fine, but most myAvatool-related development has been using v4.6, so I'm sticking with that.
 
 ### What language?
-You can use any language to create a custom web service for myAvatar™. These instructions will walk through creating a web service in C#.
+While you can (probably) use any language to create a custom web service for myAvatar™, these instructions will walk through creating a web service in C#.
 
 ## CREATING A NEW PROJECT
 First, we need to create an empty ASP.NET Web Application project. Using Visual Studio 2019:
@@ -50,7 +52,9 @@ First, we need to create an empty ASP.NET Web Application project. Using Visual 
 </h6>
 <br>
 
-2. Select **ASP.NET Web Application (.NET Framework)**, then click **Next**
+2. Search for *"ASP.NET"*
+3. Select **ASP.NET Web Application (.NET Framework)**
+4. Click **Next**
 
 <h6 align="center">
 

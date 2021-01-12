@@ -14,7 +14,7 @@
 
 <h5 align="center">
 
-  v0.0&nbsp;&bull;&nbsp;Last updated: January 12, 2021
+  MAWS v0.0&nbsp;&bull;&nbsp;Last updated: January 12, 2021
 
 </h5>
 
