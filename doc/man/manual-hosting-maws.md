@@ -7,23 +7,21 @@
 
   <img src="../../resources/asset/img/logo/maws-logo-800x150.png" alt="myAvatar Web Service logo" width="800">
   <br>
-  MANUAL: HOSTING MAWS WITH IIS
+  MANUAL
   <br>
 
 </h1>
 
-***
+<h5 align="center">
 
-<h4 align="center">
+  [ABOUT MAWS](#about-maws)&nbsp;&bull;&nbsp;[HOSTING MAWS](manual-hosting-maws.md)&nbsp;&bull;&nbsp;[IMPORTING MAWS](manual-importing-maws.md)&nbsp;&bull;&nbsp;[SCRIPTLINK EVENTS](manual-scriptlink-events.md)&nbsp;&bull;&nbsp;[MAWS CALLS](manual-maws-calls.md)&nbsp;&bull;&nbsp;[CUSTOM MYAVATAR WEB SERVICES](manual-custom-myavatar-web-services.md)
 
-  [RETURN TO CONTENTS](manual.md)
-
-</h4>
+</h5>
 
 ***
 
 # CONTENTS
-[HOSTING MAWS WITH IIS](#hosting-maws-with-iis)<br>
+[HOSTING MAWS](#hosting-maws-with-iis)<br>
 [CREATING AN APPLICATION POOL](#creating-an-application-pool)<br>
 [CREATING A NEW SITE](#creating-a-new-site)<br>
 [INSTALLING THE ASP.NET ROLE](#installing-the-asp-net-role)<br>
@@ -31,7 +29,7 @@
 [VERIFYING THE NEW SITE](#verifying-the-new-site)<br>
 [ENABLING DIRECTORY BROWSING](#enabling-directory-browsing)
 
-# HOSTING MAWS WITH IIS
+# HOSTING MAWS
 Web services that interface with myAvatar™ need to be hosted at a location where myAvatar™ can access them, and MAWS is no exception. There are two options for hosting MAWS:
 
 1. **Have Netsmart host MAWS**<br>
