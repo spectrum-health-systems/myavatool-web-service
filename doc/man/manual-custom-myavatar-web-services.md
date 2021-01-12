@@ -52,7 +52,7 @@ First, we need to create an empty ASP.NET Web Application project. Using Visual 
 </h6>
 <br>
 
-2. Search for *"ASP.NET"*
+2. Search for "*ASP.NET*"
 3. Select **ASP.NET Web Application (.NET Framework)**
 4. Click **Next**
 
@@ -65,10 +65,10 @@ First, we need to create an empty ASP.NET Web Application project. Using Visual 
 </h6>
 <br>
 
-4. Name the project (in this example, the name is "MyAvatoolWebService")
-5. Choose a **Location** for your project
-6. Verify that **.NET Framework 4.6** is selected
-7. Click **Create**
+5. Complete the **Project Name** field (in this example, the project name is "*MyAvatoolWebService*")
+6. Choose a **Location** for your project
+7. Verify the **Framwork** is "*.NET Framework 4.6*"
+8. Click **Create**
 
 <h6 align="center">
 
@@ -79,9 +79,9 @@ First, we need to create an empty ASP.NET Web Application project. Using Visual 
 </h6>
 <br>
 
-8. In the **Create a new ASP.NET Core Web Application** dialog, select **Empty**
-9. Verify that **Configure for HTTPS** (under **Advanced**) is checked
-10. Click **Create**
+9. In the *Create a new ASP.NET Core Web Application dialog*, select **Empty**
+10. Verify that **Configure for HTTPS** (under *Advanced*) is checked
+11. Click **Create**
 
 <h6 align="center">
 
