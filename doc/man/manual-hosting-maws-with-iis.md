@@ -7,7 +7,7 @@
 
   <img src="../../resources/asset/img/logo/maws-logo-800x150.png" alt="myAvatar Web Service logo" width="800">
   <br>
-  MANUAL: HOSTING MAWS
+  MANUAL: HOSTING MAWS WITH IIS
   <br>
 
 </h1>
@@ -23,7 +23,7 @@
 ***
 
 # CONTENTS
-[HOSTING MAWS](#hosting-maws)<br>
+[HOSTING MAWS WITH IIS](#hosting-maws)<br>
 [SETTING UP IIS](#importing-maws)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[CREATE AN APPLICATION POOL](#about-maws)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[CREATE A NEW SITE](#about-maws)<br>
@@ -32,25 +32,29 @@
 &nbsp;&nbsp;&nbsp;&nbsp;[VERIFY THE NEW SITE](#about-maws)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[ENABLE DIRECTORY BROWSING](#about-maws)
 
-# HOSTING MAWS
+# HOSTING MAWS WITH IIS
 Web services that interface with myAvatar™ need to be hosted at a location where myAvatar™ can access them, and MAWS is no exception. There are two options for hosting MAWS:
 
 1. **Have Netsmart host MAWS**<br>
 If your myAvatar™ environments are hosted by Netsmart, you can have Netsmart - for an additional cost - host MAWS (and other custom web services) as well. If you choose to have Netsmart host MAWS, you can skip this section of the manual, and go straight to the section that discusses [importing MAWS](#importing-maws) into your myAvatar™ environment(s).<br>
 <br>
 *Please note: MAWS has not been tested in a hosted environment, just self-hosted!*
-
+<br>
 2. **Self-host MAWS**<br> 
 If you self-host your myAvatar™ environments, or would rather have complete control over your custom web services, you can self-host them. This section will offer some guidance, if that's they way you want to do it.
 
-# SETTING UP IIS
-These are the steps that I used - twice! - to host MAWS in our environment, but they are more of a *guideline* than a perfect set of instructions. It's quite possible that I didn't follow best-practices, or maybe I have something setup incorrectly, so please use caution when following these steps. And since I (hopefully?) won't have to do this again, this section will probably not be updated.
+### Before you begin
+A few things before you begin:
+
+* I'm sure you can host MAWS, and other myAvatar™ custom web services, using other web servers like [Apache]() and [NGINX](), but these steps focus on Microsoft Internet Information Services (IIS), specifically version 10.
+
+* These are the steps that I used - twice! - to host MAWS in our environment, but they are more of a *guideline* than a perfect set of instructions. It's quite possible that I didn't follow best-practices, or maybe I have something setup incorrectly, so please use caution when following these steps. And since I (hopefully?) won't have to do this again, this section will probably not be updated.
+
+* This document assumes that you already have a Windows Server with IIS up and running.
 
 ### What I used
 * Microsoft Windows 2019
 * Microsoft Internet Information Services (IIS) version 10
-
-*This document assumes that you already have a Windows Server with IIS up and running.*
 
 ## CREATE AN IIS APPLICATION POOL
 I’m not sure this step is necessary, but it helps to make things a little more organized…maybe? I’m not an IIS expert, so I’m not sure.

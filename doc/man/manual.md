@@ -24,7 +24,7 @@
 
 # CONTENTS
 [ABOUT MAWS](manual-about-maws.md)<br>
-[HOSTING MAWS](manual-hosting-maws.md)<br>
+[HOSTING MAWS WITH IIS](manual-hosting-maws-with-iis.md)<br>
 [IMPORTING MAWS](manual-importing-maws.md)<br>
 [CREATING SCRIPTLINK EVENTS](manual-creating-scriptlink-events.md)<br>
 [MAWS CALLS](manual-maws-calls.md)<br>
