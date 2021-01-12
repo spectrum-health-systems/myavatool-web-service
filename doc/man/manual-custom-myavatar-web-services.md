@@ -134,7 +134,7 @@ Since we created an empty project, there aren't any valid web services available
 
 <h6 align="center">
 
-  <img src="img/vs2019-add-web-service-03-710x496.png" width="710">
+  <img src="img/vs2019-add-web-service-03-710x947.png" width="710">
   <br>
   Setting the web service start page
   
