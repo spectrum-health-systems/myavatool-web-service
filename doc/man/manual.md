@@ -17,9 +17,16 @@
 <h4 align="center">
 
   MAWS v0.1&nbsp;&bull;&nbsp;Last updated January 11, 2021<br>
-  [ABOUT MAWS](manual-about-maws.md)&nbsp;&bull;&nbsp;[HOSTING MAWS WITH IIS](manual-hosting-maws-with-iis.md)&nbsp;&bull;&nbsp;[IMPORTING MAWS](manual-importing-maws.md)&nbsp;&bull;&nbsp;[CREATING SCRIPTLINK EVENTS](manual-creating-scriptlink-events.md)&nbsp;&bull;&nbsp;[MAWS CALLS](manual-maws-calls.md)&nbsp;&bull;&nbsp;[CUSTOM MYAVATAR WEB SERVICES](manual-custom-myavatar-web-services.md)
 
 </h4>
+
+<h5 align="center">
+
+  MAWS v0.1&nbsp;&bull;&nbsp;Last updated January 11, 2021<br>
+  [ABOUT MAWS](manual-about-maws.md)&nbsp;&bull;&nbsp;[HOSTING MAWS WITH IIS](manual-hosting-maws-with-iis.md)&nbsp;&bull;&nbsp;[IMPORTING MAWS](manual-importing-maws.md)&nbsp;&bull;&nbsp;[CREATING SCRIPTLINK EVENTS](manual-creating-scriptlink-events.md)&nbsp;&bull;&nbsp;[MAWS CALLS](manual-maws-calls.md)&nbsp;&bull;&nbsp;[CUSTOM MYAVATAR WEB SERVICES](manual-custom-myavatar-web-services.md)
+
+</h5>
+
 
 ***
 
