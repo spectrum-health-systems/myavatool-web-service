@@ -142,10 +142,10 @@ Since we created an empty project, there aren't any valid web services available
 <br>
 
 # ADDING THE NETSMART SCRIPTLINK SERVICE TO THE PROJECT
-In order for our new AvatoolWebService Web Service to work, we'll need to add the Netsmart ScriptLink Service to our project.
+In order for our new MyAvatoolWebService Web Service to work, we'll need to add the *Netsmart ScriptLink Service* to our project.
 
 ## Downloading the Netsmart ScriptLink Service
-The Netsmart ScriptLink Service is bundled with the "Brief ScriptLink Tutorial with OptionObject2", which you will need to download from the [Netsmart Cares portal](https://netsmartcares.force.com/s/login/)
+The Netsmart ScriptLink Service is bundled with the "Brief ScriptLink Tutorial with OptionObject2", which you will need to download from the Netsmart Cares portal.
 
 1. Login to the *[Netsmart Cares portal](https://netsmartcares.force.com/s/login/)*
 2. Go to the *Application Exchange* by choosing **Community** > **App Exchange**
