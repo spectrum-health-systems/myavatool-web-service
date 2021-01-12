@@ -18,6 +18,8 @@
 
 </h5>
 
+<h1></h1>
+
 # HOSTING MAWS
 Web services that interface with myAvatar™ need to be hosted at a location where myAvatar™ can access them, and MAWS is no exception. There are two options for hosting MAWS:
 
