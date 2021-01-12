@@ -245,17 +245,31 @@ Your solution should look like this:
 
 6. Right-click the **Avatool-Web-Service** *project*
 7. Choose **Add** > **Reference..**
+
+<h6 align="center">
+
+  <img src="img/vs2019-add-ntst-scriptlink-service-04-800x655.png" width="800">
+  <br>
+  Adding a reference to the Netsmart ScriptLink Service, Part One
+  
+</h6>
+<br>
+
+
 8. Under **Projects**, check the box that says **NTST.ScriptLinkService.Objects**
 9. Click **OK**
 
 <h6 align="center">
 
-  <img src="img/vs2019-add-ntst-scriptlink-service-02-800x676.png" width="800">
+  <img src="img/vs2019-add-ntst-scriptlink-service-05-800x555.png" width="800">
   <br>
-  Adding the Netsmart ScriptLink Service, Part Two
+  Adding a reference to the Netsmart ScriptLink Service, Part Two
   
 </h6>
 <br>
+
+
+
 
 
 
