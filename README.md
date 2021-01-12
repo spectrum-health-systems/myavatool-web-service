@@ -23,7 +23,7 @@
 <h3 align="center">
 
   <img src="https://img.shields.io/badge/status-active-brightgreen?style=flat-square">&nbsp;
-  [![License](https://img.shields.io/github/license/spectrum-health-systems/myavatool-web-service)](https://www.apache.org/licenses/LICENSE-2.0)&nbsp;
+  [![License](https://img.shields.io/github/license/spectrum-health-systems/myavatool-web-service?style=flat-square)](https://www.apache.org/licenses/LICENSE-2.0)&nbsp;
   [![GitHub release](https://img.shields.io/github/v/release/spectrum-health-systems/myavatool-web-service?style=flat-square)](https://github.com/spectrum-health-systems/myavatool-web-service/releases)&nbsp;
   [![Issues](https://img.shields.io/github/issues/spectrum-health-systems/myavatool-web-service?style=flat-square)](https://github.com/spectrum-health-systems/myavatool-web-service/issues)&nbsp;
   [![Pulls](https://img.shields.io/github/issues-pr/spectrum-health-systems/myavatool-web-service?style=flat-square)](https://github.com/spectrum-health-systems/myavatool-web-service/pulls)&nbsp;
