@@ -225,23 +225,21 @@ Now we need to add a reference to the Netsmart ScriptLink Service to our project
 
 <h6 align="center">
 
-  <img src="img/vs2019-add-ntst-scriptlink-service-01-800x676.png" width="800">
+  <img src="img/vs2019-add-ntst-scriptlink-service-02-800x676.png" width="800">
   <br>
   Adding the Netsmart ScriptLink Service, Part Two
   
 </h6>
 <br>
 
+6. Right-click the **Avatool-Web-Service** *project*
+7. Choose **Add** > **Reference..**
+8. Under **Projects**, check the box that says **NTST.ScriptLinkService.Objects**
+9. Click **OK**
 
-> **Wrong .NET Framework version?**<br>
-> If a message pops up letting you know that the Netsmart ScriptLink Service targets a .NET Framework version that's not installed (in this case, .NET 3.5), choose the **Change the target to .NET Framework 4.6.1...** option, then click **OK**.
+### Wrong .NET Framework version?
+If a message pops up letting you know that the Netsmart ScriptLink Service targets a .NET Framework version that's not installed (in this case, .NET 3.5), change the target .NET Framework version to v4.6.
 
-## Extracting the Netsmart ScriptLink Service
-Next we need to add a Netsmart ScriptLink Service reference to the Avatool Web Service project
-
-1. Right-click the **Avatool-Web-Service** *project* and choose **Add** > **Reference..**
-2. Under **Projects**, check the box that says **NTST.ScriptLinkService.Objects**
-3. Click **OK**
 
 # ADDING REQUIRED METHODS
 Custom web services that interface with myAvatar™ require two methods to be present.
