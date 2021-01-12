@@ -21,10 +21,21 @@
 ***
 
 #  MAWS
-The myAvatool Web Service (**MAWS**) is a custom web service for [Netsmart's myAvatar™ EHR](https://www.ntst.com/Solutions-and-Services/Offerings/myAvatar) which includes various tools and utilities that aren't included in the official release, and provides a solid foundation for building additional functionality quickly and efficiently. 
+[Netsmart's myAvatar™](https://www.ntst.com/Solutions-and-Services/Offerings/myAvatar) is a behavioral health EHR that offers a recovery-focused suite of solutions that leverage real-time analytics and clinical decision support to drive value-based care.
 
-More information about MAWS, from the README, will go here.
+While myAvatar™ is a robust platform, like most things in life (except [Heroes of Might and Magic III](https://www.gog.com/game/heroes_of_might_and_magic_3_complete_edition)), it isn't perfect.
 
-More information about the project will go here (i.e. other projects, etc).
+The good news is that myAvatar™ functionality can be extended via Netsmart's myAvatar™ Web Services, and/or custom web services that are written by myAvatar™ users.
+
+The myAvatool Web Service (**MAWS**) is one such custom web service which includes various tools and utilities for myAvatar™ that aren't included in the official release, and provides a solid foundation for building additional functionality quickly and efficiently.
+
+## MAWS FEATURES
+* Several built-in tools and utilities for use with myAvatar™
+* A solid foundation to build additional custom tools and utilities
+
+## MAWS REQUIREMENTS
+* A location to host the Avatool Web Service
+* Access to your myAvatar™ environments from the Avatool Web Service via HTTPS
 
 ## ABOUT THIS MANUAL
+About
