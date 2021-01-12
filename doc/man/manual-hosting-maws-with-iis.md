@@ -55,7 +55,7 @@ A few things before you begin:
 * Microsoft Windows 2019
 * Microsoft Internet Information Services (IIS) version 10
 
-## CREATING AN APPLICATION POOL
+# CREATING AN APPLICATION POOL
 I’m not sure this step is necessary, but it helps to make things a little more organized…maybe? I’m not an IIS expert, so I’m not sure.
 
 From within IIS:
@@ -75,7 +75,7 @@ I’ve named the application pool *AvatoolWebService*.
 
 </h6>
 
-## CREATING A NEW SITE
+# CREATING A NEW SITE
 From within IIS:
 1. Right-click the **Sites** connection
 2. Choose **Add Website**
@@ -94,7 +94,7 @@ From within IIS:
 
 </h6>
 
-## INSTALLING THE ASP.NET ROLE
+# INSTALLING THE ASP.NET ROLE
 ASP.NET is required by Web Services, so add the ASP.NET role to IIS.
 
 Once that’s done, your IIS roles should look like this:
@@ -108,7 +108,7 @@ Once that’s done, your IIS roles should look like this:
 
 </h6>
 
-## DISABLING THE DEFAULT WEBSITE
+# DISABLING THE DEFAULT SITE
 Might as well do this? Probably?
 
 From within IIS:
@@ -116,7 +116,7 @@ From within IIS:
 2. Choose **Manage Web Site**
 3. Choose **Stop**
 
-## VERIFY THE NEW SITE
+# VERIFYING THE NEW SITE
 Your AvatoolWebService site should look like this:
 
 <h6 align="center">
@@ -128,7 +128,7 @@ Your AvatoolWebService site should look like this:
 
 </h6>
 
-## ENABLING DIRECTORY BROWSING
+# ENABLING DIRECTORY BROWSING
 From within IIS:
 1. Double-click on the **Directory Browsing** icon
 2. Choose **Enable**
