@@ -38,4 +38,6 @@ The myAvatool Web Service (**MAWS**) is one such custom web service which includ
 * Access to your myAvatar™ environments from the Avatool Web Service via HTTPS
 
 ## ABOUT THIS MANUAL
-About
+Some components of the Avatool Web Service will need to be customized before they can be used at your organization.
+
+These components, and the customization that they require, are detailed various documents in this repository. You'll know what needs to be changed, and what it needs to be changed to, as long as you follow the instructions

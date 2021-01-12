@@ -27,11 +27,16 @@
 * [DISABLING SCRIPTLINK EVENTS](#disabling-scriptlink-events)
 
 # ABOUT SCRIPTLINK
+When working with custom web services and myAvatar™, it's inevitable that you will hear about ScriptLink. And depending on who/what is describing what ScriptLink is/does, you are going to get different answers.
 
+Netsmart tends to use "ScriptLink" as another way to say "custom web services", but that's not really the case. I mean, a "custom web service" is a web service. It's in the name. ScriptLink *isn't* a web service.
 
+As far as I can tell, ScriptLink is simply a link to a script. Or, more specifically, a link to a custom web service. Or, *even more specifically*, something that calls a method in a custom web service when something is done with/on a form in myAvatar™.
+
+To summarize, ScriptLink is essentially a line of code in the form designer that kicks off the magical stuff you've written in a custom web service.
 
 # CREATING SCRIPTLINK EVENTS
-Before you can use MAWS (or any custom web service) with myAvatar™, make sure you've [imported](#importing-maws-into-myAvatar) it.
+Before you can use MAWS (or any custom web service) with myAvatar™, make sure you've [imported](manual-importing-maws.md) it.
 
 To use the MAWS with myAvatar™, you will need to add a ScriptLink event to a form event. When that event takes place, myAvatar™ will pass information to MAWS (and potentiall recieve something back).
 
