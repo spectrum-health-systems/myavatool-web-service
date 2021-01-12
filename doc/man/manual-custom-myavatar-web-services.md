@@ -219,14 +219,18 @@ Now we need to add a reference to the Netsmart ScriptLink Service to our project
 </h6>
 <br>
 
+3. Navgate to the **NTST.ScriptLinkService.Objects** folder in */MyAvatoolWebService/*
+4. Choose the  **NTST.ScriptLinkService.Objects.vbproj** file
+5. Click **Open**
 
+<h6 align="center">
 
-
-2. Navgate to the **NTST.ScriptLinkService.Objects** folder in the */Avatool-Web-Service/*
-3. Choose the  **NTST.ScriptLinkService.Objects.vbproj** file
-4. Click **Open**
-
-
+  <img src="img/vs2019-add-ntst-scriptlink-service-01-800x676.png" width="800">
+  <br>
+  Adding the Netsmart ScriptLink Service, Part Two
+  
+</h6>
+<br>
 
 
 > **Wrong .NET Framework version?**<br>
