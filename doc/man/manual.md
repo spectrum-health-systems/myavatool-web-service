@@ -13,8 +13,8 @@
 </h1>
 
 <h5 align="center">
-
-  v0.0&nbsp;&bull;&nbsp; Last updated: January 12, 2021
+  v0.0&nbsp;&bull;&nbsp;Last updated: January 12, 2021
+  <br>
   <br>
   ABOUT MAWS&nbsp;&bull;&nbsp;[HOSTING MAWS](manual-hosting-maws.md)&nbsp;&bull;&nbsp;[IMPORTING MAWS](manual-importing-maws.md)&nbsp;&bull;&nbsp;[SCRIPTLINK EVENTS](manual-scriptlink-events.md)&nbsp;&bull;&nbsp;[MAWS CALLS](manual-maws-calls.md)&nbsp;&bull;&nbsp;[CUSTOM MYAVATAR WEB SERVICES](manual-custom-myavatar-web-services.md)
 
