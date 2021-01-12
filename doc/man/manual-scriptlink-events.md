@@ -25,6 +25,7 @@
 * [CREATING SCRIPTLINK EVENTS](#creating-scriptlink-events)
 * [ADDING A SCRIPTLINK EVENT TO A FORM](#adding-a-scriptlink-event-to-a-form)
 * [DISABLING SCRIPTLINK EVENTS](#disabling-scriptlink-events)
+* [SCRIPTLINK TESTING SUGGESTIONS](#scriptlink-testing-suggestions)
 
 # ABOUT SCRIPTLINK
 When working with custom web services and myAvatar™, it's inevitable that you will hear about ScriptLink. And depending on who/what is describing what ScriptLink is/does, you are going to get different answers.
@@ -82,7 +83,7 @@ Let's say you wanted to have MAWS do something when you hit the **Submit** butto
 
 Next we will need to choose an event that will call the Avatool Web Service, and determine the action that will take place. For this example, we will call the *VerifyInpatientAdmissionDate* action on the form's *Pre-File* event:
 
-7. Click the dropdown in the **Pre-File** row under the **Availble Scripts** column
+7. Click the dropdown in the **Pre-File** row under the **Available Scripts** column
 8. Choose **AvatoolWebService** (the *red* box)
 9. Type "VerifyInpatientAdmissionDate" in the **Pre-File** row under the **Script Parameter** column (the *purple* box)
 10. Uncheck the **Disable All Scripts For Form** and **Disable All Scripts on Error** boxes  (the *green* box)
@@ -91,6 +92,67 @@ Next we will need to choose an event that will call the Avatool Web Service, and
 13. Click **Submit**
 
 Now, when the Admission form is submitted, myAvatar™ will ask MAWS to VerifyInpatientAdmissionDate for a specific client.
+
+## DISABLING SCRIPTLINK EVENTS
+Disabling the functionality of a custom web service is simple and quick, and you can choose to disable individual ScriptLink events, or all ScriptLink events on a form.
+
+In addition, enabling/disabling ScriptLink events does not require any downtime for your environments. The change is made when you hit **Submit**.
+
+To do either of those, you would:
+1. Open the **Form Designer** form
+2. Choose the myAvatar™ form you want to use from the **Forms** dropdown
+3. Choose the form tab from the **Tabs** dropdown
+4. Click the **Show Tab** button
+5. You will now see the form tab in designer mode. In the upper left of myAvatar™ you will see a **Settings** button:
+
+<h6 align="center">
+
+  <img src="img/scriptlink-form-designer-settings-button-364x335.png" width="300">
+  <br>
+  The "Settings" button.
+  <br>
+
+</h6>
+
+6. Clicking the **Settings** button will bring you to the ScriptLink options page:
+
+<h6 align="center">
+
+  <img src="img/scriptlink-event-example-839x369.png" width="739">
+  <br>
+  The ScriptLink options page.
+  <br>
+
+</h6>
+<br>
+
+### Disabling specific ScriptLink events
+If you want to disable a specific ScriptLink event:
+1. Check the **Disable** boxes  (the *green* box) next to the **Form Load**, **Pre-File** and/or **Post-File** events
+2. Click **Return to Designer** (the *yellow* box), and the ScriptLink options page will close, and you will be back on the **Tab Designer** page
+3. Click the **Save** button, and you bw returned to the **Form Designer** page
+4. Click **Submit**
+
+Now, when the form is submitted, myAvatar™ *will not* process ScriptLink events for the events you have disabled.
+
+### Disabling all ScriptLink events on a form
+If you want to disable all ScriptLink events on a form:
+1. Check the **Disable All Scripts For Form** and **Disable All Scripts on Error** boxes  (the *green* box)
+2. Click **Return to Designer** (the *yellow* box), and the ScriptLink options page will close, and you will be back on the **Tab Designer** page
+3. Click the **Save** button, and you bw returned to the **Form Designer** page
+4. Click **Submit**
+
+Now, when the Admission form is submitted, myAvatar™ *will not* process *any* scriptlink event on the form.
+
+## SCRIPTLINK TESTING SUGGESTIONS
+It is strongly recommended that you thouroughly test any custom web service functionality in your environments, and that includes MAWS.
+
+Since it's easy to enable/disable ScriptLink events, my suggestions when testing functionality is to:
+* Enable functionlity after the business day has started
+* Disable functionality prior to the business day ending
+* Test during business hours for a week
+
+Using the above suggestions, you will be able to disable functionlity quickly if there are any issues.
 
 ***
 
