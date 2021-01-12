@@ -22,21 +22,15 @@
 
 <h5 align="center">
 
-  MAWS v0.1&nbsp;&bull;&nbsp;Last updated January 11, 2021<br>
   [ABOUT MAWS](manual-about-maws.md)&nbsp;&bull;&nbsp;[HOSTING MAWS WITH IIS](manual-hosting-maws-with-iis.md)&nbsp;&bull;&nbsp;[IMPORTING MAWS](manual-importing-maws.md)&nbsp;&bull;&nbsp;[CREATING SCRIPTLINK EVENTS](manual-creating-scriptlink-events.md)&nbsp;&bull;&nbsp;[MAWS CALLS](manual-maws-calls.md)&nbsp;&bull;&nbsp;[CUSTOM MYAVATAR WEB SERVICES](manual-custom-myavatar-web-services.md)
 
 </h5>
 
-
 ***
 
+# ABOUT MAWS
+The myAvatool Web Service (**MAWS**) is a custom web service for [Netsmart's myAvatar™ EHR](https://www.ntst.com/Solutions-and-Services/Offerings/myAvatar) which includes various tools and utilities that aren't included in the official release, and provides a solid foundation for building additional functionality quickly and efficiently. 
 
+More information about MAWS, from the README, will go here.
 
-
-# CONTENTS
-[ABOUT MAWS](manual-about-maws.md)<br>
-[HOSTING MAWS WITH IIS](manual-hosting-maws-with-iis.md)<br>
-[IMPORTING MAWS](manual-importing-maws.md)<br>
-[CREATING SCRIPTLINK EVENTS](manual-creating-scriptlink-events.md)<br>
-[MAWS CALLS](manual-maws-calls.md)<br>
-[CUSTOM MYAVATAR WEB SERVICES](manual-custom-myavatar-web-services.md)
+More information about the project will go here (i.e. other projects, etc).
