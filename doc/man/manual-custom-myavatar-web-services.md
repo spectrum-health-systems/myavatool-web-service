@@ -225,7 +225,7 @@ Now we need to add a reference to the Netsmart ScriptLink Service to our project
 
 <h6 align="center">
 
-  <img src="img/vs2019-add-ntst-scriptlink-service-01-800x676.png" width="800">
+  <img src="img/vs2019-add-ntst-scriptlink-service-02-800x676.png" width="800">
   <br>
   Adding the Netsmart ScriptLink Service, Part Two
   
