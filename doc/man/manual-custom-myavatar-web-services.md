@@ -38,7 +38,7 @@ Personally, I would rather use .NET Core 5, but as of .NET Core 5.1, SOAP web se
 ### What language?
 While you can (probably) use any language to create a custom web service for myAvatar™, these instructions will walk through creating a web service in C#.
 
-## CREATING A NEW PROJECT
+# CREATING A NEW PROJECT
 First, we need to create an empty ASP.NET Web Application project. Using Visual Studio 2019:
 
 1. Click **Create a new project**
@@ -94,7 +94,7 @@ First, we need to create an empty ASP.NET Web Application project. Using Visual 
 
 It may take a few minutes for Visual Studio to create the project.
 
-## ADDING A NEW .ASMX WEB SERVICE TO THE PROJECT
+# ADDING A NEW .ASMX WEB SERVICE TO THE PROJECT
 Now you have a brand new, clean ASP.NET Web Application that you can use to build your custom web service for myAvatar™!
 
 <h6 align="center">
@@ -144,10 +144,10 @@ Since we created an empty project, there aren't any valid web services available
 </h6>
 <br>
 
-## ADDING THE NETSMART SCRIPTLINK SERVICE TO THE PROJECT
+# ADDING THE NETSMART SCRIPTLINK SERVICE TO THE PROJECT
 In order for our new AvatoolWebService Web Service to work, we'll need to add the Netsmart ScriptLink Service to our project.
 
-### Downloading the Netsmart ScriptLink Service
+## Downloading the Netsmart ScriptLink Service
 The Netsmart ScriptLink Service is bundled with the "Brief ScriptLink Tutorial with OptionObject2", which you will need to download from the [Netsmart Cares portal](https://netsmartcares.force.com/s/login/)
 
 1. Login to the *[Netsmart Cares portal](https://netsmartcares.force.com/s/login/)*
@@ -174,7 +174,7 @@ The Netsmart ScriptLink Service is bundled with the "Brief ScriptLink Tutorial w
 </h6>
 <br>
 
-### Make sure you have the correct file!
+## Make sure you have the correct file!
 The downloaded file is a .zip archive with (as of January 8th, 2021) the following details:
 
 > Name: **136_180_9_ScriptLinkTutorialWithOptionObject2.zip**<br>
@@ -182,7 +182,7 @@ The downloaded file is a .zip archive with (as of January 8th, 2021) the followi
 > MD5: **EC9445B70FD994A4453C4D0649208EC2**<br>
 > SHA2-256: **899617150FF9A69A6D3A7661CD4CAC304292D5F7BA775432C9B5C3FE6AA1D8F4**<br>
 
-### Extracting the Netsmart ScriptLink Service
+## Extracting the Netsmart ScriptLink Service
 The file you downloaded actually contains a bunch of stuff, most of which we don't need. 
 
 1. Extract the contents of **136_180_9_ScriptLinkTutorialWithOptionObject2.zip**
@@ -204,7 +204,7 @@ When complete, the folder structure of the Avatool Web Service project should lo
 ...
 ```
 
-### Adding the Netsmart ScriptLink Service to the project
+## Adding the Netsmart ScriptLink Service to the project
 Now we need to add a reference to the Netsmart ScriptLink Service to our project.
 
 1. Right-click the **Avatool-Web-Service** *solution* and choose **Add** > **Existing Project..**
@@ -215,17 +215,17 @@ Now we need to add a reference to the Netsmart ScriptLink Service to our project
 > **Wrong .NET Framework version?**<br>
 > If a message pops up letting you know that the Netsmart ScriptLink Service targets a .NET Framework version that's not installed (in this case, .NET 3.5), choose the **Change the target to .NET Framework 4.6.1...** option, then click **OK**.
 
-### Extracting the Netsmart ScriptLink Service
+## Extracting the Netsmart ScriptLink Service
 Next we need to add a Netsmart ScriptLink Service reference to the Avatool Web Service project
 
 1. Right-click the **Avatool-Web-Service** *project* and choose **Add** > **Reference..**
 2. Under **Projects**, check the box that says **NTST.ScriptLinkService.Objects**
 3. Click **OK**
 
-## ADDING REQUIRED METHODS
+# ADDING REQUIRED METHODS
 Custom web services that interface with myAvatar™ require two methods to be present.
 
-### THE DEFAULT ASMX.CS FILE
+## THE DEFAULT ASMX.CS FILE
 Your *MyAvatoolWebService.asmx.cs* file should look like this:
 
 ```
@@ -275,7 +275,7 @@ namespace MyAvatoolWebService
 }
 ```
 
-### ADDING THE GetVersion() METHOD
+## ADDING THE GetVersion() METHOD
 The first of the required methods is called `GetVersion()`. It looks like this:
 ```
 [WebMethod]
@@ -314,7 +314,7 @@ namespace MyAvatoolWebService
 }
 ```
 
-### ADDING THE RunScript() METHOD
+## ADDING THE RunScript() METHOD
 
 The second required method is called `RunScript()`. It looks like this:
 ```
