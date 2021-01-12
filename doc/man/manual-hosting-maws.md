@@ -42,7 +42,7 @@ If you self-host your myAvatar™ environments, or would rather have complete co
 ### Before you begin
 A few things before you begin:
 
-* I'm sure you can host MAWS, and other myAvatar™ custom web services, using other web servers like [Apache]() and [NGINX](), but these steps focus on Microsoft Internet Information Services (IIS), specifically version 10.
+* I'm sure you can host MAWS, and other myAvatar™ custom web services, using other web servers like [Apache]() and [NGINX](), but these steps focus on [Microsoft Internet Information Services (IIS)](), specifically version 10.
 
 * These are the steps that I used - twice! - to host MAWS in our environment, but they are more of a *guideline* than a perfect set of instructions. It's quite possible that I didn't follow best-practices, or maybe I have something setup incorrectly, so please use caution when following these steps. And since I (hopefully?) won't have to do this again, this section will probably not be updated.
 
@@ -141,3 +141,11 @@ From within IIS:
 </h6>
 
 At this point, you should be able to point a browser to your website, and see the landing page.
+
+***
+
+<h5 align="center">
+
+  [ABOUT MAWS](#about-maws)&nbsp;&bull;&nbsp;HOSTING MAWS&nbsp;&bull;&nbsp;[IMPORTING MAWS](manual-importing-maws.md)&nbsp;&bull;&nbsp;[SCRIPTLINK EVENTS](manual-scriptlink-events.md)&nbsp;&bull;&nbsp;[MAWS CALLS](manual-maws-calls.md)&nbsp;&bull;&nbsp;[CUSTOM MYAVATAR WEB SERVICES](manual-custom-myavatar-web-services.md)
+
+</h5>
