@@ -20,13 +20,6 @@
 
 ***
 
-# CONTENTS
-* [ABOUT SCRIPTLINK](#about-scriptlink)
-* [CREATING SCRIPTLINK EVENTS](#creating-scriptlink-events)
-* [ADDING A SCRIPTLINK EVENT TO A FORM](#adding-a-scriptlink-event-to-a-form)
-* [DISABLING SCRIPTLINK EVENTS](#disabling-scriptlink-events)
-* [SCRIPTLINK TESTING SUGGESTIONS](#scriptlink-testing-suggestions)
-
 # ABOUT SCRIPTLINK
 When working with custom web services and myAvatar™, it's inevitable that you will hear about ScriptLink. And depending on who/what is describing what ScriptLink is/does, you are going to get different answers.
 

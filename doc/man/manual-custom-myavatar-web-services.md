@@ -20,11 +20,6 @@
 
 ***
 
-# CONTENTS
-[IMPORTING MAWS](#hosting-maws)<br>
-[CONFIRMING THE MAWS WSDL](#importing-maws)<br>
-[IMPORTING THE MAWS WSDL](#importing-maws)<br>
-
 # CUSTOM MYAVATAR WEB SERVICES
 If you are curious as to how the MAWS was created, or you are looking for some information on creating your own custom web service for myAvatar™, these are the steps I took. I'll be using the same naming conventions that I did with MAWS, so you should modify things as you see fit.
 
@@ -509,8 +504,13 @@ namespace MyAvatoolWebService
 ## NOW WHAT
 Modify!
 
-
-
-
 #### You have one shot at this!
 Once you have imported a custom web service into myAvatar™, it's there to stay. If you are using your own custom web service, make sure you've named it exactly what you want, otherwise you may end up with the names of depreciated web services in your myAvatar™ environments.
+
+***
+
+<h5 align="center">
+
+  [ABOUT MAWS](manual.md)&nbsp;&bull;&nbsp;[HOSTING MAWS](manual-hosting-maws.md)&nbsp;&bull;&nbsp;[IMPORTING MAWS](manual-importing-maws.md)&nbsp;&bull;&nbsp;[SCRIPTLINK EVENTS](manual-scriptlink-events.md)&nbsp;&bull;&nbsp;[MAWS CALLS](manual-maws-calls.md)&nbsp;&bull;&nbsp;CUSTOM MYAVATAR WEB SERVICES
+
+</h5>

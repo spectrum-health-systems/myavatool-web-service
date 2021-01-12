@@ -20,11 +20,6 @@
 
 ***
 
-# CONTENTS
-[IMPORTING MAWS](#hosting-maws)<br>
-[CONFIRMING THE MAWS WSDL](#importing-maws)<br>
-[IMPORTING THE MAWS WSDL](#importing-maws)<br>
-
 # IMPORTING MAWS
 In order for myAvatar™ to use MAWS, you'll need to import MAWS into myAvatar™. This section will walk your through the following process:
 
