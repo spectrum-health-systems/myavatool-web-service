@@ -75,7 +75,7 @@ The myAvatool Web Service (**MAWS**) is one such custom web service which includ
   * Access to your myAvatar™ environments from the Avatool Web Service via HTTPS
 
 ### Read the manual!
-Hey now, I spent alot of time working on the [MAWS Manual](doc/man/manual.md), so please take a look. I update the manual with each new release of MAWS, and it covers pretty much anything you need to know about MAWS (as well as some general myAvatar™ custom web services stuff).
+Hey now, I spent alot of time working on the MAWS [manual](doc/man/manual.md), so please take a look. I update the manual with each new release of MAWS, and it covers pretty much anything you need to know about MAWS (as well as some general myAvatar™ custom web services stuff).
 
 # GETTING STARTED
 ### Before you begin
@@ -88,7 +88,7 @@ The Avatool Web Service isn't *installed* so much as it is *published*.
 
 The current method of publishing the web service is to just copy the entire project to where it is being hosted. Future versions of the Avatool Web Service will utilize the publishing functionality of Visual Studio.
 
-For more information about installing/publishing MAWS, please read the [MAWS Manual](doc/man/manual-hosting-maws.md).
+For more information about installing/publishing MAWS, please read the MAWS [manual](doc/man/manual-hosting-maws.md).
 
 #### Other operating systems
 Since MAWS used the .NET Framework, I'm pretty sure it's only compatible with the Windows operating system.
