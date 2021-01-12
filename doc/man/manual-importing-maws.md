@@ -7,25 +7,18 @@
 
   <img src="../../resources/asset/img/logo/maws-logo-800x150.png" alt="myAvatar Web Service logo" width="800">
   <br>
-  MANUAL: IMPORTING MAWS
+  MANUAL
   <br>
 
 </h1>
 
-***
+<h5 align="center">
 
-<h4 align="center">
+  [ABOUT MAWS](manual.md)&nbsp;&bull;&nbsp;[HOSTING MAWS](manual-hosting-maws.md)&nbsp;&bull;&nbsp;IMPORTING MAWS&nbsp;&bull;&nbsp;[SCRIPTLINK EVENTS](manual-scriptlink-events.md)&nbsp;&bull;&nbsp;[MAWS CALLS](manual-maws-calls.md)&nbsp;&bull;&nbsp;[CUSTOM MYAVATAR WEB SERVICES](manual-custom-myavatar-web-services.md)
 
-  [RETURN TO CONTENTS](manual.md)
-
-</h4>
+</h5>
 
 ***
-
-# CONTENTS
-[IMPORTING MAWS](#hosting-maws)<br>
-[CONFIRMING THE MAWS WSDL](#importing-maws)<br>
-[IMPORTING THE MAWS WSDL](#importing-maws)<br>
 
 # IMPORTING MAWS
 In order for myAvatar™ to use MAWS, you'll need to import MAWS into myAvatar™. This section will walk your through the following process:
@@ -33,7 +26,7 @@ In order for myAvatar™ to use MAWS, you'll need to import MAWS into myAvatar�
 ### Before you begin
 To continue with this documentations, you will need to know the location of MAWS in your environment.
 
-## CONFIRMING THE MAWS WSDL
+# CONFIRMING THE MAWS WSDL
 Before attempting to import MAWS into myAvatar™, you should make sure that you have a valid **W**eb **S**ervice **D**escription **L**anguage (**WSDL**) URL. To do this, paste the URL of the MAWS WSDL in a web browser and attempt to access the URL.
 
 For example, pointing a browser to `https://your-organization.com/MyAvatoolWebService.asmx?WSDL` should display XML that looks something like this:
@@ -51,7 +44,7 @@ If the WSDL file *is diplayed* in the browser, that URL is what you are going to
 
 If the WSDL file *is not displayed*, you'll need to get a valid WSDL location before continuing.
 
-## IMPORTING THE MAWS WSDL
+# IMPORTING THE MAWS WSDL
 Any form can be used to import a web service, and once a web service has been imported it can be used by any form that allows ScriptLink events.
 
 We will use the *Admissions* form to import the MAWS WSDL:
@@ -84,3 +77,11 @@ We will use the *Admissions* form to import the MAWS WSDL:
 2. Click the **Import** button.
 
 You should get a popup letting you know the WSDL was imported successfully.
+
+***
+
+<h5 align="center">
+
+  [ABOUT MAWS](manual.md)&nbsp;&bull;&nbsp;[HOSTING MAWS](manual-hosting-maws.md)&nbsp;&bull;&nbsp;IMPORTING MAWS&nbsp;&bull;&nbsp;[SCRIPTLINK EVENTS](manual-scriptlink-events.md)&nbsp;&bull;&nbsp;[MAWS CALLS](manual-maws-calls.md)&nbsp;&bull;&nbsp;[CUSTOM MYAVATAR WEB SERVICES](manual-custom-myavatar-web-services.md)
+
+</h5>
