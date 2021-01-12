@@ -174,7 +174,7 @@ The Netsmart ScriptLink Service is bundled with the "Brief ScriptLink Tutorial w
 ### Can't find the file in the App Exchange?
 If you can't find the "Brief ScriptLink Tutorial with OptionObject2" entry in the App Exchange, you can [download it](third-party/netsmart/136_180_9_ScriptLinkTutorialWithOptionObject2.zip) from this repository.
 
-## Make sure you have the correct file!
+### Make sure you have the correct file!
 The downloaded file is a .zip archive with (as of January 8th, 2021) the following details:
 
 > Name: **136_180_9_ScriptLinkTutorialWithOptionObject2.zip**<br>
