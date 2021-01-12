@@ -207,10 +207,27 @@ When complete, the folder structure of the Avatool Web Service project should lo
 ## Adding the Netsmart ScriptLink Service to the project
 Now we need to add a reference to the Netsmart ScriptLink Service to our project.
 
-1. Right-click the **Avatool-Web-Service** *solution* and choose **Add** > **Existing Project..**
+1. Right-click the **Avatool-Web-Service** *solution*
+2. Choose **Add** > **Existing Project..**
+
+<h6 align="center">
+
+  <img src="vs2019-add-ntst-scriptlink-service-800x655.png" width="800">
+  <br>
+  Adding the Netsmart ScriptLink Service, Part One
+  
+</h6>
+<br>
+
+
+
+
 2. Navgate to the **NTST.ScriptLinkService.Objects** folder in the */Avatool-Web-Service/*
 3. Choose the  **NTST.ScriptLinkService.Objects.vbproj** file
 4. Click **Open**
+
+
+
 
 > **Wrong .NET Framework version?**<br>
 > If a message pops up letting you know that the Netsmart ScriptLink Service targets a .NET Framework version that's not installed (in this case, .NET 3.5), choose the **Change the target to .NET Framework 4.6.1...** option, then click **OK**.
