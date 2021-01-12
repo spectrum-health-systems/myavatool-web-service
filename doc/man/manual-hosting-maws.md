@@ -21,7 +21,6 @@
 ***
 
 ### CONTENTS
----------<br>
 [HOSTING MAWS](#hosting-maws)<br>
 [CREATING AN APPLICATION POOL](#creating-an-application-pool)<br>
 [CREATING A NEW SITE](#creating-a-new-site)<br>
@@ -29,7 +28,6 @@
 [DISABLING THE DEFAULT SITE](#disabling-the-default-site)<br>
 [VERIFYING THE NEW SITE](#verifying-the-new-site)<br>
 [ENABLING DIRECTORY BROWSING](#enabling-directory-browsing)
-
 
 # HOSTING MAWS
 Web services that interface with myAvatar™ need to be hosted at a location where myAvatar™ can access them, and MAWS is no exception. There are two options for hosting MAWS:
