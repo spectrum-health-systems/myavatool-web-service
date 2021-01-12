@@ -101,10 +101,9 @@ Once the project is created (it may take a few minutes), you will have a brand n
   A nice new, clean app!
   
 </h6>
-<br>
 
 # ADDING A NEW .ASMX WEB SERVICE TO THE PROJECT
-Since we created an empty project, there aren't any valid web services available. Let's create one.
+Since we created an empty project, there aren't any valid web services available, so we will need to create one.
 
 1. Right click the **Avatool-Web-Service** *project*
 2. Choose **Add** > **New Item...**
@@ -118,8 +117,8 @@ Since we created an empty project, there aren't any valid web services available
 </h6>
 <br>
 
-3. Choose **Visual C** > **Web** > **web Service (ASMX**)
-4. Name the Web Service **AvatoolWebService.asmx**
+3. Choose **Visual C#** > **Web** > **Web Service (ASMX**)
+4. Name the web service **MyAvatoolWebService.asmx**
 5. Click **Add**
 
 <h6 align="center">
