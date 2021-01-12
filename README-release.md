@@ -80,7 +80,7 @@ Hey now, I spent alot of time working on the [MAWS Manual](doc/man/manual.md), s
 # GETTING STARTED
 ### Before you begin
 * Verify you have met the [requirements](#requirements).
-* Read the [MAWS Manual](doc/man/manual.md)!
+* Read the MAWS [manual](doc/man/manual.md)!
 
 # INSTALLING
 ### Windows
@@ -94,13 +94,13 @@ For more information about installing/publishing MAWS, please read the [MAWS Man
 Since MAWS used the .NET Framework, I'm pretty sure it's only compatible with the Windows operating system.
 
 # USING
-Please read the [MAWS Manual](doc/man/manual.md) for information on using MAWS.
+Please read the MAWS [manual](doc/man/manual.md) for information on using MAWS.
 
 # UPDATING
-Please read the [MAWS Manual]doc/man/manual.md) for information on updating MAWS.
+Please read the MAWS [manual](doc/man/manual.md) for information on updating MAWS.
 
 # UNINSTALLING
-Please read the [MAWS Manual](doc/man/manual.md) for information on uninstalling MAWS.
+Please read the MAWS [manual](doc/man/manual.md) for information on uninstalling MAWS.
 
 # DEVELOPMENT
 MAWS is developed by [A Pretty Cool Program](https://aprettycoolprogram.com) and these [contributors](doc/contributors.md), using these [third-party resources](built-with.md).
