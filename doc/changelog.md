@@ -5,7 +5,7 @@
 ## v0.1
 > This branch is a more complete blank template for MAWS, building on v0.0. It includes comments and some minor naming convention changes.
 
-#### 0.1.21013.1420 - 0.1.21013.1643 (2021-01-13)
+#### 0.1.21013.1420 - 0.1.21013.1647 (2021-01-13)
 * `INFO` A more complete blank template for MAWS
 * `ADDED` MAWS.licenseheader file for use with the [License Header Manager](https://marketplace.visualstudio.com/items?itemName=StefanWenig.LicenseHeaderManager) extension
 * `MODIFIED` AssemblyInfo.cs with...uh...assembly information

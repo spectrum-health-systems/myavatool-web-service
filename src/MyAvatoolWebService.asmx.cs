@@ -1,6 +1,6 @@
 ﻿/* PROJECT: MyAvatoolWebService (https://github.com/aprettycoolprogram/MyAvatoolWebService)
  *    FILE: MyAvatoolWebService.MyAvatoolWebService.asmx.cs
- * UPDATED: 1-13-2021-11:27 AM
+ * UPDATED: 1-13-2021-11:47 AM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2020 A Pretty Cool Program All rights reserved
  */
@@ -71,7 +71,8 @@ namespace MyAvatoolWebService
         [WebMethod]
         public string GetVersion()
         {
-            /* The version number should be the same as the version being developed.
+            /* For detailed information about RunScript(), please see the MAWS manual:
+             * https://github.com/spectrum-health-systems/myavatool-web-service/blob/main/doc/man/manual-maws-calls.md#getversion
              */
             return "VERSION 1.0";
         }
