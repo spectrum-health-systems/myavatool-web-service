@@ -42,9 +42,9 @@ The version should be the same as the development branch. For example, if you ar
 
 The `RunScript()` method performs a MAWS action (e.g., "Version 1.0").
 
-The `RunScript()` method receives an OptionObject2 object and an "action" string from myAvatar, then uses a switch statement to pass both of those to the local method that will process the action.
+The `RunScript()` method receives an OptionObject2 object and an "action" string from myAvatar, then uses a switch statement to pass the OptionObject2 object and action to the local method that will process the action.
 
-
+If an invalid action is passed, the the OptionObject2 is returned without any changes being made.
 
 # ACTIONS
 These are the valid actions that MAWS can do.
