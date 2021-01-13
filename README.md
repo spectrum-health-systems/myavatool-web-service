@@ -65,6 +65,13 @@ The good news is that myAvatar™ functionality can be extended via Netsmart's m
 
 The myAvatool Web Service (**MAWS**) is one such custom web service which includes various tools and utilities for myAvatar™ that aren't included in the official release, and provides a solid foundation for building additional functionality quickly and efficiently.
 
+### This is beta software!
+I'm working on getting MAWS v1.0 out the door, so for now this sourcecode in *very beta*.
+
+If you are interested in the development of v1.0, please see the [development branch](https://github.com/spectrum-health-systems/myavatool-web-service/tree/development-v1.0).
+
+If you are looking for something to use right now, check out the [Avatool Web Service](https://github.com/spectrum-health-systems/Avatool-Web-Service) (the precursor to MAWS).
+
 ## FEATURES
 * Several built-in tools and utilities for use with myAvatar™
 * A solid foundation to build additional custom tools and utilities
