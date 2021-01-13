@@ -27,9 +27,18 @@ Each `action` has a *class* with the same name. For example, the `VerifyInpatien
 
 To perform an `action`, you'll need to create a ScriptLink event in myAvatar that passes both an "action" and an *OptionObject2* to MAWS. For more information about creating ScriptLink events, please see the MAWS [manual](manual-scriptlink-events).
 
+# STANDARD MTHODS
 
+## GetVersion()
 
+## RunScript()
 
+# ACTIONS
+
+## VerifyInpatientAdmissionDate
+what?
+
+## 
 
   /* The main function of MAWS is to perform an "action" (i.e., a MAWS method call) using data that is received
              * from myAvatar via an OptionObject2.
