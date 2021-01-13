@@ -79,7 +79,7 @@ namespace MyAvatoolWebService
 
         /// <summary>Performs an MAWS action.</summary>
         /// <param name="sentOptionObject2">The OptionObject2 object sent from myAvatar.</param>
-        /// <param name="action">           The MAWS action perform.</param>
+        /// <param name="action">           The MAWS action perform (e.g., "VerifyInpatientAdmissionDate")</param>
         /// <returns>A completed OptionObject2 that MAWS will return to myAvatar.</returns>
         /// <remarks>This method is required by myAvatar. Do not remove.</remarks>
         [WebMethod]
