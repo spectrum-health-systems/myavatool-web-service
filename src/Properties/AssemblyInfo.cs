@@ -1,14 +1,21 @@
-﻿using System.Reflection;
+﻿/* PROJECT: MyAvatoolWebService (https://github.com/aprettycoolprogram/MyAvatoolWebService)
+ *    FILE: %Namespace%.AssemblyInfo.cs
+ * UPDATED: 1-13-2021-9:25 AM
+ * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
+ *          Copyright 2020 A Pretty Cool Program All rights reserved
+ */
+
+using System.Reflection;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following set of attributes. Change these attribute
 // values to modify the information associated with an assembly.
 [assembly: AssemblyTitle("MyAvatoolWebService")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("MyAvatoolWebService")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("A Pretty Cool Progam")]
 [assembly: AssemblyProduct("MyAvatoolWebService")]
-[assembly: AssemblyCopyright("Copyright ©  2021")]
+[assembly: AssemblyCopyright("Copyright 2021 A Pretty Cool Program")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -24,5 +31,5 @@ using System.Runtime.InteropServices;
 // Major Version Minor Version Build Number Revision
 //
 // You can specify all the values or you can default the Revision and Build Numbers by using the '*' as shown below:
-[assembly: AssemblyVersion("0.1.0.0")]
-[assembly: AssemblyFileVersion("0.1.0.0")]
+[assembly: AssemblyVersion("0.1.21013.1420")]
+[assembly: AssemblyFileVersion("0.1.21013.1420")]

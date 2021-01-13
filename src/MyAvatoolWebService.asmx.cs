@@ -1,6 +1,13 @@
-﻿using NTST.ScriptLinkService.Objects;
+﻿/* PROJECT: MyAvatoolWebService (https://github.com/aprettycoolprogram/MyAvatoolWebService)
+ *    FILE: MyAvatoolWebService.MyAvatoolWebService.asmx.cs
+ * UPDATED: 1-13-2021-9:31 AM
+ * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
+ *          Copyright 2020 A Pretty Cool Program All rights reserved
+ */
 
 using System.Web.Services;
+
+using NTST.ScriptLinkService.Objects;
 
 namespace MyAvatoolWebService
 {
@@ -9,7 +16,7 @@ namespace MyAvatoolWebService
     [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
     [System.ComponentModel.ToolboxItem(false)]
     // To allow this Web Service to be called from script, using ASP.NET AJAX, uncomment the following line. [System.Web.Script.Services.ScriptService]
-    public class MyAvatoolWebService : System.Web.Services.WebService
+    public class MyAvatoolWebService : WebService
     {
         [WebMethod]
         public string GetVersion()
