@@ -10,17 +10,13 @@
  * =====================
  *
  * -----------------------------------
- * THIS IS THE MAWS VERSION 0.1 BRANCH
+ * THIS IS THE MAWS VERSION 0.2 BRANCH
  * -----------------------------------
- * This sourcecode is for MAWS v0.1, a more complete blank template for MAWS, building on v0.0. It includes comments,
- * documentation changes, and some minor code/naming convention changes.
+ * This sourcecode is for MAWS v0.2, focusing on moving functionality from the Avatar Web Service:
+ *  https://github.com/spectrum-health-systems/Avatool-Web-Service
  *
  * You should definately be using the MAWS main branch in production environments:
  *  https://github.com/spectrum-health-systems/myavatool-web-service/tree/main
- *
- * MAWS v1.0 development can be found here:
- *  https://github.com/spectrum-health-systems/myavatool-web-service/tree/development-v1.0
- *
  *
  * ------------------
  * THERE IS A MANUAL!

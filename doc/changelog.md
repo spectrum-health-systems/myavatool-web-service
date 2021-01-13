@@ -1,5 +1,11 @@
 ﻿# MAWS: Changelog
 
+## v0.2
+> This branch focuses on moving functionality from the Avatar Web Service:
+
+#### 0.2.0.0 (2021-01-13)
+* `INFO` Initial commit of v0.2 branch
+
 ## v0.1
 > This branch is a more complete blank template for MAWS, building on v0.0. It includes:
 
