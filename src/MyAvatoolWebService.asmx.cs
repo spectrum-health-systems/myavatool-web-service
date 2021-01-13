@@ -1,6 +1,6 @@
 ﻿/* PROJECT: MyAvatoolWebService (https://github.com/aprettycoolprogram/MyAvatoolWebService)
  *    FILE: MyAvatoolWebService.MyAvatoolWebService.asmx.cs
- * UPDATED: 1-13-2021-11:14 AM
+ * UPDATED: 1-13-2021-11:22 AM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2020 A Pretty Cool Program All rights reserved
  */
@@ -80,16 +80,15 @@ namespace MyAvatoolWebService
         /// <param name="sentOptionObject2">The OptionObject2 object sent from myAvatar.</param>
         /// <param name="action">           The MAWS action perform.</param>
         /// <returns>A completed OptionObject2 that MAWS will return to myAvatar.</returns>
-        /// <remarks>This method is required by myAvatar. Do not remove.</remarks>
+        /// <remarks>
+        /// * This method is required by myAvatar. Do not remove.
+        /// * For detailed information about the RunScript() method, please see the MAWS manual: https://github.com/spectrum-health-systems/myavatool-web-service/blob/main/doc/man/manual-maws-calls.md#about-maws-method-calls
+        /// </remarks>
         [WebMethod]
         public OptionObject2 RunScript(OptionObject2 sentOptionObject2, string action)
         {
-            /* For more information about creating ScriptLink events, please see the MAWS manual:
-             *
-             *  https://github.com/spectrum-health-systems/myavatool-web-service/blob/main/doc/man/manual-maws-calls.md#about-maws-method-calls
-             */
-
-            /* This switch statement will call the appropriate "action" method call.
+            /* This switch statement calls the appropriate "action" method call, which will return an updated
+             * OptionObject2 object that is returned to myAvatar.
              *
              * If the requested action is not one of the supported methods, the OptionObject2 is returned without any
              * changes being made.
@@ -109,6 +108,9 @@ namespace MyAvatoolWebService
         /// <summary>This is a method call for a MAWS "action".</summary>
         /// <param name="sentOptionObject2">The OptionObject2 object sent from myAvatar.</param>
         /// <returns>A completed OptionObject2.</returns>
+        /// <remarks>
+        /// * For detailed information about the RunScript() method, please see the MAWS manual: https://github.com/spectrum-health-systems/myavatool-web-service/blob/main/doc/man/manual-maws-calls.md#about-maws-method-calls
+        /// </remarks>
         public static OptionObject2 MethodName(OptionObject2 sentOptionObject2)
         {
             /* While MAWS "actions" are completed by a seperate class, the "action" first passed to a local method in the
