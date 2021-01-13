@@ -1,6 +1,6 @@
 ﻿/* PROJECT: MyAvatoolWebService (https://github.com/aprettycoolprogram/MyAvatoolWebService)
  *    FILE: MyAvatoolWebService.MyAvatoolWebService.asmx.cs
- * UPDATED: 1-13-2021-10:03 AM
+ * UPDATED: 1-13-2021-10:38 AM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2020 A Pretty Cool Program All rights reserved
  */
@@ -9,9 +9,10 @@
  * ABOUT THIS SOURCECODE
  * =====================
  *
- * THIS IS THE DEVELOPMENT BRANCH
- * ------------------------------
- * This sourcecode is for the development branch of MAWS v1.0.
+ * THIS IS THE MAWS VERSION 0.1 BRANCH
+ * -----------------------------------
+ * This sourcecode is for MAWS v0.1, a more complete blank template for MAWS, building on v0.0. It includes comments and
+ * some minor naming convention changes.
  *
  * You should definately be using the MAWS main branch:
  *
@@ -62,17 +63,37 @@ namespace MyAvatoolWebService
         }
 
         /// <summary>Performs an MAWS action.</summary>
-        /// <param name="sentOptionObject">The OptionObject2 object sent from myAvatar.</param>
-        /// <param name="action">          The MAWS action perform.</param>
+        /// <param name="sentOptionObject2">The OptionObject2 object sent from myAvatar.</param>
+        /// <param name="action">           The MAWS action perform.</param>
         /// <returns>A completed OptionObject2 that MAWS will return to myAvatar.</returns>
         /// <remarks>This method is required by myAvatar. Do not remove.</remarks>
         [WebMethod]
-        public OptionObject2 RunScript(OptionObject2 sentOptionObject, string action)
+        public OptionObject2 RunScript(OptionObject2 sentOptionObject2, string action)
         {
             /* The main function of MAWS is to perform an "action" (i.e., a MAWS method call) using data that is received
              * from myAvatar via an OptionObject2.
              *
-             * Each "action" has a class with the same name. For example, the "VerifyInpatientAdmissionDate" action is
+             * The "MyAvatoolWebService.asmx.cs.RunScript()" method is the receiver of both the OptionObject2, and the
+             * requested action.
+             *
+             * Within MAWS, each "action" has:
+             *
+             *  1. A method in MyAvatoolWebService.asmx.cs, used to do any necessary pre-processing
+             *  2. A seperate class in MAWS, used to do the actual work for the action
+             *
+             * For example, if you call the "VerifyInpatientAdmissionDate" action, the following occurs:
+             *
+             *  1. The MyAvatoolWebService.asmx.cs.RunScript() method receives both the OptionObject2, and
+             *     the "VerifyInpatientAdmissionDate" action
+             *  2. The "MyAvatoolWebService.asmx.cs.VerifyInpatientAdmissionDate()" method is called, passing the
+             *     OptionObject2 object, as well as any necessary parameters
+             *  3. The "MyAvatoolWebService.asmx.cs.VerifyInpatientAdmissionDate()" method does any necessary
+             *     pre-processing
+             *  4. The "MyAvatoolWebService.asmx.cs.VerifyInpatientAdmissionDate()" method calls
+             *     the "MyAvatoolWebService.VerifyInpatientAdmissionDate.cs.<method-name>() method, which does the work
+             *     requested by the action
+             * 5.
+             *
              * performed by methods in the "VerifyInpatientAdmissionDate.cs" class.
              *
              * To perform an "action", you'll need to create a ScriptLink event in myAvatar that passes both an "action"
@@ -83,19 +104,31 @@ namespace MyAvatoolWebService
              *  https://github.com/spectrum-health-systems/myavatool-web-service/blob/main/doc/man/manual.md
              */
 
+            /* This switch statement will call the appropriate "action" method call.
+             *
+             * If the requested action is not one of the supported methods, the OptionObject2 is returned without any
+             * changes being made.
+             */
             switch(action)
             {
                 case "doSomething":
-                    return MethodName(sentOptionObject);
+                    return MethodName(sentOptionObject2);
 
                 default:
                     break;
             }
-            return sentOptionObject;
+
+            return sentOptionObject2;
         }
 
-        public static OptionObject2 MethodName(OptionObject2 sentOptionObject)
+        /// <summary>This is a method call for a MAWS "action".</summary>
+        /// <param name="sentOptionObject2">The OptionObject2 object sent from myAvatar.</param>
+        /// <returns>A completed OptionObject2.</returns>
+        public static OptionObject2 MethodName(OptionObject2 sentOptionObject2)
         {
+            /* While MAWS "actions" are completed by a seperate class, the "action" first passed to a local method in the
+             * event there is pre-processing to be done.
+             */
             return new OptionObject2();
         }
     }
