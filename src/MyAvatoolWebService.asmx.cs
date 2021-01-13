@@ -1,6 +1,6 @@
 ﻿/* PROJECT: MyAvatoolWebService (https://github.com/aprettycoolprogram/MyAvatoolWebService)
  *    FILE: MyAvatoolWebService.MyAvatoolWebService.asmx.cs
- * UPDATED: 1-13-2021-10:38 AM
+ * UPDATED: 1-13-2021-11:14 AM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2020 A Pretty Cool Program All rights reserved
  */
@@ -9,33 +9,47 @@
  * ABOUT THIS SOURCECODE
  * =====================
  *
+ * -----------------------------------
  * THIS IS THE MAWS VERSION 0.1 BRANCH
  * -----------------------------------
- * This sourcecode is for MAWS v0.1, a more complete blank template for MAWS, building on v0.0. It includes comments and
- * some minor naming convention changes.
+ * This sourcecode is for MAWS v0.1, a more complete blank template for MAWS, building on v0.0. It includes comments,
+ * documentation changes, and some minor code/naming convention changes.
  *
  * You should definately be using the MAWS main branch:
  *
  *  https://github.com/spectrum-health-systems/myavatool-web-service/tree/main
  *
- * THE COMMENTS
- * ------------
+ * ------------------
+ * THERE IS A MANUAL!
+ * ------------------
+ * I spend alot of time working on the manual, and update it with each release of MAWS. It covers pretty much anything
+ * you need to know about MAWS. I recommend you read it!
+ *
+ *  https://github.com/spectrum-health-systems/myavatool-web-service/blob/main/doc/man/manual.md
+ *
+ * ---------------------
+ * A NOTE ABOUT COMMENTS
+ * ---------------------
  * I've tried to make this sourcecode as human-readable as possible, but since other organizations may use MAWS I've
  * decided to heavily comment everything as well. I know this goes against best practice, however since Netsmart doesn't
  * do the best job of making everything *they* do transparent, I want to make it sure that *my* code is as clear as
  * possible as to what it does, and how it does it.
  *
- * If you fork MAWS for your own development, please do not remove the original comments (and add nice, detailed comments
- * for any functionality you add!).
+ * Each of the three different types of comments in MAWS start differently.
  *
- * THE MANUAL
- * ----------
- * I recommend that you read the MAWS manual:
+ *  1. ///
+ *     XML comments used by Visual Studio
  *
- *  https://github.com/spectrum-health-systems/myavatool-web-service/blob/main/doc/man/manual.md
+ *  2. //
+ *     Short comments intended to give additional information about a block of code.
  *
- * I spent alot of time working on the manual, and update it with each release of MAWS. It covers pretty much anything
- * you need to know about MAWS.
+ *  3. /*
+ *     Narrative comments when sourcecode concepts need to be explained in more detail.
+ *
+ * When possible, I link to the relevent parts of the MAWS manual.
+ *
+ * Please do not remove any of the sourcecode comments, and if you fork MAWS for your own development, please and add
+ * your own.
  */
 
 using System.Web.Services;
@@ -70,38 +84,9 @@ namespace MyAvatoolWebService
         [WebMethod]
         public OptionObject2 RunScript(OptionObject2 sentOptionObject2, string action)
         {
-            /* The main function of MAWS is to perform an "action" (i.e., a MAWS method call) using data that is received
-             * from myAvatar via an OptionObject2.
+            /* For more information about creating ScriptLink events, please see the MAWS manual:
              *
-             * The "MyAvatoolWebService.asmx.cs.RunScript()" method is the receiver of both the OptionObject2, and the
-             * requested action.
-             *
-             * Within MAWS, each "action" has:
-             *
-             *  1. A method in MyAvatoolWebService.asmx.cs, used to do any necessary pre-processing
-             *  2. A seperate class in MAWS, used to do the actual work for the action
-             *
-             * For example, if you call the "VerifyInpatientAdmissionDate" action, the following occurs:
-             *
-             *  1. The MyAvatoolWebService.asmx.cs.RunScript() method receives both the OptionObject2, and
-             *     the "VerifyInpatientAdmissionDate" action
-             *  2. The "MyAvatoolWebService.asmx.cs.VerifyInpatientAdmissionDate()" method is called, passing the
-             *     OptionObject2 object, as well as any necessary parameters
-             *  3. The "MyAvatoolWebService.asmx.cs.VerifyInpatientAdmissionDate()" method does any necessary
-             *     pre-processing
-             *  4. The "MyAvatoolWebService.asmx.cs.VerifyInpatientAdmissionDate()" method calls
-             *     the "MyAvatoolWebService.VerifyInpatientAdmissionDate.cs.<method-name>() method, which does the work
-             *     requested by the action
-             * 5.
-             *
-             * performed by methods in the "VerifyInpatientAdmissionDate.cs" class.
-             *
-             * To perform an "action", you'll need to create a ScriptLink event in myAvatar that passes both an "action"
-             * and an OptionObject2 to MAWS.
-             *
-             * For more information about creating ScriptLink events, please see the MAWS manual:
-             *
-             *  https://github.com/spectrum-health-systems/myavatool-web-service/blob/main/doc/man/manual.md
+             *  https://github.com/spectrum-health-systems/myavatool-web-service/blob/main/doc/man/manual-maws-calls.md#about-maws-method-calls
              */
 
             /* This switch statement will call the appropriate "action" method call.
