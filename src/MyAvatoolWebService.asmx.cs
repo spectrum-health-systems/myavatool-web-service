@@ -1,6 +1,6 @@
 ﻿/* PROJECT: MyAvatoolWebService (https://github.com/aprettycoolprogram/MyAvatoolWebService)
  *    FILE: MyAvatoolWebService.MyAvatoolWebService.asmx.cs
- * UPDATED: 1-13-2021-12:12 PM
+ * UPDATED: 1-14-2021-8:44 AM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2020 A Pretty Cool Program All rights reserved
  */
@@ -71,7 +71,7 @@ namespace MyAvatoolWebService
 
         /// <summary>Performs an MAWS action.</summary>
         /// <param name="sentOptionObject2">The OptionObject2 object sent from myAvatar.</param>
-        /// <param name="action">           The MAWS action perform (e.g., "VerifyInpatientAdmissionDate")</param>
+        /// <param name="action">           The MAWS action perform (e.g., "InptAdminDate-VerifyPreAdmin")</param>
         /// <returns>A completed OptionObject2 that MAWS will return to myAvatar.</returns>
         /// <remarks>This method is required by myAvatar. Do not remove.</remarks>
         [WebMethod]
@@ -80,32 +80,28 @@ namespace MyAvatoolWebService
             /* For detailed information about RunScript(), please see the MAWS manual:
              *  https://github.com/spectrum-health-systems/myavatool-web-service/blob/main/doc/man/manual-maws-calls.md#runscript
              */
+            var completedOptionObject2 = new OptionObject2();
 
-            /* This switch statement calls the appropriate "action" method call, which will return an updated
-             * OptionObject2 object that is returned to myAvatar, or a non-modified OptionObject2 if request is not a
-             * valid action.
+            /* Let's have a quick description of this code block here, and more in-depth in the manual.
              */
-            switch(action)
+            if(action.Contains("InptAdminDate"))
             {
-                case "doSomething":
-                    return MethodName(sentOptionObject2);
-
-                default:
-                    break;
+                completedOptionObject2 = InptAdminDate.Parser(sentOptionObject2, action);
+            }
+            else if(action.Contains("SubPolicyNumber"))
+            {
+                //completedOptionObject2 = SubPolicyNumber(sentOptionObject2, action);
+            }
+            else
+            {
+                completedOptionObject2 = sentOptionObject2;
             }
 
-            return sentOptionObject2;
-        }
+            // TODO completed OO2 stuff here?
 
-        /// <summary>This is a method call for a MAWS "action".</summary>
-        /// <param name="sentOptionObject2">The OptionObject2 object sent from myAvatar.</param>
-        /// <returns>A completed OptionObject2.</returns>
-        public static OptionObject2 MethodName(OptionObject2 sentOptionObject2)
-        {
-            /* For detailed information about MethodName(), please see the MAWS manual:
-             *  https://github.com/spectrum-health-systems/myavatool-web-service/blob/main/doc/man/manual-maws-calls.md#<method-name>
-             */
-            return new OptionObject2();
+            return completedOptionObject2;
         }
     }
 }
+
+// Outpatient = outpt

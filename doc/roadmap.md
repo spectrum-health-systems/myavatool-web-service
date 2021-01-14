@@ -5,6 +5,10 @@
     * updating MAWS
     * Disabling MAWS
 
+* Update manual to reflect the local methods being removed.
+    * Main asmx is just the required methods now
+    * All actions are external classes
+
 
 * documentation
     * other projects
