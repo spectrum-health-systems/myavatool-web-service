@@ -22,3 +22,5 @@
 
 * Other abbreviations:
     * Outpatient = outpt 
+
+* Do the $"{}" thing with strings
