@@ -21,7 +21,7 @@
 
 <h4 align="center">
 
-  ABOUT MAWS&nbsp;&bull;&nbsp;[INSTALLING MAWS](manual-installing-maws.md)&nbsp;&bull;&nbsp;[SCRIPTLINK](manual-scriptlink-events.md)&nbsp;&bull;&nbsp;[MAWS REQUESTS](manual-maws-requests.md)&nbsp;&bull;&nbsp;[CUSTOM MYAVATAR WEB SERVICES](manual-custom-web-services.md)
+  INTRODUCTION&nbsp;&bull;&nbsp;[INSTALLING MAWS](manual-installing-maws.md)&nbsp;&bull;&nbsp;[SCRIPTLINK](manual-scriptlink-events.md)&nbsp;&bull;&nbsp;[MAWS REQUESTS](manual-maws-requests.md)&nbsp;&bull;&nbsp;[CUSTOM MYAVATAR WEB SERVICES](manual-custom-web-services.md)
 
 </h4>
 
