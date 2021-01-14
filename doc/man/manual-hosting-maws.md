@@ -20,6 +20,12 @@
 
 ***
 
+## CONTENTS
+HOSTING MAWS
+USING ISS TO HOST MAWS
+UPDATING MAWS
+DISABLING MAWS
+
 # HOSTING MAWS
 In order to use MAWS, or any web service that interfaces with myAvatar™, it needs to be hosted at a location where myAvatar™ has access to them.
 
@@ -30,18 +36,16 @@ If your myAvatar™ environments are hosted by Netsmart, they can also host cust
 2. **Self-host MAWS**
 If you self-host your myAvatar™ environments, or would rather have complete control over your custom web services, you can self-host them. This section of the MAWS manual will offer some guidance on how to do that.
 
-### Before you begin
-A few things before you begin:
-* You can probably host MAWS using many web server/operating systems combinations, but these guidelines will focus on getting MAWS setup on Microsoft Windows Server with version 10 of [Microsoft Internet Information Services (IIS)](https://www.iis.net/).
-* These are the steps that I used - twice! - to host MAWS in our environment, but they are more of a *guideline* than a perfect set of instructions. It's quite possible that I didn't follow best-practices, or maybe I have something setup incorrectly, so please use caution when following these steps. And since I (hopefully?) won't have to do this again, this section will probably not be updated.
-* This document assumes that you already have a Windows Server with IIS up and running.
-* myAvatar™ can only communicate with web services via HTTPS://
+# USING IIS TO HOST MAWS
+You can probably host MAWS using many web server/operating systems combinations, but these guidelines will focus on getting MAWS setup on Microsoft IIS.
 
-### What I used
-* Microsoft Windows 2019
-* Microsoft Internet Information Services (IIS) version 10
+These are the steps that I used - twice! - to host MAWS in our environment, but they are more of a *guideline* than a perfect set of instructions. It's quite possible that I didn't follow best-practices, or maybe I have something setup incorrectly, so please use caution when following these steps. And since I (hopefully?) won't have to do this again, this section will probably not be updated.
 
-# CREATING AN APPLICATION POOL
+This document assumes that you already have a IIS version 10 up and running.
+
+Please keep in mind that myAvatar™ can only communicate with web services via HTTPS://
+
+## CREATING AN APPLICATION POOL
 I’m not sure this step is necessary, but it helps to make things a little more organized…maybe? I’m not an IIS expert, so I’m not sure.
 
 From within IIS:
@@ -61,7 +65,7 @@ I’ve named the application pool *AvatoolWebService*.
 
 </h6>
 
-# CREATING A NEW SITE
+## CREATING A NEW SITE
 From within IIS:
 1. Right-click the **Sites** connection
 2. Choose **Add Website**
@@ -80,7 +84,7 @@ From within IIS:
 
 </h6>
 
-# INSTALLING THE ASP.NET ROLE
+## INSTALLING THE ASP.NET ROLE
 ASP.NET is required by Web Services, so add the ASP.NET role to IIS.
 
 Once that’s done, your IIS roles should look like this:
@@ -94,7 +98,7 @@ Once that’s done, your IIS roles should look like this:
 
 </h6>
 
-# DISABLING THE DEFAULT SITE
+## DISABLING THE DEFAULT SITE
 Might as well do this? Probably?
 
 From within IIS:
@@ -102,7 +106,7 @@ From within IIS:
 2. Choose **Manage Web Site**
 3. Choose **Stop**
 
-# VERIFYING THE NEW SITE
+## VERIFYING THE NEW SITE
 Your AvatoolWebService site should look like this:
 
 <h6 align="center">
@@ -114,7 +118,7 @@ Your AvatoolWebService site should look like this:
 
 </h6>
 
-# ENABLING DIRECTORY BROWSING
+## ENABLING DIRECTORY BROWSING
 From within IIS:
 1. Double-click on the **Directory Browsing** icon
 2. Choose **Enable**
@@ -131,10 +135,20 @@ From within IIS:
 
 At this point, you should be able to point a browser to your website, and see the landing page.
 
+
+
+
+
+
+
+
+
+
 ***
 
 <h5 align="center">
 
-  [ABOUT MAWS](manual.md)&nbsp;&bull;&nbsp;HOSTING MAWS&nbsp;&bull;&nbsp;[IMPORTING MAWS](manual-importing-maws.md)&nbsp;&bull;&nbsp;[SCRIPTLINK EVENTS](manual-scriptlink-events.md)&nbsp;&bull;&nbsp;[MAWS CALLS](manual-maws-calls.md)&nbsp;&bull;&nbsp;[CUSTOM MYAVATAR WEB SERVICES](manual-custom-myavatar-web-services.md)
+  [ABOUT MAWS](manual.md)&nbsp;&bull;&nbsp;<b>HOSTING MAWS</b>&nbsp;&bull;&nbsp;[IMPORTING MAWS](manual-importing-maws.md)&nbsp;&bull;&nbsp;[SCRIPTLINK EVENTS](manual-scriptlink-events.md)&nbsp;&bull;&nbsp;[MAWS REQUESTS](manual-maws-requests.md)&nbsp;&bull;&nbsp;[CUSTOM MYAVATAR WEB SERVICES](manual-custom-myavatar-web-services.md)
+
 
 </h5>
