@@ -19,3 +19,6 @@
 * documentation
     * other projects
     * OO2
+
+* Other abbreviations:
+    * Outpatient = outpt 

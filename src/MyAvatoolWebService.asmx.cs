@@ -1,6 +1,6 @@
 ﻿/* PROJECT: MyAvatoolWebService (https://github.com/aprettycoolprogram/MyAvatoolWebService)
  *    FILE: MyAvatoolWebService.MyAvatoolWebService.asmx.cs
- * UPDATED: 1-14-2021-10:29 AM
+ * UPDATED: 1-14-2021-10:55 AM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2020 A Pretty Cool Program All rights reserved
  */
@@ -64,7 +64,7 @@ namespace MyAvatoolWebService
         public string GetVersion()
         {
             /* For detailed information about GetVersion(), please see the MAWS manual:
-             *  https://github.com/spectrum-health-systems/myavatool-web-service/blob/main/doc/man/manual-maws-calls.md#getversion
+             *  https://
              */
             return "VERSION 1.0";
         }
@@ -78,7 +78,7 @@ namespace MyAvatoolWebService
         public OptionObject2 RunScript(OptionObject2 sentOptionObject2, string mawsRequest)
         {
             /* For detailed information about RunScript(), please see the MAWS manual:
-             *  https://github.com/spectrum-health-systems/myavatool-web-service/blob/main/doc/man/manual-maws-calls.md#runscript
+             *  https:
              */
             var workingOptionObject2 = new OptionObject2();
 
