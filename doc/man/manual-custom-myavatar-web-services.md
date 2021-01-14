@@ -573,3 +573,31 @@ Once you have imported a custom web service into myAvatar™, it's there to stay
   [ABOUT MAWS](manual.md)&nbsp;&bull;&nbsp;[HOSTING MAWS](manual-hosting-maws.md)&nbsp;&bull;&nbsp;[IMPORTING MAWS](manual-importing-maws.md)&nbsp;&bull;&nbsp;[SCRIPTLINK EVENTS](manual-scriptlink-events.md)&nbsp;&bull;&nbsp;[MAWS CALLS](manual-maws-calls.md)&nbsp;&bull;&nbsp;CUSTOM MYAVATAR WEB SERVICES
 
 </h5>
+
+
+
+
+
+
+
+
+
+
+
+# STANDARD METHODS
+These are the standard methods that are required by myAvatar.
+
+## GetVersion()
+> This method is required by myAvatar, and cannot be removed from MAWS.
+
+### About `GetVersion()`:
+* Returns the MAWS version string (e.g., "Version 1.0").
+* The version that is returned should be the same as the development branch. For example, if you are developing version 2.1 of MAWS, the `GetVersion()` method should return "Version 2.1", even if the actual version of the sourcecode is different.
+
+## RunScript()
+> This method is required by myAvatar, and cannot be removed from MAWS.
+
+### About `RunScript()`:
+* Performs a MAWS action (e.g., "Version 1.0").
+* It's the only MAWS method that myAvatar works with directly, both calling the action myAvatar requests, and returning the result of that action to myAvatar.
+* Receives an OptionObject2 object and an "action" string from myAvatar, then uses a switch statement to pass the OptionObject2 object and action to the local method that will process the action. If an invalid action is passed, the the OptionObject2 is returned without any changes being made.

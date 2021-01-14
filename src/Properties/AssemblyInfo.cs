@@ -1,6 +1,6 @@
 ﻿/* PROJECT: MyAvatoolWebService (https://github.com/aprettycoolprogram/MyAvatoolWebService)
  *    FILE: %Namespace%.AssemblyInfo.cs
- * UPDATED: 1-13-2021-9:25 AM
+ * UPDATED: 1-13-2021-12:34 PM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2020 A Pretty Cool Program All rights reserved
  */
@@ -31,5 +31,5 @@ using System.Runtime.InteropServices;
 // Major Version Minor Version Build Number Revision
 //
 // You can specify all the values or you can default the Revision and Build Numbers by using the '*' as shown below:
-[assembly: AssemblyVersion("0.1.21013.1712")]
-[assembly: AssemblyFileVersion("0.1.21013.1712")]
+[assembly: AssemblyVersion("0.2.21014.1544")]
+[assembly: AssemblyFileVersion("0.2.21014.1544")]
