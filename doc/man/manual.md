@@ -27,6 +27,7 @@
 
 ***
 
+# INTRODUCTION
 [Netsmart's myAvatar™](https://www.ntst.com/Solutions-and-Services/Offerings/myAvatar) is a behavioral health EHR that offers a recovery-focused suite of solutions that leverage real-time analytics and clinical decision support to drive value-based care.
 
 While myAvatar™ is a robust platform, like most things in life (except [Heroes of Might and Magic III](https://www.gog.com/game/heroes_of_might_and_magic_3_complete_edition)), it isn't perfect.
@@ -42,11 +43,3 @@ The myAvatool Web Service (**MAWS**) is one such custom web service which includ
 
 ## MAWS REQUIREMENTS
 * A location to host MAWS that is available to your my myAvatar™ environments via HTTPS
-
-## ABOUT THIS MANUAL
-This manual will cover:
-  * [Hosting](manual-hosting-maws.md) MAWS for use in your myAvatar™ environments
-  * [Importing](manual-importing-maws.md) MAWS into your myAvatar™ environments
-  * How to use and customize the built in [MAWS requests](manual-maws-requests.md) in your myAvatar™ environments
-  * How to create [ScriptLink events](manual-scriptlink-events.md) to make MAWS requests
-  * How to [create your own](manual-custom-myavatar-web-services.md) custom web service for myAvatar™
