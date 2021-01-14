@@ -25,17 +25,14 @@ In order to use MAWS, or any web service that interfaces with myAvatar™, it ne
 
 There are two options for hosting MAWS:
 
-1. **Have Netsmart host MAWS**<br>
-If your myAvatar™ environments are hosted by Netsmart, they can also host custom web services, including MAWS. If you choose to have Netsmart host MAWS, you can skip this section of the manual, and go straight to [importing MAWS](#importing-maws).
-<br>
-*Please note: MAWS has not been tested in a Netsmart-hosted environment.*
-
-2. **Self-host MAWS**<br> 
+1. **Have Netsmart host MAWS**
+If your myAvatar™ environments are hosted by Netsmart, they can also host custom web services, including MAWS. If you choose to have Netsmart host MAWS, you can skip this section of the manual, and go straight to [importing MAWS](#importing-maws). Please keep in mind that MAWS has not been tested in a Netsmart-hosted environment.
+2. **Self-host MAWS**
 If you self-host your myAvatar™ environments, or would rather have complete control over your custom web services, you can self-host them. This section of the MAWS manual will offer some guidance on how to do that.
 
 ### Before you begin
 A few things before you begin:
-* I'm sure you can host MAWS, and other myAvatar™ custom web services, using other web servers like [Apache](https://httpd.apache.org/)/[NGINX](https://nginx.org/en/), and non-Windows operating systems. These guidelines focus on getting MAWS setup on Microsoft Windows Server with version 10 of [Microsoft Internet Information Services (IIS)]().
+* You can probably host MAWS using many web server/operating systems combinations, but these guidelines will focus on getting MAWS setup on Microsoft Windows Server with version 10 of [Microsoft Internet Information Services (IIS)](https://www.iis.net/).
 * These are the steps that I used - twice! - to host MAWS in our environment, but they are more of a *guideline* than a perfect set of instructions. It's quite possible that I didn't follow best-practices, or maybe I have something setup incorrectly, so please use caution when following these steps. And since I (hopefully?) won't have to do this again, this section will probably not be updated.
 * This document assumes that you already have a Windows Server with IIS up and running.
 * myAvatar™ can only communicate with web services via HTTPS://
