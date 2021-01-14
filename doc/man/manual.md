@@ -46,8 +46,8 @@ The myAvatool Web Service (**MAWS**) is one such custom web service which includ
 
 ## ABOUT THIS MANUAL
 This manual will cover:
-  * [Hosting](manual-hosting-maws.md) MAWS for use in your myAvatar™ environment(s)
-  * [Importing](manual-importing-maws.md) MAWS into your myAvatar™ environment(s)
-  * How to create [ScriptLink events](manual-scriptlink-events.md) to utilize MAWS
-  * How to use the built in MAWS [requests](manual-maws-requests.md), including customizing them for your organization
+  * [Hosting](manual-hosting-maws.md) MAWS for use in your myAvatar™ environments
+  * [Importing](manual-importing-maws.md) MAWS into your myAvatar™ environments
+  * How to use and customize the built in [MAWS requests](manual-maws-requests.md) in your myAvatar™ environments
+  * How to create [ScriptLink events](manual-scriptlink-events.md) to make MAWS requests
   * How to [create your own](manual-custom-myavatar-web-services.md) custom web service for myAvatar™
