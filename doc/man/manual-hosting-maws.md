@@ -21,10 +21,13 @@
 ***
 
 # HOSTING MAWS
-Web services that interface with myAvatar™ need to be hosted at a location where myAvatar™ can access them, and MAWS is no exception. There are two options for hosting MAWS:
+In order to use MAWS, or any web service that interfaces with myAvatar™, it needs to be hosted at a location where myAvatar™ has access to them.
+
+There are two options for hosting MAWS:
 
 1. **Have Netsmart host MAWS**<br>
-If your myAvatar™ environments are hosted by Netsmart, you can have Netsmart - for an additional cost - host MAWS (and other custom web services) as well. If you choose to have Netsmart host MAWS, you can skip this section of the manual, and go straight to the section that discusses [importing MAWS](#importing-maws) into your myAvatar™ environment(s).<br><br>
+If your myAvatar™ environments are hosted by Netsmart, they can also host custom web services, including MAWS. If you choose to have Netsmart host MAWS, you can skip this section of the manual, and go straight to [importing MAWS](#importing-maws).
+<br>
 *Please note: MAWS has not been tested in a hosted environment, just self-hosted!*
 
 2. **Self-host MAWS**<br> 
@@ -38,6 +41,8 @@ A few things before you begin:
 * These are the steps that I used - twice! - to host MAWS in our environment, but they are more of a *guideline* than a perfect set of instructions. It's quite possible that I didn't follow best-practices, or maybe I have something setup incorrectly, so please use caution when following these steps. And since I (hopefully?) won't have to do this again, this section will probably not be updated.
 
 * This document assumes that you already have a Windows Server with IIS up and running.
+
+* HTTPS
 
 ### What I used
 * Microsoft Windows 2019
