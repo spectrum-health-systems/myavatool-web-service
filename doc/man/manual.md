@@ -38,13 +38,16 @@ The myAvatool Web Service (**MAWS**) is one such custom web service which includ
 
 ## MAWS FEATURES
 * Several built-in tools and utilities for use with myAvatar™
+* Does not require Java to be installed
 * A solid foundation to build additional custom tools and utilities
 
 ## MAWS REQUIREMENTS
-* A location to host the Avatool Web Service
-* Access to your myAvatar™ environments from the Avatool Web Service via HTTPS
+* A location to host MAWS that is available to your my myAvatar™ environments via HTTPS
 
 ## ABOUT THIS MANUAL
-Some components of the Avatool Web Service will need to be customized before they can be used at your organization.
-
-These components, and the customization that they require, are detailed various documents in this repository. You'll know what needs to be changed, and what it needs to be changed to, as long as you follow the instructions
+This manual will cover:
+  * [Hosting](manual-hosting-maws.md) MAWS for use in your myAvatar™ environment(s)
+  * [Importing](manual-importing-maws.md) MAWS into your myAvatar™ environment(s)
+  * How to create [ScriptLink events](manual-scriptlink-events.md) to utilize MAWS
+  * How to use the built in MAWS [requests](manual-maws-requests.md), including customizing them for your organization
+  * How to [create your own](manual-custom-myavatar-web-services.md) custom web service for myAvatar™
