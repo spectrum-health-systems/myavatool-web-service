@@ -76,7 +76,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="InptAdminDate.cs" />
+    <Compile Include="InptAdmitDate.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -3,8 +3,15 @@
 ## v0.2
 > This branch focuses on moving functionality from the Avatar Web Service:
 
+#### 0.2.21014.1544 (2021-01-14)
+* `ADDED` MyAvatoolWebService.InptAdminDate.cs.Parser() method
+* `ADDED` MyAvatoolWebService.InptAdminDate.cs.VerifyPreAdmitDate() method
+* `MODIFIED` Requests in the RunScript() method now uses "workingOptionObject2" instead of "completedOptionObject2" because I want to make sure it's very clear as to what MAWS is sent ("sentOptionObject2"), what it works with ("workingOptionObject2"), and what it returns to myAvatar ("completedOptionObject2").
+* `RENAMED` "MyAvatoolWebService.InptAdminDate.cs" to "MyAvatoolWebService.InptAdmitDate.cs" because this request will do things with the inpatient *admission* date, and the "Admin" abbreviation indicates *administration*.
+* `RENAMED` "action" to "mawsRequest" because going forward ScriptLink events will be passing a "request-action" (e.g., "InptAdmitDate-VerifyPreAdmitDate")
+* `UPDATED` Documentation
+
 #### 0.2.21014.1425 (2021-01-14)
-* `INFO` I'm making some significant changes in the way things work.
 * `REMOVED` Local methods to pre-process an action (i.e., "MyAvatoolWebService.asmx.cs.InptAdminDate"). The pre-processing is now going to be done in the action class, in a method named "Parser()" (e.g., "MyAvatoolWebService.InptAdminDate.Parser()").
 * `UPDATED` Documentation
 
@@ -34,3 +41,13 @@
 
 #### 0.0.0.0 (2021-01-12)
 * `INFO` This is a blank MAWS template.
+
+
+
+* `INFO`
+* `ADDED`
+* `MODIFIED`
+* `RENAMED`
+* `UPDATED`
+* `DEPRECIATED`
+* `REMOVED`

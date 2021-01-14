@@ -9,6 +9,12 @@
     * Main asmx is just the required methods now
     * All actions are external classes
 
+* Man
+    * InptAdmitDate.cs
+        * Parser, DefineFieldIds, etc all under main
+
+* Logging
+
 
 * documentation
     * other projects

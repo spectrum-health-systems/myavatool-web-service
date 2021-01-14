@@ -1,6 +1,6 @@
 ﻿/* PROJECT: MyAvatoolWebService (https://github.com/aprettycoolprogram/MyAvatoolWebService)
  *    FILE: MyAvatoolWebService.MyAvatoolWebService.asmx.cs
- * UPDATED: 1-14-2021-8:44 AM
+ * UPDATED: 1-14-2021-10:29 AM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2020 A Pretty Cool Program All rights reserved
  */
@@ -71,35 +71,36 @@ namespace MyAvatoolWebService
 
         /// <summary>Performs an MAWS action.</summary>
         /// <param name="sentOptionObject2">The OptionObject2 object sent from myAvatar.</param>
-        /// <param name="action">           The MAWS action perform (e.g., "InptAdminDate-VerifyPreAdmin")</param>
+        /// <param name="mawsRequest">      The MAWS action perform (e.g., "InptAdmitDate-VerifyPreAdmin")</param>
         /// <returns>A completed OptionObject2 that MAWS will return to myAvatar.</returns>
         /// <remarks>This method is required by myAvatar. Do not remove.</remarks>
         [WebMethod]
-        public OptionObject2 RunScript(OptionObject2 sentOptionObject2, string action)
+        public OptionObject2 RunScript(OptionObject2 sentOptionObject2, string mawsRequest)
         {
             /* For detailed information about RunScript(), please see the MAWS manual:
              *  https://github.com/spectrum-health-systems/myavatool-web-service/blob/main/doc/man/manual-maws-calls.md#runscript
              */
-            var completedOptionObject2 = new OptionObject2();
+            var workingOptionObject2 = new OptionObject2();
 
             /* Let's have a quick description of this code block here, and more in-depth in the manual.
              */
-            if(action.Contains("InptAdminDate"))
+            if(mawsRequest.Contains("InptAdmitDate"))
             {
-                completedOptionObject2 = InptAdminDate.Parser(sentOptionObject2, action);
+                workingOptionObject2 = InptAdmitDate.Parser(sentOptionObject2, mawsRequest);
             }
-            else if(action.Contains("SubPolicyNumber"))
+            else if(mawsRequest.Contains("SubPolicyNumber"))
             {
-                //completedOptionObject2 = SubPolicyNumber(sentOptionObject2, action);
+                //completedOptionObject2 = SubPolicyNumber(sentOptionObject2, mawsRequest);
             }
             else
             {
-                completedOptionObject2 = sentOptionObject2;
+                workingOptionObject2 = sentOptionObject2;
             }
 
             // TODO completed OO2 stuff here?
+            OptionObject2 completedOptionObject2 = workingOptionObject2;
 
-            return completedOptionObject2;
+            return workingOptionObject2;
         }
     }
 }

@@ -14,44 +14,48 @@
 
 <h5 align="center">
 
-  [ABOUT MAWS](manual.md)&nbsp;&bull;&nbsp;[HOSTING MAWS](manual-hosting-maws.md)&nbsp;&bull;&nbsp;[IMPORTING MAWS](manual-importing-maws.md)&nbsp;&bull;&nbsp;[SCRIPTLINK EVENTS](manual-scriptlink-events.md)&nbsp;&bull;&nbsp;MAWS CALLS&nbsp;&bull;&nbsp;[CUSTOM MYAVATAR WEB SERVICES](manual-custom-myavatar-web-services.md)
+  [ABOUT MAWS](manual.md)&nbsp;&bull;&nbsp;[HOSTING MAWS](manual-hosting-maws.md)&nbsp;&bull;&nbsp;[IMPORTING MAWS](manual-importing-maws.md)&nbsp;&bull;&nbsp;[SCRIPTLINK EVENTS](manual-scriptlink-events.md)&nbsp;&bull;&nbsp;MAWS REQUESTS&nbsp;&bull;&nbsp;[CUSTOM MYAVATAR WEB SERVICES](manual-custom-myavatar-web-services.md)
 
 </h5>
 
 ***
 
-# ABOUT MAWS METHOD CALLS
-The main function of MAWS is to perform an `action` (i.e., a MAWS method call) using data that is received from myAvatar via an *OptionObject2*.
- 
-Each `action` has a *class* with the same name. For example, the `VerifyInpatientAdmissionDate` action is performed by methods in the *VerifyInpatientAdmissionDate.cs* class.
+# ABOUT MAWS REQUESTS
+The main function of MAWS is to perform an `mawsRequest` against data received from myAvatar via an *OptionObject2*.
 
-To perform an `action`, you'll need to create a ScriptLink event in myAvatar that passes both an "action" and an *OptionObject2* to MAWS. For more information about creating ScriptLink events, please see the MAWS [manual](manual-scriptlink-events).
+# ACTIONS AND COMMANDS
+A `mawsRequest` is comprised of an "action" and a "command", which are seperated by a "-" like so:
+```
+action-command
+```
 
-# STANDARD METHODS
-These are the standard methods that are required by myAvatar.
+or more specifically:
+```
+InptAdmitDate-VerifyPreAdmitDate
+```
 
-## GetVersion()
-> This method is required by myAvatar, and cannot be removed from MAWS.
+Here are some examples of a `mawsRequest`:
+* Verify that a clients pre-admission date is the same as the system date (`InptAdmitDate-VerifyPreAdmitDate`).
+* Remove leading/trailing whitespace from a subscriber policy number (`SubPolicyNumber-TrimWhitespace`)
 
-### What the `GetVersion()` method does:
-* Returns the MAWS version string (e.g., "Version 1.0").
+## Actions are classes
+Each `mawsRequest` action has a *class* with the same name. For example, the *InptAdmitDate.cs* class.
 
-The version should be the same as the development branch. For example, if you are developing version 2.1 of MAWS, the `GetVersion()` method should return "Version 2.1", even if the actual version of the sourcecode is different.
+## Commands are methods
 
-## RunScript()
-> This method is required by myAvatar, and cannot be removed from MAWS.
+These classes contain methods that mirror the `mawsRequest` commands. For example, the following `mawsRequest`:
 
-### What the `RunScript()` method does:
-* Performs a MAWS action (e.g., "Version 1.0").
+"InptAdmitDate-VerifyPreAdmitDate"
 
-The `RunScript()` method is the only MAWS method that myAvatar works with directly. The `RunScript()` method both calls the action myAvatar requests, and returns the result of that action to myAvatar.
+Would be carried out by the "VerifyPreAdmitDate()" method in the "InptAdmitDate.cs" class.
 
-The `RunScript()` method receives an OptionObject2 object and an "action" string from myAvatar, then uses a switch statement to pass the OptionObject2 object and action to the local method that will process the action.
+## How all of this relates to myAvatar
+To perform an `mawsRequest`, you'll need to create a ScriptLink event in myAvatar that passes both an "action" and an *OptionObject2* to MAWS. For more information about creating ScriptLink events, please see the MAWS [manual](manual-scriptlink-events).
 
-If an invalid action is passed, the the OptionObject2 is returned without any changes being made.
-
-# ACTIONS
-These are the valid actions that MAWS can do.
+# VALID MAWS REQUESTS
+* These are the valid actions that MAWS can do.
+* Each action is in it's own, seperate class that does the work.
+* Each action class has a Parser() method
 
 Each "action" has:
 1. A method in MyAvatoolWebService.asmx.cs, used to do any necessary pre-processing
@@ -68,6 +72,9 @@ https://github.com/spectrum-health-systems/myavatool-web-service/blob/main/doc/m
 
 ## VerifyInpatientAdmissionDate
 Verify that the Inpatient Admission Date is the same as the system current date.
+
+InptAdmitDate-VerifyPreAdmit
+
 
 This method verifies that an existing Pre-Admission date is the same as the system date.
 
