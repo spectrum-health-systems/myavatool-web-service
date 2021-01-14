@@ -1,7 +1,10 @@
 ﻿# MAWS: Changelog
 
+## v0.3
+> This branch focuses on updating documentation and comments.
+
 ## v0.2
-> This branch focuses on moving functionality from the Avatar Web Service:
+> This branch focuses on moving functionality from the Avatar Web Service.
 
 #### v0.2.21014.1544 (2021-01-14)
 * `ADDED` OptionObjectMaintenance.cs
