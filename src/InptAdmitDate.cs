@@ -1,6 +1,6 @@
 ﻿/* PROJECT: MyAvatoolWebService (https://github.com/aprettycoolprogram/MyAvatoolWebService)
  *    FILE: MyAvatoolWebService.InptAdmitDate.cs
- * UPDATED: 2-4-2021-10:08 AM
+ * UPDATED: 2-5-2021-11:38 AM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2020 A Pretty Cool Program All rights reserved
  */
@@ -66,8 +66,8 @@ namespace MyAvatoolWebService
             var foundTypeOfAdmissionField             = false;
             var foundPreAdmitToAdmissionDateField     = false;
 
-            /* We will loop through each field of every form in sentOptionObject2, and do something special if we land on
-             * the "typeOfAdmissionField" or "preAdmitToAdmissionDateField".
+            /* We will loop through each field of every form in sentOptionObject2, and do something special if we land
+             * on the "typeOfAdmissionField" or "preAdmitToAdmissionDateField".
              */
             foreach(FormObject form in sentOptionObject2.Forms)
             {
@@ -76,7 +76,7 @@ namespace MyAvatoolWebService
                     switch(field.FieldNumber)
                     {
                         case typeOfAdmissionField:
-                            typeOfAdmission = int.Parse(field.FieldValue);                                               // TODO Convert.ToInt()?
+                            typeOfAdmission = int.Parse(field.FieldValue);                                              // TODO Convert.ToInt()?
                             foundPreAdmitToAdmissionDateField = true;
                             break;
 
@@ -98,15 +98,15 @@ namespace MyAvatoolWebService
                 }
             }
 
-            var systemDate = new DateTime(1900, 1, 1);                                                     // TODO Why not define this in the line below?
+            var systemDate = new DateTime(1900, 1, 1);                                                    // TODO Why not define this in the line below?
             systemDate = DateTime.Today;
             var errMsgBody = string.Empty;
             var errMsgCode = 0;
 
             /* If the "Admission Type" is set to "Pre-Admission" and the "Pre-Admission Date" is not the same as the
-             * system date, the errMsgCode will be set to "1", and a pop-up will notify the user that they need to modify
-             * the Pre-Admission Date field to equal the system time, and the user will be returned to the form to modify
-             * the Pre-Admission Date.
+             * system date, the errMsgCode will be set to "1", and a pop-up will notify the user that they need to
+             * modify the Pre-Admission Date field to equal the system time, and the user will be returned to the form
+             * to modify the Pre-Admission Date.
              *
              * If you just want to warn the user that the "Pre-Admission Date" is not the same as the  system date (and
              * not force them to modify it), you can change the following line of code:
