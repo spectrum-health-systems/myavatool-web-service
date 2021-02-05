@@ -46,3 +46,13 @@ E:\GitHub\spectrumhealthsystems\myavatool-web-service\src\NTST.ScriptLinkService
 E:\GitHub\spectrumhealthsystems\myavatool-web-service\src\NTST.ScriptLinkService.Objects\obj\Debug\NTST.ScriptLinkService.Objects.dll
 E:\GitHub\spectrumhealthsystems\myavatool-web-service\src\NTST.ScriptLinkService.Objects\obj\Debug\NTST.ScriptLinkService.Objects.xml
 E:\GitHub\spectrumhealthsystems\myavatool-web-service\src\NTST.ScriptLinkService.Objects\obj\Debug\NTST.ScriptLinkService.Objects.pdb
+C:\Users\chris.banwarth\GitHub\Spectrum\myavatool-web-service\src\NTST.ScriptLinkService.Objects\bin\Debug\NTST.ScriptLinkService.Objects.dll
+C:\Users\chris.banwarth\GitHub\Spectrum\myavatool-web-service\src\NTST.ScriptLinkService.Objects\bin\Debug\NTST.ScriptLinkService.Objects.pdb
+C:\Users\chris.banwarth\GitHub\Spectrum\myavatool-web-service\src\NTST.ScriptLinkService.Objects\bin\Debug\NTST.ScriptLinkService.Objects.xml
+C:\Users\chris.banwarth\GitHub\Spectrum\myavatool-web-service\src\NTST.ScriptLinkService.Objects\obj\Debug\NTST.ScriptLinkService.Objects.vbprojAssemblyReference.cache
+C:\Users\chris.banwarth\GitHub\Spectrum\myavatool-web-service\src\NTST.ScriptLinkService.Objects\obj\Debug\NTST.ScriptLinkService.Objects.Resources.resources
+C:\Users\chris.banwarth\GitHub\Spectrum\myavatool-web-service\src\NTST.ScriptLinkService.Objects\obj\Debug\NTST.ScriptLinkService.Objects.vbproj.GenerateResource.cache
+C:\Users\chris.banwarth\GitHub\Spectrum\myavatool-web-service\src\NTST.ScriptLinkService.Objects\obj\Debug\NTST.ScriptLinkService.Objects.vbproj.CoreCompileInputs.cache
+C:\Users\chris.banwarth\GitHub\Spectrum\myavatool-web-service\src\NTST.ScriptLinkService.Objects\obj\Debug\NTST.ScriptLinkService.Objects.dll
+C:\Users\chris.banwarth\GitHub\Spectrum\myavatool-web-service\src\NTST.ScriptLinkService.Objects\obj\Debug\NTST.ScriptLinkService.Objects.xml
+C:\Users\chris.banwarth\GitHub\Spectrum\myavatool-web-service\src\NTST.ScriptLinkService.Objects\obj\Debug\NTST.ScriptLinkService.Objects.pdb
