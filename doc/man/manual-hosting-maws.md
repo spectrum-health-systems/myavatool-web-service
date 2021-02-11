@@ -14,7 +14,7 @@
 
 <h5 align="center">
 
-  [INTRODUCTION](manual.md)&nbsp;&bull;&nbsp;[INSTALLING](manual-installing-maws.md)&nbsp;&bull;&nbsp;[USING](manual-using-maws.md)&nbsp;&bull;&nbsp;[CUSTOM WEB SERVICES](manual-custom-web-services.md)
+  [INTRODUCTION](manual.md)&nbsp;&bull;&nbsp;[HOSTING MAWS](manual-hosting-maws.md)&nbsp;&bull;&nbsp;[IMPORTING MAWS](manual-importing-maws.md)&nbsp;&bull;&nbsp;[USING MAWS](manual-using-maws.md)&nbsp;&bull;&nbsp;[CUSTOM MYAVATAR WEB SERVICES](manual-custom-myavatar-web-services.md)
 
 </h5>
 
@@ -22,7 +22,7 @@
 
 ### CONTENTS
 [HOSTING OVERVIEW](#hosting-overview)<br>
-[USING IIS TO HOST MAWS](#using-iis-to-host-maws)<br>
+[USING MICROSOFT IIS TO HOST MAWS](#using-iis-to-host-maws)<br>
 [INSTALLING MAWS](#updating-maws)<br>
 [UPDATING MAWS](#updating-maws)<br>
 [DISABLING MAWS](#disabling-maws)<br>
@@ -37,7 +37,7 @@ If your myAvatar™ environments are hosted by Netsmart, they can also host cust
 2. **Self-host MAWS**
 If you self-host your myAvatar™ environments, or would rather have complete control over your custom web services, you can self-host them. This section of the MAWS manual will offer some guidance on how to do that.
 
-# USING IIS TO HOST MAWS
+# USING MICROSOFT IIS TO HOST MAWS
 You can probably host MAWS using many web server/operating systems combinations, but these guidelines will focus on getting MAWS setup on Microsoft IIS.
 
 These are the steps that I used - twice! - to host MAWS in our environment, but they are more of a *guideline* than a perfect set of instructions. It's quite possible that I didn't follow best-practices, or maybe I have something setup incorrectly, so please use caution when following these steps. And since I (hopefully?) won't have to do this again, this section will probably not be updated.
