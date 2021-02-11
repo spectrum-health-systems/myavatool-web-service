@@ -48,4 +48,4 @@ The myAvatool Web Service (**MAWS**) is one such custom web service which includ
 This manual will walk you through the requirements of using MAWS in your environments, which include:
 * [Hosting MAWS]() on a web server that you myAvatar™ environments have access to
 * [Importing MAWS]() into your myAvatar™ environments
-* How to [Use MAWS]() in your myAvatar™ environments.
+* How to [use MAWS]() in your myAvatar™ environments.

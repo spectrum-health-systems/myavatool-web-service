@@ -21,19 +21,14 @@
 ***
 
 ### CONTENTS
-[INSTALLATION OVERVIEW](#installation-overview)<br>
+[HOSTING OVERVIEW](#hosting-overview)<br>
 [USING IIS TO HOST MAWS](#using-iis-to-host-maws)<br>
 [INSTALLING MAWS](#updating-maws)<br>
 [UPDATING MAWS](#updating-maws)<br>
 [DISABLING MAWS](#disabling-maws)<br>
 
 # INSTALLATION OVERVIEW
-In order to use MAWS, or any web service that interfaces with myAvatar™:
-* The web service needs to be ***hosted*** at a location that myAvatar™ has access to
-* The web services needs to be ***imported*** into myAvatar™ 
-
-### Hosting MAWS
-In order to use MAWS, or any web service that interfaces with myAvatar™, it needs to be hosted at a location where myAvatar™ has access to them.
+In order to use any web service that interfaces with myAvatar™, that web service needs to be ***hosted*** at a location that myAvatar™ has access to
 
 There are two options for hosting MAWS:
 
