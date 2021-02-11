@@ -67,7 +67,7 @@ The myAvatool Web Service (**MAWS**) is one such custom web service which includ
 
 > **WARNING!** ***This is beta software!***
 
-The current version of MAWS is [v.06](https://github.com/spectrum-health-systems/myavatool-web-service/tree/0.6). I'm working on getting MAWS v1.0 out the door, so for now this sourcecode in *very beta*, so **DO NOT** use this version. It's only here becuase I'm trying to keep the GitHub repository history clean.
+The current version of MAWS is [v0.6](https://github.com/spectrum-health-systems/myavatool-web-service/tree/0.6). I'm working on getting MAWS v1.0 out the door, so for now this sourcecode in *very beta*, so **DO NOT** use this version. It's only here becuase I'm trying to keep the GitHub repository history clean.
 
 If you are looking for something to use right now, check out the [Avatool Web Service](https://github.com/spectrum-health-systems/Avatool-Web-Service) (the precursor to MAWS).
 
