@@ -21,11 +21,14 @@
 ***
 
 ### CONTENTS
-[HOSTING OVERVIEW](#hosting-overview)<br>
-[USING MICROSOFT IIS TO HOST MAWS](#using-iis-to-host-maws)<br>
-[INSTALLING MAWS](#updating-maws)<br>
-[UPDATING MAWS](#updating-maws)<br>
-[DISABLING MAWS](#disabling-maws)<br>
+[INSTALLATION OVERVIEW](#hosting-overview)<br>
+[USING MICROSOFT IIS TO HOST MAWS](#using-microsoft-iis-to-host-maws)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[CREATING AN APPLICATION POOL](#creating-an-application-pool)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[CREATING A NEW SITE](#creating-a-new-site)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[INSTALLING THE ASP.NET ROLE](#installing-the-asp-net-role)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[DISABLING THE DEFAULT SITE](#disabling-the-default-site)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[ENABLING DIRECTORY BROWSING](#enabling-directory-browsing)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;[VERIFYING THE NEW SITE](#verifying-the-new-site)<br>
 
 # INSTALLATION OVERVIEW
 In order to use any web service that interfaces with myAvatar™, that web service needs to be ***hosted*** at a location that myAvatar™ has access to
@@ -107,18 +110,6 @@ From within IIS:
 2. Choose **Manage Web Site**
 3. Choose **Stop**
 
-## VERIFYING THE NEW SITE
-Your AvatoolWebService site should look like this:
-
-<h6 align="center">
-
-  <img src="img/iis-site-home-633x206.png" width="633">
-  <br>
-  Maybe?
-  <br>
-
-</h6>
-
 ## ENABLING DIRECTORY BROWSING
 From within IIS:
 1. Double-click on the **Directory Browsing** icon
@@ -134,16 +125,19 @@ From within IIS:
 
 </h6>
 
+## VERIFYING THE NEW SITE
+Your AvatoolWebService site should look like this:
+
+<h6 align="center">
+
+  <img src="img/iis-site-home-633x206.png" width="633">
+  <br>
+  Maybe?
+  <br>
+
+</h6>
+
 At this point, you should be able to point a browser to your website, and see the landing page.
-
-
-
-
-
-
-
-
-
 
 ***
 
