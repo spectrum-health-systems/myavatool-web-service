@@ -82,6 +82,7 @@
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="MAWS.licenseheader" />
+    <Content Include="Resources\Dev\development-notes.md" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -94,6 +95,9 @@
       <Project>{5ec9314e-835e-4794-9fc9-2a00df57058f}</Project>
       <Name>NTST.ScriptLinkService.Objects</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\Doc\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

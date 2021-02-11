@@ -92,6 +92,14 @@ namespace MyAvatoolWebService
             {
                 //completedOptionObject2 = SubPolicyNumber(sentOptionObject2, mawsRequest);
             }
+            else if(mawsRequest.Contains("NewWebServiceCommand-01"))
+            {
+                //completedOptionObject2 = NewWebServiceCommand-02(sentOptionObject2, mawsRequest);
+            }
+            else if(mawsRequest.Contains("NewWebServiceCommand-02"))
+            {
+                //completedOptionObject2 = NewWebServiceCommand-02(sentOptionObject2, mawsRequest);
+            }
             else
             {
                 workingOptionObject2 = sentOptionObject2;
