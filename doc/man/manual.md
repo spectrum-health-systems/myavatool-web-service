@@ -14,14 +14,14 @@
 
 <h5 align="center">
 
-  MAWS v0.3&nbsp;&bull;&nbsp;Last updated: January 22, 2021
+  MAWS v0.6&nbsp;&bull;&nbsp;Last updated: February 11, 2021
 
 </h5>
 
 
 <h4 align="center">
 
-  INTRODUCTION&nbsp;&bull;&nbsp;[INSTALLING](manual-installing-maws.md)&nbsp;&bull;&nbsp;[USING](manual-using-maws.md)&nbsp;&bull;&nbsp;[CUSTOM WEB SERVICES](manual-custom-web-services.md)
+  [INTRODUCTION](manual.md)&nbsp;&bull;&nbsp;[HOSTING MAWS](manual-hosting-maws.md)&nbsp;&bull;&nbsp;[IMPORTING MAWS](manual-importing-maws.md)&nbsp;&bull;&nbsp;[USING MAWS](manual-using-maws.md)&nbsp;&bull;&nbsp;[CUSTOM MYAVATAR WEB SERVICES](manual-custom-myavatar-web-services.md)
 
 </h4>
 
@@ -43,3 +43,9 @@ The myAvatool Web Service (**MAWS**) is one such custom web service which includ
 
 ## MAWS REQUIREMENTS
 * A location to host MAWS that is available to your my myAvatar™ environments via HTTPS
+
+# USING MAWS IN YOUR ENVIRONMENT
+This manual will walk you through the requirements of using MAWS in your environments, which include:
+* [Hosting MAWS]() on a web server that you myAvatar™ environments have access to
+* [Importing MAWS]() into your myAvatar™ environments
+* How to [Use MAWS]() in your myAvatar™ environments.

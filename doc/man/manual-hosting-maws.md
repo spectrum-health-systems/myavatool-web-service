@@ -14,7 +14,7 @@
 
 <h5 align="center">
 
-  [ABOUT MAWS](manual.md)&nbsp;&bull;&nbsp;<b>HOSTING MAWS</b>&nbsp;&bull;&nbsp;[IMPORTING MAWS](manual-importing-maws.md)&nbsp;&bull;&nbsp;[SCRIPTLINK](manual-scriptlink.md)&nbsp;&bull;&nbsp;[MAWS REQUESTS](manual-maws-requests.md)&nbsp;&bull;&nbsp;[CUSTOM WEB SERVICES](manual-custom-myavatar-web-services.md)
+  [INTRODUCTION](manual.md)&nbsp;&bull;&nbsp;[INSTALLING](manual-installing-maws.md)&nbsp;&bull;&nbsp;[USING](manual-using-maws.md)&nbsp;&bull;&nbsp;[CUSTOM WEB SERVICES](manual-custom-web-services.md)
 
 </h5>
 
@@ -22,18 +22,17 @@
 
 ### CONTENTS
 [INSTALLATION OVERVIEW](#installation-overview)<br>
-[HOSTING MAWS(#hosting-maws)<br>
-[SETTING UP ISS](#using-iis)<br>
+[USING IIS TO HOST MAWS](#using-iis-to-host-maws)<br>
 [INSTALLING MAWS](#updating-maws)<br>
 [UPDATING MAWS](#updating-maws)<br>
 [DISABLING MAWS](#disabling-maws)<br>
 
 # INSTALLATION OVERVIEW
 In order to use MAWS, or any web service that interfaces with myAvatar™:
-* The web service needs to be *hosted* at a location that myAvatar™ has access to
-* The web services needs to be *imported* into myAvatar™ 
+* The web service needs to be ***hosted*** at a location that myAvatar™ has access to
+* The web services needs to be ***imported*** into myAvatar™ 
 
-# HOSTING MAWS
+### Hosting MAWS
 In order to use MAWS, or any web service that interfaces with myAvatar™, it needs to be hosted at a location where myAvatar™ has access to them.
 
 There are two options for hosting MAWS:
