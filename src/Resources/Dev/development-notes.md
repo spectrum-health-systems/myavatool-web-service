@@ -4,13 +4,15 @@
 
 ### Process
 * Fast Dose Dispensing form
-* If Number of Outstanding Take Out Bottles >= 1
-  * Get the content of the Dispense History field
-  * Get the historical dates
-  * Loop through the historical dates and see if any match the Dispense Date
-    * All dates, or a specific number of dates?
-  * If yes, error
-    * If no, continue
+* Get the content of the Dispense History field
+* Get the historical dates
+* Loop through the historical dates and see if any match the Dispense Date
+  * All dates, or a specific number of dates?
+* If yes, error
+  * If no, continue
+
+Dispensing History field = scrolling text field (10008)
+Dispensing Date field = date field (10007)
 
 ### Test plan
 *
