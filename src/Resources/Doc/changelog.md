@@ -1,5 +1,14 @@
 ﻿# MAWS: Changelog
 
+## v0.6
+> This branch focuses on updating documentation and comments.
+> 
+## v0.5
+> This branch focuses on updating documentation and comments.
+> 
+## v0.4
+> This branch focuses on updating documentation and comments.
+
 ## v0.3
 > This branch focuses on updating documentation and comments.
 
