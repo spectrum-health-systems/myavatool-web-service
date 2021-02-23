@@ -1,6 +1,6 @@
 ﻿/* PROJECT: MyAvatoolWebService (https://github.com/aprettycoolprogram/MyAvatoolWebService)
  *    FILE: MyAvatoolWebService.InptAdmitDate.cs
- * UPDATED: 2-5-2021-11:38 AM
+ * UPDATED: 2-15-2021-9:28 AM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2020 A Pretty Cool Program All rights reserved
  */
@@ -27,7 +27,7 @@ namespace MyAvatoolWebService
             /* This method parses.
              *
              * For detailed information about InptAdmitDate.Parser(), please see the MAWS manual:
-             *  https://github.com/spectrum-health-systems/myavatool-web-service/blob/main/doc/man/manual-maws-calls.md#inptadmitdate
+             *  https://github.com/spectrum-health-systems/MyAvatoolWebService/blob/main/doc/man/manual.md
              */
 
             var inptAdmitDateOptionObject2 = new OptionObject2();
@@ -51,7 +51,7 @@ namespace MyAvatoolWebService
         private static OptionObject2 VerifyPreAdmitDate(OptionObject2 sentOptionObject2)
         {
             /* For detailed information about InptAdmitDate.VerifyPreAdmitDate(), please see the MAWS manual:
-             *  https://
+             *  https://github.com/spectrum-health-systems/MyAvatoolWebService/blob/main/doc/man/manual.md
              */
 
             /* You will need to modify these values to match the fieldIDs for your organization.
