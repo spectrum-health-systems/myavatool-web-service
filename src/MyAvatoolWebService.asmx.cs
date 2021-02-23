@@ -1,6 +1,6 @@
 ﻿/* PROJECT: MyAvatoolWebService (https://github.com/aprettycoolprogram/MyAvatoolWebService)
  *    FILE: MyAvatoolWebService.MyAvatoolWebService.asmx.cs
- * UPDATED: 2-11-2021-11:51 AM
+ * UPDATED: 2-23-2021-11:05 AM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2020 A Pretty Cool Program All rights reserved
  */
@@ -21,7 +21,7 @@
  * THERE IS A MANUAL!
  * ------------------
  * I spent alot of time working on the manual, and update it with each release of MAWS:
- *  https://github.com/spectrum-health-systems/myavatool-web-service/blob/main/doc/man/manual.md
+ *  https://github.com/spectrum-health-systems/MyAvatoolWebService/blob/main/doc/man/manual.md
  *
  * A NOTE ABOUT COMMENTS
  * ---------------------
@@ -51,8 +51,6 @@
  *
  */
 using System.Web.Services;
-
-using NTST.ScriptLinkService.Objects;
 
 namespace MyAvatoolWebService
 {
