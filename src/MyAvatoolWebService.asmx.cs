@@ -50,7 +50,9 @@
  *  -  RunScript(): Executes web script functionality.
  *
  */
+
 using System.Web.Services;
+using NTST.ScriptLinkService.Objects;
 
 namespace MyAvatoolWebService
 {
