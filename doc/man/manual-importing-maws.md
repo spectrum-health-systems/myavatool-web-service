@@ -14,21 +14,32 @@
 
 <h5 align="center">
 
-  [INTRODUCTION](manual.md)&nbsp;&bull;&nbsp;[HOSTING MAWS](manual-hosting-maws.md)&nbsp;&bull;&nbsp;[IMPORTING MAWS](manual-importing-maws.md)&nbsp;&bull;&nbsp;[USING MAWS](manual-using-maws.md)&nbsp;&bull;&nbsp;[CUSTOM MYAVATAR™ WEB SERVICES](manual-custom-myavatar-web-services.md)
+  MAWS v0.7&nbsp;&bull;&nbsp;Last updated: April 6th, 2021
 
 </h5>
 
+<h4 align="center">
+
+  [INTRODUCTION](manual-introduction.md)&nbsp;&bull;&nbsp;[HOSTING MAWS](manual-hosting-maws.md)&nbsp;&bull;&nbsp;IMPORTING MAWS&nbsp;&bull;&nbsp;[USING MAWS](manual-using-maws.md)&nbsp;&bull;&nbsp;[CUSTOM MYAVATAR™ WEB SERVICES](manual-custom-myavatar-web-services.md)
+
+</h4>
+
 ***
 
-### CONTENTS
-[OVERVIEW](#overview)<br>
-[IMPORTING MAWS INTO YOUR ENVIRONMENTS](#importing-maws-into-your-environments)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;[CREATING AN APPLICATION POOL](#creating-an-application-pool)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;[CREATING A NEW SITE](#creating-a-new-site)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;[INSTALLING THE ASP.NET ROLE](#installing-the-aspnet-role)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;[DISABLING THE DEFAULT SITE](#disabling-the-default-site)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;[ENABLING DIRECTORY BROWSING](#enabling-directory-browsing)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;[VERIFYING THE NEW SITE](#verifying-the-new-site)<br>
+<!-- The HTML indentations have to stay this way to work. -->
+<table>
+<tr>
+<td img src="resources/asset/img/doc/readme/spacer.png" alt="blank-spacer" width="1000" height="1">
+
+  ### CONTENTS
+  [OVERVIEW](#overview)<br>
+  [IMPORTING MAWS INTO YOUR ENVIRONMENTS](#importing-maws-into-your-environments)<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;[CONFIRMING THE MAWS WSDL](#confirming-the-maws-wsdl)<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;[IMPORTING THE MAWS WSDL](#importing-the-maws-wsdl)<br>
+
+</td>
+</tr>
+</table>
 
 # OVERVIEW
 In order for myAvatar™ to use MAWS, you'll need to import MAWS into your myAvatar™ environments.
@@ -37,9 +48,9 @@ In order for myAvatar™ to use MAWS, you'll need to import MAWS into your myAva
 To continue with this documentations, you will need to know the location of MAWS in your environment.
 
 # IMPORTING MAWS INTO YOUR ENVIRONMENTS
+Importing MAWS into your myAvatar™ environments is pretty simple. Here is how you do it.
 
-
-# CONFIRMING THE MAWS WSDL
+## CONFIRMING THE MAWS WSDL
 Before attempting to import MAWS into myAvatar™, you should make sure that you have a valid **W**eb **S**ervice **D**escription **L**anguage (**WSDL**) URL. To do this, paste the URL of the MAWS WSDL in a web browser and attempt to access the URL.
 
 For example, pointing a browser to `https://your-organization.com/MyAvatoolWebService.asmx?WSDL` should display XML that looks something like this:
@@ -57,7 +68,7 @@ If the WSDL file *is diplayed* in the browser, that URL is what you are going to
 
 If the WSDL file *is not displayed*, you'll need to get a valid WSDL location before continuing.
 
-# IMPORTING THE MAWS WSDL
+## IMPORT THE MAWS WSDL
 Any form can be used to import a web service, and once a web service has been imported it can be used by any form that allows ScriptLink events.
 
 We will use the *Admissions* form to import the MAWS WSDL:
@@ -93,8 +104,8 @@ You should get a popup letting you know the WSDL was imported successfully.
 
 ***
 
-<h5 align="center">
+<h4 align="center">
 
-  [ABOUT MAWS](manual.md)&nbsp;&bull;&nbsp;[HOSTING MAWS](manual-hosting-maws.md)&nbsp;&bull;&nbsp;IMPORTING MAWS&nbsp;&bull;&nbsp;[SCRIPTLINK EVENTS](manual-scriptlink-events.md)&nbsp;&bull;&nbsp;[MAWS REQUESTS](manual-maws-requests.md)&nbsp;&bull;&nbsp;[CUSTOM MYAVATAR WEB SERVICES](manual-custom-myavatar-web-services.md)
-
-</h5>
+  [INTRODUCTION](manual-introduction.md)&nbsp;&bull;&nbsp;[HOSTING MAWS](manual-hosting-maws.md)&nbsp;&bull;&nbsp;IMPORTING MAWS&nbsp;&bull;&nbsp;[USING MAWS](manual-using-maws.md)&nbsp;&bull;&nbsp;[CUSTOM MYAVATAR™ WEB SERVICES](manual-custom-myavatar-web-services.md)
+  
+</h4>
