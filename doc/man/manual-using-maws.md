@@ -53,7 +53,7 @@ A `mawsRequest` consists of an `action` and a `command` for MAWS to perform agai
 
 Each `mawsRequest` is formatted like so: `%action%-%command%`
 
-For example, to verify that a clients pre-admission date is the same as the system date, you would make a `mawsRequest` of `InptAdmitDate-VerifyPreAdmitDate`, where `InptAdmitDate` is the request *action*, and `VerifyPreAdmitDate` is the request *command*. 
+For example, the `InptAdmitDate-VerifyPreAdmitDate` request verifies that a clients pre-admission date is the same as the system date. The request *action* is `InptAdmitDate`, and the request *command* `VerifyPreAdmitDate`. 
 
 ## Actions are classes
 Each `mawsRequest` action has a *class* with the same name.
