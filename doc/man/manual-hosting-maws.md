@@ -26,7 +26,7 @@
 
 ***
 
-### CONTENTS
+## CONTENTS
 [OVERVIEW](#hosting-overview)<br>
 [USING MICROSOFT IIS TO HOST MAWS](#using-microsoft-iis-to-host-maws)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;[CREATING AN APPLICATION POOL](#creating-an-application-pool)<br>
