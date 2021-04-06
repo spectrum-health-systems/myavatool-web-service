@@ -1,4 +1,6 @@
 
+
+
 ## INPATIENT ADMISSION DATE
 The current version of MAWS supports the following `InptAdmitDate` commands: 
 ### VerifyPreAdmitDate
