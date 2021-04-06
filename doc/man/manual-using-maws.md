@@ -80,9 +80,9 @@ A `mawsRequest` will result in one of the following:
 3. Optionally return modified data to myAvatar
 
 # VALID MAWS REQUESTS
-These are the valid `mawsRequest` that MAWS can do.
+The current version of MAWS supports the following `mawsRequest`:
 
-## Inpatient Admission Date (InptAdmitDate)
+## INPATIENT ADMISSION DATE (`InptAdmitDate`)
 What
 ### VerifyPreAdmitDate (InptAdmitDate-VerifyPreAdmitDate)
 Verify that the Inpatient Admission Date is the same as the system current date.
