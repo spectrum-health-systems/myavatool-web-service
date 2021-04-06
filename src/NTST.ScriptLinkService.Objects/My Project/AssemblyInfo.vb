@@ -1,4 +1,3 @@
-Imports System
 Imports System.Reflection
 Imports System.Runtime.InteropServices
 
@@ -26,6 +25,6 @@ Imports System.Runtime.InteropServices
 ' You can specify all the values or you can default the Build and Revision Numbers by using the '*' as shown below:
 ' <Assembly: AssemblyVersion("1.0.*")>
 
-<Assembly: AssemblyVersion("1.2.21054.1510")>
-<Assembly: AssemblyFileVersion("1.2.21054.1510")>
-[assembly: AssemblyInformationalVersion("1.2.0-alpha-01")]
+<Assembly: AssemblyVersion("1.0.0.0")>
+<Assembly: AssemblyFileVersion("1.0.0.0")>
+[assembly: AssemblyInformationalVersion("1.0.0-alpha")]

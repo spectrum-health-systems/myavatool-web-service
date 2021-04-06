@@ -1,8 +1,8 @@
-﻿/* PROJECT: MyAvatoolWebService (https://github.com/aprettycoolprogram/MyAvatoolWebService)
+﻿/* PROJECT: MyAvatoolWebService (https://github.com/spectrum-health-systems/MyAvatoolWebService)
  *    FILE: MyAvatoolWebService.MyAvatoolWebService.asmx.cs
- * UPDATED: 2-11-2021-11:51 AM
+ * UPDATED: 4-6-2021-9:57 AM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
- *          Copyright 2020 A Pretty Cool Program All rights reserved
+ *          Copyright 2021 A Pretty Cool Program, All Rights reserved
  */
 
 /*
@@ -14,14 +14,14 @@
 
 /* ABOUT THIS SOURCECODE
  * ---------------------
- * This is the MAWS v0.6 branch, which focuses on building the MAWS framework, and moving functionality from the current
+ * This is the MAWS v0.7 branch, which focuses on building the MAWS framework, and moving functionality from the current
  * Avatar Web Service:
  *  https://github.com/spectrum-health-systems/Avatool-Web-Service
  *
  * THERE IS A MANUAL!
  * ------------------
  * I spent alot of time working on the manual, and update it with each release of MAWS:
- *  https://github.com/spectrum-health-systems/myavatool-web-service/blob/main/doc/man/manual.md
+ *  https://github.com/spectrum-health-systems/MyAvatoolWebService/blob/main/doc/man/manual.md
  *
  * A NOTE ABOUT COMMENTS
  * ---------------------
@@ -50,8 +50,8 @@
  *  -  RunScript(): Executes web script functionality.
  *
  */
-using System.Web.Services;
 
+using System.Web.Services;
 using NTST.ScriptLinkService.Objects;
 
 namespace MyAvatoolWebService
