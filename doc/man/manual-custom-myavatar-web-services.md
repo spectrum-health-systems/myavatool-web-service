@@ -14,9 +14,16 @@
 
 <h5 align="center">
 
-  [ABOUT MAWS](manual.md)&nbsp;&bull;&nbsp;[HOSTING MAWS](manual-hosting-maws.md)&nbsp;&bull;&nbsp;[IMPORTING MAWS](manual-importing-maws.md)&nbsp;&bull;&nbsp;[SCRIPTLINK EVENTS](manual-scriptlink-events.md)&nbsp;&bull;&nbsp;[MAWS REQUESTS](manual-maws-requests.md)&nbsp;&bull;&nbsp;CUSTOM MYAVATAR WEB SERVICES
+  MAWS v0.7&nbsp;&bull;&nbsp;Last updated: April 6th, 2021
 
 </h5>
+
+<h4 align="center">
+
+  [INTRODUCTION](manual-introduction.md)&nbsp;&bull;&nbsp;[HOSTING MAWS](manual-hosting-maws.md)&nbsp;&bull;&nbsp;[IMPORTING MAWS](manual-importing-maws.md)&nbsp;&bull;&nbsp;[USING MAWS](manual-using-maws.md)&nbsp;&bull;&nbsp;CUSTOM MYAVATAR™ WEB SERVICES
+
+</h4>
+
 
 ***
 
@@ -622,3 +629,11 @@ These are the standard methods that are required by myAvatar.
              *
              * Use Error Code 4 to allow the user to ignore the date issue, and submit the form with different dates.
              */
+
+***
+
+<h4 align="center">
+
+  [INTRODUCTION](manual-introduction.md)&nbsp;&bull;&nbsp;[HOSTING MAWS](manual-hosting-maws.md)&nbsp;&bull;&nbsp;[IMPORTING MAWS](manual-importing-maws.md)&nbsp;&bull;&nbsp;[USING MAWS](manual-using-maws.md)&nbsp;&bull;&nbsp;CUSTOM MYAVATAR™ WEB SERVICES
+
+</h4>
