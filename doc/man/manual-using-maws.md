@@ -82,11 +82,11 @@ A `mawsRequest` will result in one of the following:
 # VALID MAWS REQUESTS
 The current version of MAWS supports the following `mawsRequest` actions:
 
-[INPATIENT ADMISSION DATE](#inpatient-admission-date)
-[SUBSCRIBER POLICY NUMBER](#subscriber-policy-number)
+* [INPATIENT ADMISSION DATE](#inpatient-admission-date)
+* [SUBSCRIBER POLICY NUMBER](#subscriber-policy-number)
 
 ## INPATIENT ADMISSION DATE
-The current version of MAWS supports the following 
+The current version of MAWS supports the following `InptAdmitDate` commands: 
 ### VerifyPreAdmitDate (InptAdmitDate-VerifyPreAdmitDate)
 Verify that the Inpatient Admission Date is the same as the system current date.
 
