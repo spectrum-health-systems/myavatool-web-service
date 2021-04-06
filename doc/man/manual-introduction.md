@@ -14,14 +14,14 @@
 
 <h5 align="center">
 
-  MAWS v0.6&nbsp;&bull;&nbsp;Last updated: February 11, 2021
+  MAWS v0.7&nbsp;&bull;&nbsp;Last updated: April 6th, 2021
 
 </h5>
 
 
 <h4 align="center">
 
-  [INTRODUCTION](manual.md)&nbsp;&bull;&nbsp;[HOSTING MAWS](manual-hosting-maws.md)&nbsp;&bull;&nbsp;[IMPORTING MAWS](manual-importing-maws.md)&nbsp;&bull;&nbsp;[USING MAWS](manual-using-maws.md)&nbsp;&bull;&nbsp;[CUSTOM MYAVATAR™ WEB SERVICES](manual-custom-myavatar-web-services.md)
+  [INTRODUCTION&nbsp;&bull;&nbsp;[HOSTING MAWS](manual-hosting-maws.md)&nbsp;&bull;&nbsp;[IMPORTING MAWS](manual-importing-maws.md)&nbsp;&bull;&nbsp;[USING MAWS](manual-using-maws.md)&nbsp;&bull;&nbsp;[CUSTOM MYAVATAR™ WEB SERVICES](manual-custom-myavatar-web-services.md)
 
 </h4>
 
@@ -39,13 +39,13 @@ The myAvatool Web Service (**MAWS**) is one such custom web service which includ
 ## MAWS FEATURES
 * Several built-in tools and utilities for use with myAvatar™
 * Does not require Java to be installed
-* A solid foundation to build additional custom tools and utilities
+* A solid foundation to build additional myAvatar™ custom tools and utilities
 
 ## MAWS REQUIREMENTS
-* A location to host MAWS that is available to your my myAvatar™ environments via HTTPS
+* A location to host MAWS that is available to your myAvatar™ environments via HTTPS.
 
 # USING MAWS IN YOUR ENVIRONMENT
 This manual will walk you through the requirements of using MAWS in your environments, which include:
-* [Hosting MAWS]() on a web server that you myAvatar™ environments have access to
-* [Importing MAWS]() into your myAvatar™ environments
-* How to [use MAWS]() in your myAvatar™ environments.
+* [Hosting MAWS](https://github.com/spectrum-health-systems/MyAvatoolWebService/blob/main/doc/man/manual-hosting-maws.md) on a web server that you myAvatar™ environments have access to
+* [Importing MAWS](https://github.com/spectrum-health-systems/MyAvatoolWebService/blob/main/doc/man/manual-importing-maws.md) into your myAvatar™ environments
+* [Using MAWS](https://github.com/spectrum-health-systems/MyAvatoolWebService/blob/main/doc/man/manual-using-maws.md) in your myAvatar™ environments.
