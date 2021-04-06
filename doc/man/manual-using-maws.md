@@ -83,7 +83,7 @@ A `mawsRequest` will result in one of the following:
 
 # VALID MAWS REQUESTS
 ## INPATIENT ADMISSION DATE
-> `InptAdmitDate-VerifyPreAdmitDate`
+#### `InptAdmitDate-VerifyPreAdmitDate`
 
 Verify that the Inpatient Admission Date is the same as the system current date.
 
