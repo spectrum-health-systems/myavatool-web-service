@@ -51,21 +51,16 @@ Once you have [hosted](manual-hosting-maws.md) MAWS and [imported](manual-import
 # ABOUT MAWS REQUESTS
 A `mawsRequest` consists of an `action` and a `command` for MAWS to perform against data received from myAvatar via an *OptionObject2*.
 
-A `mawsRequest` is formatted like so: `%action%-%command%`
+Each `mawsRequest` is formatted like so: `%action%-%command%`
 
-For example, to verify that a clients pre-admission date is the same as the system date, you would make a `mawsRequest` of 
-```
-InptAdmitDate-VerifyPreAdmitDate
-```
-where `InptAdmitDate` is the request *action*, and `VerifyPreAdmitDate` is the request *command*. 
-* To remove leading/trailing whitespace from a subscriber policy, you would make a `mawsRequest` of `SubPolicyNumber-TrimWhitespace`.
+For example, to verify that a clients pre-admission date is the same as the system date, you would make a `mawsRequest` of `InptAdmitDate-VerifyPreAdmitDate`, where `InptAdmitDate` is the request *action*, and `VerifyPreAdmitDate` is the request *command*. 
 
-## `mawsRequest` actions are classes
+## Actions are classes
 Each `mawsRequest` action has a *class* with the same name.
 
 For example, any `mawsRequest` concerning Inpatient Admission Dates ("InptAdmitDate") will be handled by the *InptAdmitDate.cs* class.
 
-## `mawsRequest` commands are methods
+## Commands are methods
 Each *action class* contain *methods* that mirror the `mawsRequest` *commands*. For example, the following `mawsRequest`:
 
 "InptAdmitDate-VerifyPreAdmitDate"
