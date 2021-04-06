@@ -50,7 +50,7 @@ In order to use any web service that interfaces with myAvatar™, that web servi
 
 There are two options for hosting MAWS:
 
-1. **Have Netsmart host MAWS**
+1. **Have Netsmart host MAWS**<br>
 If your myAvatar™ environments are hosted by Netsmart, they can also host custom web services, including MAWS. If you choose to have Netsmart host MAWS, you can skip this section of the manual, and go straight to [importing MAWS](#importing-maws). Please keep in mind that MAWS has not been tested in a Netsmart-hosted environment.
 2. **Self-host MAWS**
 If you self-host your myAvatar™ environments, or would rather have complete control over your custom web services, you can self-host them. This section of the MAWS manual will offer some guidance on how to do that.
