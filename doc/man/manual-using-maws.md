@@ -53,14 +53,18 @@ A `mawsRequest` consists of an `action` and a `command` for MAWS to perform agai
 
 Each `mawsRequest` is formatted like so: `%action%-%command%`
 
-For example, the `InptAdmitDate-VerifyPreAdmitDate` request verifies that a clients pre-admission date is the same as the system date. The request *action* is `InptAdmitDate`, and the request *command* `VerifyPreAdmitDate`. 
+## EXAMPLES
 
-## Actions are classes
+* The `InptAdmitDate-VerifyPreAdmitDate` request verifies that a clients pre-admission date is the same as the system date. The request *action* is `InptAdmitDate`, and the request *command* `VerifyPreAdmitDate`. 
+
+* The `SubPolicyNumber-TrimWhitespace` removes leading/trailing whitespace from a subscriber policy number. The request *action* is `SubPolicyNumber`, and the request *command* `TrimWhitespace`. 
+
+### Actions are classes
 Each `mawsRequest` action has a *class* with the same name.
 
 For example, any `mawsRequest` concerning Inpatient Admission Dates ("InptAdmitDate") will be handled by the *InptAdmitDate.cs* class.
 
-## Commands are methods
+### Commands are methods
 Each *action class* contain *methods* that mirror the `mawsRequest` *commands*. For example, the following `mawsRequest`:
 
 "InptAdmitDate-VerifyPreAdmitDate"
