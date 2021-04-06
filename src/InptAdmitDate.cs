@@ -1,21 +1,26 @@
-﻿/* PROJECT: MyAvatoolWebService (https://github.com/aprettycoolprogram/MyAvatoolWebService)
+﻿/* PROJECT: MyAvatoolWebService (https://github.com/spectrum-health-systems/MyAvatoolWebService)
  *    FILE: MyAvatoolWebService.InptAdmitDate.cs
- * UPDATED: 2-23-2021-12:46 PM
+ * UPDATED: 4-6-2021-10:18 AM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
- *          Copyright 2020 A Pretty Cool Program All rights reserved
+ *          Copyright 2021 A Pretty Cool Program, All Rights reserved
  */
 
 /* For detailed information about the InptAdmitDate class, please see the MAWS manual:
- *  https://
+ *  https://github.com/spectrum-health-systems/MyAvatoolWebService/blob/main/doc/man/manual.md
  */
 
 using System;
-
 using NTST.ScriptLinkService.Objects;
 
 namespace MyAvatoolWebService
 {
-    /// <summary></summary>
+    /// <summary>
+    /// The InptAdmitDate request does various things with Inpatient Admission Date data.
+    /// </summary>
+    /// <remarks>
+    /// The following InptAdmitDate commands are available:
+    ///     - VerifyPreAdmitDate: Verify the pre-admission date in the Admission form is the same as the current system date.
+    /// </remarks>
     public class InptAdmitDate
     {
         /// <summary></summary>

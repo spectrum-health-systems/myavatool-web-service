@@ -1,8 +1,8 @@
-﻿/* PROJECT: MyAvatoolWebService (https://github.com/aprettycoolprogram/MyAvatoolWebService)
+﻿/* PROJECT: MyAvatoolWebService (https://github.com/spectrum-health-systems/MyAvatoolWebService)
  *    FILE: MyAvatoolWebService.MyAvatoolWebService.asmx.cs
- * UPDATED: 2-23-2021-11:05 AM
+ * UPDATED: 4-6-2021-9:57 AM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
- *          Copyright 2020 A Pretty Cool Program All rights reserved
+ *          Copyright 2021 A Pretty Cool Program, All Rights reserved
  */
 
 /*
@@ -14,7 +14,7 @@
 
 /* ABOUT THIS SOURCECODE
  * ---------------------
- * This is the MAWS v0.6 branch, which focuses on building the MAWS framework, and moving functionality from the current
+ * This is the MAWS v0.7 branch, which focuses on building the MAWS framework, and moving functionality from the current
  * Avatar Web Service:
  *  https://github.com/spectrum-health-systems/Avatool-Web-Service
  *
