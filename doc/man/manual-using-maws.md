@@ -55,49 +55,29 @@ Each `mawsRequest` is formatted like so: `%action%-%command%`
 
 ## EXAMPLES
 
-* The `InptAdmitDate-VerifyPreAdmitDate` request verifies that a clients pre-admission date is the same as the system date. The request *action* is `InptAdmitDate`, and the request *command* `VerifyPreAdmitDate`. 
+* The `InptAdmitDate-VerifyPreAdmitDate` request verifies that a clients pre-admission date is the same as the system date. The request **action** is `InptAdmitDate`, and the request **command** is `VerifyPreAdmitDate`. 
 
-* The `SubPolicyNumber-TrimWhitespace` removes leading/trailing whitespace from a subscriber policy number. The request *action* is `SubPolicyNumber`, and the request *command* `TrimWhitespace`. 
+* The `SubPolicyNumber-TrimWhitespace` removes leading/trailing whitespace from a subscriber policy number. The request **action** is `SubPolicyNumber`, and the request **command** is `TrimWhitespace`. 
 
 ### Actions are classes
-Each `mawsRequest` action has a *class* with the same name.
+Each `mawsRequest` action has a corresponding sourcecode class with the same name.
 
-For example, any `mawsRequest` concerning Inpatient Admission Dates ("InptAdmitDate") will be handled by the *InptAdmitDate.cs* class.
+For example, any `InptAdmitDate` actions will be handled by the *InptAdmitDate.cs* class.
 
 ### Commands are methods
-Each *action class* contain *methods* that mirror the `mawsRequest` *commands*. For example, the following `mawsRequest`:
+Each `mawsRequest` command has a corresponding method with the same name. This method can be found in the action's class sourcecode. 
 
-"InptAdmitDate-VerifyPreAdmitDate"
+For example, the `VerifyPreAdmitDate` **command** of the `InptAdmitDate` **action** would be processed by the *VerifyPreAdmitDate()* method in the *InptAdmitDate.cs* class.
 
-Would be carried out by the "VerifyPreAdmitDate()" method in the "InptAdmitDate.cs" class.
+# HOW TO MAKE A MAWS REQUEST
+To perform an `mawsRequest`, you'll need to create a ScriptLink event in myAvatar that passes the request and an *OptionObject2* to MAWS. For more information about creating ScriptLink events, please see the MAWS [manual](manual-scriptlink-events).
 
-
-
-
-
-
-
-
- then do one of the following:
+# MAWS REQUEST RESULTS
+A `mawsRequest` will result in one of the following:
 
 1. Prompt the user to make a change within myAvatar
 2. Warn the user about something
 3. Optionally return modified data to myAvatar
-
-### How a MAWS request relates to myAvatar
-To perform an `mawsRequest`, you'll need to create a ScriptLink event in myAvatar that passes both an "action" and an *OptionObject2* to MAWS. For more information about creating ScriptLink events, please see the MAWS [manual](manual-scriptlink-events).
-
-# ACTIONS AND COMMANDS
-
-
-Here are some examples of a `mawsRequest`:
-* Verify that a clients pre-admission date is the same as the system date (`InptAdmitDate-VerifyPreAdmitDate`).
-* Remove leading/trailing whitespace from a subscriber policy number (`SubPolicyNumber-TrimWhitespace`)
-
-## Actions are classes
-
-
-
 
 # VALID MAWS REQUESTS
 These are the valid `mawsRequest` that MAWS can do.
