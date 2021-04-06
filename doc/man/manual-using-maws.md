@@ -80,10 +80,13 @@ A `mawsRequest` will result in one of the following:
 3. Optionally return modified data to myAvatar
 
 # VALID MAWS REQUESTS
-The current version of MAWS supports the following `mawsRequest`:
+The current version of MAWS supports the following `mawsRequest` actions:
 
-## INPATIENT ADMISSION DATE (`InptAdmitDate`)
-What
+[INPATIENT ADMISSION DATE](#inpatient-admission-date)
+[SUBSCRIBER POLICY NUMBER](#subscriber-policy-number)
+
+## INPATIENT ADMISSION DATE
+The current version of MAWS supports the following 
 ### VerifyPreAdmitDate (InptAdmitDate-VerifyPreAdmitDate)
 Verify that the Inpatient Admission Date is the same as the system current date.
 
@@ -110,6 +113,8 @@ Here is how it works:
              *
              * Use Error Code 4 to allow the user to ignore the date issue, and submit the form with different dates.
              */
+
+## SUBSCRIBER POLICY NUMBER
 
 ***
 
