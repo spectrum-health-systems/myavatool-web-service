@@ -82,11 +82,11 @@ A `mawsRequest` will result in one of the following:
 3. Optionally return modified data to myAvatar
 
 # VALID MAWS REQUESTS
-[Inpatient Admission Date](https://github.com/spectrum-health-systems/MyAvatoolWebService/blob/main/doc/man/manual-request-inpt-admit-date.md)<br>
-* [`InptAdmitDate-VerifyPreAdmitDate`](https://github.com/spectrum-health-systems/MyAvatoolWebService/blob/main/doc/man/manual-request-inpt-admit-date.md#verifypreadmitdate)
+* [Inpatient Admission Date](https://github.com/spectrum-health-systems/MyAvatoolWebService/blob/main/doc/man/manual-request-inpt-admit-date.md)<br>
+  * [`InptAdmitDate-VerifyPreAdmitDate`](https://github.com/spectrum-health-systems/MyAvatoolWebService/blob/main/doc/man/manual-request-inpt-admit-date.md#verifypreadmitdate)
 
-[Subscriber Policy Number](https://github.com/spectrum-health-systems/MyAvatoolWebService/blob/main/doc/man/manual-request-sub-policy-number.md)<br>
-* [SubPolicyNumber-TrimWhitespace](#https://github.com/spectrum-health-systems/MyAvatoolWebService/blob/main/doc/man/manual-request-sub-policy-number.md#trimwhitespace)
+* [Subscriber Policy Number](https://github.com/spectrum-health-systems/MyAvatoolWebService/blob/main/doc/man/manual-request-sub-policy-number.md)<br>
+  * [`SubPolicyNumber-TrimWhitespace`](#https://github.com/spectrum-health-systems/MyAvatoolWebService/blob/main/doc/man/manual-request-sub-policy-number.md#trimwhitespace)
 
 ***
 
