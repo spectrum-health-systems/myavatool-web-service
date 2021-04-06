@@ -26,15 +26,24 @@
 
 ***
 
-## CONTENTS
-[OVERVIEW](#hosting-overview)<br>
-[USING MICROSOFT IIS TO HOST MAWS](#using-microsoft-iis-to-host-maws)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;[CREATING AN APPLICATION POOL](#creating-an-application-pool)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;[CREATING A NEW SITE](#creating-a-new-site)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;[INSTALLING THE ASP.NET ROLE](#installing-the-aspnet-role)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;[DISABLING THE DEFAULT SITE](#disabling-the-default-site)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;[ENABLING DIRECTORY BROWSING](#enabling-directory-browsing)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;[VERIFYING THE NEW SITE](#verifying-the-new-site)<br>
+<!-- The HTML indentations have to stay this way to work. -->
+<table>
+<tr>
+<td img src="resources/asset/img/doc/readme/spacer.png" alt="blank-spacer" width="1000" height="1">
+
+  ### CONTENTS
+  [OVERVIEW](#hosting-overview)<br>
+  [USING MICROSOFT IIS TO HOST MAWS](#using-microsoft-iis-to-host-maws)<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;[CREATING AN APPLICATION POOL](#creating-an-application-pool)<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;[CREATING A NEW SITE](#creating-a-new-site)<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;[INSTALLING THE ASP.NET ROLE](#installing-the-aspnet-role)<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;[DISABLING THE DEFAULT SITE](#disabling-the-default-site)<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;[ENABLING DIRECTORY BROWSING](#enabling-directory-browsing)<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;[VERIFYING THE NEW SITE](#verifying-the-new-site)<br>
+
+</td>
+</tr>
+</table>
 
 # OVERVIEW
 In order to use any web service that interfaces with myAvatar™, that web service needs to be ***hosted*** at a location that myAvatar™ has access to
