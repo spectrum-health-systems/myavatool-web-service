@@ -49,12 +49,11 @@
 Once you have [hosted](manual-hosting-maws.md) MAWS and [imported](manual-importing-maws.md) it into your myAvatar™ environment, it's ready to use by making a `mawsRequest`.
 
 # ABOUT MAWS REQUESTS
-A `mawsRequest` consists of an *action* and a *command* for MAWS to perform against data received from myAvatar via an *OptionObject2*.
+A `mawsRequest` consists of an `action` and a `command` for MAWS to perform against data received from myAvatar via an *OptionObject2*.
 
 A `mawsRequest` is formatted like so: `%action%-%command%`
 
-For example:
-* To verify that a clients pre-admission date is the same as the system date, you would make a `mawsRequest` of 
+For example, to verify that a clients pre-admission date is the same as the system date, you would make a `mawsRequest` of 
 ```
 InptAdmitDate-VerifyPreAdmitDate
 ```
