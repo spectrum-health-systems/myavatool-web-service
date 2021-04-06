@@ -33,13 +33,14 @@
 
   ### CONTENTS
   [OVERVIEW](#using-overview)<br>
-  [USING MICROSOFT IIS TO HOST MAWS](#using-microsoft-iis-to-host-maws)<br>
-  &nbsp;&nbsp;&nbsp;&nbsp;[CREATING AN APPLICATION POOL](#creating-an-application-pool)<br>
-  &nbsp;&nbsp;&nbsp;&nbsp;[CREATING A NEW SITE](#creating-a-new-site)<br>
-  &nbsp;&nbsp;&nbsp;&nbsp;[INSTALLING THE ASP.NET ROLE](#installing-the-aspnet-role)<br>
-  &nbsp;&nbsp;&nbsp;&nbsp;[DISABLING THE DEFAULT SITE](#disabling-the-default-site)<br>
-  &nbsp;&nbsp;&nbsp;&nbsp;[ENABLING DIRECTORY BROWSING](#enabling-directory-browsing)<br>
-  &nbsp;&nbsp;&nbsp;&nbsp;[VERIFYING THE NEW SITE](#verifying-the-new-site)<br>
+  [ABOUT MAWS REQUESTS](#about-maws-requests)<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;[EXAMPLES](#examples)<br>
+  [ACTIONS AND COMMANDS](#actions-and-commands)<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;[ACTIONS ARE CLASSES](#actions-are-classes)<br>
+  &nbsp;&nbsp;&nbsp;&nbsp;[COMMANDS ARE METHODS](#commands-are-methods)<br>
+  [HOW TO MAKE A MAWS REQUEST](#how-to-make-a-maws-request)<br>
+  [MAWS REQUEST RESULTS](#maws-request-results)<br>
+  [VALID MAWS REQUESTS](#valid-maws-requests)<br>
 
 </td>
 </tr>
@@ -59,12 +60,13 @@ Each `mawsRequest` is formatted like so: `%action%-%command%`
 
 * The `SubPolicyNumber-TrimWhitespace` removes leading/trailing whitespace from a subscriber policy number. The request **action** is `SubPolicyNumber`, and the request **command** is `TrimWhitespace`. 
 
-### Actions are classes
+# ACTIONS AND COMMANDS
+## ACTIONS ARE CLASSES
 Each `mawsRequest` action has a corresponding sourcecode class with the same name.
 
 For example, any `InptAdmitDate` actions will be handled by the *InptAdmitDate.cs* class.
 
-### Commands are methods
+## COMMANDS ARE METHODS
 Each `mawsRequest` command has a corresponding method with the same name. This method can be found in the action's class sourcecode. 
 
 For example, the `VerifyPreAdmitDate` **command** of the `InptAdmitDate` **action** would be processed by the *VerifyPreAdmitDate()* method in the *InptAdmitDate.cs* class.
