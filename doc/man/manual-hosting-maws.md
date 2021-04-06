@@ -52,7 +52,7 @@ There are two options for hosting MAWS:
 
 1. **Have Netsmart host MAWS**<br>
 If your myAvatar™ environments are hosted by Netsmart, they can also host custom web services, including MAWS. If you choose to have Netsmart host MAWS, you can skip this section of the manual, and go straight to [importing MAWS](#importing-maws). Please keep in mind that MAWS has not been tested in a Netsmart-hosted environment.
-2. **Self-host MAWS**
+2. **Self-host MAWS**<br>
 If you self-host your myAvatar™ environments, or would rather have complete control over your custom web services, you can self-host them. This section of the MAWS manual will offer some guidance on how to do that.
 
 # USING MICROSOFT IIS TO HOST MAWS
@@ -62,7 +62,7 @@ These are the steps that I used - twice! - to host MAWS in our environment, but 
 
 This document assumes that you already have a IIS version 10 up and running.
 
-Please keep in mind that myAvatar™ can only communicate with web services via HTTPS://
+Please keep in mind that myAvatar™ can only communicate with web services via the HTTPS:// protocol.
 
 ## CREATING AN APPLICATION POOL
 I’m not sure this step is necessary, but it helps to make things a little more organized…maybe? I’m not an IIS expert, so I’m not sure.
@@ -156,9 +156,9 @@ At this point, you should be able to point a browser to your website, and see th
 
 ***
 
-<h5 align="center">
+<h4 align="center">
 
-  [ABOUT MAWS](manual.md)&nbsp;&bull;&nbsp;<b>HOSTING MAWS</b>&nbsp;&bull;&nbsp;[IMPORTING MAWS](manual-importing-maws.md)&nbsp;&bull;&nbsp;[SCRIPTLINK EVENTS](manual-scriptlink-events.md)&nbsp;&bull;&nbsp;[MAWS REQUESTS](manual-maws-requests.md)&nbsp;&bull;&nbsp;[CUSTOM MYAVATAR WEB SERVICES](manual-custom-myavatar-web-services.md)
+  INTRODUCTION&nbsp;&bull;&nbsp;[HOSTING MAWS](manual-hosting-maws.md)&nbsp;&bull;&nbsp;[IMPORTING MAWS](manual-importing-maws.md)&nbsp;&bull;&nbsp;[USING MAWS](manual-using-maws.md)&nbsp;&bull;&nbsp;[CUSTOM MYAVATAR™ WEB SERVICES](manual-custom-myavatar-web-services.md)
 
+</h4>
 
-</h5>

@@ -51,3 +51,11 @@ This manual will walk you through the requirements of using MAWS in your environ
 
 # CREATING YOUR OWN CUSTOM MYAVATAR™ WEB SERVICE
 In the event that you would like to create your own custom web service for myAvatar™, I've outlined the steps I took to create MAWS [here](https://github.com/spectrum-health-systems/MyAvatoolWebService/blob/main/doc/man/manual-custom-web-services.md).
+
+***
+
+<h4 align="center">
+
+  INTRODUCTION&nbsp;&bull;&nbsp;[HOSTING MAWS](manual-hosting-maws.md)&nbsp;&bull;&nbsp;[IMPORTING MAWS](manual-importing-maws.md)&nbsp;&bull;&nbsp;[USING MAWS](manual-using-maws.md)&nbsp;&bull;&nbsp;[CUSTOM MYAVATAR™ WEB SERVICES](manual-custom-myavatar-web-services.md)
+
+</h4>
