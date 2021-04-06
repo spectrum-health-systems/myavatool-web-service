@@ -44,7 +44,7 @@ The myAvatool Web Service (**MAWS**) is one such custom web service which includ
 ## MAWS REQUIREMENTS
 * A location to host MAWS that is available to your myAvatar™ environments via HTTPS.
 
-# USING MAWS IN YOUR ENVIRONMENT
+# THE MAWS MANUAL
 This manual will walk you through the requirements of using MAWS in your environments, which include:
 * [Hosting MAWS](https://github.com/spectrum-health-systems/MyAvatoolWebService/blob/main/doc/man/manual-hosting-maws.md) on a web server that you myAvatar™ environments have access to
 * [Importing MAWS](https://github.com/spectrum-health-systems/MyAvatoolWebService/blob/main/doc/man/manual-importing-maws.md) into your myAvatar™ environments

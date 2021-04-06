@@ -29,6 +29,6 @@
 
 <h3 align="center">
 
-  Click one of the links above.
+  Click one of the links above
 
 </h3>
