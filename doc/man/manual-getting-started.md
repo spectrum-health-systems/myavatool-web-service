@@ -46,7 +46,7 @@ To use MAWS, you will need to:
   * .NET Framework 4.6+ installed
   * Access to your myAvatar™ environments from the Avatool Web Service via HTTPS
 
-# FIRST STEP: HOSTING MAWS AT YOUR ORGANIZATION
+# FIRST STEP: HOSTING MAWS
 The first step to using MAWS in your myAvatar™ environment is hosting the MAWS sourcecode at your organization, which is detailed [here](manual-hosting-maws.md).
 
 ***

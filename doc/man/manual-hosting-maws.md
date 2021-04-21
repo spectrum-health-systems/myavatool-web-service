@@ -156,6 +156,9 @@ Your AvatoolWebService site should look like this:
 
 At this point, you should be able to point a browser to your website, and see the landing page.
 
+## NEXT STEP: IMPORTING MAWS
+Now that you have successfully hosted MAWS at your organization, we need to [import MAWS](manual-importing-maws.md) into your myAvatar™ environment.
+
 ***
 
 <h5 align="center">
