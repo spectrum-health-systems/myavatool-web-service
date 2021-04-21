@@ -104,7 +104,7 @@ We will use the *Admissions* form to import the MAWS WSDL:
 
 You should get a popup letting you know the WSDL was imported successfully.
 
-NEXT: HOW TO USE MAWS
+# NEXT: HOW TO USE MAWS
 Before you write ScriptLink events, you'll want to know [how MAWS works](manual-using-maws.md).
 
 ***
