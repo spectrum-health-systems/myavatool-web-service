@@ -12,17 +12,19 @@
 
 </h1>
 
+<h6 align="center">
+
+  MAWS v0.8.x&nbsp;&bull;&nbsp;Last updated: April 21st, 2021
+
+</h6>
+
+***
+
 <h5 align="center">
 
-  MAWS v0.8&nbsp;&bull;&nbsp;Last updated: April 21st, 2021
+  [HOME](manual.md)&nbsp;&bull;&nbsp;[GETTING STARTED](manual-getting-started.md)&nbsp;&bull;&nbsp;[HOSTING MAWS](manual-hosting-maws.md)&nbsp;&bull;&nbsp;[IMPORTING MAWS](manual-importing-maws.md)&nbsp;&bull;&nbsp;[USING MAWS](manual-using-maws.md)&nbsp;&bull;&nbsp;SCRIPTLINK EVENTS&nbsp;&bull;&nbsp;[ADDITIONAL INFORMATION](manual-additional-information.md)
 
 </h5>
-
-<h4 align="center">
-
-  [HOME](manual.md)&nbsp;&bull;&nbsp;[HOSTING MAWS](manual-hosting-maws.md)&nbsp;&bull;&nbsp;[IMPORTING MAWS](manual-importing-maws.md)&nbsp;&bull;&nbsp;[USING MAWS](manual-using-maws.md)&nbsp;&bull;&nbsp;SCRIPTLINK EVENTS&nbsp;&bull;&nbsp;[CUSTOM WEB SERVICES](manual-custom-web-services.md)
-
-</h4>
 
 ***
 
@@ -155,8 +157,8 @@ Using the above suggestions, you will be able to disable functionlity quickly if
 
 ***
 
-<h4 align="center">
+<h5 align="center">
 
-  [HOME](manual.md)&nbsp;&bull;&nbsp;[HOSTING MAWS](manual-hosting-maws.md)&nbsp;&bull;&nbsp;[IMPORTING MAWS](manual-importing-maws.md)&nbsp;&bull;&nbsp;[USING MAWS](manual-using-maws.md)&nbsp;&bull;&nbsp;SCRIPTLINK EVENTS&nbsp;&bull;&nbsp;[CUSTOM WEB SERVICES](manual-custom-web-services.md)
+  [HOME](manual.md)&nbsp;&bull;&nbsp;[GETTING STARTED](manual-getting-started.md)&nbsp;&bull;&nbsp;[HOSTING MAWS](manual-hosting-maws.md)&nbsp;&bull;&nbsp;[IMPORTING MAWS](manual-importing-maws.md)&nbsp;&bull;&nbsp;[USING MAWS](manual-using-maws.md)&nbsp;&bull;&nbsp;SCRIPTLINK EVENTS&nbsp;&bull;&nbsp;[ADDITIONAL INFORMATION](manual-additional-information.md)
 
-</h4>
+</h5>
