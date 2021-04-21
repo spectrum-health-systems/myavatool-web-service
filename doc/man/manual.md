@@ -12,22 +12,51 @@
 
 </h1>
 
-<h5 align="center">
+<h6 align="center">
 
-  MAWS v0.7&nbsp;&bull;&nbsp;Last updated: April 6th, 2021
+  MAWS v0.8.x&nbsp;&bull;&nbsp;Last updated: April 21st, 2021
 
-</h5>
-
-<h4 align="center">
-
-  [INTRODUCTION](manual-introduction.md)&nbsp;&bull;&nbsp;[HOSTING MAWS](manual-hosting-maws.md)&nbsp;&bull;&nbsp;[IMPORTING MAWS](manual-importing-maws.md)&nbsp;&bull;&nbsp;[USING MAWS](manual-using-maws.md)&nbsp;&bull;&nbsp;[SCRIPTLINK EVENTS](manual-scriptlink-events.md)&nbsp;&bull;&nbsp;[CUSTOM WEB SERVICES](manual-custom-web-services.md)
-
-</h4>
+</h6>
 
 ***
 
-<h3 align="center">
+<h5 align="center">
 
-  Click one of the links above
+  HOME&nbsp;&bull;&nbsp;[GETTING STARTED](manual-getting-started.md)&nbsp;&bull;&nbsp;[HOSTING MAWS](manual-hosting-maws.md)&nbsp;&bull;&nbsp;[IMPORTING MAWS](manual-importing-maws.md)&nbsp;&bull;&nbsp;[USING MAWS](manual-using-maws.md)&nbsp;&bull;&nbsp;[SCRIPTLINK EVENTS](manual-scriptlink-events.md)&nbsp;&bull;&nbsp;[ADDITIONAL INFORMATION](manual-additional-information.md)
 
-</h3>
+</h5>
+
+***
+
+<h6 align="center">
+
+  <img src="https://img.shields.io/badge/WARNING:-THIS%20IS%20BETA%20SOFTWARE-%23990000?style=for-the-badge">
+  
+</h6>
+
+# THE MYAVATOOL WEB SERVICE (MAWS)
+[Netsmart's myAvatar™](https://www.ntst.com/Solutions-and-Services/Offerings/myAvatar) is a behavioral health EHR that offers a recovery-focused suite of solutions that leverage real-time analytics and clinical decision support to drive value-based care.
+
+While myAvatar™ is a robust platform, like most things in life (except [Heroes of Might and Magic III](https://www.gog.com/game/heroes_of_might_and_magic_3_complete_edition)), it isn't perfect.
+
+The good news is that myAvatar™ functionality can be extended via Netsmart's myAvatar™ Web Services, and/or custom web services that are written by myAvatar™ users.
+
+The myAvatool Web Service (**MAWS**) is one such custom web service which includes various tools and utilities for myAvatar™ that aren't included in the official release, and provides a solid foundation for building additional functionality quickly and efficiently.
+
+## MAWS FEATURES
+* Several built-in tools and utilities for use with myAvatar™
+* Does not require Java to be installed
+* A solid foundation to build additional myAvatar™ custom tools and utilities
+
+## THE MANUAL
+The MAWS Manual (which you are reading *right now*) is updated with each release, and will walk you through setting up and using MAWS in your environments.
+
+## GETTING STARTED
+Ready to setup MAWS in your environment? [Let's get started!](manual-getting-started.md)
+***
+
+<h5 align="center">
+
+  HOME&nbsp;&bull;&nbsp;[GETTING STARTED](manual-getting-started.md)&nbsp;&bull;&nbsp;[HOSTING MAWS](manual-hosting-maws.md)&nbsp;&bull;&nbsp;[IMPORTING MAWS](manual-importing-maws.md)&nbsp;&bull;&nbsp;[USING MAWS](manual-using-maws.md)&nbsp;&bull;&nbsp;[SCRIPTLINK EVENTS](manual-scriptlink-events.md)&nbsp;&bull;&nbsp;[ADDITIONAL INFORMATION](manual-additional-information.md)
+
+</h5>

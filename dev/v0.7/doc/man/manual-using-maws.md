@@ -12,19 +12,17 @@
 
 </h1>
 
-<h6 align="center">
-
-  MAWS v0.8.x&nbsp;&bull;&nbsp;Last updated: April 21st, 2021
-
-</h6>
-
-***
-
 <h5 align="center">
 
-  [HOME](manual.md)&nbsp;&bull;&nbsp;[GETTING STARTED](manual-getting-started.md)&nbsp;&bull;&nbsp;[HOSTING MAWS](manual-hosting-maws.md)&nbsp;&bull;&nbsp;[IMPORTING MAWS](manual-importing-maws.md)&nbsp;&bull;&nbsp;USING MAWS&nbsp;&bull;&nbsp;[SCRIPTLINK EVENTS](manual-scriptlink-events.md)&nbsp;&bull;&nbsp;[ADDITIONAL INFORMATION](manual-additional-information.md)
+  MAWS v0.7&nbsp;&bull;&nbsp;Last updated: April 6th, 2021
 
 </h5>
+
+<h4 align="center">
+
+  [INTRODUCTION](manual-introduction.md)&nbsp;&bull;&nbsp;[HOSTING MAWS](manual-hosting-maws.md)&nbsp;&bull;&nbsp;[IMPORTING MAWS](manual-importing-maws.md)&nbsp;&bull;&nbsp;USING MAWS&nbsp;&bull;&nbsp;[SCRIPTLINK EVENTS](manual-scriptlink-events.md)[CUSTOM WEB SERVICES](manual-custom-web-services.md)
+
+</h4>
 
 ***
 
@@ -111,13 +109,9 @@ TBD.
 * TBD
 * TBD
 
-# NEXT: CREATING SCRIPTLINK EVENTS
-Now that you know how MAWS *works*, you can start adding [ScriptLink events](manual-scriptlink-events.md) to your myAvatar™ forms.
-
 ***
 
-<h5 align="center">
+<h4 align="center">
 
-  [HOME](manual.md)&nbsp;&bull;&nbsp;[GETTING STARTED](manual-getting-started.md)&nbsp;&bull;&nbsp;[HOSTING MAWS](manual-hosting-maws.md)&nbsp;&bull;&nbsp;[IMPORTING MAWS](manual-importing-maws.md)&nbsp;&bull;&nbsp;USING MAWS&nbsp;&bull;&nbsp;[SCRIPTLINK EVENTS](manual-scriptlink-events.md)&nbsp;&bull;&nbsp;[ADDITIONAL INFORMATION](manual-additional-information.md)
-
-</h5>
+  [INTRODUCTION](manual-introduction.md)&nbsp;&bull;&nbsp;[HOSTING MAWS](manual-hosting-maws.md)&nbsp;&bull;&nbsp;[IMPORTING MAWS](manual-importing-maws.md)&nbsp;&bull;&nbsp;USING MAWS&nbsp;&bull;&nbsp;[SCRIPTLINK EVENTS](manual-scriptlink-events.md)[CUSTOM WEB SERVICES](manual-custom-web-services.md)
+</h4>
