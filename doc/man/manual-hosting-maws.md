@@ -12,17 +12,19 @@
 
 </h1>
 
+<h6 align="center">
+
+  MAWS v0.8.x&nbsp;&bull;&nbsp;Last updated: April 21st, 2021
+
+</h6>
+
+***
+
 <h5 align="center">
 
-  MAWS v0.8&nbsp;&bull;&nbsp;Last updated: April 21st, 2021
+  [HOME](manual.md)&nbsp;&bull;&nbsp;[GETTING STARTED](manual-getting-started.md)&nbsp;&bull;&nbsp;HOSTING MAWS&nbsp;&bull;&nbsp;[IMPORTING MAWS](manual-importing-maws.md)&nbsp;&bull;&nbsp;[USING MAWS](manual-using-maws.md)&nbsp;&bull;&nbsp;[SCRIPTLINK EVENTS](manual-scriptlink-events.md)&nbsp;&bull;&nbsp;[ADDITIONAL INFORMATION](manual-additional-information.md)
 
 </h5>
-
-<h4 align="center">
-
-  [HOME](manual.md)&nbsp;&bull;&nbsp;HOSTING MAWS&nbsp;&bull;&nbsp;[IMPORTING MAWS](manual-importing-maws.md)&nbsp;&bull;&nbsp;[USING MAWS](manual-using-maws.md)&nbsp;&bull;&nbsp;[SCRIPTLINK EVENTS](manual-scriptlink-events.md)&nbsp;&bull;&nbsp;[CUSTOM WEB SERVICES](manual-custom-web-services.md)&nbsp;&bull;&nbsp;[MISC](manual-misc.md)
-
-</h4>
 
 ***
 
@@ -156,8 +158,8 @@ At this point, you should be able to point a browser to your website, and see th
 
 ***
 
-<h4 align="center">
+<h5 align="center">
 
-  [HOME](manual.md)&nbsp;&bull;&nbsp;HOSTING MAWS&nbsp;&bull;&nbsp;[IMPORTING MAWS](manual-importing-maws.md)&nbsp;&bull;&nbsp;[USING MAWS](manual-using-maws.md)&nbsp;&bull;&nbsp;[SCRIPTLINK EVENTS](manual-scriptlink-events.md)&nbsp;&bull;&nbsp;[CUSTOM WEB SERVICES](manual-custom-web-services.md)&nbsp;&bull;&nbsp;[MISC](manual-misc.md)
+  [HOME](manual.md)&nbsp;&bull;&nbsp;[GETTING STARTED](manual-getting-started.md)&nbsp;&bull;&nbsp;HOSTING MAWS&nbsp;&bull;&nbsp;[IMPORTING MAWS](manual-importing-maws.md)&nbsp;&bull;&nbsp;[USING MAWS](manual-using-maws.md)&nbsp;&bull;&nbsp;[SCRIPTLINK EVENTS](manual-scriptlink-events.md)&nbsp;&bull;&nbsp;[ADDITIONAL INFORMATION](manual-additional-information.md)
 
-</h4>
+</h5>
