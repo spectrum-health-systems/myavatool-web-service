@@ -23,7 +23,9 @@ namespace MyAvatoolWebService
     /// </remarks>
     public class InptAdmitDate
     {
-        /// <summary></summary>
+        /// <summary>
+        /// Parses a InptAdmitDate request string to determine the  command.
+        /// </summary>
         /// <param name="sentOptionObject2"></param>
         /// <param name="mawsRequest">      </param>
         /// <returns></returns>
