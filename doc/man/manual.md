@@ -3,12 +3,6 @@
   https://github.com/APrettyCoolProgram/my-development-environment/tree/master/templates/documentation
 -->
 
-<h6 align="center">
-
-  MAWS v0.8.x&nbsp;&bull;&nbsp;Last updated: April 21st, 2021
-
-</h6>
-
 <h1 align="center">
 
   <img src="../../resources/asset/img/logo/maws-logo-800x150.png" alt="myAvatar Web Service logo" width="800">
@@ -23,6 +17,8 @@
   MAWS v0.8.x&nbsp;&bull;&nbsp;Last updated: April 21st, 2021
 
 </h6>
+
+***
 
 <h5 align="center">
 
