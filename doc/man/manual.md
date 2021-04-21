@@ -34,13 +34,6 @@
   
 </h6>
 
-### DO NOT USE MAWS IN YOUR PRODUCTION ENVIRONMENT
-The current version of MAWS is v0.8.x.
-
-I'm working on getting MAWS v1.0 out the door, so for now this sourcecode in very beta, so DO NOT use this version. It's only here becuase I'm trying to keep the GitHub repository history clean.
-
-If you are looking for something to use right now, check out the [Avatool Web Service](https://github.com/spectrum-health-systems/Avatool-Web-Service), which is the the precursor to MAWS.
-
 # THE MYAVATOOL WEB SERVICE (MAWS)
 [Netsmart's myAvatar™](https://www.ntst.com/Solutions-and-Services/Offerings/myAvatar) is a behavioral health EHR that offers a recovery-focused suite of solutions that leverage real-time analytics and clinical decision support to drive value-based care.
 
