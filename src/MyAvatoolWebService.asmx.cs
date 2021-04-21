@@ -1,20 +1,56 @@
 ﻿/* PROJECT: MyAvatoolWebService (https://github.com/spectrum-health-systems/MyAvatoolWebService)
  *    FILE: MyAvatoolWebService.MyAvatoolWebService.asmx.cs
- * UPDATED: 4-21-2021-9:48 AM
+ * UPDATED: 4-21-2021-10:04 AM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2021 A Pretty Cool Program, All Rights reserved
  */
 
-/*
-   !!! WARNING !!!
-   ---------------
-   THIS IS A DEVELOPMENT BRANCH AND IS NOT INTENDED FOR PRODUCTION ENVIRONMENTS
+/******************************************************************************
+ *                                                                            *
+ *                                ===============                             *
+ *                                !!! WARNING !!!                             *
+ *                                ===============                             *
+ *                                                                            *
+ *                   >>> THIS IS THE MAWS DEVELOPMENT BRANCH <<<              *
+ *                                                                            *
+ ******************************************************************************/
 
- */
+/***********************************************************************************************************************
+ *                                                                                                                     *
+ *                                ===============                                                                      *
+ *                                !!! WARNING !!!                                                                      *
+ *                                ===============                                                                      *
+ *                                                                                                                     *
+ *                   >>> THIS IS THE MAWS DEVELOPMENT BRANCH <<<                                                       *
+ *                                                                                                                     *
+ **********************************************************************************************************************/
+
+/* ABOUT THIS DEVELOPMENT BRANCH
+ * -----------------------------
+ * Unless I have forgotten to update this comment, you are looking at v0.8 of
+ * the MAWS development branch
+
+
+
+
+
+
+
+
+
 
 /* ABOUT THIS SOURCECODE
  * ---------------------
- * This is the MAWS v0.7 branch, which focuses on building the MAWS framework, and moving functionality from the current
+ * This is the MAWS development branch, v0.8.xxxxx.xxxx.
+ *
+ * The development branch
+ *
+ * To make sure you are using the latest devel
+ *
+ *
+ *
+ *
+ * , which focuses on building the MAWS framework, and moving functionality from the current
  * Avatar Web Service:
  *  https://github.com/spectrum-health-systems/Avatool-Web-Service
  *
