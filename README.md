@@ -32,7 +32,7 @@
 
 <h4 align="center">
 
-  [MANUAL](doc/man/manual.md)&nbsp;&bull;&nbsp;[CHANGELOG](doc/changelog.md)&nbsp;&bull;&nbsp;[ROADMAP](doc/roadmap.md)&nbsp;&bull;&nbsp;[KNOWN ISSUES](doc/known-issues.md)&nbsp;&bull;&nbsp;[SUPPORT](doc/support.md)
+  [MANUAL](doc/man/manual.md)&nbsp;&bull;&nbsp;[CHANGELOG](src/Resources/Doc/changelog.md)&nbsp;&bull;&nbsp;[ROADMAP](src/Resources/Doc/roadmap.md)&nbsp;&bull;&nbsp;[KNOWN ISSUES](src/Resources/Doc/known-issues.md)&nbsp;&bull;&nbsp;[SUPPORT](src/Resources/Doc/support.md)
   <br>
 
 </h4>
@@ -65,60 +65,31 @@ The good news is that myAvatar™ functionality can be extended via Netsmart's m
 
 The myAvatool Web Service (**MAWS**) is one such custom web service which includes various tools and utilities for myAvatar™ that aren't included in the official release, and provides a solid foundation for building additional functionality quickly and efficiently.
 
-> **WARNING!** ***This is beta software!***
-
-The current version of MAWS is [v0.6](https://github.com/spectrum-health-systems/myavatool-web-service/tree/0.6). I'm working on getting MAWS v1.0 out the door, so for now this sourcecode in *very beta*, so **DO NOT** use this version. It's only here becuase I'm trying to keep the GitHub repository history clean.
-
-If you are looking for something to use right now, check out the [Avatool Web Service](https://github.com/spectrum-health-systems/Avatool-Web-Service) (the precursor to MAWS).
-
-## FEATURES
+## MAWS FEATURES
 * Several built-in tools and utilities for use with myAvatar™
-* A solid foundation to build additional custom tools and utilities
+* Does not require Java to be installed
+* A solid foundation to build additional myAvatar™ custom tools and utilities
+
+## THE MANUAL
+The [MAWS Manual](doc/man/manual.md) is updated with each release, and will walk you through setting up and using MAWS in your environments.
 
 ## REQUIREMENTS
 * A location to host the Avatool Web Service which meets the following requirements:
   * .NET Framework 4.6+ installed
   * Access to your myAvatar™ environments from the Avatool Web Service via HTTPS
 
-### Read the manual!
-Hey now, I spent alot of time working on the MAWS [manual](doc/man/manual.md), so please take a look. I update the manual with each new release of MAWS, and it covers pretty much anything you need to know about MAWS (as well as some general myAvatar™ custom web services stuff).
-
-# GETTING STARTED
-### Before you begin
-* Verify you have met the [requirements](#requirements).
-* Read the MAWS [manual](doc/man/manual.md)!
-
-# INSTALLING
-### Windows
-The Avatool Web Service isn't *installed* so much as it is *published*.
-
-The current method of publishing the web service is to just copy the entire project to where it is being hosted. Future versions of the Avatool Web Service will utilize the publishing functionality of Visual Studio.
-
-For more information about installing/publishing MAWS, please read the MAWS [manual](doc/man/manual-hosting-maws.md).
-
-#### Other operating systems
-Since MAWS used the .NET Framework, I'm pretty sure it's only compatible with the Windows operating system.
-
-# USING
-Please read the MAWS [manual](doc/man/manual.md) for information on using MAWS.
-
-# UPDATING
-Please read the MAWS [manual](doc/man/manual.md) for information on updating MAWS.
-
-# UNINSTALLING
-Please read the MAWS [manual](doc/man/manual.md) for information on uninstalling MAWS.
+# USING MAWS AT YOUR ORGANIZATION
+The [MAWS Manual](doc/man/manual.md) will walk your through setting up and using MAWS in your myAvatar™ environments.
 
 # DEVELOPMENT
-MAWS is developed by [A Pretty Cool Program](https://aprettycoolprogram.com) and these [contributors](doc/contributors.md), using these [third-party resources](built-with.md).
+MAWS is developed by [A Pretty Cool Program](https://aprettycoolprogram.com) and these [contributors](src/Resources/Doc/contributors.md), using these [third-party resources](src/Resources/Doc/built-with.md).
 
-You can find the current development branch of MAWS [here](https://github.com/spectrum-health-systems/myavatool-web-service/tree/development-v1.0).
-
-To contribute to the development branch of MAWS, please see our [contributing guidelines](doc/contributing.md).
+To contribute to the development branch of MAWS, please see our [contributing guidelines](src/Resources/Doc/contributing.md).
 
 # ADDITIONAL INFORMATION
-* [Acknowledgements](doc/acknowledgements.md)
-* [Related projects](doc/related-projects.md)
-* [Additional reading](doc/additional-reading.md)
+* [Acknowledgements](src/Resources/Doc/acknowledgements.md)
+* [Related projects](src/Resources/Doc/related-projects.md)
+* [Additional reading](src/Resources/Doc/additional-reading.md)
 
 ***
 

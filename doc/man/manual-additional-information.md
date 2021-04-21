@@ -22,6 +22,7 @@
 ## MAWS DEVELOPMENT
 * [Sourcecode information](../../src/Resources/Dev/sourcecode-information.md)
 * [Development information](../../src/Resources/Dev/development-information.md)
+* Previous development versions can be found [here](../../dev/).
 
 ## CREATING YOUR OWN MYAVATAR™ CUSTOM WEB SERVICE
 * [Creating a custom web service for myAvatar™](manual-custom-myavatar-web-services.md)
