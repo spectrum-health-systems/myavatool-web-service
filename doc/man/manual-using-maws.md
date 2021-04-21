@@ -111,6 +111,9 @@ TBD.
 * TBD
 * TBD
 
+# NEXT: CREATING SCRIPTLINK EVENTS
+Now that you know how MAWS *works*, you can start adding [ScriptLink events](manual-scriptlink-events.md) to your myAvatar™ forms.
+
 ***
 
 <h5 align="center">
