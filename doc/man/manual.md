@@ -28,7 +28,20 @@
 
 ***
 
-# IMPORTANT! THIS IS BETA SOFTWARE!
+<h3 align="center">
+
+  MAWS v0.8.x&nbsp;&bull;&nbsp;Last updated: April 21st, 2021
+
+</h6>
+
+***
+
+<h6 align="center">
+
+  <img src="https://img.shields.io/badge/WARNING:-THIS%20IS%20BETA%20SOFTWARE-%23990000?style=for-the-badge">
+  
+</h6>
+
 The current version of MAWS is v0.8.x.
 
 I'm working on getting MAWS v1.0 out the door, so for now this sourcecode in very beta, so DO NOT use this version. It's only here becuase I'm trying to keep the GitHub repository history clean.
