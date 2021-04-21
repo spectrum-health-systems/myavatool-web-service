@@ -48,12 +48,11 @@ The myAvatool Web Service (**MAWS**) is one such custom web service which includ
 * Does not require Java to be installed
 * A solid foundation to build additional myAvatar™ custom tools and utilities
 
-## DON'T FORGET THE MANUAL!
+## THE MANUAL
 The MAWS Manual (which you are reading *right now*) is updated with each release, and will walk you through setting up and using MAWS in your environments.
 
-## WANT TO START FROM SCRATCH?
-In the event that you would like to create your own custom web service for myAvatar™, I've outlined the steps I took to create MAWS [here](https://github.com/spectrum-health-systems/MyAvatoolWebService/blob/main/doc/man/manual-custom-web-services.md).
-
+## GETTING STARTED
+Ready to setup MAWS in your environment? [Let's get started!](manual-getting-started.md)
 ***
 
 <h5 align="center">
