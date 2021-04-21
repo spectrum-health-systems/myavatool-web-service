@@ -14,7 +14,7 @@
 
 <h5 align="center">
 
-  MAWS v0.7&nbsp;&bull;&nbsp;Last updated: April 6th, 2021
+  MAWS v0.8&nbsp;&bull;&nbsp;Last updated: April 21st, 2021
 
 </h5>
 

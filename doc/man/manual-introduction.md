@@ -14,13 +14,13 @@
 
 <h5 align="center">
 
-  MAWS v0.7&nbsp;&bull;&nbsp;Last updated: April 6th, 2021
+  MAWS v0.8&nbsp;&bull;&nbsp;Last updated: April 21st, 2021
 
 </h5>
 
 <h4 align="center">
 
-  INTRODUCTION&nbsp;&bull;&nbsp;[HOSTING MAWS](manual-hosting-maws.md)&nbsp;&bull;&nbsp;[IMPORTING MAWS](manual-importing-maws.md)&nbsp;&bull;&nbsp;[USING MAWS](manual-using-maws.md)&nbsp;&bull;&nbsp;[SCRIPTLINK EVENTS](manual-scriptlink-events.md)[CUSTOM WEB SERVICES](manual-custom-web-services.md)
+  INTRODUCTION&nbsp;&bull;&nbsp;[HOSTING MAWS](manual-hosting-maws.md)&nbsp;&bull;&nbsp;[IMPORTING MAWS](manual-importing-maws.md)&nbsp;&bull;&nbsp;[USING MAWS](manual-using-maws.md)&nbsp;&bull;&nbsp;[SCRIPTLINK EVENTS](manual-scriptlink-events.md)&nbsp;&bull;&nbsp;[CUSTOM WEB SERVICES](manual-custom-web-services.md)&nbsp;&bull;&nbsp;[MISC](manual-misc.md)
 
 </h4>
 
@@ -56,6 +56,6 @@ In the event that you would like to create your own custom web service for myAva
 
 <h4 align="center">
 
-  INTRODUCTION&nbsp;&bull;&nbsp;[HOSTING MAWS](manual-hosting-maws.md)&nbsp;&bull;&nbsp;[IMPORTING MAWS](manual-importing-maws.md)&nbsp;&bull;&nbsp;[USING MAWS](manual-using-maws.md)&nbsp;&bull;&nbsp;[SCRIPTLINK EVENTS](manual-scriptlink-events.md)[CUSTOM WEB SERVICES](manual-custom-web-services.md)
+  INTRODUCTION&nbsp;&bull;&nbsp;[HOSTING MAWS](manual-hosting-maws.md)&nbsp;&bull;&nbsp;[IMPORTING MAWS](manual-importing-maws.md)&nbsp;&bull;&nbsp;[USING MAWS](manual-using-maws.md)&nbsp;&bull;&nbsp;[SCRIPTLINK EVENTS](manual-scriptlink-events.md)&nbsp;&bull;&nbsp;[CUSTOM WEB SERVICES](manual-custom-web-services.md)&nbsp;&bull;&nbsp;[MISC](manual-misc.md)
 
 </h4>
