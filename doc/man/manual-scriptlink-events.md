@@ -155,6 +155,11 @@ Since it's easy to enable/disable ScriptLink events, my suggestions when testing
 
 Using the above suggestions, you will be able to disable functionlity quickly if there are any issues.
 
+# THAT'S IT!
+You've hosted MAWS, imported it into myAvatar™, and added ScriptLinks to forms.
+
+If you are still curious about MAWS, check out the [additional information](manual-additional-information.md) document.
+
 ***
 
 <h5 align="center">
