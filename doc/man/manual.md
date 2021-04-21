@@ -12,11 +12,11 @@
 
 </h1>
 
-<h5 align="center">
+<h6 align="center">
 
   MAWS v0.8&nbsp;&bull;&nbsp;Last updated: April 21st, 2021
 
-</h5>
+</h6>
 
 <h5 align="center">
 
