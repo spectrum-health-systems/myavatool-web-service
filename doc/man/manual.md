@@ -28,14 +28,6 @@
 
 ***
 
-<h3 align="center">
-
-  MAWS v0.8.x&nbsp;&bull;&nbsp;Last updated: April 21st, 2021
-
-</h6>
-
-***
-
 <h6 align="center">
 
   <img src="https://img.shields.io/badge/WARNING:-THIS%20IS%20BETA%20SOFTWARE-%23990000?style=for-the-badge">
