@@ -1,30 +1,28 @@
 ﻿/* PROJECT: MyAvatoolWebService (https://github.com/spectrum-health-systems/MyAvatoolWebService)
  *    FILE: MyAvatoolWebService.MyAvatoolWebService.asmx.cs
- * UPDATED: 4-21-2021-10:37 AM
+ * UPDATED: 4-21-2021-10:43 AM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2021 A Pretty Cool Program, All Rights reserved
  */
 
-/***************************************************************************************************************************
- *                                 >>> WARNING: THIS IS THE MAWS DEVELOPMENT BRANCH <<<                                    *
- ***************************************************************************************************************************
- *                                                                                                                         *
- * Unless I have forgotten to update this comment, you are looking at v0.8 of the MAWS development branch. You can confirm *
- * this by checking the following line in /Properties/AssemblyInfo.cs:                                                     *
- *                                                                                                                         *
- *  [assembly: AssemblyVersion("X.X.X.X")]                                                                                 *
- *                                                                                                                         *
- * To make sure you are using the latest development branch version, check the /Resources/Dev/current-versions.md file:    *
- *                                                                                                                         *
- *  https://github.com/spectrum-health-systems/MyAvatoolWebService/blob/development/src/Resources/Dev/current-versions.md  *
- *                                                                                                                         *
- * The MAWS development branch should not be used in production environments.                                              *
- *                                                                                                                         *
- * For previous development branch versions, please see:                                                                   *
- *                                                                                                                         *
- *  https://github.com/spectrum-health-systems/MyAvatoolWebService/tree/main/dev                                           *
- *                                                                                                                         *
- **************************************************************************************************************************/
+/**********************************************************************************************************************************
+ *                                 >>> WARNING: THIS IS THE MAWS DEVELOPMENT BRANCH <<<                                           *
+ **********************************************************************************************************************************
+ *                                                                                                                                *
+ * Unless I have forgotten to update this comment, you are looking at v0.8 of the MAWS development branch. You can confirm this   *
+ * by checking the following line in /Properties/AssemblyInfo.cs:                                                                 *
+ *                                                                                                                                *
+ *  [assembly: AssemblyVersion("X.X.X.X")]                                                                                        *
+ *                                                                                                                                *
+ * To make sure you are using the latest development branch version, check the /Resources/Dev/current-versions.md file:           *
+ *  https://github.com/spectrum-health-systems/MyAvatoolWebService/blob/development/src/Resources/Dev/development-information.md  *
+ *                                                                                                                                *
+ * The MAWS development branch should not be used in production environments.                                                     *
+ *                                                                                                                                *
+ * For previous development branch versions, please see:                                                                          *
+ *  https://github.com/spectrum-health-systems/MyAvatoolWebService/tree/main/dev                                                  *
+ *                                                                                                                                *
+ *********************************************************************************************************************************/
 
 /* =====================
  * ABOUT THIS SOURCECODE
@@ -33,8 +31,7 @@
  * -----------------
  * THERE IS A MANUAL
  * -----------------
- * I spent alot of time working on the manual, and it is updated with each release of MAWS:
- * 
+ * The MAWS Manual is updated with each release:
  *  https://github.com/spectrum-health-systems/MyAvatoolWebService/blob/main/doc/man/manual.md
  *
  * --------------------------------
@@ -64,10 +61,9 @@
  *
  *  - GetVersion(): Returns the web service version information
  *  -  RunScript(): Executes web service functionality
- *  
+ *
  * For more information about these required methods, please see the MAWS manual:
- * 
- *  https://github.com/spectrum-health-systems/MyAvatoolWebService/blob/main/doc/man/manual-custom-myavatar-web-services.md#addding-required-methods.md
+ *  https://github.com/spectrum-health-systems/MyAvatoolWebService/blob/main/doc/man/manual-custom-myavatar-web-services.md#adding-required-methods
  */
 
 using System.Web.Services;
@@ -75,7 +71,9 @@ using NTST.ScriptLinkService.Objects;
 
 namespace MyAvatoolWebService
 {
-    /// <summary>Summary description for MyAvatoolWebService.</summary>
+    /// <summary>
+    /// Summary description for MyAvatoolWebService.
+    /// </summary>
     /// <remarks>Required by myAvatar. Do not remove.</remarks>
     [WebService(Namespace = "http://tempuri.org/")]
     [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
