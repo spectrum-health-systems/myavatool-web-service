@@ -1,6 +1,6 @@
 ﻿/* PROJECT: MyAvatoolWebService (https://github.com/spectrum-health-systems/MyAvatoolWebService)
  *    FILE: MyAvatoolWebService.MyAvatoolWebService.asmx.cs
- * UPDATED: 4-21-2021-10:26 AM
+ * UPDATED: 4-21-2021-10:37 AM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2021 A Pretty Cool Program, All Rights reserved
  */
@@ -26,28 +26,20 @@
  *                                                                                                                         *
  **************************************************************************************************************************/
 
-/* ABOUT THIS SOURCECODE
- * ---------------------
- * This is the MAWS development branch, v0.8.xxxxx.xxxx.
+/* =====================
+ * ABOUT THIS SOURCECODE
+ * =====================
  *
- * The development branch
- *
- * To make sure you are using the latest devel
- *
- *
- *
- *
- * , which focuses on building the MAWS framework, and moving functionality from the current
- * Avatar Web Service:
- *  https://github.com/spectrum-health-systems/Avatool-Web-Service
- *
- * THERE IS A MANUAL!
- * ------------------
- * I spent alot of time working on the manual, and update it with each release of MAWS:
+ * -----------------
+ * THERE IS A MANUAL
+ * -----------------
+ * I spent alot of time working on the manual, and it is updated with each release of MAWS:
+ * 
  *  https://github.com/spectrum-health-systems/MyAvatoolWebService/blob/main/doc/man/manual.md
  *
- * A NOTE ABOUT COMMENTS
- * ---------------------
+ * --------------------------------
+ * YEAH, THERE ARE ALOT OF COMMENTS
+ * --------------------------------
  * I've tried to make this sourcecode as human-readable as possible, but since other organizations may use MAWS I've
  * decided to heavily comment everything as well. I know this goes against best practice, however since Netsmart doesn't
  * do the best job of making everything *they* do transparent, I want to make it sure that *my* code is as clear as
@@ -65,13 +57,17 @@
  * your own.
  */
 
-/* ABOUT THIS CLASS
- * ----------------
- * This class contains two methods that myAvatar requires a custom web service to have:
+/* ================
+ * ABOUT THIS CLASS
+ * ================
+ * MyAvatoolWebService.asmx.cs contains twp methods that myAvatar requires all custom web services to have:
  *
- *  - GetVersion(): Returns the MAWS version information
- *  -  RunScript(): Executes web script functionality.
- *
+ *  - GetVersion(): Returns the web service version information
+ *  -  RunScript(): Executes web service functionality
+ *  
+ * For more information about these required methods, please see the MAWS manual:
+ * 
+ *  https://github.com/spectrum-health-systems/MyAvatoolWebService/blob/main/doc/man/manual-custom-myavatar-web-services.md#addding-required-methods.md
  */
 
 using System.Web.Services;

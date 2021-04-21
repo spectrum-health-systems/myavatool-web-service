@@ -1,5 +1,11 @@
 ﻿# MAWS: Changelog
 
+## v0.8
+> This branch focuses on finalizing documentation and comments.
+
+#### v0.8.21111.1434 (2021-04-21)
+* `ADDED` /Resources/Dev/current-versions.md
+
 ## v0.7
 > This branch focuses on updating documentation and comments.
 
