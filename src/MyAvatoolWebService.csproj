@@ -74,12 +74,26 @@
     <Compile Include="MyAvatoolWebService.asmx.cs">
       <DependentUpon>MyAvatoolWebService.asmx</DependentUpon>
     </Compile>
+    <Compile Include="OptionObjectMaintenance.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="maws.licenseheader" />
     <None Include="packages.config" />
     <Content Include="Resources\Doc\changelog.md" />
+    <Content Include="Resources\Dev\development-information.md" />
+    <Content Include="Resources\Dev\development-notes.md" />
+    <Content Include="Resources\Dev\sourcecode-information.md" />
+    <Content Include="Resources\Doc\acknowledgements.md" />
+    <Content Include="Resources\Doc\additional-reading.md" />
+    <Content Include="Resources\Doc\built-with.md" />
+    <Content Include="Resources\Doc\code-of-conduct.md" />
+    <Content Include="Resources\Doc\contributing.md" />
+    <Content Include="Resources\Doc\contributors.md" />
+    <Content Include="Resources\Doc\known-issues.md" />
+    <Content Include="Resources\Doc\related-projects.md" />
+    <Content Include="Resources\Doc\roadmap.md" />
+    <Content Include="Resources\Doc\support.md" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
