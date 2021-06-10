@@ -6,10 +6,11 @@
 
   <img src="https://img.shields.io/badge/WARNING:-DEPRECIATED%20VERSION-%23990000?style=for-the-badge">
   <br>
- <br>
-  This version of MAWS has been depreciated, since it uses the older *OptionObject*.
+  <br>
 
-  The [current development branch](https://github.com/spectrum-health-systems/MyAvatoolWebService/tree/development) uses the new *OptionObject2015*
+  This version of MAWS has been depreciated, since it uses the older OptionObject.
+
+  The [current development branch](https://github.com/spectrum-health-systems/MyAvatoolWebService/tree/development) uses the new OptionObject2015.
 
 </h3>
 
