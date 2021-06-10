@@ -1,4 +1,12 @@
-﻿using System.Web.Services;
+﻿/* PROJECT: MyAvatoolWebService (https://github.com/aprettycoolprogram/MyAvatoolWebService)
+ *    FILE: MyAvatoolWebService.MyAvatoolWebService.asmx.cs
+ * UPDATED: 6-10-2021-2:31 PM
+ * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
+ *          Copyright 2021 A Pretty Cool Program All rights reserved
+ */
+
+using System.Web.Services;
+using NTST.ScriptLinkService.Objects;
 
 namespace MyAvatoolWebService
 {
@@ -14,9 +22,27 @@ namespace MyAvatoolWebService
     {
 
         [WebMethod]
-        public string HelloWorld()
+        public string GetVersion()
         {
-            return "Hello World";
+            return "VERSION 1.0";
+        }
+
+        [WebMethod]
+        public OptionObject2015 RunScript(OptionObject2015 sentOptionObject, string action)
+        {
+            switch(action)
+            {
+                case "doSomething":
+                    return MethodName(sentOptionObject);
+                default:
+                    break;
+            }
+            return sentOptionObject;
+        }
+
+        public static OptionObject2015 MethodName(OptionObject2015 sentOptionObject)
+        {
+            return new OptionObject2015();
         }
     }
 }

@@ -145,7 +145,7 @@ Since we created an empty project, there aren't any valid web services available
 In order for our new MyAvatoolWebService Web Service to work, we'll need to add the *Netsmart ScriptLink Service* to our project.
 
 ## Downloading the Netsmart ScriptLink Service
-The Netsmart ScriptLink Service is bundled with the "Brief ScriptLink Tutorial with OptionObject2", which you will need to download from the Netsmart Cares portal.
+The Netsmart ScriptLink Service is bundled with the "Brief ScriptLink Tutorial with OptionObject2015", which you will need to download from the Netsmart Cares portal.
 
 1. Login to the *[Netsmart Cares portal](https://netsmartcares.force.com/s/login/)*
 2. Go to the *Application Exchange* by choosing **Community** > **App Exchange**
@@ -160,7 +160,7 @@ The Netsmart ScriptLink Service is bundled with the "Brief ScriptLink Tutorial w
 <br>
 
 3. Under **Quick Links** choose **Avatar ScriptLink Library**
-4. Find the **Brief ScriptLink Tutorial with OptionObject2** entry, and click **Download**
+4. Find the **Brief ScriptLink Tutorial with OptionObject2015** entry, and click **Download**
 
 <h6 align="center">
 
@@ -172,7 +172,7 @@ The Netsmart ScriptLink Service is bundled with the "Brief ScriptLink Tutorial w
 <br>
 
 ### Can't find the file in the App Exchange?
-If you can't find the "Brief ScriptLink Tutorial with OptionObject2" entry in the App Exchange, you can [download it](third-party/netsmart/136_180_9_ScriptLinkTutorialWithOptionObject2.zip) from this repository.
+If you can't find the "Brief ScriptLink Tutorial with OptionObject2015" entry in the App Exchange, you can [download it](third-party/netsmart/136_180_9_ScriptLinkTutorialWithOptionObject2015.zip) from this repository.
 
 ### Make sure you have the correct file!
 The downloaded file is a .zip archive with (as of January 8th, 2021) the following details:
@@ -266,11 +266,6 @@ Your solution should look like this:
   
 </h6>
 <br>
-
-
-
-
-
 
 ### Wrong .NET Framework version?
 If a message pops up letting you know that the Netsmart ScriptLink Service targets a .NET Framework version that's not installed (in this case, .NET 3.5), change the target .NET Framework version to v4.6.
@@ -376,9 +371,9 @@ namespace MyAvatoolWebService
 The second required method is called `RunScript()`. It looks like this:
 ```
 [WebMethod]
-public OptionObject2 RunScript(OptionObject2 sentOptionObject, string action)
+public OptionObject2015015 RunScript(OptionObject2015015 sentOptionObject, string action)
 {
-    switch (action)
+    switch(action)
     {
         case "doSomething":
             return MethodName(sentOptionObject);
@@ -392,7 +387,7 @@ public OptionObject2 RunScript(OptionObject2 sentOptionObject, string action)
 #### What does `RunScript()` do?
 * Performs a MAWS request (e.g., "InptAdmitDate-VerifyPreAdmitDate").
 * It's the only MAWS method that myAvatar works with directly, both calling the action myAvatar requests, and returning the result of that action to myAvatar.
-* Receives an OptionObject2 object and an "action" string from myAvatar, then uses a switch statement to pass the OptionObject2 object and action to the local method that will process the action. If an invalid action is passed, the the OptionObject2 is returned without any changes being made.
+* Receives an OptionObject2015 object and an "action" string from myAvatar, then uses a switch statement to pass the OptionObject2015 object and action to the local method that will process the action. If an invalid action is passed, the the OptionObject2015 is returned without any changes being made.
 
 Copy the `RunScript()` method code above, and paste it below the `GetVersion()` method in the *MyAvatoolWebService* class.
 
@@ -419,7 +414,7 @@ namespace MyAvatoolWebService
         }
 
         [WebMethod]
-        public OptionObject2 RunScript(OptionObject2 sentOptionObject, string action)
+        public OptionObject2015015 RunScript(OptionObject2015015 sentOptionObject, string action)
         {
             switch(action)
             {
@@ -435,9 +430,9 @@ namespace MyAvatoolWebService
 ```
 
 ### Why the red lines?
-Once you have completed the above steps, you will probably notice some warnings in your code in the form of red underlines. Most likely you are getting these warnings under the text for `OptionObject2` and `MethodName`.
+Once you have completed the above steps, you will probably notice some warnings in your code in the form of red underlines. Most likely you are getting these warnings under the text for `OptionObject2015` and `MethodName`.
 
-You are getting these warnings becuase your project doesn't know what `OptionObject2` and `MethodName` are. Let's fix that.
+You are getting these warnings becuase your project doesn't know what `OptionObject2015` and `MethodName` are. Let's fix that.
 
 ## ADDING THE NTST.ScriptLinkService.Objects NAMESPACE
 You'll need to add a `using` statement at the top of your code so the `NTST.ScriptLinkService.Objects` is accessible. Here's how:
@@ -471,7 +466,7 @@ namespace MyAvatoolWebService
         }
 
         [WebMethod]
-        public OptionObject2 RunScript(OptionObject2 sentOptionObject, string action)
+        public OptionObject2015 RunScript(OptionObject2015 sentOptionObject, string action)
         {
             switch(action)
             {
@@ -498,7 +493,7 @@ A more real-world example would be myAvatar™ requesting a "checkDate" action b
 The `RunScript()` method  in that example would look like this:
 ```
 [WebMethod]
-public OptionObject2 RunScript(OptionObject2 sentOptionObject, string action)
+public OptionObject2015 RunScript(OptionObject2015 sentOptionObject, string action)
 {
     switch(action)
     {
@@ -515,9 +510,9 @@ And then we would have a method called `CheckTheDatePlease()` that would do what
 
 For this tutorial, we are just going to create a method called `MethodName()`, which looks like this:
 ```
-public static OptionObject2 MethodName(OptionObject2 sentOptionObject)
+public static OptionObject2015 MethodName(OptionObject2015 sentOptionObject)
 {
-    return new OptionObject2();
+    return new OptionObject2015();
 }
 ```
 
@@ -547,7 +542,7 @@ namespace MyAvatoolWebService
         }
 
         [WebMethod]
-        public OptionObject2 RunScript(OptionObject2 sentOptionObject, string action)
+        public OptionObject2015 RunScript(OptionObject2015 sentOptionObject, string action)
         {
             switch(action)
             {
@@ -559,9 +554,9 @@ namespace MyAvatoolWebService
             return sentOptionObject;
         }
 
-        public static OptionObject2 MethodName(OptionObject2 sentOptionObject)
+        public static OptionObject2015 MethodName(OptionObject2015 sentOptionObject)
         {
-            return new OptionObject2();
+            return new OptionObject2015();
         }
     }
 }
