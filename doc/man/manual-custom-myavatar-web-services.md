@@ -30,10 +30,10 @@ To create MAWS, I used:
 * [Visual Studio Community 2019](https://visualstudio.microsoft.com/vs/) (including the extensions listed [here](https://github.com/APrettyCoolProgram/my-development-environment))
 * [Visual Studio Code](https://code.visualstudio.com/?wt.mc_id=DX_841432) (including the extensions listed [here](https://github.com/APrettyCoolProgram/my-development-environment))
 * [GitHub Desktop](https://desktop.github.com/)
-* [.NET Framework 4.6](https://dotnet.microsoft.com/download/dotnet-framework)
+* [.NET Framework 4.6.1](https://dotnet.microsoft.com/download/dotnet-framework)
 
 ### Why .NET Framework 4.6?
-Personally, I would rather use .NET Core 5, but as of .NET Core 5.1, SOAP web services are not supported. I would imagine other versions of the .NET Framework would be fine, but most myAvatool-related development has been using v4.6, so I'm sticking with that.
+Personally, I would rather use .NET Core, but as of .NET Core 5.1, SOAP web services are not supported. I would imagine other versions of the .NET Framework would be fine, but most myAvatool-related development has been using v4.6.x, so I'm sticking with that.
 
 ### What language?
 While you can (probably) use any language to create a custom web service for myAvatar™, these instructions will walk through creating a web service in C#.
@@ -67,7 +67,7 @@ First, we need to create an empty ASP.NET Web Application project. Using Visual 
 
 5. Complete the **Project Name** field (in this example, the project name is "*MyAvatoolWebService*")
 6. Choose a **Location** for your project
-7. Verify the **Framwork** is "*.NET Framework 4.6*"
+7. Verify the **Framwork** is "*.NET Framework 4.6.1*"
 8. Click **Create**
 
 <h6 align="center">
@@ -177,18 +177,17 @@ If you can't find the "Brief ScriptLink Tutorial with OptionObject2" entry in th
 ### Make sure you have the correct file!
 The downloaded file is a .zip archive with (as of January 8th, 2021) the following details:
 
-> Name: **136_180_9_ScriptLinkTutorialWithOptionObject2.zip**<br>
-> Size: **1.85MB**<br>
-> MD5: **EC9445B70FD994A4453C4D0649208EC2**<br>
-> SHA2-256: **899617150FF9A69A6D3A7661CD4CAC304292D5F7BA775432C9B5C3FE6AA1D8F4**<br>
+> Name: **136_4354_20_ScriptLinkStub.zip**<br>
+> Size: **19,844KB**<br>
+> SHA2-256: **05AD745F1EA6170CCC76CDE6C68733627DBD5853D2F6E56A7C9342C773C7B9DC**<br>
 
 ## Extracting the Netsmart ScriptLink Service
 The file you downloaded actually contains a bunch of stuff, most of which we don't need. 
 
-1. Extract the contents of **136_180_9_ScriptLinkTutorialWithOptionObject2.zip**
+1. Extract the contents of **136_4354_20_ScriptLinkStub.zip**
 2. Find the **NTST.ScriptLinkService.Objects/** folder in the extracted data:
 ```
-./136_180_9_ScriptLinkTutorialWithOptionObject2/ScriptLinkTutorialWithOptionObject2/DotNetCode/ScriptLinkServiceComplete/NTST.ScriptLinkService.Objects/
+./136_4354_20_ScriptLinkStub/NTST.ScriptLinkService.Objects/
 ```
 3. Copy the **NTST.ScriptLinkService.Objects/** folder to the root of your project
 
