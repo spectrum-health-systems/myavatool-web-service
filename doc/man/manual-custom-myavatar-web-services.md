@@ -371,7 +371,7 @@ namespace MyAvatoolWebService
 The second required method is called `RunScript()`. It looks like this:
 ```
 [WebMethod]
-public OptionObject2015015 RunScript(OptionObject2015015 sentOptionObject, string action)
+public OptionObject2015 RunScript(OptionObject2015 sentOptionObject, string action)
 {
     switch(action)
     {
@@ -414,7 +414,7 @@ namespace MyAvatoolWebService
         }
 
         [WebMethod]
-        public OptionObject2015015 RunScript(OptionObject2015015 sentOptionObject, string action)
+        public OptionObject2015 RunScript(OptionObject2015 sentOptionObject, string action)
         {
             switch(action)
             {
