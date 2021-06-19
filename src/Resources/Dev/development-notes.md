@@ -21,6 +21,24 @@
   </tr>
 </table>
 
+<table>
+  <tr>
+    <th>NAME</th>
+    <td>ExternalLogging</td>
+  </tr>
+  <tr>
+    <th>DESCRIPTION</th>
+    <td>Logging functionality.</td>
+  </tr>
+    <th>DETAILS</th>
+    <td>TBD</td>
+  </tr>
+    </tr>
+    <th>STATUS</th>
+    <td>In Progress</td>
+  </tr>
+</table>
+
 ## FUNCTIONALITY
 
 ### DoseCheck
@@ -44,7 +62,9 @@ AND
   </tr>
   <tr>
     <th>FORMS/FIELDS</th>
-    <td>Verify that the current medication dose does not exceed specific parameters</td>
+    <td>FORM: Quick Medication Order FIELD: Dosage 1(mg) FIELD_ID: 107</td>
+    <td>FORM: Quick Medication Order FIELD: Dosage 1(mg) FIELD_ID: 107</td>
+    <td>FORM: Quick Medication Order FIELD: Dosage 1(mg) FIELD_ID: 107</td>
   </tr>
 </table>
 
