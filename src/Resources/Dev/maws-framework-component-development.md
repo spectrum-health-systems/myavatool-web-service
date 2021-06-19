@@ -6,27 +6,18 @@
 
 ## Request Syntax Engine
 
-<table>
-  <tr>
-    <th>COMPONENT NAME</th>
-    <td>ReqEng</td>
-  </tr>
-  <tr>
-    <th>DESCRIPTION</th>
-    <td>The logic that parses a MAWS Request</td>
-  </tr>
-    <th>STATUS</th>
-    <td>In Progress - v2.0 (MAWS v0.9)</td>
-</table>
+| NAME | DESCRIPTION | STATUS |
+| ---- | ----------- | ------ |
+| ReqSynEng | Logic to process MAWS Requests | In-progress - v2.0 (MAWS 0.9) |
 
 Originally a MAWS Request was a single "command", e.g., "VerifyInpatientAdmissionDate". In order to make MAWS more customizable, I decided to allow a MAWS Request to be more complex, consisting of a MAWS "command" and a command "action". The MAWS Request Syntax Engine is the component that parses a MAWS Request, and breaks it down into its seperate parts so MAWS can do what it needs to do.
 
-### ReqEng v2.0
+### ReqSynEng v2.0
 I've changed the way that MAWS requests are passed/executed. Instead of passing an *action* to `MyAvatoolWebService.RunScript()`, a *mawsRequest* (e.g., "InptAdmitDate-VerifyPreAdmin") is passed. That is then parsed (using the `-` delimiter) into the following:
 1. A MAWS *command* (e.g., "InptAdmitDate")
 2. A MAWS *action* (e.g., "VerifyPreAdmin")
 
-### ReqEng v1.0
+### ReqSynEng v1.0
 Original syntax stuff. Very simple. Not documented.
 
 ### Testing platform
