@@ -9,6 +9,8 @@ Last updated: 6.19.21 (MAWS v0.9.x.x)
 
 # FRAMEWORK COMPONENTS
 ## Request Syntax Engine
+
+<h4>
 <table>
   <tr>
     <th>COMPONENT NAME</th>
@@ -28,6 +30,7 @@ Last updated: 6.19.21 (MAWS v0.9.x.x)
     <td>v0.9</td>
   </tr>
 </table>
+</h4>
 
 Originally a MAWS Request was a single "command", e.g., "VerifyInpatientAdmissionDate". In order to make MAWS more customizable, I decided to allow a MAWS Request to be more complex, consisting of a MAWS "command" and a command "action". The MAWS Request Syntax Engine is the component that parses a MAWS Request, and breaks it down into its seperate parts so MAWS can do what it needs to do.
 
