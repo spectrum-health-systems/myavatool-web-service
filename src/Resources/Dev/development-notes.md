@@ -52,5 +52,5 @@ Dispensing Date field = date field (10007)
 ### Test plan
 *
 
-### Next steps:
+### Next steps
 * Christine: Admission or Admission (Outpatient) form?
