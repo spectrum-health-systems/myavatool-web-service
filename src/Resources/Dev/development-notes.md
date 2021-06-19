@@ -1,19 +1,24 @@
-﻿# MAWS: Development Notes
+﻿# MAWS: DEVELOPMENT NOTES
 This document contains all development notes for the myAvatar Web Service (MAWS).
+Last updated: 6.19.21 (MAWS v0.9.x.x)
+
+CONTENTS
+[FRAMEWORK COMPONENTS](#framework-components)
+[FUNCTIONALITY](#functionality)
 
 # FRAMEWORK COMPONENTS
-## MAWS Request Syntax
+## MAWS Request Syntax Engine
 <table>
   <tr>
-    <th>NAME</th>
-    <td>MawsReqSyntax</td>
+    <th>FRAMEWORK COMPONENT NAME</th>
+    <td>MRSE</td>
   </tr>
   <tr>
     <th>DESCRIPTION</th>
     <td>The MAWS Request syntax logic.</td>
   </tr>
     <th>DETAILS</th>
-    <td>TBD</td>
+    <td>The MAWS Request Syntax is what</td>
   </tr>
     <th>STATUS</th>
     <td>In Progress - v2.0</td>
@@ -23,7 +28,6 @@ This document contains all development notes for the myAvatar Web Service (MAWS)
   </tr>
 </table>
 
-#### MawsReqSyntax proposal
 The MAWS Request syntax should be modified to be more customizable.
 
 #### MawsReqSyntax v2.x
