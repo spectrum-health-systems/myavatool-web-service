@@ -6,5 +6,5 @@ Please see the [MAWS Framework Components](https://github.com/spectrum-health-sy
 
 ## FUNCTIONALITY
 Please see the [MAWS Framework Components](https://github.com/spectrum-health-systems/MyAvatoolWebService/blob/development/src/Resources/Dev/maws-functionality-development.md)document.
-## OTHER
 
+## OTHER
