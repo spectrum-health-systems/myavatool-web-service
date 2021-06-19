@@ -1,6 +1,6 @@
 ﻿/* PROJECT: MyAvatoolWebService (https://github.com/aprettycoolprogram/MyAvatoolWebService)
  *    FILE: MyAvatoolWebService.MyAvatoolWebService.asmx.cs
- * UPDATED: 6-19-2021-12:28 PM
+ * UPDATED: 6-19-2021-1:26 PM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2021 A Pretty Cool Program All rights reserved
  */
@@ -47,23 +47,28 @@ namespace MyAvatoolWebService
         public string GetVersion()
         {
             /* This is required by myAvatar. Do not remove!
+             * 
+             * I'm leaving this as "VERSION 1.0" throughout the development of MAWS v1.0.
              */
             return "VERSION 1.0";
         }
 
         /// <summary>
-        /// Performs an MAWS request
+        /// Performs an MAWS request.
         /// </summary>
         /// <param name="sentOptionObject">The OptionObject2015 object sent from myAvatar.</param>
         /// <param name="mawsRequest">     The MAWS request to perform (e.g., "InptAdmitDate-VerifyPreAdmin")</param>
         /// <returns>A completed OptionObject2 that MAWS will return to myAvatar.</returns>
-        public OptionObject2015 RunScript(OptionObject2015 sentOptionObject, string action)
+        public OptionObject2015 RunScript(OptionObject2015 sentOptionObject, string mawsRequest)
         {
             /* This is required by myAvatar. Do not remove! The only changes to this method should be adding external methods to the switch statement.
              *
              * For information about how to perform a MAWS request from within myAvatar, please see:
              *  https://github.com/spectrum-health-systems/MyAvatoolWebService/blob/main/doc/man/manual-using-maws.md
              */
+
+
+
             switch(action)
             {
                 case "doSomething":

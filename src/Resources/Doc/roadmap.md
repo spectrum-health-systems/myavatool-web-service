@@ -6,7 +6,7 @@
 <table>
   <tr>
     <th>NAME</th>
-    <td>MAWSGUI</td>
+    <td>MawsGui</td>
   </tr>
   <tr>
     <th>DESCRIPTION</th>
@@ -25,7 +25,40 @@
   </tr>
 </table>
 
+#### MawsGui proposal
 A GUI control panel for MAWS
+
+#### MawsGui v0.1
+TBD
+
+### Efficient looping
+<table>
+  <tr>
+    <th>NAME</th>
+    <td>EffLoop</td>
+  </tr>
+  <tr>
+    <th>DESCRIPTION</th>
+    <td>Clean up the OptionObject search loop.</td>
+  </tr>
+    <th>DETAILS</th>
+    <td>Looping through the OptionObject is currently very inefficient.</td>
+  </tr>
+    </tr>
+    <th>STATUS</th>
+    <td>In Progress</td>
+  </tr>
+  <tr>
+    <th>TARGET RELEASE</th>
+    <td>TBD</td>
+  </tr>
+</table>
+
+#### EffLoop proposal
+Looping should be more efficient.
+
+#### EffLoop v0.1
+TBD
 
 ## FUNCTIONALITY
 
@@ -52,6 +85,12 @@ A GUI control panel for MAWS
     <td>TBD</td>
   </tr>
 </table>
+
+#### IdCheck proposal
+TBD
+
+#### IdCheck v0.1
+TBD
 
 ### SiteClosure
 
@@ -80,6 +119,7 @@ A GUI control panel for MAWS
   </tr>
 </table>
 
+#### SiteClosure proposal
 Field 10008 is a scrolling text field.
 Field 10007 is a date field.
 
@@ -93,6 +133,9 @@ If yes: error
 If no: continue
 
 Dispensing History field = scrolling text field (10008) Dispensing Date field = date field (10007)
+
+#### SiteClosure v0.1
+TBD
 
 ### SubscriberPolicyNumberWhitespace
 
@@ -118,7 +161,11 @@ Dispensing History field = scrolling text field (10008) Dispensing Date field = 
   </tr>
 </table>
 
+#### SubscriberPolicyNumberWhitespace proposal
 This is a text field that can be either numeric or alphanumeric. The data element number is 263. If we could warn the user or ideally trim the leading/trailing spaces that would be ideal. 
+
+#### SubscriberPolicyNumberWhitespace v0.1
+TBD
 
 ### VerifyDayOfWeek
 
@@ -144,6 +191,12 @@ This is a text field that can be either numeric or alphanumeric. The data elem
   </tr>
 </table>
 
+#### VerifyDayOfWeek proposal
+TBD
+
+#### VerifyDayOfWeek v0.1
+TBD
+
 ### BatchUserDeactivate
 
 <table>
@@ -167,6 +220,12 @@ This is a text field that can be either numeric or alphanumeric. The data elem
     <td>TBD</td>
   </tr>
 </table>
+
+#### BatchUserDeactivate proposal
+TBD
+
+#### BatchUserDeactivate v0.1
+TBD
 
 ### PreAdmissionEpisodeEditedForAdmission
 
@@ -192,6 +251,7 @@ This is a text field that can be either numeric or alphanumeric. The data elem
   </tr>
 </table>
 
+#### PreAdmissionEpisodeEditedForAdmission proposal
 Admission (Outpatient)
 Choose a PA episode > Edit
 If the Preadmit/Admission date is empty, don't do anything
@@ -199,6 +259,10 @@ If the Preadmit/Admission date == system date, don't do anything
 If the Preadmit/Admission date != system date:
 Warn user to modify date
 Warn again!
+
+#### PreAdmissionEpisodeEditedForAdmission v0.1
+TBD
+
 
 ## OTHER
 * Confirm all references to *OptionObject2* are replaced with *OptionObject2015*
