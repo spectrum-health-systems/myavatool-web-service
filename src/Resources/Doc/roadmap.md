@@ -16,20 +16,6 @@ Please see the [MAWS functionality](https://github.com/spectrum-health-systems/M
         * This method, and the methods it calls, should be more efficient. Currently it relies on brute force.
         * Maybe do the work with a "workerOptionObject", then at the end copy that over to "finalizedOptionObject"
 
-* manual-hosting-maws.md
-    * instruction on where to put the files/how to publish
-    * updating MAWS
-    * Disabling MAWS
-    * has to be https
-
-* Update manual to reflect the local methods being removed.
-    * Main asmx is just the required methods now
-    * All actions are external classes
-
-* Man
-    * InptAdmitDate.cs
-        * Parser, DefineFieldIds, etc all under main
-
 * documentation
     * other projects
     * OO2
@@ -37,6 +23,20 @@ Please see the [MAWS functionality](https://github.com/spectrum-health-systems/M
 * Other abbreviations:
     * Outpatient = outpt 
 
+* Why not JSON?
+
 * Do the $"{}" thing with strings
 
-* Update docs with standard ids
+* Manual
+  * How to test functionality while developing via ForceTest()
+  * Update docs with standard ids
+  * manual-hosting-maws.md
+    * instruction on where to put the files/how to publish
+    * updating MAWS
+    * Disabling MAWS
+    * has to be https
+  * Update manual to reflect the local methods being removed.
+      * Main asmx is just the required methods now
+      * All actions are external classes
+  * InptAdmitDate.cs
+      * Parser, DefineFieldIds, etc all under main

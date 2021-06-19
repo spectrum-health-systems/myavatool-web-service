@@ -1,6 +1,6 @@
 ﻿/* PROJECT: MyAvatoolWebService (https://github.com/aprettycoolprogram/MyAvatoolWebService)
  *    FILE: MyAvatoolWebService.MyAvatoolWebService.asmx.cs
- * UPDATED: 6-19-2021-1:39 PM
+ * UPDATED: 6-19-2021-4:44 PM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2021 A Pretty Cool Program All rights reserved
  */
@@ -26,6 +26,7 @@
  *  https://github.com/spectrum-health-systems/MyAvatoolWebService/blob/development/src/Resources/Dev/sourcecode-information.md
  */
 
+using System.Collections.Generic;
 using System.Web.Services;
 using NTST.ScriptLinkService.Objects;
 
@@ -43,13 +44,13 @@ namespace MyAvatoolWebService
         /// Returns the MAWS version string.
         /// </summary>
         /// <returns>The MAWS version string (e.g., "VERSION 1.0").</returns>
+        /// <remarks>This method is required by myAvatar. DO NOT REMOVE.</remarks>
         [WebMethod]
         public string GetVersion()
         {
-            /* This is required by myAvatar. Do not remove!
-             *
-             * I'm leaving this as "VERSION 1.0" throughout the development of MAWS v1.0.
-             */
+            // Uncomment to test MAWS functionality.
+            ForceTest();
+
             return "VERSION 1.0";
         }
 
@@ -59,24 +60,47 @@ namespace MyAvatoolWebService
         /// <param name="sentOptionObject">The OptionObject2015 object sent from myAvatar.</param>
         /// <param name="mawsRequest">     The MAWS request to perform (e.g., "InptAdmitDate-VerifyPreAdmin")</param>
         /// <returns>A completed OptionObject2 that MAWS will return to myAvatar.</returns>
-        public OptionObject2015 RunScript(OptionObject2015 sentOptionObject, string mawsRequest)
+        /// <remarks>This method is required by myAvatar. DO NOT REMOVE.</remarks>
+        public static OptionObject2015 RunScript(OptionObject2015 sentOptionObject, string mawsRequest)
         {
-            /* This is required by myAvatar. Do not remove! The only changes to this method should be adding external methods to the switch statement.
+            /* This method is required by myAvatar. Do not remove! The only changes to this method should be adding external methods to the switch statement.
              *
              * For information about how to perform a MAWS request from within myAvatar, please see:
              *  https://github.com/spectrum-health-systems/MyAvatoolWebService/blob/main/doc/man/manual-using-maws.md
              */
 
+            Dictionary<string, string> mawsRequestComponent = RequestSyntaxEngine.ParseRequest(mawsRequest);
 
-
-            switch(action)
+            switch(mawsRequestComponent["requestCommand"])
             {
-                case "doSomething":
-                    return MethodName(sentOptionObject);
+                case "InpatientAdmissionDate":
+                    break;
+
                 default:
                     break;
             }
+
+            //switch(action)
+            //{
+            //    case "doSomething":
+            //        return MethodName(sentOptionObject);
+            //    default:
+            //        break;
+            //}
+
             return sentOptionObject;
+        }
+
+        /// <summary>
+        /// Test MAWS functionality.
+        /// </summary>
+        private static void ForceTest()
+        {
+            /* This is probably a Bad Idea? But I do want an easy way to test functionality, so...uncomment lines below
+             * to test various functionality.
+             */
+
+            RequestSyntaxEngine.ForceTest();
         }
 
         public static OptionObject2015 MethodName(OptionObject2015 sentOptionObject)

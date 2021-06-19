@@ -18,9 +18,14 @@ In order to make MAWS more customizable, I decided to allow a MAWS Request to be
 1. A MAWS *command* (e.g., "InptAdmitDate")
 2. A MAWS *action* (e.g., "VerifyPreAdmin")
 
-The command and action are seperated by a `-` delimiter. So a complete MAWS request will look like "InptAdmitDate-VerifyPreAdmin". The MAWS Request Syntax Engine is the component that parses a MAWS Request, and breaks it down into its seperate parts so MAWS can do what it needs to do.
+It's also possible that the MAWS request will contain:
+3. A MAWS *option* (e.g., "Testing")
 
-For more information, see the manual.
+The commands/actions/options are seperated by a `-` delimiter. So a complete MAWS request will look like "InptAdmitDate-VerifyPreAdmin<-option>". The MAWS Request Syntax Engine is the component that parses a MAWS Request, and breaks it down into its seperate parts so MAWS can do what it needs to do.
+
+In addition, v2.0 will have an external list of valid commands/actions/options that will be verified by the RequestSyntaxEngine.
+
+For more information on making MAWS Requests, see the manual.
 
 ## TestPlatform
 | DESCRIPTION | STATUS | RELEASE |

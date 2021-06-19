@@ -3,6 +3,11 @@
 ## Version 0.9.x.x
 > Porting v0.8 over to use OptionObject2015
 
+#### 0.9.21170.2044 (2021-06-19)
+* `INFO` Built-in (simplistic!) testing works.
+* `ADDED` MyAvatoolWebService.ForceTest()
+* `ADDED` RequestSyntaxEngine.ForceTest()
+
 #### 0.9.21170.1739 (2021-06-19)
 * `INFO` Documentation updates
 

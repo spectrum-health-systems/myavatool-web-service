@@ -76,6 +76,7 @@
     </Compile>
     <Compile Include="OptionObjectMaintenance.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RequestSyntaxEngine.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="maws.licenseheader" />
