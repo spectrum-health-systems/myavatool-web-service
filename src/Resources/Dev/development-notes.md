@@ -6,7 +6,7 @@
 <table>
   <tr>
     <th>NAME</th>
-    <td>TestPlatform</td>
+    <td>Test platform</td>
   </tr>
   <tr>
     <th>DESCRIPTION</th>
@@ -15,9 +15,11 @@
     <th>DETAILS</th>
     <td>TBD</td>
   </tr>
-    </tr>
     <th>STATUS</th>
     <td>In Progress</td>
+  </tr>
+    <th>TARGET RELEASE</th>
+    <td>v0.9</td>
   </tr>
 </table>
 
@@ -29,7 +31,7 @@ This is an ongoing project which will span multiple MAWS versions.
 <table>
   <tr>
     <th>NAME</th>
-    <td>ExternalLogging</td>
+    <td>External logging</td>
   </tr>
   <tr>
     <th>DESCRIPTION</th>
@@ -38,9 +40,12 @@ This is an ongoing project which will span multiple MAWS versions.
     <th>DETAILS</th>
     <td>TBD</td>
   </tr>
-    </tr>
     <th>STATUS</th>
     <td>In Progress</td>
+  </tr>
+  <tr>
+    <th>TARGET RELEASE</th>
+    <td>v0.9</td>
   </tr>
 </table>
 
@@ -55,7 +60,7 @@ Also, maybe include metrics where we can see how often/how many times a specific
 <table>
   <tr>
     <th>NAME</th>
-    <td>ExternalSettings</td>
+    <td>External settings</td>
   </tr>
   <tr>
     <th>DESCRIPTION</th>
@@ -67,6 +72,35 @@ Also, maybe include metrics where we can see how often/how many times a specific
     </tr>
     <th>STATUS</th>
     <td>In Progress</td>
+  </tr>
+  <tr>
+    <th>TARGET RELEASE</th>
+    <td>v0.9</td>
+  </tr>
+</table>
+
+Settings should be stored in a file outside of MAWS
+
+### Efficient looping
+<table>
+  <tr>
+    <th>NAME</th>
+    <td>Efficient looping</td>
+  </tr>
+  <tr>
+    <th>DESCRIPTION</th>
+    <td>Clean up the OptionObject search loop.</td>
+  </tr>
+    <th>DETAILS</th>
+    <td>Looping through the OptionObject is currently very inefficient.</td>
+  </tr>
+    </tr>
+    <th>STATUS</th>
+    <td>In Progress</td>
+  </tr>
+  <tr>
+    <th>TARGET RELEASE</th>
+    <td>v0.9</td>
   </tr>
 </table>
 
@@ -99,63 +133,10 @@ AND
     FORM: Quick Medication Order FIELD: "Last order scheduled" FIELD_ID: 142<br>
     FORM: Quick Medication Order FIELD: "Single Dosage radio button" FIELD_ID: 106</td>
   </tr>
+  <tr>
+    <th>TARGET RELEASE</th>
+    <td>v0.9</td>
+  </tr>
 </table>
 
-
-
-
 This functionality will end up being relatively complex, so we will be building it out in chunks. We will start out simple, and add complexity with each version.
-
-
-
-## FUNCTIONALITY: UPCOMING DEVELOPMENT
-
-## ID CHECK
-
-## SITE CLOSURE
-
-## SUBSCRIBER POLICY NUMBER WHITESPACE
-
-## DAY OF WEEK VERFICATION
-
-## BATCH USER DEACTIVATE
-
-
-
-
-
-
-## Exception closed dispensing
-
-### Process
-* Fast Dose Dispensing form
-* Get the content of the Dispense History field
-* Get the historical dates
-* Loop through the historical dates and see if any match the Dispense Date
-  * All dates, or a specific number of dates?
-* If yes, error
-  * If no, continue
-
-Dispensing History field = scrolling text field (10008)
-Dispensing Date field = date field (10007)
-
-### Test plan
-*
-
-### Next steps:
-* Rebecca and Odete
-
-## Christine's request
-* Admission (Outpatient)
-* Choose a PA episode > Edit
-* If the Preadmit/Admission date is empty, don't do anything
-* If the Preadmit/Admission date == system date, don't do anything
-* If the Preadmit/Admission date != system date:
-  * Warn user to modify date
-  * Warn again!
-
-### Test plan
-*
-
-### Next steps
-* Christine: Admission or Admission (Outpatient) form?

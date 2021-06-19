@@ -19,6 +19,10 @@
     <th>STATUS</th>
     <td>---</td>
   </tr>
+  <tr>
+    <th>TARGET RELEASE</th>
+    <td>TBD</td>
+  </tr>
 </table>
 
 A GUI control panel for MAWS
@@ -43,6 +47,10 @@ A GUI control panel for MAWS
     <th>FORMS/FIELDS</th>
     <td>TBD</td>
   </tr>
+  <tr>
+    <th>TARGET RELEASE</th>
+    <td>TBD</td>
+  </tr>
 </table>
 
 ### SiteClosure
@@ -65,6 +73,10 @@ A GUI control panel for MAWS
       FORM: Fast Dose Dispensing FIELD: "Dispensing History field" FIELD_ID: 10008<br>
       FORM: Fast Dose Dispensing FIELD: "Dispensing Date field" FIELD_ID: 10007
     </td>
+  </tr>
+  <tr>
+    <th>TARGET RELEASE</th>
+    <td>TBD</td>
   </tr>
 </table>
 
@@ -100,6 +112,10 @@ Dispensing History field = scrolling text field (10008) Dispensing Date field = 
     <th>FORMS/FIELDS</th>
     <td>TBD</td>
   </tr>
+  <tr>
+    <th>TARGET RELEASE</th>
+    <td>TBD</td>
+  </tr>
 </table>
 
 This is a text field that can be either numeric or alphanumeric. The data element number is 263. If we could warn the user or ideally trim the leading/trailing spaces that would be ideal. 
@@ -122,6 +138,10 @@ This is a text field that can be either numeric or alphanumeric. The data elem
     <th>FORMS/FIELDS</th>
     <td>TBD</td>
   </tr>
+  <tr>
+    <th>TARGET RELEASE</th>
+    <td>TBD</td>
+  </tr>
 </table>
 
 ### BatchUserDeactivate
@@ -142,6 +162,10 @@ This is a text field that can be either numeric or alphanumeric. The data elem
     <th>FORMS/FIELDS</th>
     <td>TBD</td>
   </tr>
+  <tr>
+    <th>TARGET RELEASE</th>
+    <td>TBD</td>
+  </tr>
 </table>
 
 ### PreAdmissionEpisodeEditedForAdmission
@@ -160,6 +184,10 @@ This is a text field that can be either numeric or alphanumeric. The data elem
   </tr>
   <tr>
     <th>FORMS/FIELDS</th>
+    <td>TBD</td>
+  </tr>
+  <tr>
+    <th>TARGET RELEASE</th>
     <td>TBD</td>
   </tr>
 </table>
