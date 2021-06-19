@@ -1,5 +1,6 @@
 ﻿# MAWS: DEVELOPMENT NOTES
 This document contains all development notes for the myAvatar Web Service (MAWS).
+
 Last updated: 6.19.21 (MAWS v0.9.x.x)
 
 **CONTENTS**<br>
@@ -10,7 +11,7 @@ Last updated: 6.19.21 (MAWS v0.9.x.x)
 ## Request Syntax Engine
 <table>
   <tr>
-    <th>FRAMEWORK COMPONENT NAME</th>
+    <th>COMPONENT NAME</th>
     <td>ReqEng</td>
   </tr>
   <tr>
@@ -31,7 +32,7 @@ Last updated: 6.19.21 (MAWS v0.9.x.x)
 Originally a MAWS Request was a single "command", e.g., "VerifyInpatientAdmissionDate". In order to make MAWS more customizable, I decided to allow a MAWS Request to be more complex, consisting of a MAWS "command" and a command "action". The MAWS Request Syntax Engine is the component that parses a MAWS Request, and breaks it down into its seperate parts so MAWS can do what it needs to do.
 
 ### ReqEng v2.0
-I've changed the way that MAWS requests are passed/executed: instead of passing an *action* to `MyAvatoolWebService.RunScript()`, a *mawsRequest* (e.g., "InptAdmitDate-VerifyPreAdmin") is passed. That is then parsed (using the `-` delimiter) into the following:
+I've changed the way that MAWS requests are passed/executed. Instead of passing an *action* to `MyAvatoolWebService.RunScript()`, a *mawsRequest* (e.g., "InptAdmitDate-VerifyPreAdmin") is passed. That is then parsed (using the `-` delimiter) into the following:
 1. A MAWS *command* (e.g., "InptAdmitDate")
 2. A MAWS *action* (e.g., "VerifyPreAdmin")
 
