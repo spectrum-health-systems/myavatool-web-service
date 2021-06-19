@@ -1,9 +1,31 @@
 ﻿# MAWS: Development Notes
 
-## FUNCTIONALITY
+## FUNCTIONALITY: CURRENT DEVELOPMENT
 
-### DOSE CHECK
+| NAME | DESCRIPTION |
+| ---- | ----------- |
+| DoseCheck | Verify that the current medication dose is within specific boundries |
+
+
+### DoseCheck
+| NAME |
+| ---- |
+| DoseCheck |
+
+
+
 This functionality will end up being relatively complex, so we will be building it out in chunks. We will start out simple, and add complexity with each version.
+
+Confirm that the current medication dose:
+
+1. Does not exceed X% of the previous dose
+AND/OR
+2. Does not exceed Xmg of the previous dose
+AND
+3. Does not exceed Xmg
+
+
+## FUNCTIONALITY: UPCOMING DEVELOPMENT
 
 ## ID CHECK
 
