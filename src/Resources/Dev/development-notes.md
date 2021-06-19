@@ -23,9 +23,9 @@
     <td>Confirm that the current medication dose:
 
 1. Does not exceed X% of the previous dose<br>
-AND/OR<br>
+AND/OR
 2. Does not exceed X(mg) of the previous dose<br>
-AND<br>
+AND
 3. Does not exceed X(mg)</td>
   </tr>
   <tr>
