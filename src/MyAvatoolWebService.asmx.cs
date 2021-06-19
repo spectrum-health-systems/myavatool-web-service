@@ -1,6 +1,6 @@
 ﻿/* PROJECT: MyAvatoolWebService (https://github.com/aprettycoolprogram/MyAvatoolWebService)
  *    FILE: MyAvatoolWebService.MyAvatoolWebService.asmx.cs
- * UPDATED: 6-19-2021-1:26 PM
+ * UPDATED: 6-19-2021-1:39 PM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2021 A Pretty Cool Program All rights reserved
  */
@@ -47,7 +47,7 @@ namespace MyAvatoolWebService
         public string GetVersion()
         {
             /* This is required by myAvatar. Do not remove!
-             * 
+             *
              * I'm leaving this as "VERSION 1.0" throughout the development of MAWS v1.0.
              */
             return "VERSION 1.0";

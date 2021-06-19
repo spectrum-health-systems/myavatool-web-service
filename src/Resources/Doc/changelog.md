@@ -3,9 +3,12 @@
 ## Version 0.9.x.x
 > Porting v0.8 over to use OptionObject2015
 
+#### 0.9.21170.1739 (2021-06-19)
+* `INFO` Documentation updates
+
 #### 0.9.21170.1726 (2021-06-19)
 * `INFO` Documentation updates
-* `MODIFIED` Started the change to [MAWS Request syntax](https://github.com/spectrum-health-systems/MyAvatoolWebService/blob/development/src/Resources/Dev/development-notes.md#testplat-v0.1)
+* `MODIFIED` Started the change to the [MAWS Request syntax](https://github.com/spectrum-health-systems/MyAvatoolWebService/blob/development/src/Resources/Dev/development-notes.md#testplat-v01)
 
 #### 0.9.21170.1628 (2021-06-19)
 * `INFO` Code/comment/documentation changes

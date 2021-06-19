@@ -1,6 +1,40 @@
 ﻿# MAWS: Development Notes
+This document contains all development notes for the myAvatar Web Service (MAWS).
 
-## FRAMEWORK
+# FRAMEWORK COMPONENTS
+## MAWS Request Syntax
+<table>
+  <tr>
+    <th>NAME</th>
+    <td>MawsReqSyntax</td>
+  </tr>
+  <tr>
+    <th>DESCRIPTION</th>
+    <td>The MAWS Request syntax logic.</td>
+  </tr>
+    <th>DETAILS</th>
+    <td>TBD</td>
+  </tr>
+    <th>STATUS</th>
+    <td>In Progress - v2.0</td>
+  </tr>
+    <th>TARGET MAWS RELEASE</th>
+    <td>v0.9</td>
+  </tr>
+</table>
+
+#### MawsReqSyntax proposal
+The MAWS Request syntax should be modified to be more customizable.
+
+#### MawsReqSyntax v2.x
+##### MawsReqSyntax v2.0
+I've changed the way that MAWS requests are passed/executed:
+* Instead of passing an *action* to `MyAvatoolWebService.RunScript()`, a *mawsRequest* (e.g., "InptAdmitDate-VerifyPreAdmin") is passed. That is then parsed (using the `-` delimiter) into the following:
+1. A MAWS *command* (e.g., "InptAdmitDate")
+2. A MAWS *action* (e.g., "VerifyPreAdmin")
+
+#### MawsReqSyntax v1.0
+Original syntax stuff. Not documented.
 
 ### Testing platform
 <table>
