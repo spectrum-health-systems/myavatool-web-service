@@ -1,11 +1,13 @@
 ﻿# MAWS FRAMEWORK COMPONENT DEVELOPMENT
 
 **CONTENTS**<br>
-[CURRENT DEVELOPMENT](#current-development)
+CURRENT DEVELOPMENT<br>
+[RequestSyntaxEngine](#requestsyntaxengine)
 [UPCOMING DEVELOPMENT](#upcoming-development)
 [COMPLETED DEVELOPMENT](#ccompleted-development)
 
-## CURRENT DEVELOPMENT
+## RequestSyntaxEngine
+> STATUS: IN PROGRESS (v2.0)
 
 | COMPONENT NAME | STATUS | RELEASE |
 |:-------------- |:------ |:------- |
