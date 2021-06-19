@@ -2,11 +2,11 @@
 
 **CONTENTS**<br>
 CURRENT DEVELOPMENT<br>
-*[RequestSyntaxEngine](#requestsyntaxengine)<br>
+* [RequestSyntaxEngine](#requestsyntaxengine)<br>
 UPCOMING DEVELOPMENT<br>
-*[RequestSyntaxEngine](#requestsyntaxengine)<br>
+* [RequestSyntaxEngine](#requestsyntaxengine)<br>
 COMPLETED DEVELOPMENT<br>
-*[RequestSyntaxEngine](#requestsyntaxengine)<br>
+* [RequestSyntaxEngine](#requestsyntaxengine)<br>
 
 ## RequestSyntaxEngine
 > STATUS: IN PROGRESS (v2.0)
