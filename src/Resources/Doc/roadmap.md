@@ -41,3 +41,5 @@
     * Outpatient = outpt 
 
 * Do the $"{}" thing with strings
+
+* Update docs with standard ids

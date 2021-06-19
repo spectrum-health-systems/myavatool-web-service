@@ -62,9 +62,9 @@ AND
   </tr>
   <tr>
     <th>FORMS/FIELDS</th>
-    <td>FORM: Quick Medication Order FIELD: Dosage 1(mg) FIELD_ID: 107<br>
-    FORM: Quick Medication Order FIELD: Dosage 1(mg) FIELD_ID: 107<br>
-    FORM: Quick Medication Order FIELD: Dosage 1(mg) FIELD_ID: 107</td>
+    <td>FORM: Quick Medication Order FIELD: "Dosage 1(mg)" FIELD_ID: 107<br>
+    FORM: Quick Medication Order FIELD: "Last order scheduled" FIELD_ID: 142<br>
+    FORM: Quick Medication Order FIELD: "Single Dosage radio button" FIELD_ID: 106</td>
   </tr>
 </table>
 
