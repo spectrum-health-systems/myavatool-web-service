@@ -7,8 +7,8 @@
 
 ## CURRENT DEVELOPMENT
 
-|: NAME |: STATUS |: RELEASE |
-| ----- | ------- | -------- |
+| NAME | STATUS | RELEASE |
+|:---- |:------ |:------- |
 | **RequestSyntaxEngine** | In Progress | v2.0 (MAWS 0.9) |
 
 Originally a MAWS Request was a single "command", e.g., "VerifyInpatientAdmissionDate". In order to make MAWS more customizable, I decided to allow a MAWS Request to be more complex, consisting of a MAWS "command" and a command "action". The MAWS Request Syntax Engine is the component that parses a MAWS Request, and breaks it down into its seperate parts so MAWS can do what it needs to do.
