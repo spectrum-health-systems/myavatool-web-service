@@ -1,4 +1,24 @@
-﻿# Development Notes
+﻿# MAWS: Development Notes
+
+## FUNCTIONALITY
+
+### DOSE CHECK
+This functionality will end up being relatively complex, so we will be building it out in chunks. We will start out simple, and add complexity with each version.
+
+## ID CHECK
+
+## SITE CLOSURE
+
+## SUBSCRIBER POLICY NUMBER WHITESPACE
+
+## DAY OF WEEK VERFICATION
+
+## BATCH USER DEACTIVATE
+
+
+
+
+
 
 ## Exception closed dispensing
 
