@@ -48,5 +48,21 @@ Also, maybe include metrics where we can see how often/how many times a specific
 |:----------- |:------ |:------- |
 | MAWS settings are stored externally | In Progress | v1.0 (MAWS 0.9) |
 
-#### ExternalSetting
+#### ExternalSetting v1.0
 Settings should be stored in a file outside of MAWS, so they can be easily viewed and modified.
+
+### EfficientSearch
+| DESCRIPTION | STATUS | RELEASE |
+|:----------- |:------ |:------- |
+| More efficient search logic | TBD | TBD |
+
+#### EfficientSearch v0.1
+The current search method is really inefficient. Once all the needed data has been found, we should exit the search.
+
+### MAWSGUI
+| DESCRIPTION | STATUS | RELEASE |
+|:----------- |:------ |:------- |
+| A GUI for MAWS | TBD | TBD |
+
+#### MAWSGUI v1.0
+TBD
