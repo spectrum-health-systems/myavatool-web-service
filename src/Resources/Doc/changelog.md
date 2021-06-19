@@ -3,6 +3,11 @@
 ## Version 0.9.x.x
 > Porting v0.8 over to use OptionObject2015
 
+#### 0.9.21170.2311 (2021-06-19)
+* `INFO` Re-implemented the *InpatientAdmissionDate* command
+* `ADDED` InpatientAdmissionDate.cs
+* `ADDED` RequestSyntaxEngine.ForceTest()
+
 #### 0.9.21170.2044 (2021-06-19)
 * `INFO` Built-in (simplistic!) testing works.
 * `ADDED` MyAvatoolWebService.ForceTest()
@@ -13,7 +18,7 @@
 
 #### 0.9.21170.1726 (2021-06-19)
 * `INFO` Documentation updates
-* `MODIFIED` Started the change to the [MAWS Request syntax](https://github.com/spectrum-health-systems/MyAvatoolWebService/blob/development/src/Resources/Dev/development-notes.md#testplat-v01)
+* `MODIFIED` Started the change to the MAWS Request Syntax Engine
 
 #### 0.9.21170.1628 (2021-06-19)
 * `INFO` Code/comment/documentation changes

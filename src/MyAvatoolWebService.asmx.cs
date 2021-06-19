@@ -1,6 +1,6 @@
 ﻿/* PROJECT: MyAvatoolWebService (https://github.com/aprettycoolprogram/MyAvatoolWebService)
  *    FILE: MyAvatoolWebService.MyAvatoolWebService.asmx.cs
- * UPDATED: 6-19-2021-4:44 PM
+ * UPDATED: 6-19-2021-7:11 PM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2021 A Pretty Cool Program All rights reserved
  */
@@ -68,25 +68,19 @@ namespace MyAvatoolWebService
              * For information about how to perform a MAWS request from within myAvatar, please see:
              *  https://github.com/spectrum-health-systems/MyAvatoolWebService/blob/main/doc/man/manual-using-maws.md
              */
+            var requestCommand = RequestSyntaxEngine.GetRequestCommand(mawsRequest);
+            var requestAction  = RequestSyntaxEngine.GetRequestAction(mawsRequest);
+            var requestOption  = RequestSyntaxEngine.GetRequestOption(mawsRequest);
 
-            Dictionary<string, string> mawsRequestComponent = RequestSyntaxEngine.ParseRequest(mawsRequest);
-
-            switch(mawsRequestComponent["requestCommand"])
+            switch(requestCommand)
             {
                 case "InpatientAdmissionDate":
+                    InpatientAdmissionDate.ExecuteAction(sentOptionObject, requestAction, requestOption);
                     break;
 
                 default:
                     break;
             }
-
-            //switch(action)
-            //{
-            //    case "doSomething":
-            //        return MethodName(sentOptionObject);
-            //    default:
-            //        break;
-            //}
 
             return sentOptionObject;
         }
@@ -101,11 +95,6 @@ namespace MyAvatoolWebService
              */
 
             RequestSyntaxEngine.ForceTest();
-        }
-
-        public static OptionObject2015 MethodName(OptionObject2015 sentOptionObject)
-        {
-            return new OptionObject2015();
         }
     }
 }
