@@ -13,10 +13,17 @@ Verify that the current medication dose does not exceed specific parameters.
 ### Dose v1.0
 | ACTION | DESCRIPTION | STATUS |
 |:------ |:----------- |:------ |
-| VerifyPercent | Verify the current medication (in mg) does not exceed a specific percentage increase from the previous dose | In Progress |
+| WithinPercentIncrease | Verify the current medication (in mg) does not exceed a specific percentage increase from the previous dose | In Progress |
+| WithinMilligramIncrease | Verify the current medication (in mg) does not exceed a specific milligram increase from the previous dose | In Progress |
+| LessThanMilligrams | Verify the current medication (in mg) does not exceed a specific number of milligrams | In Progress |
+| WithinParameters | Verify the current medication (in mg) does not exceed a specific number of milligrams | In Progress |
 
-
-
+This command will verify that the current medication dose:
+1. Does not exceed X% of the previous dose<br>
+AND/OR
+2. Does not exceed X(mg) of the previous dose<br>
+AND
+3. Does not exceed X(mg)
 
 Originally a MAWS Request was a single "command", e.g., "VerifyInpatientAdmissionDate".
 
