@@ -22,8 +22,10 @@
     <th>DETAILS</th>
     <td>Confirm that the current medication dose:
 
-1. Does not exceed X% of the previous dose<br>
-AND/OR<br>
+1. Does not exceed X% of the previous dose
+<br>
+AND/OR
+<br>
 2. Does not exceed X(mg) of the previous dose<br>
 AND<br>
 3. Does not exceed X(mg)</td>
