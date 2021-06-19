@@ -3,8 +3,10 @@
 **CONTENTS**<br>
 CURRENT DEVELOPMENT<br>
 * [RequestSyntaxEngine](#requestsyntaxengine)<br>
+
 UPCOMING DEVELOPMENT<br>
 * [RequestSyntaxEngine](#requestsyntaxengine)<br>
+
 COMPLETED DEVELOPMENT<br>
 * [RequestSyntaxEngine](#requestsyntaxengine)<br>
 
@@ -25,8 +27,6 @@ I've changed the way that MAWS requests are passed/executed. Instead of passing 
 
 ### RequestSyntaxEngine v1.0
 Original syntax stuff. Very simple. Not documented.
-
-
 
 | NAME | DESCRIPTION | STATUS |
 | ---- | ----------- | ------ |
