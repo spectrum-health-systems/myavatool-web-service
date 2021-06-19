@@ -2,9 +2,9 @@
 This document contains all development notes for the myAvatar Web Service (MAWS).
 Last updated: 6.19.21 (MAWS v0.9.x.x)
 
-CONTENTS
-[FRAMEWORK COMPONENTS](#framework-components)
-[FUNCTIONALITY](#functionality)
+CONTENTS<br>
+[FRAMEWORK COMPONENTS](#framework-components)<br>
+[FUNCTIONALITY](#functionality)<br>
 
 # FRAMEWORK COMPONENTS
 ## MAWS Request Syntax Engine
