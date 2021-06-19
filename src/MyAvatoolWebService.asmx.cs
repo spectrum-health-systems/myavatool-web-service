@@ -1,6 +1,6 @@
 ﻿/* PROJECT: MyAvatoolWebService (https://github.com/aprettycoolprogram/MyAvatoolWebService)
  *    FILE: MyAvatoolWebService.MyAvatoolWebService.asmx.cs
- * UPDATED: 6-10-2021-2:54 PM
+ * UPDATED: 6-19-2021-12:28 PM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2021 A Pretty Cool Program All rights reserved
  */
@@ -46,6 +46,8 @@ namespace MyAvatoolWebService
         [WebMethod]
         public string GetVersion()
         {
+            /* This is required by myAvatar. Do not remove!
+             */
             return "VERSION 1.0";
         }
 
@@ -57,7 +59,9 @@ namespace MyAvatoolWebService
         /// <returns>A completed OptionObject2 that MAWS will return to myAvatar.</returns>
         public OptionObject2015 RunScript(OptionObject2015 sentOptionObject, string action)
         {
-            /* For information about how to perform a MAWS request from within myAvatar, please see:
+            /* This is required by myAvatar. Do not remove! The only changes to this method should be adding external methods to the switch statement.
+             *
+             * For information about how to perform a MAWS request from within myAvatar, please see:
              *  https://github.com/spectrum-health-systems/MyAvatoolWebService/blob/main/doc/man/manual-using-maws.md
              */
             switch(action)

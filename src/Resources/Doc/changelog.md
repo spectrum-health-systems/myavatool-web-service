@@ -3,6 +3,9 @@
 ## Version 0.9.x.x
 > Porting v0.8 over to use OptionObject2015
 
+#### 0.9.21170.1628 (2021-06-19)
+* `INFO` Code/comment/documentation changes
+
 #### 0.9.21161.1940 (2021-06-10)
 * `ADDED` OptionObjectMaintenance.cs
 * `ADDED` OptionObjectMaintenance.FinalizeObject()
