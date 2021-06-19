@@ -11,12 +11,26 @@
 
 <table>
   <tr>
-    <th>Fruit</th>
-    <td>Banana</td>
+    <th>NAME</th>
+    <td>DoseCheck</td>
   </tr>
   <tr>
-    <th>Vegetable</th>
-    <td>Carrot</td>
+    <th>DESCRIPTION</th>
+    <td>Verify that the current medication dose is within specific boundries.</td>
+  </tr>
+    <tr>
+    <th>DETAILS</th>
+    <td>Confirm that the current medication dose:
+
+1. Does not exceed X% of the previous dose
+AND/OR
+2. Does not exceed Xmg of the previous dose
+AND
+3. Does not exceed Xmg</td>
+  </tr>
+  <tr>
+    <th>Description</th>
+    <td>Verify that the current medication dose is within specific boundries.</td>
   </tr>
 </table>
 
