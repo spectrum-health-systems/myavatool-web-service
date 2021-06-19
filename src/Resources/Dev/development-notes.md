@@ -1,11 +1,27 @@
 ﻿# MAWS: Development Notes
 
-## FUNCTIONALITY: CURRENT DEVELOPMENT
+## FRAMEWORK
 
-| NAME | DESCRIPTION |
-| ---- | ----------- |
-| DoseCheck | Verify that the current medication dose not exceed specific parameters |
+### Testing platform
+<table>
+  <tr>
+    <th>NAME</th>
+    <td>TestPlatform</td>
+  </tr>
+  <tr>
+    <th>DESCRIPTION</th>
+    <td>Ability to test/develop new functionality using the same codebase that is deployed to production.</td>
+  </tr>
+    <th>DETAILS</th>
+    <td>TBD</td>
+  </tr>
+    </tr>
+    <th>STATUS</th>
+    <td>In Progress</td>
+  </tr>
+</table>
 
+## FUNCTIONALITY
 
 ### DoseCheck
 
@@ -16,12 +32,10 @@
   </tr>
   <tr>
     <th>DESCRIPTION</th>
-    <td>Verify that the current medication dose is within specific boundries.</td>
+    <td>Verify that the current medication dose does not exceed specific parameters.</td>
   </tr>
-    <tr>
     <th>DETAILS</th>
     <td>Confirm that the current medication dose:
-
 1. Does not exceed X% of the previous dose<br>
 AND/OR
 2. Does not exceed X(mg) of the previous dose<br>
@@ -29,8 +43,8 @@ AND
 3. Does not exceed X(mg)</td>
   </tr>
   <tr>
-    <th>Description</th>
-    <td>Verify that the current medication dose is within specific boundries.</td>
+    <th>FORMS/FIELDS</th>
+    <td>Verify that the current medication dose does not exceed specific parameters</td>
   </tr>
 </table>
 
@@ -39,13 +53,6 @@ AND
 
 This functionality will end up being relatively complex, so we will be building it out in chunks. We will start out simple, and add complexity with each version.
 
-Confirm that the current medication dose:
-
-1. Does not exceed X% of the previous dose
-AND/OR
-2. Does not exceed Xmg of the previous dose
-AND
-3. Does not exceed Xmg
 
 
 ## FUNCTIONALITY: UPCOMING DEVELOPMENT

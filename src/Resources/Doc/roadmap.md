@@ -1,5 +1,11 @@
 ﻿# MAWS: Roadmap
 
+## MAWS FRAMEWORK
+
+## FUNCTIONALITY: CURRENT DEVELOPMENT
+
+## FUNCTIONALITY: UPCOMING DEVELOPMENT
+
 [ ] Confirm all references to *OptionObject2* are replaced with *OptionObject2015*
 
 [ ] OptionObjectMaintenance.cs
