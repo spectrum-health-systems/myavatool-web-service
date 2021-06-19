@@ -1,8 +1,8 @@
-﻿# MAWS FRAMEWORK COMPONENT DEVELOPMEN
+﻿# MAWS FRAMEWORK COMPONENT DEVELOPMENT
 
 **CONTENTS**<br>
 [REQUEST SYNTAX ENGINE](#request-syntax-engine)<br>
-[Functionality](#functionality)<br>
+[TESTING PLATFORM](#testing-platform)<br>
 
 ## Request Syntax Engine
 
@@ -15,15 +15,8 @@
     <th>DESCRIPTION</th>
     <td>The logic that parses a MAWS Request</td>
   </tr>
-    <th>DETAILS</th>
-    <td>A MAWS Request is comprised of multiple components, which the MAWS Request Syntax Engine parses to determine what actions/commands need to be completed.</td>
-  </tr>
     <th>STATUS</th>
-    <td>In Progress - v2.0</td>
-  </tr>
-    <th>MAWS RELEASE</th>
-    <td>v0.9</td>
-  </tr>
+    <td>In Progress - v2.0 (MAWS v0.9)</td>
 </table>
 
 Originally a MAWS Request was a single "command", e.g., "VerifyInpatientAdmissionDate". In order to make MAWS more customizable, I decided to allow a MAWS Request to be more complex, consisting of a MAWS "command" and a command "action". The MAWS Request Syntax Engine is the component that parses a MAWS Request, and breaks it down into its seperate parts so MAWS can do what it needs to do.
