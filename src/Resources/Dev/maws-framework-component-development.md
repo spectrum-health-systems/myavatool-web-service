@@ -1,52 +1,37 @@
 ﻿# MAWS FRAMEWORK COMPONENT DEVELOPMENT
 
 **CONTENTS**<br>
-[REQUEST SYNTAX ENGINE](#request-syntax-engine)<br>
-[TESTING PLATFORM](#testing-platform)<br>
+[CURRENT DEVELOPMENT](#current-development)
+[UPCOMING DEVELOPMENT](#upcoming-development)
+[COMPLETED DEVELOPMENT](#ccompleted-development)
 
-***
+## CURRENT DEVELOPMENT
 
-| NAME | DESCRIPTION | STATUS |
-| ---- | ----------- | ------ |
-| **Request Syntax Engine** | Logic to process MAWS Requests | In-progress - v2.0 (MAWS 0.9) |
+|:NAME |:STATUS |:RELEASE |
+| ---- | ------ | ------- |
+| **RequestSyntaxEngine** | In Progress | v2.0 (MAWS 0.9) |
 
 Originally a MAWS Request was a single "command", e.g., "VerifyInpatientAdmissionDate". In order to make MAWS more customizable, I decided to allow a MAWS Request to be more complex, consisting of a MAWS "command" and a command "action". The MAWS Request Syntax Engine is the component that parses a MAWS Request, and breaks it down into its seperate parts so MAWS can do what it needs to do.
 
-### ReqSynEng v2.0
+### RequestSyntaxEngine v2.0
 I've changed the way that MAWS requests are passed/executed. Instead of passing an *action* to `MyAvatoolWebService.RunScript()`, a *mawsRequest* (e.g., "InptAdmitDate-VerifyPreAdmin") is passed. That is then parsed (using the `-` delimiter) into the following:
 1. A MAWS *command* (e.g., "InptAdmitDate")
 2. A MAWS *action* (e.g., "VerifyPreAdmin")
 
-### ReqSynEng v1.0
+### RequestSyntaxEngine v1.0
 Original syntax stuff. Very simple. Not documented.
 
-### Testing platform
-<table>
-  <tr>
-    <th>NAME</th>
-    <td>TestPlat</td>
-  </tr>
-  <tr>
-    <th>DESCRIPTION</th>
-    <td>Ability to test/develop new functionality using the same codebase that is deployed to production.</td>
-  </tr>
-    <th>DETAILS</th>
-    <td>TBD</td>
-  </tr>
-    <th>STATUS</th>
-    <td>In Progress</td>
-  </tr>
-    <th>TARGET RELEASE</th>
-    <td>v0.9</td>
-  </tr>
-</table>
 
-#### TestPlat proposal
+
+
+
+| NAME | DESCRIPTION | STATUS |
+| ---- | ----------- | ------ |
+| **TestPlatform** | Logic to process MAWS Requests | In-progress - v2.0 (MAWS 0.9) |
+
 New/existing MAWS functionality should be able to be developed/modified without over-complicating the testing of said functionality. The idea here is to embed testing code into the production codebase, and access that when testing. When testing is complete, the verified code is copied to the production codebase.
 
-This is an ongoing project which will span multiple MAWS versions.
-
-#### TestPlat v0.1
+#### TestPlatform v1.0
 I've changed the way that MAWS requests are passed/executed:
 * Instead of passing an *action* to `MyAvatoolWebService.RunScript()`, a *mawsRequest* (e.g., "InptAdmitDate-VerifyPreAdmin") is passed. That is then parsed (using the `-` delimiter) into the following:
 1. A MAWS *command* (e.g., "InptAdmitDate")
