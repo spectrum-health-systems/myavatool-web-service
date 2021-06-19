@@ -21,6 +21,11 @@
   </tr>
 </table>
 
+We should be able to develop new/modify current MAWS functionality without over-complicating the testing of said functionality. The idea here is to embed testing code into the production codebase, and access that when testing. When testing is complete, the verified code is copied to the production codebase.
+
+This is an ongoing project which will span multiple MAWS versions.
+
+### External logging
 <table>
   <tr>
     <th>NAME</th>
@@ -38,6 +43,34 @@
     <td>In Progress</td>
   </tr>
 </table>
+
+MAWS should log stuff, for example:
+* When a specific function is called
+* Values of a specific function
+* Who called it
+
+Also, maybe include metrics where we can see how often/how many times a specific function is called.
+
+### External settings
+<table>
+  <tr>
+    <th>NAME</th>
+    <td>ExternalSettings</td>
+  </tr>
+  <tr>
+    <th>DESCRIPTION</th>
+    <td>Store settings outside of MAWS.</td>
+  </tr>
+    <th>DETAILS</th>
+    <td>TBD</td>
+  </tr>
+    </tr>
+    <th>STATUS</th>
+    <td>In Progress</td>
+  </tr>
+</table>
+
+Settings should be stored in a file outside of MAWS
 
 ## FUNCTIONALITY
 

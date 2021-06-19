@@ -2,9 +2,28 @@
 
 ## MAWS FRAMEWORK
 
-## FUNCTIONALITY: CURRENT DEVELOPMENT
+### MAWS GUI
+<table>
+  <tr>
+    <th>NAME</th>
+    <td>MAWSGUI</td>
+  </tr>
+  <tr>
+    <th>DESCRIPTION</th>
+    <td>A GUI for MAWS.</td>
+  </tr>
+    <th>DETAILS</th>
+    <td>TBD</td>
+  </tr>
+    </tr>
+    <th>STATUS</th>
+    <td>---</td>
+  </tr>
+</table>
 
-## FUNCTIONALITY: UPCOMING DEVELOPMENT
+A GUI control panel for MAWS
+
+## FUNCTIONALITY
 
 [ ] Confirm all references to *OptionObject2* are replaced with *OptionObject2015*
 
