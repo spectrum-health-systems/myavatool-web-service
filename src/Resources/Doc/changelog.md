@@ -3,6 +3,10 @@
 ## Version 0.9.x.x
 > Porting v0.8 over to use OptionObject2015
 
+#### 0.9.21171.1735 (2021-06-20)
+* `MODIFIED` Added [DEBUG] prefix to log files
+* `MODIFIED` Added [SYSTEM] prefix to log files
+
 #### 0.9.21171.1731 (2021-06-20)
 * `ADDED` Error logging for invalid commands
 * `ADDED` Error logging for invalid InptAdmitDate.cs actions

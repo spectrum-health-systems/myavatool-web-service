@@ -56,7 +56,7 @@ namespace MyAvatoolWebService
             var logFileContent = $"requestCommand={requestCommand}{Environment.NewLine}" +
                                  $"requestAction={requestAction}{Environment.NewLine}" +
                                  $"requestOption={requestOption}{Environment.NewLine}";
-            Logger.WriteToTimestampedFile("RequestSyntaxEngine.ForceTest", logFileContent);
+            Logger.WriteToTimestampedFile("[DEBUG]RequestSyntaxEngine.ForceTest", logFileContent);
         }
     }
 }

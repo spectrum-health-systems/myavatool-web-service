@@ -23,7 +23,7 @@ namespace MyAvatoolWebService
 
                 // Log this event. Logic here, otherwise logging creates an infinate loop.
                 var logFileContent = "Created directory: C:/MAWS/Log/";
-                Logger.WriteToTimestampedFile("Maintenance.ConfirmLogDirectory", logFileContent);
+                Logger.WriteToTimestampedFile("[SYSTEM]Maintenance.ConfirmLogDirectory", logFileContent);
             }
         }
     }
