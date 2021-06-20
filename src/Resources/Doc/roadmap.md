@@ -1,12 +1,5 @@
 ﻿# MAWS Roadmap
 
-## MAWS FRAMEWORK COMPONENTS
-Please see the [MAWS Framework Components](https://github.com/spectrum-health-systems/MyAvatoolWebService/blob/development/src/Resources/Dev/maws-framework-component-development.md) document for upcoming changes to the MAWS Framework components
-
-## MAWS FUNCTIONALITY
-Please see the [MAWS functionality](https://github.com/spectrum-health-systems/MyAvatoolWebService/blob/development/src/Resources/Dev/maws-functionality-development.md) document for upcoming changes to MAWS functionality
-
-## OTHER
 * Confirm all references to *OptionObject2* are replaced with *OptionObject2015*
 
 * OptionObjectMaintenance.cs
