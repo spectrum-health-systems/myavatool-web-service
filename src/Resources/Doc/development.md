@@ -24,10 +24,8 @@ When possible, I link to the relevent parts of the [MAWS Manual](https://github.
  
 Please do not remove any of the sourcecode comments, and if you fork MAWS for your own development, please and add your own.
 
-
 ### Read the manual!
 The [MAWS Manual](https://github.com/spectrum-health-systems/MyAvatoolWebService/blob/main/doc/man/manual.md) is updated with each release.
-
 
 ## MAWS FRAMEWORK COMPONENTS
 [RequestSyntaxEngine](#RequestSyntaxEngine)<br>
