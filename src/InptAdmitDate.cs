@@ -1,6 +1,6 @@
 ﻿/* PROJECT: MyAvatoolWebService (https://github.com/aprettycoolprogram/MyAvatoolWebService)
  *    FILE: MyAvatoolWebService.InptAdmitDate.cs
- * UPDATED: 6-20-2021-12:49 PM
+ * UPDATED: 6-20-2021-1:23 PM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2021 A Pretty Cool Program All rights reserved
  */
@@ -16,7 +16,7 @@ namespace MyAvatoolWebService
         /// Executes a MAWS action for the InptAdmitDate command
         /// </summary>
         /// <param name="sentOptionObject2015">The original OptionObject2015 sent from myAvatar.</param>
-        /// <param name="mawsRequest">The MAWS request string.</param>
+        /// <param name="mawsRequest">         The MAWS request string.</param>
         /// <returns></returns>
         public static OptionObject2015 ExecuteAction(OptionObject2015 sentOptionObject2015, string mawsRequest)
         {
@@ -33,6 +33,10 @@ namespace MyAvatoolWebService
                     break;
 
                 default:
+                    // Log this event
+                    var logFileContent = $"[ERROR]{Environment.NewLine}" +
+                                         $"request action \"{requestAction}\" is not valid.{Environment.NewLine}";
+                    Logger.WriteToTimestampedFile("[ERROR]InptAdmitDate.ExecuteAction", logFileContent);
                     break;
             }
 
@@ -169,7 +173,7 @@ namespace MyAvatoolWebService
         {
             var verifyAdmitDateOptionObject2015 = new OptionObject2015();
 
-            // This is a placeholder method in the event that ComparePreAdmitToAdmit() is modified. IF that's the case,
+            // This is a placeholder method in the event that ComparePreAdmitToAdmit() is modified. If that's the case,
             // copy the contents of ComparePreAdmitToAdmit() here.
 
             return verifyAdmitDateOptionObject2015;

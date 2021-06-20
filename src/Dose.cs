@@ -1,6 +1,6 @@
 ﻿/* PROJECT: MyAvatoolWebService (https://github.com/aprettycoolprogram/MyAvatoolWebService)
  *    FILE: MyAvatoolWebService.Dose.cs
- * UPDATED: 6-20-2021-1:19 PM
+ * UPDATED: 6-20-2021-1:31 PM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2021 A Pretty Cool Program All rights reserved
  */
@@ -33,6 +33,10 @@ namespace MyAvatoolWebService
                     break;
 
                 default:
+                    // Log this event
+                    var logFileContent = $"[ERROR]{Environment.NewLine}" +
+                                         $"request action \"{requestAction}\" is not valid.{Environment.NewLine}";
+                    Logger.WriteToTimestampedFile("[ERROR]Dose.ExecuteAction", logFileContent);
                     break;
             }
 
@@ -146,9 +150,6 @@ namespace MyAvatoolWebService
         private static OptionObject2015 VerifyPercentage_Testing(OptionObject2015 sentOptionObject2015)
         {
             var verifyAdmitDateOptionObject2015 = new OptionObject2015();
-
-            // This is a placeholder method in the event that ComparePreAdmitToAdmit() is modified. IF that's the case,
-            // copy the contents of ComparePreAdmitToAdmit() here.
 
             return verifyAdmitDateOptionObject2015;
         }

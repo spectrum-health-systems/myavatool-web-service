@@ -3,7 +3,12 @@
 ## Version 0.9.x.x
 > Porting v0.8 over to use OptionObject2015
 
-#### 0.9.21171.1719 (2021-06-19)
+#### 0.9.21171.1731 (2021-06-20)
+* `ADDED` Error logging for invalid commands
+* `ADDED` Error logging for invalid InptAdmitDate.cs actions
+* `ADDED` Error logging for invalid Dose.cs actions
+
+#### 0.9.21171.1719 (2021-06-20)
 * `INFO` Code/comment cleanup (lots of undocumented changes to *InpatientAdmissionDate* to bring it in-line with the new framwork)
 * `MODIFIED` Renamed *InpatientAdmissionDate* -> *InptAdmitDate*
 * `MODIFIED` Removed *GetRequestAction()* and *GetRequestOption()* from *MyAvatoolWebService.asmx.cs* so the scope is tightened up a bit.
