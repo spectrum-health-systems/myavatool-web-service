@@ -1,1 +1,3 @@
-# MAWS: Contributors
+# MAWS Contributors
+
+Chris Banwarth (development@aprettycoolprogram.com)

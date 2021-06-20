@@ -13,7 +13,7 @@
  *                                                                                                                                *
  *  [assembly: AssemblyVersion("X.X.X.X")]                                                                                        *
  *                                                                                                                                *
- * To make sure you are using the latest development branch version, check the /Resources/Dev/current-versions.md file:           *
+ * To make sure you are using the latest development branch version, check the /Resources/Dev/development-information.md file:           *
  *  https://github.com/spectrum-health-systems/MyAvatoolWebService/blob/development/src/Resources/Dev/development-information.md  *
  *                                                                                                                                *
  * The MAWS development branch should not be used in production environments.                                                     *

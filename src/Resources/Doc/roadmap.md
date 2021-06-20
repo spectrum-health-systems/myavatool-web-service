@@ -1,4 +1,4 @@
-﻿# MAWS: Roadmap
+﻿# MAWS Roadmap
 
 ## MAWS FRAMEWORK COMPONENTS
 Please see the [MAWS Framework Components](https://github.com/spectrum-health-systems/MyAvatoolWebService/blob/development/src/Resources/Dev/maws-framework-component-development.md) document for upcoming changes to the MAWS Framework components
