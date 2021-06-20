@@ -1,6 +1,6 @@
 ﻿/* PROJECT: MyAvatoolWebService (https://github.com/aprettycoolprogram/MyAvatoolWebService)
- *    FILE: MyAvatoolWebService.InpatientAdmissionDate.cs
- * UPDATED: 6-19-2021-5:11 PM
+ *    FILE: MyAvatoolWebService.InptAdmitDate.cs
+ * UPDATED: 6-20-2021-12:49 PM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2021 A Pretty Cool Program All rights reserved
  */
@@ -10,62 +10,47 @@ using NTST.ScriptLinkService.Objects;
 
 namespace MyAvatoolWebService
 {
-    public class InpatientAdmissionDate
+    public class InptAdmitDate
     {
         /// <summary>
-        /// 
+        /// Executes a MAWS action for the InptAdmitDate command
         /// </summary>
-        /// <param name="sentOptionObject2"></param>
-        /// <param name="mawsRequest">      </param>
+        /// <param name="sentOptionObject2015">The original OptionObject2015 sent from myAvatar.</param>
+        /// <param name="mawsRequest">The MAWS request string.</param>
         /// <returns></returns>
-        public static OptionObject2015 ExecuteAction(OptionObject2015 sentOptionObject2015, string requestAction, string requestOption)
+        public static OptionObject2015 ExecuteAction(OptionObject2015 sentOptionObject2015, string mawsRequest)
         {
-            var inpatientAdmittionDateOptionObject = new OptionObject2015();
+            var inptAdmitDateOptionObject = new OptionObject2015();
+            var requestAction             = RequestSyntaxEngine.GetRequestAction(mawsRequest).ToLower();
+            var requestOption             = RequestSyntaxEngine.GetRequestOption(mawsRequest).ToLower();
 
             switch(requestAction)
             {
-                case "DoesPreAdmitMatchAdmit":
-                    inpatientAdmittionDateOptionObject = VerifyPreAdmitDate(sentOptionObject2015);
+                case "comparepreadmittoadmit":
+                    inptAdmitDateOptionObject = requestOption == "testing"
+                        ? ComparePreAdmitToAdmit_Testing(sentOptionObject2015)
+                        : ComparePreAdmitToAdmit(sentOptionObject2015);
                     break;
 
                 default:
                     break;
             }
 
-
-
-
-            //var inptAdmitDateOptionObject2 = new OptionObject2015();
-
-            //if(mawsRequest.Contains("-VerifyPreAdmitDate"))
-            //{
-            //    inptAdmitDateOptionObject2 = VerifyPreAdmitDate(sentOptionObject2015);
-            //}
-            //else
-            //{
-            //    // Logic for other things.
-            //}
-
-            return inpatientAdmittionDateOptionObject;
+            return inptAdmitDateOptionObject;
         }
 
-
-
-        /// <summary>Verifies that client's Pre-Admission date is the same as the system date.</summary>
+        /// <summary>
+        /// Verifies that client's Pre-Admission date is the same as the system date.
+        /// </summary>
         /// <param name="sentOptionObject2">The OptionObject2 object sent from myAvatar.</param>
         /// <returns>An OptionObject2 object with the data.</returns>
         /// <remarks>This method is called by the "InptAdmitDate-VerifyPreAdmitDate" mawsRequest.</remarks>
-        private static OptionObject2015 VerifyPreAdmitDate(OptionObject2015 sentOptionObject2015)
+        private static OptionObject2015 ComparePreAdmitToAdmit(OptionObject2015 sentOptionObject2015)
         {
-            /* For detailed information about InptAdmitDate.VerifyPreAdmitDate(), please see the MAWS manual:
-             *  https://github.com/spectrum-health-systems/MyAvatoolWebService/blob/main/doc/man/manual.md
-             */
-
-            /* You will need to modify these values to match the fieldIDs for your organization.
-             */
-            const int    preAdmission                 = 3;
-            const string typeOfAdmissionField         = "44";
-            const string preAdmitToAdmissionDateField = "42";
+            // You may need to modify these values to match the fieldIDs for your organization.
+            const int    preAdmissionHardcodedValue     = 3;
+            const string typeOfAdmissionFieldId         = "44";
+            const string preAdmitToAdmissionDateFieldId = "42";
 
             var typeOfAdmission                       = 0;
             var preAdmitToAdmissionDate               = new DateTime(1900, 1, 1);
@@ -82,12 +67,12 @@ namespace MyAvatoolWebService
                 {
                     switch(field.FieldNumber)
                     {
-                        case typeOfAdmissionField:
+                        case typeOfAdmissionFieldId:
                             typeOfAdmission = int.Parse(field.FieldValue);                                              // TODO Convert.ToInt()?
                             foundPreAdmitToAdmissionDateField = true;
                             break;
 
-                        case preAdmitToAdmissionDateField:
+                        case preAdmitToAdmissionDateFieldId:
                             preAdmitToAdmissionDate = Convert.ToDateTime(field.FieldValue);
                             foundTypeOfAdmissionField = true;
                             break;
@@ -127,7 +112,7 @@ namespace MyAvatoolWebService
              * If the "Admission Type" is not set to "Pre-Admission", or if it is and the Pre-Admission Date is the same
              * as the system date, the errMsgCode remains "0", and the form is submitted normally.
              */
-            if(typeOfAdmission == preAdmission)
+            if(typeOfAdmission == preAdmissionHardcodedValue)
             {
                 if(preAdmitToAdmissionDate != systemDate)
                 {
@@ -136,17 +121,17 @@ namespace MyAvatoolWebService
                 }
             }
 
-            var verifyAdmitDateOptionObject2 = new OptionObject2015();
+            var verifyAdmitDateOptionObject2015 = new OptionObject2015();
 
             if(errMsgCode != 0)
             {
-                verifyAdmitDateOptionObject2.ErrorCode = errMsgCode;
-                verifyAdmitDateOptionObject2.ErrorMesg = errMsgBody;
+                verifyAdmitDateOptionObject2015.ErrorCode = errMsgCode;
+                verifyAdmitDateOptionObject2015.ErrorMesg = errMsgBody;
 
                 /* Uncomment this line to overide the "nice" error message with detailed information users don't need to
                  * see, which may be usefull when testing.
                  */
-                verifyAdmitDateOptionObject2.ErrorMesg = $"[ERROR]\nError Code: {errMsgCode}\nType of admission: {typeOfAdmission}\nPreAdmit Date: {preAdmitToAdmissionDate}\nSystem Date: {systemDate}";
+                verifyAdmitDateOptionObject2015.ErrorMesg = $"[ERROR]\nError Code: {errMsgCode}\nType of admission: {typeOfAdmission}\nPreAdmit Date: {preAdmitToAdmissionDate}\nSystem Date: {systemDate}";
             }
 
             /* When this block of code is uncommented, a pop-up with detailed information will be displayed when the
@@ -160,7 +145,41 @@ namespace MyAvatoolWebService
             //    verifyAdmitDateOptionObject2.ErrorMesg = "[DEBUG]\nError Code: {errMsgCode}\nType of admission: {typeOfAdmission}\nPreAdmit Date: {preAdmitToAdmissionDate}\nSystem Date: {systemDate}";
             //}
 
-            return verifyAdmitDateOptionObject2;
+            // Log this event
+            var logFileContent = $"preAdmissionHardcodedValue={preAdmissionHardcodedValue}{Environment.NewLine}" +
+                                 $"typeOfAdmissionFieldId={typeOfAdmissionFieldId}{Environment.NewLine}" +
+                                 $"preAdmitToAdmissionDateFieldId={preAdmitToAdmissionDateFieldId}{Environment.NewLine}" +
+                                 $"typeOfAdmission={typeOfAdmission}{Environment.NewLine}" +
+                                 $"preAdmitToAdmissionDate={preAdmitToAdmissionDate}{Environment.NewLine}" +
+                                 $"foundTypeOfAdmissionField={foundTypeOfAdmissionField}{Environment.NewLine}" +
+                                 $"foundPreAdmitToAdmissionDateField={foundPreAdmitToAdmissionDateField}{Environment.NewLine}" +
+                                 $"errMsgBody={verifyAdmitDateOptionObject2015.ErrorMesg}{Environment.NewLine}" +
+                                 $"errMsgCode={verifyAdmitDateOptionObject2015.ErrorCode}{Environment.NewLine}";
+            Logger.WriteToTimestampedFile("InptAdmitDate.ComparePreAdmitToAdmit", logFileContent);
+
+            return verifyAdmitDateOptionObject2015;
+        }
+
+        /// <summary>
+        ///
+        /// </summary>
+        /// <param name="sentOptionObject2015"></param>
+        /// <returns></returns>
+        private static OptionObject2015 ComparePreAdmitToAdmit_Testing(OptionObject2015 sentOptionObject2015)
+        {
+            var verifyAdmitDateOptionObject2015 = new OptionObject2015();
+
+            // This is a placeholder method in the event that ComparePreAdmitToAdmit() is modified. IF that's the case,
+            // copy the contents of ComparePreAdmitToAdmit() here.
+
+            return verifyAdmitDateOptionObject2015;
+        }
+        /// <summary>
+        ///
+        /// </summary>
+        public static void ForceTest()
+        {
+            // No way to do this, currently.
         }
     }
 }

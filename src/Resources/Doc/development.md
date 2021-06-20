@@ -45,14 +45,12 @@ In order to make MAWS more customizable, I decided to allow a MAWS Request to be
 1. A MAWS *command* (e.g., "InptAdmitDate")
 2. A MAWS *action* (e.g., "VerifyPreAdmin")
 
-It's also possible that the MAWS request will contain:
+It's also possible that the MAWS request will contain:<br>
 3. A MAWS *option* (e.g., "Testing")
 
 The commands/actions/options are seperated by a `-` delimiter. So a complete MAWS request will look like "InptAdmitDate-VerifyPreAdmin<-option>". The MAWS Request Syntax Engine is the component that parses a MAWS Request, and breaks it down into its seperate parts so MAWS can do what it needs to do.
 
 In addition, v2.0 will have an external list of valid commands/actions/options that will be verified by the RequestSyntaxEngine.
-
-For more information on making MAWS Requests, see the manual.
 
 ## TestPlatform
 | DESCRIPTION | STATUS | RELEASE |
@@ -125,16 +123,6 @@ AND/OR
 2. Does not exceed X(mg) of the previous dose<br>
 AND
 3. Does not exceed X(mg)
-
-Originally a MAWS Request was a single "command", e.g., "VerifyInpatientAdmissionDate".
-
-In order to make MAWS more customizable, I decided to allow a MAWS Request to be more complex. With v2.0 of the Syntax Engine, a MAWS Request consists of the following:
-1. A MAWS *command* (e.g., "InptAdmitDate")
-2. A MAWS *action* (e.g., "VerifyPreAdmin")
-
-The command and action are seperated by a `-` delimiter. So a complete MAWS request will look like "InptAdmitDate-VerifyPreAdmin". The MAWS Request Syntax Engine is the component that parses a MAWS Request, and breaks it down into its seperate parts so MAWS can do what it needs to do.
-
-For more information, see the manual.
 
 
 ### Dosage-VerifyPercentIncrease

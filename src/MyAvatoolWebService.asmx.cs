@@ -1,6 +1,6 @@
 ﻿/* PROJECT: MyAvatoolWebService (https://github.com/aprettycoolprogram/MyAvatoolWebService)
  *    FILE: MyAvatoolWebService.MyAvatoolWebService.asmx.cs
- * UPDATED: 6-19-2021-7:11 PM
+ * UPDATED: 6-20-2021-12:50 PM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2021 A Pretty Cool Program All rights reserved
  */
@@ -8,14 +8,11 @@
 /**********************************************************************************************************************************
  *                                 >>> WARNING: THIS IS THE MAWS DEVELOPMENT BRANCH <<<                                           *
  **********************************************************************************************************************************
- * Unless I have forgotten to update this comment, you are looking at v0.9.x.x of the MAWS development branch. You can confirm this   *
- * by checking the following line in /Properties/AssemblyInfo.cs:                                                                 *
+ * Unless I have forgotten to update this comment, you are looking at v0.9.x.x of the MAWS development branch. You can confirm    *
+ * this by checking the following line in /Properties/AssemblyInfo.cs:                                                            *
  *                                                                                                                                *
  *  [assembly: AssemblyVersion("X.X.X.X")]                                                                                        *
- *                                                                                                                                *
- * To make sure you are using the latest development branch version, check the /Resources/Dev/development-information.md file:           *
- *  https://github.com/spectrum-health-systems/MyAvatoolWebService/blob/development/src/Resources/Dev/development-information.md  *
- *                                                                                                                                *
+ *                                                                                                                                *                                                                                                                       *
  * The MAWS development branch should not be used in production environments.                                                     *
  *                                                                                                                                *
  * For previous development branch versions, please see:                                                                          *
@@ -23,10 +20,9 @@
  *********************************************************************************************************************************/
 
 /* For information about this sourcecode, please see:
- *  https://github.com/spectrum-health-systems/MyAvatoolWebService/blob/development/src/Resources/Dev/sourcecode-information.md
+ *  https://github.com/spectrum-health-systems/MyAvatoolWebService/blob/development/src/Resources/Doc/development.md
  */
 
-using System.Collections.Generic;
 using System.Web.Services;
 using NTST.ScriptLinkService.Objects;
 
@@ -48,9 +44,10 @@ namespace MyAvatoolWebService
         [WebMethod]
         public string GetVersion()
         {
-            // Uncomment to test MAWS functionality.
+            // Uncomment to test MAWS. See comments in MyAvatoolWebService.ForceTest() for more information.
             ForceTest();
 
+            // Leaving this as v1.0 throughout development.
             return "VERSION 1.0";
         }
 
@@ -63,19 +60,15 @@ namespace MyAvatoolWebService
         /// <remarks>This method is required by myAvatar. DO NOT REMOVE.</remarks>
         public static OptionObject2015 RunScript(OptionObject2015 sentOptionObject, string mawsRequest)
         {
-            /* This method is required by myAvatar. Do not remove! The only changes to this method should be adding external methods to the switch statement.
-             *
-             * For information about how to perform a MAWS request from within myAvatar, please see:
-             *  https://github.com/spectrum-health-systems/MyAvatoolWebService/blob/main/doc/man/manual-using-maws.md
+            /* For information about how to perform a MAWS request from within myAvatar, please see:
+             * https://github.com/spectrum-health-systems/MyAvatoolWebService/blob/main/doc/man/manual-using-maws.md
              */
             var requestCommand = RequestSyntaxEngine.GetRequestCommand(mawsRequest);
-            var requestAction  = RequestSyntaxEngine.GetRequestAction(mawsRequest);
-            var requestOption  = RequestSyntaxEngine.GetRequestOption(mawsRequest);
 
             switch(requestCommand)
             {
-                case "InpatientAdmissionDate":
-                    InpatientAdmissionDate.ExecuteAction(sentOptionObject, requestAction, requestOption);
+                case "InptAdmitDate":
+                    InptAdmitDate.ExecuteAction(sentOptionObject, mawsRequest);
                     break;
 
                 default:
@@ -92,9 +85,19 @@ namespace MyAvatoolWebService
         {
             /* This is probably a Bad Idea? But I do want an easy way to test functionality, so...uncomment lines below
              * to test various functionality.
+             *
+             * Then:
+             * 1. Run MAWS
+             * 2. Click "GetVersion"
+             * 3. Click the "Invoke" button
+             *
+             * It's probably best if you uncomment each of the lines below individually, for the fucntionality you want
+             * to test. Each <class>.ForceTest() method should have a breakpoint line at the end, so you can check
+             * outputs, etc.
+             *
              */
-
             RequestSyntaxEngine.ForceTest();
+            InptAdmitDate.ForceTest();
         }
     }
 }

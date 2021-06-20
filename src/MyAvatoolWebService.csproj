@@ -71,7 +71,10 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="InpatientAdmissionDate.cs" />
+    <Compile Include="Dose.cs" />
+    <Compile Include="InptAdmitDate.cs" />
+    <Compile Include="Logger.cs" />
+    <Compile Include="Maintenance.cs" />
     <Compile Include="MyAvatoolWebService.asmx.cs">
       <DependentUpon>MyAvatoolWebService.asmx</DependentUpon>
     </Compile>
@@ -108,6 +111,9 @@
       <Project>{8a8a6089-3286-42e6-9f76-b61784709654}</Project>
       <Name>NTST.ScriptLinkService.Objects</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\Log\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -1,38 +1,16 @@
 ﻿/* PROJECT: MyAvatoolWebService (https://github.com/aprettycoolprogram/MyAvatoolWebService)
  *    FILE: MyAvatoolWebService.RequestSyntaxEngine.cs
- * UPDATED: 6-19-2021-5:14 PM
+ * UPDATED: 6-20-2021-12:31 PM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2021 A Pretty Cool Program All rights reserved
  */
+
+using System;
 
 namespace MyAvatoolWebService
 {
     public class RequestSyntaxEngine
     {
-        ///// <summary>
-        ///// Parse a MAWS Request into a command, action, and optional option.
-        ///// </summary>
-        ///// <param name="mawsRequest">The MAWS Request (e.g., "ThisIsACommand-ThisIsAnAction-Option")</param>
-        ///// <returns>A Dictionary<string,string> containing the MAWS Request components.</returns>
-        //public static Dictionary<string, string> ParseRequest(string mawsRequest)
-        //{
-        //    var mawsRequestAsArray = mawsRequest.Split('-');
-
-        //    var mawsRequestAsDictionary = new Dictionary<string,string>
-        //    {
-        //        { "requestCommand", mawsRequestAsArray[0] },
-        //        { "requestAction",  mawsRequestAsArray[1] },
-        //        { "requestOption",  "none" },
-        //    };
-
-        //    if(mawsRequestAsArray.Length >= 3)
-        //    {
-        //        mawsRequestAsDictionary["requestOption"] = mawsRequestAsArray[2];
-        //    }
-
-        //    return mawsRequestAsDictionary;
-        //}
-
         /// <summary>
         ///
         /// </summary>
@@ -73,6 +51,12 @@ namespace MyAvatoolWebService
             var requestCommand = RequestSyntaxEngine.GetRequestCommand("ThisIsACommand-ThisIsAnAction-Testing-ShouldNotAppear");
             var requestAction  = RequestSyntaxEngine.GetRequestAction("ThisIsACommand-ThisIsAnAction-Testing-ShouldNotAppear");
             var requestOption  = RequestSyntaxEngine.GetRequestOption("ThisIsACommand-ThisIsAnAction-Testing-ShouldNotAppear");
+
+            // Log this event
+            var logFileContent = $"requestCommand={requestCommand}{Environment.NewLine}" +
+                                 $"requestAction={requestAction}{Environment.NewLine}" +
+                                 $"requestOption={requestOption}{Environment.NewLine}";
+            Logger.WriteToTimestampedFile("RequestSyntaxEngine.ForceTest", logFileContent);
         }
     }
 }
