@@ -1,8 +1,9 @@
 ﻿# MAWS Changelog
 
 ## Version 1.0
-> Version 1.0 includes:
->   InptAdmitDate.ComparePreAdmitToAdmit
+> Version 1.0 includes:<br>
+>   New functionality:<br>
+>       * InptAdmitDate.ComparePreAdmitToAdmit
 >   Dose.VerifyPercentage
 
 ## Version 0.10
