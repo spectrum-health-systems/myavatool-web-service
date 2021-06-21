@@ -1,6 +1,6 @@
 ﻿/* PROJECT: MyAvatoolWebService (https://github.com/aprettycoolprogram/MyAvatoolWebService)
  *    FILE: MyAvatoolWebService.MyAvatoolWebService.asmx.cs
- * UPDATED: 6-21-2021-8:37 AM
+ * UPDATED: 6-21-2021-12:15 PM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2021 A Pretty Cool Program All rights reserved
  */
@@ -49,7 +49,6 @@ namespace MyAvatoolWebService
         /// <remarks>This method is required by myAvatar. DO NOT REMOVE.</remarks>
         public static OptionObject2015 RunScript(OptionObject2015 sentOptionObject, string mawsRequest)
         {
-
             var requestCommand = RequestSyntaxEngine.GetRequestCommand(mawsRequest);
 
             switch(requestCommand)

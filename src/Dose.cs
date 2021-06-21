@@ -18,7 +18,7 @@ namespace MyAvatoolWebService
     public class Dose
     {
         /// <summary>
-        /// Executes a MAWS action for the InptAdmitDate command
+        /// Executes a MAWS action for the InptAdmitDate command.
         /// </summary>
         /// <param name="sentOptionObject2015">The original OptionObject2015 sent from myAvatar.</param>
         /// <param name="mawsRequest">The MAWS request string.</param>

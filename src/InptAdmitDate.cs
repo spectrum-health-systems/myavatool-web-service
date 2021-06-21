@@ -1,6 +1,6 @@
 ﻿/* PROJECT: MyAvatoolWebService (https://github.com/aprettycoolprogram/MyAvatoolWebService)
  *    FILE: MyAvatoolWebService.InptAdmitDate.cs
- * UPDATED: 6-21-2021-9:12 AM
+ * UPDATED: 6-21-2021-12:17 PM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2021 A Pretty Cool Program All rights reserved
  */
@@ -101,6 +101,7 @@ namespace MyAvatoolWebService
 
             var systemDate = new DateTime(1900, 1, 1);                                                    // TODO Why not define this in the line below?
             systemDate = DateTime.Today;
+
             var errMsgBody = string.Empty;
             var errMsgCode = 0;
 
@@ -130,7 +131,7 @@ namespace MyAvatoolWebService
                 }
             }
 
-            var verifyAdmitDateOptionObject2015 = new OptionObject2015();
+            var verifyAdmitDateOptionObject2015 = new OptionObject2015(); // MOVED
 
             if(errMsgCode != 0)
             {
@@ -179,6 +180,7 @@ namespace MyAvatoolWebService
         {
             return sentOptionObject2015;
         }
+
         /// <summary>
         ///
         /// </summary>

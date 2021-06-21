@@ -1,5 +1,118 @@
 ﻿# MAWS Roadmap
 
+* 0.10
+    * RunScript()
+
+            var requestCommand = RequestSyntaxEngine.GetRequestCommand(mawsRequest);
+            var completedOptionObject = sentOptionObject
+
+            switch(requestCommand)
+            {
+                case "InptAdmitDate":
+                    completedOptionObject = InptAdmitDate.ExecuteAction(sentOptionObject, mawsRequest);
+                    break;
+
+                default:
+                    // Log this event.
+                    var logFileContent = $"[ERROR]{Environment.NewLine}" +
+                                         $"request command \"{requestCommand}\" is not valid.{Environment.NewLine}";
+                    Logger.WriteToTimestampedFile("[ERROR]MyAvatoolWebService.RunScript", logFileContent);
+                    break;
+            }
+
+            return completedOptionObject;
+
+    * ComparePreAdmitToAdmit(OptionObject2015 sentOptionObject2015)
+
+            const int    preAdmissionHardcodedValue     = 3;
+            const string typeOfAdmissionFieldId         = "44";
+            const string preAdmitToAdmissionDateFieldId = "42";
+
+            var typeOfAdmission                       = 0;
+            var preAdmitToAdmissionDate               = new DateTime(1900, 1, 1);
+
+            var foundTypeOfAdmissionField             = false;
+            var foundPreAdmitToAdmissionDateField     = false;
+
+            foreach(FormObject form in sentOptionObject2015.Forms)
+            {
+                foreach(FieldObject field in form.CurrentRow.Fields)
+                {
+                    switch(field.FieldNumber)
+                    {
+                        case typeOfAdmissionFieldId:
+                            typeOfAdmission = int.Parse(field.FieldValue);                                              // TODO Convert.ToInt()?
+                            foundPreAdmitToAdmissionDateField = true;
+                            break;
+
+                        case preAdmitToAdmissionDateFieldId:
+                            preAdmitToAdmissionDate = Convert.ToDateTime(field.FieldValue);
+                            foundTypeOfAdmissionField = true;
+                            break;
+
+                        default:
+                            break;
+                    }
+
+                    if(foundPreAdmitToAdmissionDateField && foundTypeOfAdmissionField)
+                    {
+                        break;
+                    }
+                }
+            }
+
+            var systemDate = new DateTime(1900, 1, 1);                                                    // TODO Why not define this in the line below?
+            systemDate = DateTime.Today;
+
+            var verifyAdmitDateOptionObject = new OptionObject2015
+            {
+                ErrorCode = 0,
+                ErrorMsg = ""
+            };
+
+            if(typeOfAdmission == preAdmissionHardcodedValue)
+            {
+                if(preAdmitToAdmissionDate != systemDate)
+                {
+                    verifyAdmitDateOptionObject.ErrorCode = 1;
+                    verifyAdmitDateOptionObject.ErrorMsg  = "WARNING\nThe client's pre-admission date does not match today's date!";
+                }
+            }
+
+            if(errMsgCode != 0)
+            {
+                // LOG EVENT
+            }
+
+            /* When this block of code is uncommented, a pop-up with detailed information will be displayed when the
+             * errMsgCode is "0", meaning no issues were found, and the form will being submitted normally.
+             *
+             * This is  useful when debugging, but normally it should be commented out.
+             */
+            //if (errMsgCode == 0)
+            //{
+            // LOG EVENT
+            //    verifyAdmitDateOptionObject2.ErrorCode = 4;
+            //    verifyAdmitDateOptionObject2.ErrorMesg = "[DEBUG]\nError Code: {errMsgCode}\nType of admission: {typeOfAdmission}\nPreAdmit Date: {preAdmitToAdmissionDate}\nSystem Date: {systemDate}";
+            //}
+
+            // Log this event
+            var logFileContent = $"preAdmissionHardcodedValue={preAdmissionHardcodedValue}{Environment.NewLine}" +
+                                 $"typeOfAdmissionFieldId={typeOfAdmissionFieldId}{Environment.NewLine}" +
+                                 $"preAdmitToAdmissionDateFieldId={preAdmitToAdmissionDateFieldId}{Environment.NewLine}" +
+                                 $"typeOfAdmission={typeOfAdmission}{Environment.NewLine}" +
+                                 $"preAdmitToAdmissionDate={preAdmitToAdmissionDate}{Environment.NewLine}" +
+                                 $"foundTypeOfAdmissionField={foundTypeOfAdmissionField}{Environment.NewLine}" +
+                                 $"foundPreAdmitToAdmissionDateField={foundPreAdmitToAdmissionDateField}{Environment.NewLine}" +
+                                 $"errMsgBody={verifyAdmitDateOptionObject2015.ErrorMesg}{Environment.NewLine}" +
+                                 $"errMsgCode={verifyAdmitDateOptionObject2015.ErrorCode}{Environment.NewLine}";
+            Logger.WriteToTimestampedFile("InptAdmitDate.ComparePreAdmitToAdmit", logFileContent);
+
+            return verifyAdmitDateOptionObject2015;
+        }
+
+
+
 
 
 * Confirm all references to *OptionObject2* are replaced with *OptionObject2015*
