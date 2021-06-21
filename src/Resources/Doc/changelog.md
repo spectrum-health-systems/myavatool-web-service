@@ -3,6 +3,14 @@
 ## Version 0.9.x.x
 > Porting v0.8 over to use OptionObject2015
 
+#### 0.9.21172.1316 (2021-06-21)
+* `INFO` Code/comment/documentation updates/cleanup
+* `REMOVED` MyAvatoolWebService.ForceTest()
+* `ADDED` Testing.cs
+* `ADDED` Testing.Force()
+* `MODIFIED` MAWS Request commands/actions/options are now converted to lowercase prior to being returned by RequestSyntaxEngine.cs
+* `MODIFIED` Maintenance.ConfirmLogDirectory() -> Maintenance.ConfirmLogDirectory()
+
 #### 0.9.21172.1210 (2021-06-21)
 * `INFO` Code/comment/documentation updates/cleanup
 

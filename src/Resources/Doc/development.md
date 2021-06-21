@@ -18,7 +18,8 @@ Each of the three different types of comments in MAWS start differently.
  
 * `///` XML comments used by Visual Studio
 * `//` Short comments intended to give additional information about a block of code.
-* `/*...*/` Narrative comments when sourcecode concepts need to be explained in more detail.
+* `/*...*/` In-line narrative comments when sourcecode concepts need to be explained in more detail.
+* `/* -01- */` Footnote comments.
  
 When possible, I link to the relevent parts of the [MAWS Manual](https://github.com/spectrum-health-systems/MyAvatoolWebService/blob/main/doc/man/manual.md).
  

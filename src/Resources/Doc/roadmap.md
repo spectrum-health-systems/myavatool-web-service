@@ -22,6 +22,8 @@
 
 * Allow "ForceTest" to be sent to force testing/logging
 
+* Notes on logging
+
 * Put [DEBUG] and [ERROR] logs in their own folder?
 
 * Do the $"{}" thing with strings
@@ -39,3 +41,6 @@
       * All actions are external classes
   * InptAdmitDate.cs
       * Parser, DefineFieldIds, etc all under main
+
+* Test:
+    * Passing an invalid command/action/option

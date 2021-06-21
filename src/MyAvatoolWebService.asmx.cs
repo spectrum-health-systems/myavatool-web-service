@@ -1,15 +1,18 @@
 ﻿/* PROJECT: MyAvatoolWebService (https://github.com/aprettycoolprogram/MyAvatoolWebService)
  *    FILE: MyAvatoolWebService.MyAvatoolWebService.asmx.cs
- * UPDATED: 6-21-2021-8:10 AM
+ * UPDATED: 6-21-2021-8:37 AM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2021 A Pretty Cool Program All rights reserved
  */
 
-/*******************************************************************************
- *             >>> WARNING: THIS IS THE MAWS DEVELOPMENT BRANCH <<<            *
+/******************************************************************************
+ *             >>> WARNING: THIS IS THE MAWS DEVELOPMENT BRANCH <<<           *
  ******************************************************************************/
 
-// For information about this sourcecode, please see: https://github.com/spectrum-health-systems/MyAvatoolWebService/blob/development/src/Resources/Doc/development.md
+/* MyAvatoolWebService main class.
+ *
+ * Development notes/comments can be found at the end of this class.
+ */
 
 using System;
 using System.Web.Services;
@@ -26,17 +29,14 @@ namespace MyAvatoolWebService
     public class MyAvatoolWebService : WebService
     {
         /// <summary>
-        /// Returns the MAWS version string.
+        /// Returns the MAWS version.
         /// </summary>
-        /// <returns>The MAWS version string (e.g., "VERSION 1.0").</returns>
-        /// <remarks>This method is required by myAvatar. DO NOT REMOVE.</remarks>
+        /// <returns>The MAWS version (e.g., "VERSION 1.0").</returns>
         [WebMethod]
         public string GetVersion()
         {
-            // Uncomment to test MAWS. See comments in MyAvatoolWebService.ForceTest() for more information.
-            ForceTest();
+            Testing.Force("all");
 
-            // Leaving this as v1.0 throughout development.
             return "VERSION 1.0";
         }
 
@@ -49,9 +49,7 @@ namespace MyAvatoolWebService
         /// <remarks>This method is required by myAvatar. DO NOT REMOVE.</remarks>
         public static OptionObject2015 RunScript(OptionObject2015 sentOptionObject, string mawsRequest)
         {
-            /* For information about how to perform a MAWS request from within myAvatar, please see:
-             * https://github.com/spectrum-health-systems/MyAvatoolWebService/blob/main/doc/man/manual-using-maws.md
-             */
+
             var requestCommand = RequestSyntaxEngine.GetRequestCommand(mawsRequest);
 
             switch(requestCommand)
@@ -61,7 +59,7 @@ namespace MyAvatoolWebService
                     break;
 
                 default:
-                    // Log this event
+                    // Log this event.
                     var logFileContent = $"[ERROR]{Environment.NewLine}" +
                                          $"request command \"{requestCommand}\" is not valid.{Environment.NewLine}";
                     Logger.WriteToTimestampedFile("[ERROR]MyAvatoolWebService.RunScript", logFileContent);
@@ -70,27 +68,33 @@ namespace MyAvatoolWebService
 
             return sentOptionObject;
         }
-
-        /// <summary>
-        /// Test MAWS functionality.
-        /// </summary>
-        private static void ForceTest()
-        {
-            /* This is probably a Bad Idea? But I do want an easy way to test functionality, so...uncomment lines below
-             * to test various functionality.
-             *
-             * Then:
-             * 1. Run MAWS
-             * 2. Click "GetVersion"
-             * 3. Click the "Invoke" button
-             *
-             * It's probably best if you uncomment each of the lines below individually, for the fucntionality you want
-             * to test. Each <class>.ForceTest() method should have a breakpoint line at the end, so you can check
-             * outputs, etc.
-             *
-             */
-            RequestSyntaxEngine.ForceTest();
-            InptAdmitDate.ForceTest();
-        }
     }
 }
+
+/* DEVELOPMENT NOTES
+ * =================
+ *
+ * - The goal with this class is to just have the "GetVersion" and "RunScript()" methods. Everything else will be taken
+ *   care of in another class. Both methods are required by myAvatar, so don't remove them.
+ *
+ * - I'm leaving the "VERSION" as "1.0" throughout development.
+ *
+ * - Testing.Force() is probably a Bad Idea, but I wanted an easy way to test some functionality without having to
+ *   publish the web service every time I made a change. So what ForceTest() does is it allow you to inject code into
+ *   the GetVersion() method, allowing you to set breakpoints and/or view [DEBUG] log files. Again, probably a Bad Idea.
+ *
+ *   Since Testing.Force() is for use during developement, it is disabled in the production version of MAWS.
+ *
+ *   This is how you can use Testing.Force():
+ *      1. Pass a specific test you would like to force (e.g., "requestSyntaxEngine"), or "all" to force all tests. You
+ *         can also choose to not pass anything, in which case no tests will be forced.
+ *      1. Run MAWS
+ *      2. Click "GetVersion"
+ *      3. Click the "Invoke" button
+ *
+ * - For information about how to perform a MAWS request from within myAvatar, please see:
+ *      https://github.com/spectrum-health-systems/MyAvatoolWebService/blob/main/doc/man/manual-using-maws.md
+ *
+ * - For information about this sourcecode, please see:
+ *      https://github.com/spectrum-health-systems/MyAvatoolWebService/blob/development/src/Resources/Doc/development.md
+ */

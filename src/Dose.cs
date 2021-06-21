@@ -1,8 +1,13 @@
 ﻿/* PROJECT: MyAvatoolWebService (https://github.com/aprettycoolprogram/MyAvatoolWebService)
  *    FILE: MyAvatoolWebService.Dose.cs
- * UPDATED: 6-20-2021-1:33 PM
+ * UPDATED: 6-21-2021-8:52 AM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2021 A Pretty Cool Program All rights reserved
+ */
+
+/* Dose command logic
+ *
+ * Development notes/comments can be found at the end of this class.
  */
 
 using System;
@@ -50,14 +55,10 @@ namespace MyAvatoolWebService
         /// <returns>An OptionObject2 object with the data.</returns>
         private static OptionObject2015 VerifyPercentage(OptionObject2015 sentOptionObject2015)
         {
-            // You may need to modify these values to match the fieldIDs for your organization.
-            const int    preAdmissionHardcodedValue = 3;
             const string dosageOneFieldId           = "107";
             const string lastOrderScheduledFieldId  = "142";
 
             const int maxPercentIncrease   = 10;
-            const int maxMilligramIncrease = 20;
-            const int maxMilligrams        = 200;
 
             var currentDose = 0;
             var lastOrderScheduledText = "";
@@ -162,3 +163,10 @@ namespace MyAvatoolWebService
         }
     }
 }
+
+/* DEVELOPMENT NOTES
+ * =================
+ *
+ * - For information about this sourcecode, please see:
+ *      https://github.com/spectrum-health-systems/MyAvatoolWebService/blob/development/src/Resources/Doc/development.md
+ */

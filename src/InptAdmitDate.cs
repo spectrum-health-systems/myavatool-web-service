@@ -1,8 +1,13 @@
 ﻿/* PROJECT: MyAvatoolWebService (https://github.com/aprettycoolprogram/MyAvatoolWebService)
  *    FILE: MyAvatoolWebService.InptAdmitDate.cs
- * UPDATED: 6-20-2021-1:35 PM
+ * UPDATED: 6-21-2021-9:12 AM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2021 A Pretty Cool Program All rights reserved
+ */
+
+/* InptAdmitDate command logic.
+ *
+ * Development notes/comments can be found at the end of this class.
  */
 
 using System;
@@ -21,8 +26,8 @@ namespace MyAvatoolWebService
         public static OptionObject2015 ExecuteAction(OptionObject2015 sentOptionObject2015, string mawsRequest)
         {
             var inptAdmitDateOptionObject = new OptionObject2015();
-            var requestAction             = RequestSyntaxEngine.GetRequestAction(mawsRequest).ToLower();
-            var requestOption             = RequestSyntaxEngine.GetRequestOption(mawsRequest).ToLower();
+            var requestAction             = RequestSyntaxEngine.GetRequestAction(mawsRequest);
+            var requestOption             = RequestSyntaxEngine.GetRequestOption(mawsRequest);
 
             switch(requestAction)
             {
@@ -165,18 +170,14 @@ namespace MyAvatoolWebService
         }
 
         /// <summary>
-        ///
+        /// Verifies that client's Pre-Admission date is the same as the system date (TESTING VERSION)
         /// </summary>
-        /// <param name="sentOptionObject2015"></param>
-        /// <returns></returns>
+        /// <param name="sentOptionObject2">The OptionObject2 object sent from myAvatar.</param>
+        /// <returns>An OptionObject2 object with the data.</returns>
+        /// <remarks>This method is used to test ComparePreAdmitToAdmit functionality.</remarks>
         private static OptionObject2015 ComparePreAdmitToAdmit_Testing(OptionObject2015 sentOptionObject2015)
         {
-            var verifyAdmitDateOptionObject2015 = new OptionObject2015();
-
-            // This is a placeholder method in the event that ComparePreAdmitToAdmit() is modified. If that's the case,
-            // copy the contents of ComparePreAdmitToAdmit() here.
-
-            return verifyAdmitDateOptionObject2015;
+            return sentOptionObject2015;
         }
         /// <summary>
         ///
@@ -187,3 +188,26 @@ namespace MyAvatoolWebService
         }
     }
 }
+
+/* DEVELOPMENT NOTES
+ * =================
+ *
+ * - MAWS Request commands/actions/options are converted to lowercase before we look at them. This way if the you put
+ *   an incorrectly-cased MAWS Request in a form's ScriptLink event, it will still work when that request is submitted
+ *   to MAWS. On the flip-side, it's a bit harder to read the code. Since the majority of the users will only see the
+ *   myAvatar side of things, that's a tradeoff I'm ok making.
+ *
+ * - A "_Testing" postfix is applied to methods that are used to test functionality without impacting current
+ *   functionality. I know that using underscores in methods isn't best practice, but this seems to be the best way to
+ *   indicate a method is for testing only.
+ *
+ * - The original ComparePreAdmitToAdmit() method was written (and used in production) prior to the changes made to how
+ *   MAWS Requests are handled. In theory, no other changes will need to be made to ComparePreAdmitToAdmit(), so there
+ *   isn't a ComparePreAdmitToAdmit_Testing() method. But since the standart going forward will be for all methods to
+ *   have a "_Testing" version, there is a placeholder ComparePreAdmitToAdmit_Testing() method that doesn't do anything.
+ *
+ *
+ *
+ * - For information about this sourcecode, please see:
+ *      https://github.com/spectrum-health-systems/MyAvatoolWebService/blob/development/src/Resources/Doc/development.md
+ */
