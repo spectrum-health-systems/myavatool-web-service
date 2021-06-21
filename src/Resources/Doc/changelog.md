@@ -4,12 +4,12 @@
 <summary>
 Version 1.0
 
-New functionality<br>
+&nbsp;&nbsp;New Requests<br>
 &nbsp;&nbsp;&nbsp;&nbsp;InptAdmitDate.ComparePreAdmitToAdmit<br>
 &nbsp;&nbsp;&nbsp;&nbsp;Dose.VerifyPercentage
-New functionality<br>
-&nbsp;&nbsp;&nbsp;&nbsp;InptAdmitDate.ComparePreAdmitToAdmit<br>
-&nbsp;&nbsp;&nbsp;&nbsp;Dose.VerifyPercentage
+&nbsp;&nbsp;New functionality<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Logging<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Testing platform
 
 </summary>
 
