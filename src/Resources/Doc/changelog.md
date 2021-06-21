@@ -4,7 +4,7 @@
 <summary>
 Version 1.0
 
-&nbsp;&nbsp;New Requests<br>
+* New Requests
 &nbsp;&nbsp;&nbsp;&nbsp;InptAdmitDate.ComparePreAdmitToAdmit<br>
 &nbsp;&nbsp;&nbsp;&nbsp;Dose.VerifyPercentage
 &nbsp;&nbsp;New functionality<br>
