@@ -2,7 +2,7 @@
 
 ## Version 1.0
 > Version 1.0 includes:<br>
->   New functionality:<br>
+> &nbsp;&nbsp;&nbsp;&nbsp;New functionality:<br>
 >       * InptAdmitDate.ComparePreAdmitToAdmit
 >   Dose.VerifyPercentage
 
