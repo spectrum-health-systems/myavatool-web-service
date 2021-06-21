@@ -1,27 +1,15 @@
 ﻿/* PROJECT: MyAvatoolWebService (https://github.com/aprettycoolprogram/MyAvatoolWebService)
  *    FILE: MyAvatoolWebService.MyAvatoolWebService.asmx.cs
- * UPDATED: 6-20-2021-1:29 PM
+ * UPDATED: 6-21-2021-8:10 AM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2021 A Pretty Cool Program All rights reserved
  */
 
-/**********************************************************************************************************************************
- *                                 >>> WARNING: THIS IS THE MAWS DEVELOPMENT BRANCH <<<                                           *
- **********************************************************************************************************************************
- * Unless I have forgotten to update this comment, you are looking at v0.9.x.x of the MAWS development branch. You can confirm    *
- * this by checking the following line in /Properties/AssemblyInfo.cs:                                                            *
- *                                                                                                                                *
- *  [assembly: AssemblyVersion("X.X.X.X")]                                                                                        *
- *                                                                                                                                *                                                                                                                       *
- * The MAWS development branch should not be used in production environments.                                                     *
- *                                                                                                                                *
- * For previous development branch versions, please see:                                                                          *
- *  https://github.com/spectrum-health-systems/MyAvatoolWebService/tree/main/dev                                                  *
- *********************************************************************************************************************************/
+/*******************************************************************************
+ *             >>> WARNING: THIS IS THE MAWS DEVELOPMENT BRANCH <<<            *
+ ******************************************************************************/
 
-/* For information about this sourcecode, please see:
- *  https://github.com/spectrum-health-systems/MyAvatoolWebService/blob/development/src/Resources/Doc/development.md
- */
+// For information about this sourcecode, please see: https://github.com/spectrum-health-systems/MyAvatoolWebService/blob/development/src/Resources/Doc/development.md
 
 using System;
 using System.Web.Services;

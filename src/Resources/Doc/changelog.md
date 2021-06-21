@@ -3,6 +3,9 @@
 ## Version 0.9.x.x
 > Porting v0.8 over to use OptionObject2015
 
+#### 0.9.21172.1210 (2021-06-21)
+* `INFO` Code/comment/documentation updates/cleanup
+
 #### 0.9.21171.1735 (2021-06-20)
 * `MODIFIED` Added [DEBUG] prefix to log files
 * `MODIFIED` Added [SYSTEM] prefix to log files

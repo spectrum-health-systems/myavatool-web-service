@@ -20,6 +20,10 @@
 
 * Why not JSON?
 
+* Allow "ForceTest" to be sent to force testing/logging
+
+* Put [DEBUG] and [ERROR] logs in their own folder?
+
 * Do the $"{}" thing with strings
 
 * Manual
