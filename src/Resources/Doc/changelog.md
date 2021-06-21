@@ -1,7 +1,8 @@
 ﻿# MAWS Changelog
 
 <details>
-<summary>Version 1.0</summary>
+<summary>
+Version 1.0
 
 > New functionality<br>
 > &nbsp;&nbsp;&nbsp;&nbsp;InptAdmitDate.ComparePreAdmitToAdmit<br>
@@ -10,7 +11,7 @@
 > &nbsp;&nbsp;&nbsp;&nbsp;InptAdmitDate.ComparePreAdmitToAdmit<br>
 > &nbsp;&nbsp;&nbsp;&nbsp;Dose.VerifyPercentage
 
-</details>
+</summary>
 
 ## Version 0.10
 > Dose command functionality
@@ -175,6 +176,8 @@
 
 #### v0.0.0.0 (2021-01-12)
 * `INFO` This is a blank MAWS template.
+
+</details>
 
 ***
 
