@@ -1,6 +1,6 @@
 ﻿/* PROJECT: MyAvatoolWebService (https://github.com/aprettycoolprogram/MyAvatoolWebService)
  *    FILE: MyAvatoolWebService.MyAvatoolWebService.asmx.cs
- * UPDATED: 6-21-2021-12:15 PM
+ * UPDATED: 6-24-2021-9:30 PM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2021 A Pretty Cool Program All rights reserved
  */
@@ -47,13 +47,17 @@ namespace MyAvatoolWebService
         /// <param name="mawsRequest">     The MAWS request to perform (e.g., "InptAdmitDate-VerifyPreAdmin")</param>
         /// <returns>A completed OptionObject2 that MAWS will return to myAvatar.</returns>
         /// <remarks>This method is required by myAvatar. DO NOT REMOVE.</remarks>
-        public static OptionObject2015 RunScript(OptionObject2015 sentOptionObject, string mawsRequest)
+        [WebMethod]
+        public OptionObject2015 RunScript(OptionObject2015 sentOptionObject, string mawsRequest)
         {
             var requestCommand = RequestSyntaxEngine.GetRequestCommand(mawsRequest);
 
             switch(requestCommand)
             {
                 case "InptAdmitDate":
+                    // Log this event - temp!
+                    var logFileContentTemp = $"{mawsRequest}-MyAvatoolWebService.asmx.cs";
+                    Logger.WriteToTimestampedFile($"[REQUEST]{mawsRequest}", logFileContentTemp);
                     InptAdmitDate.ExecuteAction(sentOptionObject, mawsRequest);
                     break;
 

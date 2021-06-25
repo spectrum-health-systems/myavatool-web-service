@@ -1,6 +1,6 @@
 ﻿/* PROJECT: MyAvatoolWebService (https://github.com/aprettycoolprogram/MyAvatoolWebService)
  *    FILE: MyAvatoolWebService.InptAdmitDate.cs
- * UPDATED: 6-21-2021-12:17 PM
+ * UPDATED: 6-24-2021-10:00 PM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2021 A Pretty Cool Program All rights reserved
  */
@@ -29,9 +29,18 @@ namespace MyAvatoolWebService
             var requestAction             = RequestSyntaxEngine.GetRequestAction(mawsRequest);
             var requestOption             = RequestSyntaxEngine.GetRequestOption(mawsRequest);
 
+            // Log this event - temp!
+            var logFileContentTemp = $"{mawsRequest}-InptAdmitDate.ExecuteAction()";
+            Logger.WriteToTimestampedFile($"[REQUEST]InptAdmitDate-{requestAction}", logFileContentTemp);
+
             switch(requestAction)
             {
                 case "comparepreadmittoadmit":
+
+                    // Log this event - temp!
+                    var logFileContentTemp2 = $"{mawsRequest}-InptAdmitDate.ExecuteAction():{requestAction}-{requestOption} case statement";
+                    Logger.WriteToTimestampedFile($"[REQUEST-ACTION]{mawsRequest}", logFileContentTemp2);
+
                     inptAdmitDateOptionObject = requestOption == "testing"
                         ? ComparePreAdmitToAdmit_Testing(sentOptionObject2015)
                         : ComparePreAdmitToAdmit(sentOptionObject2015);
