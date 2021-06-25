@@ -1,26 +1,11 @@
 ﻿# MAWS Roadmap
 
-* 0.12
-    * RunScript()
+## Version 0.xx
+> Compartmentalized DLLs
 
-            var requestCommand = RequestSyntaxEngine.GetRequestCommand(mawsRequest);
-            var completedOptionObject = sentOptionObject
+## Version 0.11
+> Dose command functionality
 
-            switch(requestCommand)
-            {
-                case "InptAdmitDate":
-                    completedOptionObject = InptAdmitDate.ExecuteAction(sentOptionObject, mawsRequest);
-                    break;
-
-                default:
-                    // Log this event.
-                    var logFileContent = $"[ERROR]{Environment.NewLine}" +
-                                         $"request command \"{requestCommand}\" is not valid.{Environment.NewLine}";
-                    Logger.WriteToTimestampedFile("[ERROR]MyAvatoolWebService.RunScript", logFileContent);
-                    break;
-            }
-
-            return completedOptionObject;
 
     * ComparePreAdmitToAdmit(OptionObject2015 sentOptionObject2015)
 

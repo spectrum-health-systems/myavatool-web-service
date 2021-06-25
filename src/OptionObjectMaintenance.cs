@@ -51,6 +51,8 @@ namespace MyAvatoolWebService
             finalizedOptionObject.ParentNamespace = sentOptionObject.ParentNamespace;
             finalizedOptionObject.ServerName = sentOptionObject.ServerName;
             finalizedOptionObject.SystemCode = sentOptionObject.SystemCode;
+            Logger.WriteToTimestampedFile($"[DEBUG-0056]OptionObjectMaintenance.FinalizeRequiredFields()", $"{finalizedOptionObject.EntityID} - {finalizedOptionObject.Facility} - {finalizedOptionObject.NamespaceName} - {finalizedOptionObject.OptionId} - {finalizedOptionObject.ParentNamespace} - {finalizedOptionObject.ServerName} - {finalizedOptionObject.SystemCode}");
+
         }
         /// <summary
         /// Confirms the recommended fields for a valid OptionObject2015 object are populated.
@@ -74,6 +76,7 @@ namespace MyAvatoolWebService
                 finalizedOptionObject.ErrorCode = sentOptionObject.ErrorCode;
                 finalizedOptionObject.ErrorMesg = sentOptionObject.ErrorMesg;
             }
+            Logger.WriteToTimestampedFile($"[DEBUG-0081]OptionObjectMaintenance.FinalizeRecommendedFields()", $"{finalizedOptionObject.EpisodeNumber} - {finalizedOptionObject.OptionStaffId} - {finalizedOptionObject.OptionUserId} - {finalizedOptionObject.ErrorCode} - {finalizedOptionObject.ErrorMesg}");
         }
 
         /// Confirms the non-recommended fields for a valid OptionObject2015 object are populated.
@@ -81,7 +84,7 @@ namespace MyAvatoolWebService
         /// <returns>An OptionObject2015 object with all required fields populated.</returns>
         private static void FinalizeNonRecommendedFields(OptionObject2015 sentOptionObject, OptionObject2015 completedOptionObject2)
         {
-            // You most likely do not want to do any of this.
+            Logger.WriteToTimestampedFile($"[DEBUG-0090]OptionObjectMaintenance.FinalizeNonRecommendedFields()", $"This shouldn't happen!");
             completedOptionObject2.Forms = sentOptionObject.Forms;
         }
     }

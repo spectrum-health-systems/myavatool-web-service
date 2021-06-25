@@ -5,19 +5,20 @@
 Version 1.0
 
 * New Requests
-    * InptAdmitDate.ComparePreAdmitToAdmit<br>
-    * Dose.VerifyPercentage
+    * InptAdmitDate-ComparePreAdmitToAdmit<br>
+    * Dose-VerifyPercentage
 * New functionality<br>
     * Logging<br>
-    * Testing platform
+    * External settings
 
 </summary>
 
-## Version 0.11
-> Dose command functionality
-
 ## Version 0.10
-> Focus on logging functionality, and breaking components into seperate projects.
+> Focus on logging functionality and external settings
+
+#### v0.10.21176.1652 (2021-06-25)
+* `INFO` Code/comment/documentation updates/cleanup
+* `FIXED` A completed OptionObject wasn't being passed back to Avatar.
 
 #### v0.10.21176.1518 (2021-06-25)
 * `INFO` Code/comment/documentation updates/cleanup

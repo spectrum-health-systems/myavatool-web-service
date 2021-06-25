@@ -1,6 +1,6 @@
 ﻿/* PROJECT: MyAvatoolWebService (https://github.com/aprettycoolprogram/MyAvatoolWebService)
  *    FILE: MyAvatoolWebService.MyAvatoolWebService.asmx.cs
- * UPDATED: 6-25-2021-11:18 AM
+ * UPDATED: 6-25-2021-11:38 AM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2021 A Pretty Cool Program All rights reserved
  */
@@ -48,31 +48,37 @@ namespace MyAvatoolWebService
         }
 
         /// <summary>
-        /// Performs an MAWS request.
+        /// Performs an MAWS Request.
         /// </summary>
         /// <param name="sentOptionObject">The OptionObject2015 object sent from myAvatar.</param>
-        /// <param name="mawsRequest">     The MAWS request to perform (e.g., "InptAdmitDate-ComparePreAdmitToAdmit")</param>
-        /// <returns>A completed OptionObject2 that MAWS will return to myAvatar.</returns>
-        /// <remarks>This method is required by myAvatar. DO NOT REMOVE.</remarks>
+        /// <param name="mawsRequest">     The MAWS Request to perform (e.g., "InptAdmitDate-ComparePreAdmitToAdmit")</param>
+        /// <returns>A completed OptionObject2015 that MAWS will return to myAvatar.</returns>
         [WebMethod]
         public OptionObject2015 RunScript(OptionObject2015 sentOptionObject, string mawsRequest)
         {
-            Logger.WriteToTimestampedFile($"[DEBUG]MyAvatoolWebService.asmx.cs.RunScript()", $"[001] MAWS Request: {mawsRequest}");
-            var requestCommand = RequestSyntaxEngine.GetRequestCommand(mawsRequest);
+            var completedOptionObject = new OptionObject2015();
+            var requestCommand        = RequestSyntaxEngine.GetRequestCommand(mawsRequest);
+
+            Logger.WriteToTimestampedFile($"[DEBUG]MyAvatoolWebService.asmx.cs.RunScript()", $"[0062] MAWS Request: {mawsRequest} MAWS Command: {requestCommand}");
 
             switch(requestCommand)
             {
                 case "inptadmitdate":
-                    Logger.WriteToTimestampedFile($"[DEBUG]MyAvatoolWebService.asmx.cs.RunScript()", $"[002] MAWS Request: {mawsRequest} MAWS Command: {requestCommand}");
-                    InptAdmitDate.ExecuteAction(sentOptionObject, mawsRequest);
+                    Logger.WriteToTimestampedFile($"[DEBUG]MyAvatoolWebService.asmx.cs.RunScript()", $"[0067] MAWS Request: {mawsRequest} MAWS Command: {requestCommand}");
+                    completedOptionObject = InptAdmitDate.ExecuteAction(sentOptionObject, mawsRequest);
+                    break;
+
+                case "dose":
+                    Logger.WriteToTimestampedFile($"[DEBUG]MyAvatoolWebService.asmx.cs.RunScript()", $"[0072] MAWS Request: {mawsRequest} MAWS Command: {requestCommand}");
+                    completedOptionObject = Dose.ExecuteAction(sentOptionObject, mawsRequest);
                     break;
 
                 default:
-                    Logger.WriteToTimestampedFile($"[ERROR]MyAvatoolWebService.asmx.cs.RunScript()", $"[003] Request command \"{requestCommand}\" is not valid.");
+                    Logger.WriteToTimestampedFile($"[ERROR]MyAvatoolWebService.asmx.cs.RunScript()", $"[0077] Request command \"{requestCommand}\" is not valid.");
                     break;
             }
 
-            return sentOptionObject;
+            return completedOptionObject;
         }
     }
 }
@@ -80,23 +86,21 @@ namespace MyAvatoolWebService
 /* DEVELOPMENT NOTES
  * =================
  *
- * - The goal with this class is to just have the "GetVersion" and "RunScript()" methods. Everything else will be taken
- *   care of in another class. Both methods are required by myAvatar, so don't remove them.
+ * - The goal with this class is to just have the "GetVersion()" and "RunScript()" methods, all other logic will be in a
+ *   class that corresponds to the requstedCommand (e.g., "InptAdmitDate")
  *
- * - I'm leaving the "VERSION" as "1.0" throughout development.
+ *   Both GetVersion() and RunScript() are required by myAvatar, so don't remove them.
  *
- * - Testing.Force() is probably a Bad Idea, but I wanted an easy way to test some functionality without having to
- *   publish the web service every time I made a change. So what ForceTest() does is it allow you to inject code into
- *   the GetVersion() method, allowing you to set breakpoints and/or view [DEBUG] log files. Again, probably a Bad Idea.
+ * - I'm leaving the "VERSION" as "1.0" throughout development of v1.0.
  *
- *   Since Testing.Force() is for use during developement, it is disabled in the production version of MAWS.
+ * - Injecting code into GetVersion() is probably a Bad Idea, but I wanted an easy way to test functionality without
+ *   having to publish the web service every time I made a change.
  *
- *   This is how you can use Testing.Force():
- *      1. Pass a specific test you would like to force (e.g., "requestSyntaxEngine"), or "all" to force all tests. You
- *         can also choose to not pass anything, in which case no tests will be forced.
- *      1. Run MAWS
- *      2. Click "GetVersion"
- *      3. Click the "Invoke" button
+ *   Here is how you can test MAWS:
+ *      1. Make sure you have the proper testing settings configured in maws.settings
+ *      2. Run MAWS
+ *      3. Click "GetVersion"
+ *      4. Click the "Invoke" button
  *
  * - For information about how to perform a MAWS request from within myAvatar, please see:
  *      https://github.com/spectrum-health-systems/MyAvatoolWebService/blob/main/doc/man/manual-using-maws.md

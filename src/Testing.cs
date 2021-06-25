@@ -1,6 +1,6 @@
 ﻿/* PROJECT: MyAvatoolWebService (https://github.com/aprettycoolprogram/MyAvatoolWebService)
  *    FILE: MyAvatoolWebService.Testing.cs
- * UPDATED: 6-21-2021-8:29 AM
+ * UPDATED: 6-25-2021-12:51 PM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2021 A Pretty Cool Program All rights reserved
  */
@@ -30,7 +30,7 @@ namespace MyAvatoolWebService
 
             if(mawsSettings["TestInptAdmitDate"] == "true")
             {
-                thisService.RunScript(new OptionObject2015(), "InptAdmitDate-ComparePreAdmidToAdmit");
+                thisService.RunScript(new OptionObject2015(), "InptAdmitDate-ComparePreAdmitToAdmit");
                 //InptAdmitDate.ForceTest();
             }
         }

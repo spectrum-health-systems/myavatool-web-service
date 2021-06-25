@@ -1,6 +1,6 @@
 ﻿/* PROJECT: MyAvatoolWebService (https://github.com/aprettycoolprogram/MyAvatoolWebService)
  *    FILE: MyAvatoolWebService.RequestSyntaxEngine.cs
- * UPDATED: 6-21-2021-9:16 AM
+ * UPDATED: 6-25-2021-11:46 AM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2021 A Pretty Cool Program All rights reserved
  */
@@ -9,8 +9,6 @@
  *
  * Development notes/comments can be found at the end of this class.
  */
-
-using System;
 
 namespace MyAvatoolWebService
 {
@@ -23,7 +21,10 @@ namespace MyAvatoolWebService
         /// <returns>The command component of the MAWS Request (e.g., "InptAdmitDate").</returns>
         public static string GetRequestCommand(string mawsRequest)
         {
-            return mawsRequest.Split('-')[0].ToLower();
+            var requestCommand = mawsRequest.Split('-')[0].ToLower();
+            Logger.WriteToTimestampedFile($"[DEBUG]RequestSyntaxEngine.GetRequestCommand()", $"[0025] MAWS Request: {mawsRequest} MAWS Command: {requestCommand}");
+
+            return requestCommand;
         }
 
         /// <summary>
@@ -33,6 +34,9 @@ namespace MyAvatoolWebService
         /// <returns>The command component of the MAWS Request (e.g., "ComparePreAdmitToAdmit").</returns>
         public static string GetRequestAction(string mawsRequest)
         {
+            var requestAction = mawsRequest.Split('-')[1].ToLower();
+            Logger.WriteToTimestampedFile($"[DEBUG]RequestSyntaxEngine.GetRequestAction()", $"[0038] MAWS Request: {mawsRequest} MAWS Action: {requestAction}");
+
             return mawsRequest.Split('-')[1].ToLower();
         }
 
@@ -43,9 +47,12 @@ namespace MyAvatoolWebService
         /// <returns>The command component of the MAWS Request (e.g., "Testing") ["none"].</returns>
         public static string GetRequestOption(string mawsRequest)
         {
-            return mawsRequest.Split('-').Length >= 3
+            var requestOption = mawsRequest.Split('-').Length >= 3
                 ? mawsRequest.Split('-')[2].ToLower()
                 : "none";
+            Logger.WriteToTimestampedFile($"[DEBUG]RequestSyntaxEngine.GetRequestOption()", $"[0053] MAWS Request: {mawsRequest} MAWS Option: {requestOption}");
+
+            return requestOption;
         }
 
         /// <summary>
@@ -53,15 +60,11 @@ namespace MyAvatoolWebService
         /// </summary>
         public static void ForceTest()
         {
-            var requestCommand = RequestSyntaxEngine.GetRequestCommand("ThisIsACommand-ThisIsAnAction-Testing-ShouldNotAppear");
-            var requestAction  = RequestSyntaxEngine.GetRequestAction("ThisIsACommand-ThisIsAnAction-Testing-ShouldNotAppear");
-            var requestOption  = RequestSyntaxEngine.GetRequestOption("ThisIsACommand-ThisIsAnAction-Testing-ShouldNotAppear");
-
-            // Log this event
-            var logFileContent = $"requestCommand={requestCommand}{Environment.NewLine}" +
-                                 $"requestAction={requestAction}{Environment.NewLine}" +
-                                 $"requestOption={requestOption}{Environment.NewLine}";
-            Logger.WriteToTimestampedFile("[DEBUG]RequestSyntaxEngine.ForceTest", logFileContent);
+            var mawsRequest    = "ThisIsACommand-ThisIsAnAction-Testing-ShouldNotAppear";
+            var requestCommand = GetRequestCommand(mawsRequest);
+            var requestAction  = GetRequestAction(mawsRequest);
+            var requestOption  = GetRequestOption(mawsRequest);
+            Logger.WriteToTimestampedFile($"[DEBUG]RequestSyntaxEngine.ForceTest()", $"[0067] MAWS Request: {mawsRequest} MAWS Command: {requestCommand} MAWS Action: {requestAction} MAWS Option: {requestOption}");
         }
     }
 }
