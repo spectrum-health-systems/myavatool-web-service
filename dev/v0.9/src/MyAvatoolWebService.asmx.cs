@@ -1,6 +1,6 @@
 ﻿/* PROJECT: MyAvatoolWebService (https://github.com/aprettycoolprogram/MyAvatoolWebService)
  *    FILE: MyAvatoolWebService.MyAvatoolWebService.asmx.cs
- * UPDATED: 6-25-2021-11:18 AM
+ * UPDATED: 6-24-2021-9:30 PM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2021 A Pretty Cool Program All rights reserved
  */
@@ -14,7 +14,7 @@
  * Development notes/comments can be found at the end of this class.
  */
 
-using System.Collections.Generic;
+using System;
 using System.Web.Services;
 using NTST.ScriptLinkService.Objects;
 
@@ -28,8 +28,6 @@ namespace MyAvatoolWebService
     [System.ComponentModel.ToolboxItem(false)]
     public class MyAvatoolWebService : WebService
     {
-        public Dictionary<string, string> MawsSetting;
-
         /// <summary>
         /// Returns the MAWS version.
         /// </summary>
@@ -37,12 +35,7 @@ namespace MyAvatoolWebService
         [WebMethod]
         public string GetVersion()
         {
-            MawsSetting = Settings.GetSettings();
-
-            if(MawsSetting["TestFunctionality"] == "true")
-            {
-                Testing.Functionality(this, MawsSetting);
-            }
+            Testing.Force("all");
 
             return "VERSION 1.0";
         }
@@ -51,24 +44,28 @@ namespace MyAvatoolWebService
         /// Performs an MAWS request.
         /// </summary>
         /// <param name="sentOptionObject">The OptionObject2015 object sent from myAvatar.</param>
-        /// <param name="mawsRequest">     The MAWS request to perform (e.g., "InptAdmitDate-ComparePreAdmitToAdmit")</param>
+        /// <param name="mawsRequest">     The MAWS request to perform (e.g., "InptAdmitDate-VerifyPreAdmin")</param>
         /// <returns>A completed OptionObject2 that MAWS will return to myAvatar.</returns>
         /// <remarks>This method is required by myAvatar. DO NOT REMOVE.</remarks>
         [WebMethod]
         public OptionObject2015 RunScript(OptionObject2015 sentOptionObject, string mawsRequest)
         {
-            Logger.WriteToTimestampedFile($"[DEBUG]MyAvatoolWebService.asmx.cs.RunScript()", $"[001] MAWS Request: {mawsRequest}");
             var requestCommand = RequestSyntaxEngine.GetRequestCommand(mawsRequest);
 
             switch(requestCommand)
             {
-                case "inptadmitdate":
-                    Logger.WriteToTimestampedFile($"[DEBUG]MyAvatoolWebService.asmx.cs.RunScript()", $"[002] MAWS Request: {mawsRequest} MAWS Command: {requestCommand}");
+                case "InptAdmitDate":
+                    // Log this event - temp!
+                    var logFileContentTemp = $"{mawsRequest}-MyAvatoolWebService.asmx.cs";
+                    Logger.WriteToTimestampedFile($"[REQUEST]{mawsRequest}", logFileContentTemp);
                     InptAdmitDate.ExecuteAction(sentOptionObject, mawsRequest);
                     break;
 
                 default:
-                    Logger.WriteToTimestampedFile($"[ERROR]MyAvatoolWebService.asmx.cs.RunScript()", $"[003] Request command \"{requestCommand}\" is not valid.");
+                    // Log this event.
+                    var logFileContent = $"[ERROR]{Environment.NewLine}" +
+                                         $"request command \"{requestCommand}\" is not valid.{Environment.NewLine}";
+                    Logger.WriteToTimestampedFile("[ERROR]MyAvatoolWebService.RunScript", logFileContent);
                     break;
             }
 

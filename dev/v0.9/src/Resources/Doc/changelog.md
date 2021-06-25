@@ -13,32 +13,14 @@ Version 1.0
 
 </summary>
 
-## Version 0.11
-> Dose command functionality
-
 ## Version 0.10
-> Focus on logging functionality, and breaking components into seperate projects.
-
-#### v0.10.21176.1518 (2021-06-25)
-* `INFO` Code/comment/documentation updates/cleanup
-* `ADDED` Settings.cs
-* `ADDED` Settings.GetSettings()
-* `ADDED` Settings are now loaded from an external file
-* `ADDED` "TestFunctionality" setting
-* `MODIFIED` \MAWS\Log -> \MAWS\Logs
-* `MODIFIED` Testing.Force() -> Testing.Functionality()
-
-#### v0.10.21176.0200 (2021-06-25)
-* `INFO` Initial v0.10 release
+> Dose command functionality
 
 ## Version 0.9
 > Implementing OptionObject2015
 
-#### v0.9.21176.0200 (2021-06-25)
-* `INFO` Final v0.9 release. Fixed a few things that impacted deployment.
-
 #### v0.9.21172.1617 (2021-06-21)
-* `INFO` Final v0.9 release (not the case, see above)
+* `INFO` Final v0.9 release
 
 #### v0.9.21172.1316 (2021-06-21)
 * `INFO` Code/comment/documentation updates/cleanup

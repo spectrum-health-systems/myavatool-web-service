@@ -22,12 +22,12 @@ namespace MyAvatoolWebService
         /// </summary>
         public static void ConfirmLogDirectoryExists()
         {
-            if(!Directory.Exists("C:/MAWS/Logs/"))
+            if(!Directory.Exists("C:/MAWS/Log/"))
             {
-                Directory.CreateDirectory("C:/MAWS/Logs/");
+                Directory.CreateDirectory("C:/MAWS/Log/");
 
                 // Log this event.
-                var logFileContent = "Created directory: C:/MAWS/Logs/";
+                var logFileContent = "Created directory: C:/MAWS/Log/";
                 Logger.WriteToTimestampedFile("[SYSTEM]Maintenance.ConfirmLogDirectory", logFileContent);
             }
         }

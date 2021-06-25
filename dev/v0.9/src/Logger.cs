@@ -1,6 +1,6 @@
 ﻿/* PROJECT: MyAvatoolWebService (https://github.com/aprettycoolprogram/MyAvatoolWebService)
  *    FILE: MyAvatoolWebService.Logger.cs
- * UPDATED: 6-25-2021-10:20 AM
+ * UPDATED: 6-21-2021-8:49 AM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2021 A Pretty Cool Program All rights reserved
  */
@@ -27,7 +27,7 @@ namespace MyAvatoolWebService
             Maintenance.ConfirmLogDirectoryExists();
 
             var currentTimestamp = DateTime.Now.ToString("yyMMdd-HHmmss");
-            var filePath         = $"C:/MAWS/Logs/{fileName}_{currentTimestamp}";
+            var filePath         = $"C:/MAWS/Log/{fileName}_{currentTimestamp}";
 
             File.WriteAllText(filePath, fileContents);
         }

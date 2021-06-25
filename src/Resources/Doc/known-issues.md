@@ -1,3 +1,3 @@
 ﻿# MAWS Known Issues
 
-None yet.
+* maws.settings cannot have blank lines

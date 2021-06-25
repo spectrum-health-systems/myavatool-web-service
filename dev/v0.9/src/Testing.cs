@@ -10,9 +10,6 @@
  * Development notes/comments can be found at the end of this class.
  */
 
-using System.Collections.Generic;
-using NTST.ScriptLinkService.Objects;
-
 namespace MyAvatoolWebService
 {
     public class Testing
@@ -21,17 +18,28 @@ namespace MyAvatoolWebService
         /// Force testing of various MAWS components.
         /// </summary>
         /// <param name="testFunctionality"></param>
-        public static void Functionality(MyAvatoolWebService thisService, Dictionary<string, string> mawsSettings)
+        public static void Force(string testFunctionality)
         {
-            if(mawsSettings["TestRequestSyntaxEngine"] == "true")
+            switch(testFunctionality)
             {
-                RequestSyntaxEngine.ForceTest();
-            }
+                case "requestSyntaxEngine":
+                    RequestSyntaxEngine.ForceTest();
+                    break;
 
-            if(mawsSettings["TestInptAdmitDate"] == "true")
-            {
-                thisService.RunScript(new OptionObject2015(), "InptAdmitDate-ComparePreAdmidToAdmit");
-                //InptAdmitDate.ForceTest();
+                case "inptAdmitDate":
+                    InptAdmitDate.ForceTest();
+                    break;
+
+                case "all":
+                    RequestSyntaxEngine.ForceTest();
+                    InptAdmitDate.ForceTest();
+                    break;
+
+                case "none":
+                    break;
+
+                default:
+                    break;
             }
         }
     }

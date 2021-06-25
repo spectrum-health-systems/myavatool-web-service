@@ -1,6 +1,6 @@
 ﻿/* PROJECT: MyAvatoolWebService (https://github.com/aprettycoolprogram/MyAvatoolWebService)
  *    FILE: MyAvatoolWebService.InptAdmitDate.cs
- * UPDATED: 6-25-2021-8:52 AM
+ * UPDATED: 6-24-2021-10:00 PM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2021 A Pretty Cool Program All rights reserved
  */
@@ -18,7 +18,7 @@ namespace MyAvatoolWebService
     public class InptAdmitDate
     {
         /// <summary>
-        /// Executes a MAWS action for the InptAdmitDate command.
+        /// Executes a MAWS action for the InptAdmitDate command
         /// </summary>
         /// <param name="sentOptionObject2015">The original OptionObject2015 sent from myAvatar.</param>
         /// <param name="mawsRequest">         The MAWS request string.</param>
@@ -156,7 +156,7 @@ namespace MyAvatoolWebService
             /* When this block of code is uncommented, a pop-up with detailed information will be displayed when the
              * errMsgCode is "0", meaning no issues were found, and the form will being submitted normally.
              *
-             * This is useful when debugging, but normally it should be commented out.
+             * This is  useful when debugging, but normally it should be commented out.
              */
             //if (errMsgCode == 0)
             //{
@@ -195,7 +195,7 @@ namespace MyAvatoolWebService
         /// </summary>
         public static void ForceTest()
         {
-            
+            // No way to do this, currently.
         }
     }
 }

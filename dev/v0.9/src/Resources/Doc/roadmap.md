@@ -1,6 +1,6 @@
 ﻿# MAWS Roadmap
 
-* 0.12
+* 0.10
     * RunScript()
 
             var requestCommand = RequestSyntaxEngine.GetRequestCommand(mawsRequest);
@@ -112,8 +112,6 @@
         }
 
 
-
-* maws.settings file allows blank lines
 
 
 
