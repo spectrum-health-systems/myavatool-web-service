@@ -10,7 +10,7 @@
 
   This version of MAWS has been depreciated.
 
-  The [current development branch](https://github.com/spectrum-health-systems/MyAvatoolWebService/tree/development) uses the new OptionObject2015.
+  Please use the [current development branch](https://github.com/spectrum-health-systems/MyAvatoolWebService/tree/development).
 
 </h3>
 
