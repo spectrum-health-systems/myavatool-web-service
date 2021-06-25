@@ -2,11 +2,17 @@
   GitHub repository template (b210103)
   https://github.com/APrettyCoolProgram/my-development-environment/tree/master/templates/github/
 -->
-<h6 align="center">
+<h3 align="center">
 
-  <img src="https://img.shields.io/badge/WARNING:-THIS%20IS%20BETA%20SOFTWARE-%23990000?style=for-the-badge">
-  
-</h6>
+  <img src="https://img.shields.io/badge/WARNING:-DEPRECIATED%20VERSION-%23990000?style=for-the-badge">
+  <br>
+  <br>
+
+  This version of MAWS has been depreciated.
+
+  The [current development branch](https://github.com/spectrum-health-systems/MyAvatoolWebService/tree/development) uses the new OptionObject2015.
+
+</h3>
 
 ***
 
