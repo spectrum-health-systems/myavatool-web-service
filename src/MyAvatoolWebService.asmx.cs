@@ -1,6 +1,6 @@
 ﻿/* PROJECT: MyAvatoolWebService (https://github.com/aprettycoolprogram/MyAvatoolWebService)
  *    FILE: MyAvatoolWebService.MyAvatoolWebService.asmx.cs
- * UPDATED: 6-25-2021-11:38 AM
+ * UPDATED: 6-28-2021-12:25 PM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2021 A Pretty Cool Program All rights reserved
  */
@@ -57,26 +57,29 @@ namespace MyAvatoolWebService
         public OptionObject2015 RunScript(OptionObject2015 sentOptionObject, string mawsRequest)
         {
             var completedOptionObject = new OptionObject2015();
-            var requestCommand        = RequestSyntaxEngine.GetRequestCommand(mawsRequest);
 
-            Logger.WriteToTimestampedFile($"[DEBUG]MyAvatoolWebService.asmx.cs.RunScript()", $"[0062] MAWS Request: {mawsRequest} MAWS Command: {requestCommand}");
+            completedOptionObject = RequestSyntaxEngine.ParseRequest.ExecuteCommand(sentOptionObject, mawsRequest);
 
-            switch(requestCommand)
-            {
-                case "inptadmitdate":
-                    Logger.WriteToTimestampedFile($"[DEBUG]MyAvatoolWebService.asmx.cs.RunScript()", $"[0067] MAWS Request: {mawsRequest} MAWS Command: {requestCommand}");
-                    completedOptionObject = InptAdmitDate.ExecuteAction(sentOptionObject, mawsRequest);
-                    break;
+            //var requestCommand        = RequestSyntaxEngine.GetRequestCommand(mawsRequest);
 
-                case "dose":
-                    Logger.WriteToTimestampedFile($"[DEBUG]MyAvatoolWebService.asmx.cs.RunScript()", $"[0072] MAWS Request: {mawsRequest} MAWS Command: {requestCommand}");
-                    completedOptionObject = Dose.ExecuteAction(sentOptionObject, mawsRequest);
-                    break;
+            //Logger.WriteToTimestampedFile($"[DEBUG]MyAvatoolWebService.asmx.cs.RunScript()", $"[0062] MAWS Request: {mawsRequest} MAWS Command: {requestCommand}");
 
-                default:
-                    Logger.WriteToTimestampedFile($"[ERROR]MyAvatoolWebService.asmx.cs.RunScript()", $"[0077] Request command \"{requestCommand}\" is not valid.");
-                    break;
-            }
+            //switch(requestCommand)
+            //{
+            //    case "inptadmitdate":
+            //        Logger.WriteToTimestampedFile($"[DEBUG]MyAvatoolWebService.asmx.cs.RunScript()", $"[0067] MAWS Request: {mawsRequest} MAWS Command: {requestCommand}");
+            //        completedOptionObject = InptAdmitDate_old.ExecuteAction(sentOptionObject, mawsRequest);
+            //        break;
+
+            //    case "dose":
+            //        Logger.WriteToTimestampedFile($"[DEBUG]MyAvatoolWebService.asmx.cs.RunScript()", $"[0072] MAWS Request: {mawsRequest} MAWS Command: {requestCommand}");
+            //        completedOptionObject = Dose.ExecuteAction(sentOptionObject, mawsRequest);
+            //        break;
+
+            //    default:
+            //        Logger.WriteToTimestampedFile($"[ERROR]MyAvatoolWebService.asmx.cs.RunScript()", $"[0077] Request command \"{requestCommand}\" is not valid.");
+            //        break;
+            //}
 
             return completedOptionObject;
         }

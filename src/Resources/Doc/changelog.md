@@ -13,6 +13,37 @@ Version 1.0
 
 </summary>
 
+## Version 0.11
+> Focus on modularizing/compartmentalizing
+
+#### v0.11.21179.1755 (2021-06-28)
+* `INFO` Groundwork for framework update
+* `MODIFIED` Lots of logging updates
+* `ADDED` New project: Dose.csproj
+* `ADDED` New project: Logger.csproj
+* `ADDED` New project: InptAdmitDate.csproj
+* `ADDED` New project: RequestSyntaxEngine.csproj
+* `REMOVED` Maintenance.cs
+* `REMOVED` Logger.cs
+
+##### Logger
+* `ADDED` Timestamped.cs
+* `ADDED` Timestamped.Maintenance()
+* `ADDED` Timestamped.WriteToFile()
+
+##### RequestSyntaxEngine
+* `ADDED` ParseRequest.cs
+* `ADDED` ParseRequest.ExecuteCommand()
+* `ADDED` RequestComponent.cs
+* `ADDED` RequestComponent.GetCommand()
+* `ADDED` RequestComponent.GetAction()
+* `ADDED` RequestComponent.GetOption()
+* `ADDED` TestFunctionality.cs
+* `ADDED` TestFunctionality.Force()
+
+#### v0.11.21176.1652 (2021-06-28)
+* `INFO` Initial v0.11 release.
+
 ## Version 0.10
 > Focus on logging functionality and external settings
 
@@ -34,6 +65,12 @@ Version 1.0
 
 ## Version 0.9
 > Implementing OptionObject2015
+
+#### v0.9.21179.1515 (2021-06-28)
+* `FIXED` Fixed returning the OptionObject.
+
+#### v0.9.21179.1312 (2021-06-28)
+* `ADDED` Added Dose in switch statement, for testing Dose functionlity.
 
 #### v0.9.21176.0200 (2021-06-25)
 * `INFO` Final v0.9 release. Fixed a few things that impacted deployment.

@@ -25,7 +25,7 @@ namespace MyAvatoolWebService
         {
             if(mawsSettings["TestRequestSyntaxEngine"] == "true")
             {
-                RequestSyntaxEngine.ForceTest();
+                RequestSyntaxEngine.TestFunctionality.Force();
             }
 
             if(mawsSettings["TestInptAdmitDate"] == "true")
