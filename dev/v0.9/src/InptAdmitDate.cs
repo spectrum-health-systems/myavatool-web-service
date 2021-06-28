@@ -1,6 +1,6 @@
 ﻿/* PROJECT: MyAvatoolWebService (https://github.com/aprettycoolprogram/MyAvatoolWebService)
  *    FILE: MyAvatoolWebService.InptAdmitDate.cs
- * UPDATED: 6-24-2021-10:00 PM
+ * UPDATED: 6-28-2021-11:15 AM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2021 A Pretty Cool Program All rights reserved
  */
@@ -176,7 +176,12 @@ namespace MyAvatoolWebService
                                  $"errMsgCode={verifyAdmitDateOptionObject2015.ErrorCode}{Environment.NewLine}";
             Logger.WriteToTimestampedFile("InptAdmitDate.ComparePreAdmitToAdmit", logFileContent);
 
-            return verifyAdmitDateOptionObject2015;
+            OptionObject2015 completedAdmitDateOptionObject = OptionObjectMaintenance.FinalizeObject(sentOptionObject2015, verifyAdmitDateOptionObject2015, true, false);
+
+            return completedAdmitDateOptionObject;
+
+            //return verifyAdmitDateOptionObject2015;
+
         }
 
         /// <summary>

@@ -19,6 +19,12 @@ Version 1.0
 ## Version 0.9
 > Implementing OptionObject2015
 
+#### v0.9.21179.1515 (2021-06-28)
+* `FIXED` Fixed returning the OptionObject
+
+#### v0.9.21179.1312 (2021-06-28)
+* `ADDED` Added Dose in switch statement, for testing Dose functionlity
+
 #### v0.9.21172.1617 (2021-06-21)
 * `INFO` Final v0.9 release
 
