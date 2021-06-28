@@ -33,7 +33,6 @@ namespace MyAvatoolWebService
             switch(requestAction)
             {
                 case "comparepreadmittoadmit":
-
                     Logger.WriteToTimestampedFile($"[DEBUG-0036]InptAdmitDate.ExecuteAction()", $"MAWS Request: {mawsRequest} MAWS Action: {requestAction}  MAWS Option: {requestOption}");
                     inptAdmitDateOptionObject = requestOption == "testing"
                         ? ComparePreAdmitToAdmit_Testing(sentOptionObject2015)
