@@ -56,9 +56,16 @@ namespace MyAvatoolWebService
             {
                 case "InptAdmitDate":
                     // Log this event - temp!
-                    var logFileContentTemp = $"{mawsRequest}-MyAvatoolWebService.asmx.cs";
-                    Logger.WriteToTimestampedFile($"[REQUEST]{mawsRequest}", logFileContentTemp);
+                    var logFileContentTemp1 = $"{mawsRequest}-MyAvatoolWebService.asmx.cs";
+                    Logger.WriteToTimestampedFile($"[REQUEST]{mawsRequest}", logFileContentTemp1);
                     InptAdmitDate.ExecuteAction(sentOptionObject, mawsRequest);
+                    break;
+
+                case "Dose":
+                    // Log this event - temp!
+                    var logFileContentTemp2 = $"{mawsRequest}-MyAvatoolWebService.asmx.cs";
+                    Logger.WriteToTimestampedFile($"[REQUEST]{mawsRequest}", logFileContentTemp2);
+                    Dose.ExecuteAction(sentOptionObject, mawsRequest);
                     break;
 
                 default:
