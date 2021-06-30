@@ -98,9 +98,15 @@
 
 
 
-* maws.settings file allows blank lines
+* maws.settings file
+    * allows blank lines
+    * blank line at end stripped
+    * log directory
+
+* log maintenance
 
 
+* Figure out a way to confirm that "/MAWS/Logs/" and "/MAWS/maws.settings" exists just one time, not every time
 
 * Confirm all references to *OptionObject2* are replaced with *OptionObject2015*
 

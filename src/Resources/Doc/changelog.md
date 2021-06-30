@@ -16,6 +16,25 @@ Version 1.0
 ## Version 0.11
 > Focus on modularizing/compartmentalizing
 
+#### v0.11.21181.1407 (2021-06-30)
+* `INFO` Code/comment/documentation updates/cleanup
+* `FIXED` Project references.
+* `ADDED` New project: Test.csproj
+* `ADDED` *licenseheader* files
+* `REMOVED` Testing.cs
+##### Logger
+* `ADDED` *verboseLog* parameter
+##### Test
+* `ADDED` Existing.cs
+* `ADDED` Existing.Force()
+
+#### v0.11.21181.1305 (2021-06-30)
+* `INFO` Code/comment/documentation updates/cleanup
+##### Logger
+* `MODIFIED` Timestamped.WriteToFile(): *logMessage* is now an optional parameter, and defaults to "No log message defined".
+* `MODIFIED` Minor changes to log output text.
+* `MODIFIED` Renamed the "Caller" parameters to be more descriptive.
+
 #### v0.11.21179.1755 (2021-06-28)
 * `INFO` Groundwork for framework update
 * `MODIFIED` Lots of logging updates
@@ -25,12 +44,10 @@ Version 1.0
 * `ADDED` New project: RequestSyntaxEngine.csproj
 * `REMOVED` Maintenance.cs
 * `REMOVED` Logger.cs
-
 ##### Logger
 * `ADDED` Timestamped.cs
 * `ADDED` Timestamped.Maintenance()
 * `ADDED` Timestamped.WriteToFile()
-
 ##### RequestSyntaxEngine
 * `ADDED` ParseRequest.cs
 * `ADDED` ParseRequest.ExecuteCommand()

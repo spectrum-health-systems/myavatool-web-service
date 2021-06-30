@@ -13,7 +13,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dose", "Dose\Dose.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RequestSyntaxEngine", "RequestSyntaxEngine\RequestSyntaxEngine.csproj", "{8175DCE4-73B5-45EA-AE68-1333663B8632}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logger", "..\Logger\Logger.csproj", "{B891C735-82A1-4914-995E-748BC9879B74}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logger", "Logger\Logger.csproj", "{B891C735-82A1-4914-995E-748BC9879B74}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "..\Testing\Test.csproj", "{2109BB39-0493-48E3-96AD-8ED4A50131B8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{B891C735-82A1-4914-995E-748BC9879B74}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B891C735-82A1-4914-995E-748BC9879B74}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B891C735-82A1-4914-995E-748BC9879B74}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2109BB39-0493-48E3-96AD-8ED4A50131B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2109BB39-0493-48E3-96AD-8ED4A50131B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2109BB39-0493-48E3-96AD-8ED4A50131B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2109BB39-0493-48E3-96AD-8ED4A50131B8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

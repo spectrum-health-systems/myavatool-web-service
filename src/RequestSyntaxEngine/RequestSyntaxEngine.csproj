@@ -47,7 +47,15 @@
     <Compile Include="TestFunctionality.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Logger\Logger.csproj">
+    <ProjectReference Include="..\Dose\Dose.csproj">
+      <Project>{1ab9dbef-dc24-40a2-b380-164230b9def2}</Project>
+      <Name>Dose</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\InptAdmitDate\InptAdmitDate.csproj">
+      <Project>{727a6058-6856-4b1d-9b93-06acf4a1c3d3}</Project>
+      <Name>InptAdmitDate</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Logger\Logger.csproj">
       <Project>{b891c735-82a1-4914-995e-748bc9879b74}</Project>
       <Name>Logger</Name>
     </ProjectReference>
@@ -55,6 +63,9 @@
       <Project>{8a8a6089-3286-42e6-9f76-b61784709654}</Project>
       <Name>NTST.ScriptLinkService.Objects</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="RequestSyntaxEngine.licenseheader" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

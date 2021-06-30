@@ -1,6 +1,6 @@
 ﻿/* PROJECT: MyAvatoolWebService (https://github.com/aprettycoolprogram/MyAvatoolWebService)
  *    FILE: MyAvatoolWebService.MyAvatoolWebService.asmx.cs
- * UPDATED: 6-28-2021-12:25 PM
+ * UPDATED: 6-30-2021-10:00 AM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2021 A Pretty Cool Program All rights reserved
  */
@@ -41,7 +41,7 @@ namespace MyAvatoolWebService
 
             if(MawsSetting["TestFunctionality"] == "true")
             {
-                Testing.Functionality(this, MawsSetting);
+                Test.Existing.Force(MawsSetting);
             }
 
             return "VERSION 1.0";
