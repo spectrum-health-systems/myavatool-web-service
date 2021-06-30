@@ -15,17 +15,17 @@ namespace Test
         /// Force testing of various MAWS components.
         /// </summary>
         /// <param name="testFunctionality"></param>
-        public static void Force(Dictionary<string, string> mawsSettings)
-        {
-            if(mawsSettings["TestRequestSyntaxEngine"] == "true")
-            {
-                RequestSyntaxEngine.TestFunctionality.Force();
-            }
+        //public static void Force(Dictionary<string, string> mawsSettings)
+        //{
+        //    if(mawsSettings["TestRequestSyntaxEngine"] == "true")
+        //    {
+        //        RequestSyntaxEngine.TestFunctionality.Force();
+        //    }
 
-            if(mawsSettings["TestInptAdmitDate"] == "true")
-            {
-                //InptAdmitDate.ExecuteAction(new OptionObject2015(), "InptAdmitDate-ComparePreAdmitToAdmit");
-            }
-        }
+        //    if(mawsSettings["TestInptAdmitDate"] == "true")
+        //    {
+        //        Command.InptAdmitDate.ExecuteAction(new OptionObject2015(), "InptAdmitDate-ComparePreAdmitToAdmit");
+        //    }
+        //}
     }
 }

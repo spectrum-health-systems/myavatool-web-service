@@ -104,7 +104,8 @@
     * log directory
 
 * log maintenance
-
+* verbose/non-verbose logs
+* log setting
 
 * Figure out a way to confirm that "/MAWS/Logs/" and "/MAWS/maws.settings" exists just one time, not every time
 

@@ -16,8 +16,31 @@ Version 1.0
 ## Version 0.11
 > Focus on modularizing/compartmentalizing
 
+#### v0.11.21181.1709 (2021-06-30)
+* `INFO` Code/comment/documentation updates/cleanup
+* `ADDED` New project: Command.csproj
+* `ADDED` New project: TheOptionObject.csproj
+* `MODIFIED` Moved Test project to src/
+##### Command
+* `ADDED` InptAdmitDate.cs
+* `ADDED` InptAdmitDate.ExecuteAction()
+* `ADDED` InptAdmitDate.ComparePreAdmitToAdmit()
+* `ADDED` InptAdmitDate.ComparePreAdmitToAdmit_Testing()
+* `ADDED` TestFunctionality()
+* `ADDED` TestFunctionality.ForceInptAdmitDate()
+
+##### Logger
+* `ADDED` 10,000/sec to the filename.
+* `ADDED` 10ms pause after writing a file.
+* `MODIFIED` Logger filename is more descriptive.
+* `REMOVED` *verboseLog* parameter. In roadmap.
+##### Test
+* `ADDED` New.cs
+##### TheOptionObject
+
 #### v0.11.21181.1407 (2021-06-30)
 * `INFO` Code/comment/documentation updates/cleanup
+* `MODIFIED` Moved Logger project to src/
 * `FIXED` Project references.
 * `ADDED` New project: Test.csproj
 * `ADDED` *licenseheader* files

@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2109BB39-0493-48E3-96AD-8ED4A50131B8}</ProjectGuid>
+    <ProjectGuid>{1A9B6EB0-4FCE-4FB2-A081-A671C23F4E9B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Testing</RootNamespace>
-    <AssemblyName>Testing</AssemblyName>
+    <RootNamespace>TheOptionObject</RootNamespace>
+    <AssemblyName>TheOptionObject</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -41,33 +41,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Existing.cs" />
+    <Compile Include="Finalize.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\src\Dose\Dose.csproj">
-      <Project>{1ab9dbef-dc24-40a2-b380-164230b9def2}</Project>
-      <Name>Dose</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\src\InptAdmitDate\InptAdmitDate.csproj">
-      <Project>{727a6058-6856-4b1d-9b93-06acf4a1c3d3}</Project>
-      <Name>InptAdmitDate</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\src\Logger\Logger.csproj">
+    <ProjectReference Include="..\Logger\Logger.csproj">
       <Project>{b891c735-82a1-4914-995e-748bc9879b74}</Project>
       <Name>Logger</Name>
     </ProjectReference>
-    <ProjectReference Include="..\src\NTST.ScriptLinkService.Objects\NTST.ScriptLinkService.Objects.vbproj">
+    <ProjectReference Include="..\NTST.ScriptLinkService.Objects\NTST.ScriptLinkService.Objects.vbproj">
       <Project>{8a8a6089-3286-42e6-9f76-b61784709654}</Project>
       <Name>NTST.ScriptLinkService.Objects</Name>
     </ProjectReference>
-    <ProjectReference Include="..\src\RequestSyntaxEngine\RequestSyntaxEngine.csproj">
-      <Project>{8175dce4-73b5-45ea-ae68-1333663b8632}</Project>
-      <Name>RequestSyntaxEngine</Name>
+    <ProjectReference Include="..\Test\Test.csproj">
+      <Project>{2109bb39-0493-48e3-96ad-8ed4a50131b8}</Project>
+      <Name>Test</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Test.licenseheader" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

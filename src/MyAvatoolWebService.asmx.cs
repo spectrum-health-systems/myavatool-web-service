@@ -1,6 +1,6 @@
 ﻿/* PROJECT: MyAvatoolWebService (https://github.com/aprettycoolprogram/MyAvatoolWebService)
  *    FILE: MyAvatoolWebService.MyAvatoolWebService.asmx.cs
- * UPDATED: 6-30-2021-10:00 AM
+ * UPDATED: 6-30-2021-1:09 PM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2021 A Pretty Cool Program All rights reserved
  */
@@ -15,6 +15,7 @@
  */
 
 using System.Collections.Generic;
+using System.Reflection;
 using System.Web.Services;
 using NTST.ScriptLinkService.Objects;
 
@@ -41,7 +42,7 @@ namespace MyAvatoolWebService
 
             if(MawsSetting["TestFunctionality"] == "true")
             {
-                Test.Existing.Force(MawsSetting);
+                ForceTest(MawsSetting);
             }
 
             return "VERSION 1.0";
@@ -56,46 +57,70 @@ namespace MyAvatoolWebService
         [WebMethod]
         public OptionObject2015 RunScript(OptionObject2015 sentOptionObject, string mawsRequest)
         {
+            Logger.Timestamped.WriteToFile("DEBUG-TRACE", Assembly.GetExecutingAssembly().GetName().Name, $"Initial MAWS Request: {mawsRequest}");
+
             var completedOptionObject = new OptionObject2015();
+            var mawsCommand           = RequestSyntaxEngine.RequestComponent.GetCommand(mawsRequest);
+            Logger.Timestamped.WriteToFile("DEBUG-TRACE", Assembly.GetExecutingAssembly().GetName().Name, $"MAWS Command to be executed: {mawsCommand}");
 
-            completedOptionObject = RequestSyntaxEngine.ParseRequest.ExecuteCommand(sentOptionObject, mawsRequest);
+            switch(mawsCommand)
+            {
+                case "inptadmitdate":
+                    Logger.Timestamped.WriteToFile("DEBUG-TRACE", Assembly.GetExecutingAssembly().GetName().Name, "case: inptadmitdate");
+                    completedOptionObject = Command.InptAdmitDate.ExecuteAction(sentOptionObject, mawsRequest);
+                    break;
 
-            //var requestCommand        = RequestSyntaxEngine.GetRequestCommand(mawsRequest);
+                case "dose":
+                    Logger.Timestamped.WriteToFile("DEBUG-TRACE", Assembly.GetExecutingAssembly().GetName().Name, "case: dose");
+                    // - SOON - completedOptionObject = Dose.ExecuteAction(sentOptionObject, mawsRequest);
+                    break;
 
-            //Logger.WriteToTimestampedFile($"[DEBUG]MyAvatoolWebService.asmx.cs.RunScript()", $"[0062] MAWS Request: {mawsRequest} MAWS Command: {requestCommand}");
-
-            //switch(requestCommand)
-            //{
-            //    case "inptadmitdate":
-            //        Logger.WriteToTimestampedFile($"[DEBUG]MyAvatoolWebService.asmx.cs.RunScript()", $"[0067] MAWS Request: {mawsRequest} MAWS Command: {requestCommand}");
-            //        completedOptionObject = InptAdmitDate_old.ExecuteAction(sentOptionObject, mawsRequest);
-            //        break;
-
-            //    case "dose":
-            //        Logger.WriteToTimestampedFile($"[DEBUG]MyAvatoolWebService.asmx.cs.RunScript()", $"[0072] MAWS Request: {mawsRequest} MAWS Command: {requestCommand}");
-            //        completedOptionObject = Dose.ExecuteAction(sentOptionObject, mawsRequest);
-            //        break;
-
-            //    default:
-            //        Logger.WriteToTimestampedFile($"[ERROR]MyAvatoolWebService.asmx.cs.RunScript()", $"[0077] Request command \"{requestCommand}\" is not valid.");
-            //        break;
-            //}
+                default:
+                    Logger.Timestamped.WriteToFile("ERROR", Assembly.GetExecutingAssembly().GetName().Name, $"Invalid MAWS Command: \"{mawsCommand} \".");
+                    completedOptionObject = sentOptionObject;
+                    break;
+            }
 
             return completedOptionObject;
         }
+
+        public void ForceTest(Dictionary<string, string> mawsSettings)
+        {
+            if(mawsSettings["TestMaws"] == "true")
+            {
+                var testOptionObject = new OptionObject2015();
+
+                _ = RunScript(testOptionObject, "InptAdmitDate-action-option");
+                _ = RunScript(testOptionObject, "Dose-action-option");
+            }
+
+            if(mawsSettings["TestRequestSyntaxEngine"] == "true")
+            {
+                RequestSyntaxEngine.TestFunctionality.Force();
+            }
+
+            if(mawsSettings["TestInptAdmitDate"] == "true")
+            {
+                Command.TestFunctionality.ForceInptAdmitDate();
+            }
+        }
+
     }
 }
 
-/* DEVELOPMENT NOTES
+/* =================
+ * DEVELOPMENT NOTES
  * =================
- *
  * - The goal with this class is to just have the "GetVersion()" and "RunScript()" methods, all other logic will be in a
  *   class that corresponds to the requstedCommand (e.g., "InptAdmitDate")
  *
- *   Both GetVersion() and RunScript() are required by myAvatar, so don't remove them.
+ * - Both GetVersion() and RunScript() are required by myAvatar, so don't remove them.
  *
  * - I'm leaving the "VERSION" as "1.0" throughout development of v1.0.
  *
+ * ------------
+ * GetVersion()
+ * ------------
  * - Injecting code into GetVersion() is probably a Bad Idea, but I wanted an easy way to test functionality without
  *   having to publish the web service every time I made a change.
  *
@@ -105,9 +130,9 @@ namespace MyAvatoolWebService
  *      3. Click "GetVersion"
  *      4. Click the "Invoke" button
  *
- * - For information about how to perform a MAWS request from within myAvatar, please see:
- *      https://github.com/spectrum-health-systems/MyAvatoolWebService/blob/main/doc/man/manual-using-maws.md
- *
- * - For information about this sourcecode, please see:
- *      https://github.com/spectrum-health-systems/MyAvatoolWebService/blob/development/src/Resources/Doc/development.md
+ * -----------
+ * RunScript()
+ * -----------
+ * - RunScript passes everything off to the RequestSyntaxEngine, so (hopefully) this class will never really change, and
+ *   updates/addtional functionality can be added via DLL and making minor modifications to RequestSyntaxEngine.csproj.
  */

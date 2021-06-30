@@ -1,4 +1,12 @@
-﻿using NTST.ScriptLinkService.Objects;
+﻿/* PROJECT: RequestSyntaxEngine (https://github.com/aprettycoolprogram/RequestSyntaxEngine)
+ *    FILE: RequestSyntaxEngine.ParseRequest.cs
+ * UPDATED: 6-30-2021-11:42 AM
+ * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
+ *          Copyright 2021 A Pretty Cool Program All rights reserved
+ */
+
+using System.Reflection;
+using NTST.ScriptLinkService.Objects;
 
 namespace RequestSyntaxEngine
 {
@@ -10,32 +18,26 @@ namespace RequestSyntaxEngine
 
             var completedOptionObject = new OptionObject2015();
 
-            //Logger.Timestamped.WriteToFile($"[DEBUG]MyAvatoolWebService.asmx.cs.RunScript()", $"[0062] MAWS Request: {mawsRequest} MAWS Command: {mawsCommand}");
+            //Logger.Timestamped.WriteToFile("DEBUG-TRACE", Assembly.GetExecutingAssembly().GetName().Name, "MAWS Request to be parsed: {mawsRequest}\nMAWS Command to be executed: {mawsCommand}");
 
-            switch(mawsCommand)
-            {
-                case "inptadmitdate":
-                    //Logger.WriteToTimestampedFile($"[DEBUG]MyAvatoolWebService.asmx.cs.RunScript()", $"[0067] MAWS Request: {mawsRequest} MAWS Command: {requestCommand}");
-                    //- SOON - completedOptionObject = InptAdmitDate_old.ExecuteAction(sentOptionObject, mawsRequest);
-                    break;
+            //switch(mawsCommand)
+            //{
+            //    case "inptadmitdate":
+            //        Logger.Timestamped.WriteToFile("DEBUG-TRACE", Assembly.GetExecutingAssembly().GetName().Name);
+            //        //completedOptionObject = Command.InptAdmitDate.ExecuteAction(sentOptionObject, mawsRequest);
+            //        break;
 
-                case "dose":
-                    //Logger.WriteToTimestampedFile($"[DEBUG]MyAvatoolWebService.asmx.cs.RunScript()", $"[0072] MAWS Request: {mawsRequest} MAWS Command: {requestCommand}");
-                    // - SOON - completedOptionObject = Dose.ExecuteAction(sentOptionObject, mawsRequest);
-                    break;
+            //    case "dose":
+            //        Logger.Timestamped.WriteToFile("DEBUG-TRACE", Assembly.GetExecutingAssembly().GetName().Name);
+            //        // - SOON - completedOptionObject = Dose.ExecuteAction(sentOptionObject, mawsRequest);
+            //        break;
 
-                default:
-                    //Logger.WriteToTimestampedFile($"[ERROR]MyAvatoolWebService.asmx.cs.RunScript()", $"[0077] Request command \"{requestCommand}\" is not valid.");
-                    break;
-            }
+            //    default:
+            //        Logger.Timestamped.WriteToFile("ERROR", Assembly.GetExecutingAssembly().GetName().Name, "Invalid MAWS Request: \"{mawsRequest} \"");
+            //        break;
+            //}
 
             return completedOptionObject;
-
         }
-
-
-
-
-
     }
 }

@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{727A6058-6856-4B1D-9B93-06ACF4A1C3D3}</ProjectGuid>
+    <ProjectGuid>{2109BB39-0493-48E3-96AD-8ED4A50131B8}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>InptAdmitDate</RootNamespace>
-    <AssemblyName>InptAdmitDate</AssemblyName>
+    <RootNamespace>Testing</RootNamespace>
+    <AssemblyName>Testing</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -41,10 +41,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Existing.cs" />
+    <Compile Include="New.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\src\Dose\Dose.csproj">
+      <Project>{1ab9dbef-dc24-40a2-b380-164230b9def2}</Project>
+      <Name>Dose</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Logger\Logger.csproj">
       <Project>{b891c735-82a1-4914-995e-748bc9879b74}</Project>
       <Name>Logger</Name>
@@ -53,9 +58,13 @@
       <Project>{8a8a6089-3286-42e6-9f76-b61784709654}</Project>
       <Name>NTST.ScriptLinkService.Objects</Name>
     </ProjectReference>
+    <ProjectReference Include="..\RequestSyntaxEngine\RequestSyntaxEngine.csproj">
+      <Project>{8175dce4-73b5-45ea-ae68-1333663b8632}</Project>
+      <Name>RequestSyntaxEngine</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="InptAdmitDate.licenseheader" />
+    <Content Include="Test.licenseheader" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Testing")]
+[assembly: AssemblyTitle("TheOptionObject")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Testing")]
+[assembly: AssemblyProduct("TheOptionObject")]
 [assembly: AssemblyCopyright("Copyright ©  2021")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("2109bb39-0493-48e3-96ad-8ed4a50131b8")]
+[assembly: Guid("1a9b6eb0-4fce-4fb2-a081-a671c23f4e9b")]
 
 // Version information for an assembly consists of the following four values:
 //
@@ -32,5 +32,5 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.21181.1407")]
-[assembly: AssemblyFileVersion("1.0.21181.1407")]
+[assembly: AssemblyVersion("1.0.21181.1709")]
+[assembly: AssemblyFileVersion("1.0.21181.1709")]

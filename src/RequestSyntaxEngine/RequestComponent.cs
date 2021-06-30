@@ -16,7 +16,7 @@ namespace RequestSyntaxEngine
         public static string GetCommand(string mawsRequest)
         {
             var requestCommand = mawsRequest.Split('-')[0].ToLower();
-            //Logger.WriteToTimestampedFile($"[DEBUG]RequestSyntaxEngine.GetRequestCommand()", $"[0025] MAWS Request: {mawsRequest} MAWS Command: {requestCommand}");
+            //Logger.WriteToTimestampedFile($"[DEBUG-TRACE]RequestSyntaxEngine.GetRequestCommand()", $"[0025] MAWS Request: {mawsRequest} MAWS Command: {requestCommand}");
 
             return requestCommand;
         }
@@ -29,7 +29,7 @@ namespace RequestSyntaxEngine
         public static string GetAction(string mawsRequest)
         {
             var requestAction = mawsRequest.Split('-')[1].ToLower();
-            //Logger.WriteToTimestampedFile($"[DEBUG]RequestSyntaxEngine.GetRequestAction()", $"[0038] MAWS Request: {mawsRequest} MAWS Action: {requestAction}");
+            //Logger.WriteToTimestampedFile($"[DEBUG-TRACE]RequestSyntaxEngine.GetRequestAction()", $"[0038] MAWS Request: {mawsRequest} MAWS Action: {requestAction}");
 
             return mawsRequest.Split('-')[1].ToLower();
         }
@@ -44,7 +44,7 @@ namespace RequestSyntaxEngine
             var requestOption = mawsRequest.Split('-').Length >= 3
                 ? mawsRequest.Split('-')[2].ToLower()
                 : "none";
-            //Logger.WriteToTimestampedFile($"[DEBUG]RequestSyntaxEngine.GetRequestOption()", $"[0053] MAWS Request: {mawsRequest} MAWS Option: {requestOption}");
+            //Logger.WriteToTimestampedFile($"[DEBUG-TRACE]RequestSyntaxEngine.GetRequestOption()", $"[0053] MAWS Request: {mawsRequest} MAWS Option: {requestOption}");
 
             return requestOption;
         }

@@ -1,21 +1,19 @@
-﻿/* PROJECT: MyAvatoolWebService (https://github.com/aprettycoolprogram/MyAvatoolWebService)
- *    FILE: MyAvatoolWebService.OptionObjectMaintenance.cs
- * UPDATED: 6-10-2021-3:40 PM
- * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
- *          Copyright 2021 A Pretty Cool Program All rights reserved
- */
-
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using NTST.ScriptLinkService.Objects;
 
-namespace MyAvatoolWebService
+namespace TheOptionObject
 {
-    public class OptionObjectMaintenance
+    public class Finalize
     {
         /// <summary>
         /// Confirms various fields in an OptionObject2015 object are populated.
         /// </summary>
         /// <returns>An OptionObject2015 object with all required fields populated.</returns>
-        public static OptionObject2015 FinalizeObject(OptionObject2015 sentOptionObject, OptionObject2015 workingOptionObject, bool finalizeRecommended = true, bool finalizeNotRecommended = false)
+        public static OptionObject2015 WhichComponents(OptionObject2015 sentOptionObject, OptionObject2015 workingOptionObject, bool finalizeRecommended = true, bool finalizeNotRecommended = false)
         {
             /* myAvatar requires that a completed OptionObject2015 object be returned. This method will make sure that
              * all of the fields of an OptionObject2015 object that are not explicitly set are populated with the
@@ -87,5 +85,7 @@ namespace MyAvatoolWebService
             //Logger.WriteToTimestampedFile($"[DEBUG-0090]OptionObjectMaintenance.FinalizeNonRecommendedFields()", $"This shouldn't happen!");
             completedOptionObject2.Forms = sentOptionObject.Forms;
         }
+
+
     }
 }
