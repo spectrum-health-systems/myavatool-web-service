@@ -41,13 +41,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Execute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="Verify.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Logger\Logger.csproj">
       <Project>{b891c735-82a1-4914-995e-748bc9879b74}</Project>
       <Name>Logger</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NTST.ScriptLinkService.Objects\NTST.ScriptLinkService.Objects.vbproj">
+      <Project>{8a8a6089-3286-42e6-9f76-b61784709654}</Project>
+      <Name>NTST.ScriptLinkService.Objects</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RequestSyntaxEngine\RequestSyntaxEngine.csproj">
+      <Project>{8175dce4-73b5-45ea-ae68-1333663b8632}</Project>
+      <Name>RequestSyntaxEngine</Name>
     </ProjectReference>
     <ProjectReference Include="..\TheOptionObject\TheOptionObject.csproj">
       <Project>{1a9b6eb0-4fce-4fb2-a081-a671c23f4e9b}</Project>

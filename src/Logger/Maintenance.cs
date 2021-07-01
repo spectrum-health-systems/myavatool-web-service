@@ -1,6 +1,6 @@
 ﻿/* PROJECT: Logger (https://github.com/aprettycoolprogram/Logger)
  *    FILE: Logger.Maintenance.cs
- * UPDATED: 7-1-2021-11:18 AM
+ * UPDATED: 7-1-2021-12:39 PM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2021 A Pretty Cool Program All rights reserved
  */
@@ -23,15 +23,6 @@ namespace Logger
 
                 Timestamped.LogEvent("system", "SYSTEM", Assembly.GetExecutingAssembly().GetName().Name, $"Created directory: {directoryPath}");
             }
-
-            //if(!Directory.Exists("C:/MAWS/Logs/"))
-            //{
-            //    Directory.CreateDirectory("C:/MAWS/Logs/");
-
-            //    Timestamped.WriteToFile("SYSTEM", Assembly.GetExecutingAssembly().GetName().Name, "Created directory: C:/MAWS/Logs/");
-            //}
         }
-
-
     }
 }

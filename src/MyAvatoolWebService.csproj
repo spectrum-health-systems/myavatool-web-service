@@ -71,7 +71,6 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Dose.cs" />
     <Compile Include="MyAvatoolWebService.asmx.cs">
       <DependentUpon>MyAvatoolWebService.asmx</DependentUpon>
       <SubType>Component</SubType>

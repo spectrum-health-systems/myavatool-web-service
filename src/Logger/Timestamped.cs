@@ -1,6 +1,6 @@
 ﻿/* PROJECT: Logger (https://github.com/aprettycoolprogram/Logger)
  *    FILE: Logger.Timestamped.cs
- * UPDATED: 7-1-2021-11:50 AM
+ * UPDATED: 7-1-2021-2:39 PM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2021 A Pretty Cool Program All rights reserved
  */
@@ -48,7 +48,7 @@ namespace Logger
             var minuteSecondStamp = DateTime.Now.ToString($"mmss");
             var millisecondStamp  = DateTime.Now.ToString($"FFFFFFF");
 
-            var logFilePath = $"{logDirectoryPath}/{minuteSecondStamp}{millisecondStamp}_{logType}-{assemblyName}-{Path.GetFileName(callerfilePath)}-{callerMemberName}";
+            var logFilePath = $"{logDirectoryPath}/{minuteSecondStamp}{millisecondStamp}_{logType}-{assemblyName}-{Path.GetFileName(callerfilePath)}-{callerMemberName}.mawslog";
             var logContents = $"Message{Environment.NewLine}" +
                               $"======={Environment.NewLine}" +
                               $"{logMessage}{Environment.NewLine}" +

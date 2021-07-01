@@ -18,7 +18,26 @@ Version 1.0
 * Each MAWS command (e.g., "InptAdmitDate", "Dose") has it's own settings file, which makes it easier to customize various functionality (e.g., logging) for a specific command.
 * Logfiles are now more detailed, better organized, and you can specify which types of events you want to log (or disable logging completely).
 
+#### v0.12.21182.1839 (2021-07-01)
+* `REMOVED` Command project
+* `REMOVED` MyAvatoolWebService.Dose.cs
+##### InptAdmitDate
+* `ADDED` InptAdmitDate.Compare.cs
+* `ADDED` InptAdmitDate.Compare.PreAdmitToAdmit()
+* `ADDED` InptAdmitDate.Execute.cs
+* `ADDED` InptAdmitDate.Execute.Action()
+##### Logger
+* `ADDED` Logfiles now have the .mawslog extension
+##### Dose
+* `ADDED` Dose.Verify.cs
+* `ADDED` Dose.Verify.Percentage()
+* `ADDED` Dose.Verify.Percentage_Testing()
+* `ADDED` Dose.Exectute.cs
+
 #### v0.12.21182.1554 (2021-07-01)
+* `ADDED` Dose project.
+* `ADDED` InptAdmitDate project.
+##### Logger
 * `INFO` You can now specifiy what type of events are logged.
 * `ADDED` Logger.LogEvent().
 * `MODIFIED` Logging functionality for MyAvatoolWebService project.

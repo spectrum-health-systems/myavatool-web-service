@@ -1,6 +1,6 @@
 ﻿/* PROJECT: MyAvatoolWebService (https://github.com/aprettycoolprogram/MyAvatoolWebService)
  *    FILE: MyAvatoolWebService.MyAvatoolWebService.asmx.cs
- * UPDATED: 7-1-2021-11:54 AM
+ * UPDATED: 7-1-2021-2:33 PM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2021 A Pretty Cool Program All rights reserved
  */
@@ -67,12 +67,12 @@ namespace MyAvatoolWebService
             {
                 case "inptadmitdate":
                     Logger.Timestamped.LogEvent(MawsSetting["Logging"].ToLower(), "TRACE", Assembly.GetExecutingAssembly().GetName().Name, "case: inptadmitdate");
-                    // SOON - completedOptionObject = Command.InptAdmitDate.ExecuteAction(sentOptionObject, mawsRequest);
+                    completedOptionObject = InptAdmitDate.Execute.Action(sentOptionObject, mawsRequest);
                     break;
 
                 case "dose":
                     Logger.Timestamped.LogEvent(MawsSetting["Logging"].ToLower(), "TRACE", Assembly.GetExecutingAssembly().GetName().Name, "case: dose");
-                    // - SOON - completedOptionObject = Dose.ExecuteAction(sentOptionObject, mawsRequest);
+                    completedOptionObject = Dose.Execute.Action(sentOptionObject, mawsRequest);
                     break;
 
                 default:
@@ -88,16 +88,28 @@ namespace MyAvatoolWebService
         {
             if(mawsSettings["TestMaws"] == "true")
             {
-                var testOptionObject = new OptionObject2015();
+                {
+                    var emptyOptionObject = new OptionObject2015();
 
-                _ = RunScript(testOptionObject, "InptAdmitDate-action-option");
-                _ = RunScript(testOptionObject, "Dose-action-option");
-                _ = RunScript(testOptionObject, "Fake-action-option");
-            }
+                    _ = RunScript(emptyOptionObject, "InptAdmitDate-action-option");
+                    _ = RunScript(emptyOptionObject, "Dose-action-option");
+                    _ = RunScript(emptyOptionObject, "Fake-action-option");
 
-            if(mawsSettings["TestRequestSyntaxEngine"] == "true")
-            {
-                RequestSyntaxEngine.TestFunctionality.Force();
+                    var testInptAdmitDateOptionObject= new OptionObject2015
+                    {
+                        ErrorCode = 0,
+                        ErrorMesg = "",
+                    };
+
+                    _ = RunScript(testInptAdmitDateOptionObject, "InptAdmitDate-ComparePreAdmitToAdmit");
+
+                }
+
+                if(mawsSettings["TestRequestSyntaxEngine"] == "true")
+                {
+                    RequestSyntaxEngine.TestFunctionality.Force();
+                }
+
             }
         }
 
