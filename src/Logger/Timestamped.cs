@@ -1,6 +1,6 @@
 ﻿/* PROJECT: Logger (https://github.com/aprettycoolprogram/Logger)
  *    FILE: Logger.Timestamped.cs
- * UPDATED: 7-1-2021-2:39 PM
+ * UPDATED: 7-1-2021-2:41 PM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2021 A Pretty Cool Program All rights reserved
  */
