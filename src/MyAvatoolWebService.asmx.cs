@@ -1,6 +1,6 @@
 ﻿/* PROJECT: MyAvatoolWebService (https://github.com/aprettycoolprogram/MyAvatoolWebService)
  *    FILE: MyAvatoolWebService.MyAvatoolWebService.asmx.cs
- * UPDATED: 6-30-2021-1:09 PM
+ * UPDATED: 7-1-2021-11:54 AM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2021 A Pretty Cool Program All rights reserved
  */
@@ -57,26 +57,26 @@ namespace MyAvatoolWebService
         [WebMethod]
         public OptionObject2015 RunScript(OptionObject2015 sentOptionObject, string mawsRequest)
         {
-            Logger.Timestamped.WriteToFile("DEBUG-TRACE", Assembly.GetExecutingAssembly().GetName().Name, $"Initial MAWS Request: {mawsRequest}");
+            Logger.Timestamped.LogEvent(MawsSetting["Logging"].ToLower(), "TRACE", Assembly.GetExecutingAssembly().GetName().Name, $"Initial MAWS Request: {mawsRequest}");
 
             var completedOptionObject = new OptionObject2015();
             var mawsCommand           = RequestSyntaxEngine.RequestComponent.GetCommand(mawsRequest);
-            Logger.Timestamped.WriteToFile("DEBUG-TRACE", Assembly.GetExecutingAssembly().GetName().Name, $"MAWS Command to be executed: {mawsCommand}");
+            Logger.Timestamped.LogEvent(MawsSetting["Logging"].ToLower(), "TRACE", Assembly.GetExecutingAssembly().GetName().Name, $"Initial MAWS Command to be executed: {mawsCommand}");
 
             switch(mawsCommand)
             {
                 case "inptadmitdate":
-                    Logger.Timestamped.WriteToFile("DEBUG-TRACE", Assembly.GetExecutingAssembly().GetName().Name, "case: inptadmitdate");
-                    completedOptionObject = Command.InptAdmitDate.ExecuteAction(sentOptionObject, mawsRequest);
+                    Logger.Timestamped.LogEvent(MawsSetting["Logging"].ToLower(), "TRACE", Assembly.GetExecutingAssembly().GetName().Name, "case: inptadmitdate");
+                    // SOON - completedOptionObject = Command.InptAdmitDate.ExecuteAction(sentOptionObject, mawsRequest);
                     break;
 
                 case "dose":
-                    Logger.Timestamped.WriteToFile("DEBUG-TRACE", Assembly.GetExecutingAssembly().GetName().Name, "case: dose");
+                    Logger.Timestamped.LogEvent(MawsSetting["Logging"].ToLower(), "TRACE", Assembly.GetExecutingAssembly().GetName().Name, "case: dose");
                     // - SOON - completedOptionObject = Dose.ExecuteAction(sentOptionObject, mawsRequest);
                     break;
 
                 default:
-                    Logger.Timestamped.WriteToFile("ERROR", Assembly.GetExecutingAssembly().GetName().Name, $"Invalid MAWS Command: \"{mawsCommand} \".");
+                    Logger.Timestamped.LogEvent(MawsSetting["Logging"].ToLower(), "ERROR", Assembly.GetExecutingAssembly().GetName().Name, $"Invalid MAWS Command: \"{mawsCommand}\".");
                     completedOptionObject = sentOptionObject;
                     break;
             }
@@ -92,16 +92,12 @@ namespace MyAvatoolWebService
 
                 _ = RunScript(testOptionObject, "InptAdmitDate-action-option");
                 _ = RunScript(testOptionObject, "Dose-action-option");
+                _ = RunScript(testOptionObject, "Fake-action-option");
             }
 
             if(mawsSettings["TestRequestSyntaxEngine"] == "true")
             {
                 RequestSyntaxEngine.TestFunctionality.Force();
-            }
-
-            if(mawsSettings["TestInptAdmitDate"] == "true")
-            {
-                Command.TestFunctionality.ForceInptAdmitDate();
             }
         }
 

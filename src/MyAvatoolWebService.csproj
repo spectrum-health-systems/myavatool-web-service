@@ -104,9 +104,13 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Command\Command.csproj">
-      <Project>{0aab7687-a3b1-4e62-9c90-ff9d4557e9ad}</Project>
-      <Name>Command</Name>
+    <ProjectReference Include="Dose\Dose.csproj">
+      <Project>{5707bae8-52cf-4d14-b0f1-583466c65ba4}</Project>
+      <Name>Dose</Name>
+    </ProjectReference>
+    <ProjectReference Include="InptAdmitDate\InptAdmitDate.csproj">
+      <Project>{566c8ed3-5fef-4dcc-8b33-b2090e7727f7}</Project>
+      <Name>InptAdmitDate</Name>
     </ProjectReference>
     <ProjectReference Include="Logger\Logger.csproj">
       <Project>{b891c735-82a1-4914-995e-748bc9879b74}</Project>

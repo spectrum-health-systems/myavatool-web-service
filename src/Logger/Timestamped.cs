@@ -1,6 +1,6 @@
 ﻿/* PROJECT: Logger (https://github.com/aprettycoolprogram/Logger)
  *    FILE: Logger.Timestamped.cs
- * UPDATED: 6-30-2021-1:08 PM
+ * UPDATED: 7-1-2021-11:50 AM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2021 A Pretty Cool Program All rights reserved
  */
@@ -14,6 +14,19 @@ namespace Logger
 {
     public class Timestamped
     {
+        public static void LogEvent(string logSetting, string logType, string assemblyName, string logMessage = "No log message defined.",
+                                    [CallerFilePath] string callerfilePath = "", [CallerMemberName] string callerMemberName = "",
+                                    [CallerLineNumber] int callerLineNumber = 0)
+        {
+            var logEverything   = logSetting == "all";
+            var logSpecificType = logType.ToLower().Contains(logSetting);
+
+            if(logEverything || logSpecificType)
+            {
+                WriteToFile(logType, assemblyName, logMessage, callerfilePath, callerMemberName, callerLineNumber);
+            }
+        }
+
         /// <summary>
         /// Writes a timestamped log file.
         /// </summary>
@@ -23,13 +36,19 @@ namespace Logger
         /// <param name="callerfilePath">  The filename where the error occured (e.g., "MyFile.cs").</param>
         /// <param name="callerMemberName">The method where the error occured (e.g., "MyMethod()")</param>
         /// <param name="callerLineNumber">The line where the error occured (e.g., "100")</param>
-        public static void WriteToFile(string logType, string assemblyName, string logMessage = "No log message defined.", [CallerFilePath] string callerfilePath = "",
-                                      [CallerMemberName] string callerMemberName = "", [CallerLineNumber] int callerLineNumber = 0)
+        public static void WriteToFile(string logType, string assemblyName, string logMessage, string callerfilePath,
+                                      string callerMemberName, int callerLineNumber)
         {
-            Maintenance.ConfirmLogDirectoryExists();
+            var dateStamp        = DateTime.Now.ToString("yyMMdd");
+            var logDirectoryPath = $"C:/MAWS/Logs/{dateStamp}";
 
-            var timestamp = DateTime.Now.ToString("yyMMdd-HHmmss.FFFFFFF");
-            var logPath    = $"C:/MAWS/Logs/[{logType}]-{assemblyName}-{Path.GetFileName(callerfilePath)}-{callerMemberName}_{timestamp}";
+            Maintenance.ConfirmLogDirectoryExists(logDirectoryPath);
+
+            var hourStamp         = DateTime.Now.ToString($"HH");
+            var minuteSecondStamp = DateTime.Now.ToString($"mmss");
+            var millisecondStamp  = DateTime.Now.ToString($"FFFFFFF");
+
+            var logFilePath = $"{logDirectoryPath}/{minuteSecondStamp}{millisecondStamp}_{logType}-{assemblyName}-{Path.GetFileName(callerfilePath)}-{callerMemberName}";
             var logContents = $"Message{Environment.NewLine}" +
                               $"======={Environment.NewLine}" +
                               $"{logMessage}{Environment.NewLine}" +
@@ -39,9 +58,10 @@ namespace Logger
                               $"     Assembly name: {assemblyName}{Environment.NewLine}" +
                               $"  Source file path: {Path.GetFileName(callerfilePath)}{Environment.NewLine}" +
                               $"Source member name: {callerMemberName}{Environment.NewLine}" +
-                              $"Source line number: {callerLineNumber}";
+                              $"Source line number: {callerLineNumber}{Environment.NewLine}" +
+                              $"[ID-{dateStamp}/{hourStamp}{minuteSecondStamp}:{millisecondStamp}]";
 
-            File.WriteAllText(logPath, logContents);
+            File.WriteAllText(logFilePath, logContents);
             Thread.Sleep(10);
         }
     }

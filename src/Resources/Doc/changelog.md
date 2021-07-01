@@ -4,20 +4,32 @@
 <summary>
 Version 1.0
 
-* New Requests
-    * InptAdmitDate-ComparePreAdmitToAdmit<br>
+* New MAWS Requests:
+    * InptAdmitDate-ComparePreAdmitToAdmit
     * Dose-VerifyPercentage
-* New functionality<br>
-    * Logging<br>
+* New MAWS functionality:
+    * Logging
     * External settings
 
 </summary>
 
+## Version 0.12
+* Moved `InptAdmitDate.cs` and `Dose.cs` functionality out of the Command project. Don't know why I put them there in the first place, it goes against the whole compartmentalizing concept. Each MAWS command (e.g., "InptAdmitDate", "Dose") will now have it's own project.
+* Each MAWS command (e.g., "InptAdmitDate", "Dose") has it's own settings file, which makes it easier to customize various functionality (e.g., logging) for a specific command.
+* Logfiles are now more detailed, better organized, and you can specify which types of events you want to log (or disable logging completely).
+
+#### v0.12.21182.1554 (2021-07-01)
+* `INFO` You can now specifiy what type of events are logged.
+* `ADDED` Logger.LogEvent().
+* `MODIFIED` Logging functionality for MyAvatoolWebService project.
+* `MODIFIED` Log filenames and syntax.
+
+***
+
 ## Version 0.11
-> Focus on modularizing/compartmentalizing
 
 #### v0.11.21181.1709 (2021-06-30)
-* `INFO` Code/comment/documentation updates/cleanup
+* `INFO` Final v0.11 version deployed to production for testing
 * `ADDED` New project: Command.csproj
 * `ADDED` New project: TheOptionObject.csproj
 * `MODIFIED` Moved Test project to src/
@@ -28,15 +40,20 @@ Version 1.0
 * `ADDED` InptAdmitDate.ComparePreAdmitToAdmit_Testing()
 * `ADDED` TestFunctionality()
 * `ADDED` TestFunctionality.ForceInptAdmitDate()
-
 ##### Logger
 * `ADDED` 10,000/sec to the filename.
 * `ADDED` 10ms pause after writing a file.
 * `MODIFIED` Logger filename is more descriptive.
 * `REMOVED` *verboseLog* parameter. In roadmap.
 ##### Test
+* `ADDED` Existing.cs
 * `ADDED` New.cs
 ##### TheOptionObject
+* `ADDED` Finalize.cs
+* `ADDED` Finalize.WhichComponents()
+* `ADDED` Finalize.RequiredFields()
+* `ADDED` Finalize.RecommendedFields()
+* `ADDED` Finalize.NonRecommendedFields()
 
 #### v0.11.21181.1407 (2021-06-30)
 * `INFO` Code/comment/documentation updates/cleanup

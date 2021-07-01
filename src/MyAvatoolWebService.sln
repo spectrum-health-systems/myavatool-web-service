@@ -17,6 +17,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheOptionObject", "TheOptio
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Command", "Command\Command.csproj", "{0AAB7687-A3B1-4E62-9C90-FF9D4557E9AD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InptAdmitDate", "InptAdmitDate\InptAdmitDate.csproj", "{566C8ED3-5FEF-4DCC-8B33-B2090E7727F7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dose", "Dose\Dose.csproj", "{5707BAE8-52CF-4D14-B0F1-583466C65BA4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +55,14 @@ Global
 		{0AAB7687-A3B1-4E62-9C90-FF9D4557E9AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0AAB7687-A3B1-4E62-9C90-FF9D4557E9AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0AAB7687-A3B1-4E62-9C90-FF9D4557E9AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{566C8ED3-5FEF-4DCC-8B33-B2090E7727F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{566C8ED3-5FEF-4DCC-8B33-B2090E7727F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{566C8ED3-5FEF-4DCC-8B33-B2090E7727F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{566C8ED3-5FEF-4DCC-8B33-B2090E7727F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5707BAE8-52CF-4D14-B0F1-583466C65BA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5707BAE8-52CF-4D14-B0F1-583466C65BA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5707BAE8-52CF-4D14-B0F1-583466C65BA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5707BAE8-52CF-4D14-B0F1-583466C65BA4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

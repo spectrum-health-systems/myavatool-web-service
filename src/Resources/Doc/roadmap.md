@@ -103,6 +103,10 @@
     * blank line at end stripped
     * log directory
 
+* change "writetofile" to private once logging stuff is done
+
+* test logging with a pause to make sure we catch everything
+
 * log maintenance
 * verbose/non-verbose logs
 * log setting

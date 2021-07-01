@@ -1,6 +1,6 @@
 ﻿/* PROJECT: RequestSyntaxEngine (https://github.com/aprettycoolprogram/RequestSyntaxEngine)
  *    FILE: RequestSyntaxEngine.TestFunctionality.cs
- * UPDATED: 6-30-2021-12:48 PM
+ * UPDATED: 7-1-2021-11:14 AM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2021 A Pretty Cool Program All rights reserved
  */
@@ -23,7 +23,7 @@ namespace RequestSyntaxEngine
                               $" MAWS Action: {RequestComponent.GetAction(mawsRequest)}{Environment.NewLine}" +
                               $" MAWS Option: {RequestComponent.GetOption(mawsRequest)}";
 
-            Logger.Timestamped.WriteToFile("TESTING", Assembly.GetExecutingAssembly().GetName().Name, logMessage);
+            Logger.Timestamped.LogEvent("testing", "TESTING", Assembly.GetExecutingAssembly().GetName().Name, logMessage);
         }
     }
 }

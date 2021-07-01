@@ -1,10 +1,12 @@
 ﻿using System;
-using System.Reflection;
-using NTST.ScriptLinkService.Objects;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace Command
+namespace InptAdmitDate
 {
-    public class InptAdmitDate
+    public class Class1
     {
         ///// <summary>
         ///// Executes a MAWS action for the InptAdmitDate command.

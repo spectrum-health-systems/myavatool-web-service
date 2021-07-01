@@ -7,9 +7,9 @@ namespace Command
     {
         public static void ForceInptAdmitDate()
         {
-            Logger.Timestamped.WriteToFile("TESTING", Assembly.GetExecutingAssembly().GetName().Name);
+            //Logger.Timestamped.WriteToFile("TESTING", Assembly.GetExecutingAssembly().GetName().Name);
 
-            Command.InptAdmitDate.ExecuteAction(new OptionObject2015(), "InptAdmitDate-ComparePreAdmitToAdmit");
+            //Command.InptAdmitDate.ExecuteAction(new OptionObject2015(), "InptAdmitDate-ComparePreAdmitToAdmit");
         }
     }
 }
