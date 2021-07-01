@@ -18,6 +18,13 @@ Version 1.0
 * Each MAWS command (e.g., "InptAdmitDate", "Dose") has it's own settings file, which makes it easier to customize various functionality (e.g., logging) for a specific command.
 * Logfiles are now more detailed, better organized, and you can specify which types of events you want to log (or disable logging completely).
 
+#### v0.12.21182.2257 (2021-07-01)
+* `INFO` Code/comment/documentation updates/cleanup
+##### InptAdmitDate
+* `ADDED` .licenseheader file
+##### Dose
+* `ADDED` .licenseheader file
+
 #### v0.12.21182.1839 (2021-07-01)
 * `REMOVED` Command project
 * `REMOVED` MyAvatoolWebService.Dose.cs

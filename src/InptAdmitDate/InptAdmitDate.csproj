@@ -64,5 +64,8 @@
       <Name>TheOptionObject</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="InptAdmitDate.licenseheader" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
