@@ -1,3 +1,0 @@
-# MAWS Acknowledgements
-
-None yet.
