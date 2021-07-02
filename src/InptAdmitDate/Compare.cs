@@ -1,6 +1,6 @@
 ﻿/* PROJECT: InptAdmitDate (https://github.com/aprettycoolprogram/InptAdmitDate)
  *    FILE: InptAdmitDate.Compare.cs
- * UPDATED: 7-1-2021-8:45 PM
+ * UPDATED: 7-2-2021-10:11 AM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2021 A Pretty Cool Program All rights reserved
  */
@@ -57,13 +57,13 @@ namespace InptAdmitDate
                         switch(field.FieldNumber)
                         {
                             case typeOfAdmissionFieldId:
-                                typeOfAdmission                   = int.Parse(field.FieldValue);
+                                typeOfAdmission = int.Parse(field.FieldValue);
                                 foundPreAdmitToAdmissionDateField = true;
                                 Logger.Timestamped.LogEvent(inptAdmitDateSetting["Logging"].ToLower(), "TRACE", Assembly.GetExecutingAssembly().GetName().Name, "Found PreAdmitToAdmissionDateField.");
                                 break;
 
                             case preAdmitToAdmissionDateFieldId:
-                                preAdmitToAdmissionDate   = Convert.ToDateTime(field.FieldValue);
+                                preAdmitToAdmissionDate = Convert.ToDateTime(field.FieldValue);
                                 foundTypeOfAdmissionField = true;
                                 Logger.Timestamped.LogEvent(inptAdmitDateSetting["Logging"].ToLower(), "TRACE", Assembly.GetExecutingAssembly().GetName().Name, "Found TypeOfAdmissionField.");
                                 break;

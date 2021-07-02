@@ -18,6 +18,10 @@ Version 1.0
 * Each MAWS command (e.g., "InptAdmitDate", "Dose") has it's own settings file, which makes it easier to customize various functionality (e.g., logging) for a specific command.
 * Logfiles are now more detailed, better organized, and you can specify which types of events you want to log (or disable logging completely).
 
+#### v0.12.21183.1411 (2021-07-02)
+* `INFO` Final 0.12 version deployed to production for testing
+* `MODIFIED` Confirmed all projects are set to v0.12.21183.1411 
+
 #### v0.12.21183.0048 (2021-07-01)
 * `INFO` Code/comment/documentation updates/cleanup
 * `ADDED` Test case to the switch statement in RunScript()
