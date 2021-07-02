@@ -1,14 +1,21 @@
-﻿using System;
+﻿/* PROJECT: TheOptionObject (https://github.com/aprettycoolprogram/TheOptionObject)
+ *    FILE: TheOptionObject.Finalize.cs
+ * UPDATED: 7-1-2021-8:46 PM
+ * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
+ *          Copyright 2021 A Pretty Cool Program All rights reserved
+ */
+
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Reflection;
 using NTST.ScriptLinkService.Objects;
 
 namespace TheOptionObject
 {
     public class Finalize
     {
+        public static Dictionary<string, string> theOptionObjectSetting;
+
         /// <summary>
         /// Confirms various fields in an OptionObject2015 object are populated.
         /// </summary>
@@ -19,6 +26,10 @@ namespace TheOptionObject
              * all of the fields of an OptionObject2015 object that are not explicitly set are populated with the
              * original values in "sentOptionObject".
              */
+            theOptionObjectSetting = Settings.GetSettings();
+
+            Logger.Timestamped.LogEvent(theOptionObjectSetting["Logging"].ToLower(), "TRACE", Assembly.GetExecutingAssembly().GetName().Name, "In WhichComponents.");
+
             var finalizedOptionObject = new OptionObject2015();
 
             FinalizeRequiredFields(sentOptionObject, finalizedOptionObject);
@@ -49,10 +60,20 @@ namespace TheOptionObject
             finalizedOptionObject.ParentNamespace = sentOptionObject.ParentNamespace;
             finalizedOptionObject.ServerName = sentOptionObject.ServerName;
             finalizedOptionObject.SystemCode = sentOptionObject.SystemCode;
-            //Logger.WriteToTimestampedFile($"[DEBUG-0056]OptionObjectMaintenance.FinalizeRequiredFields()", $"{finalizedOptionObject.EntityID} - {finalizedOptionObject.Facility} - {finalizedOptionObject.NamespaceName} - {finalizedOptionObject.OptionId} - {finalizedOptionObject.ParentNamespace} - {finalizedOptionObject.ServerName} - {finalizedOptionObject.SystemCode}");
 
+            var finalizeRequiredFieldsMessage = $"FinalizeRequiredFields values:{Environment.NewLine}" +
+                                                $"finalizedOptionObject.EntityID={finalizedOptionObject.EntityID}{Environment.NewLine}" +
+                                                $"finalizedOptionObject.Facility={finalizedOptionObject.Facility}{Environment.NewLine}" +
+                                                $"finalizedOptionObject.NamespaceName={finalizedOptionObject.NamespaceName}{Environment.NewLine}" +
+                                                $"finalizedOptionObject.OptionId={finalizedOptionObject.OptionId}{Environment.NewLine}" +
+                                                $"finalizedOptionObject.ParentNamespace={finalizedOptionObject.ParentNamespace}{Environment.NewLine}" +
+                                                $"finalizedOptionObject.ServerName={finalizedOptionObject.ServerName}{Environment.NewLine}" +
+                                                $"finalizedOptionObject.SystemCode={finalizedOptionObject.SystemCode}";
+
+            Logger.Timestamped.LogEvent(theOptionObjectSetting["Logging"].ToLower(), "TRACE", Assembly.GetExecutingAssembly().GetName().Name, finalizeRequiredFieldsMessage);
         }
-        /// <summary
+
+        /// <summary>
         /// Confirms the recommended fields for a valid OptionObject2015 object are populated.
         /// </summary>
         /// <returns>An OptionObject2015 object with all recommended fields populated.</returns>
@@ -62,19 +83,29 @@ namespace TheOptionObject
             finalizedOptionObject.OptionStaffId = sentOptionObject.OptionStaffId;
             finalizedOptionObject.OptionUserId = sentOptionObject.OptionUserId;
 
-            // If the returnOptionObject has data, use that to complete the completedOptionObject. Otherwise, use the
+            // If the workingOptionObject has data, use that to complete the completedOptionObject. Otherwise, use the
             // data that exists in the sentOptionObject.
             if(workingOptionObject.ErrorCode >= 1)
             {
                 finalizedOptionObject.ErrorCode = workingOptionObject.ErrorCode;
                 finalizedOptionObject.ErrorMesg = workingOptionObject.ErrorMesg;
+                Logger.Timestamped.LogEvent(theOptionObjectSetting["Logging"].ToLower(), "TRACE", Assembly.GetExecutingAssembly().GetName().Name, "ErrorCode >= 1");
             }
             else
             {
                 finalizedOptionObject.ErrorCode = sentOptionObject.ErrorCode;
                 finalizedOptionObject.ErrorMesg = sentOptionObject.ErrorMesg;
+                Logger.Timestamped.LogEvent(theOptionObjectSetting["Logging"].ToLower(), "TRACE", Assembly.GetExecutingAssembly().GetName().Name, "ErrorCode = 1");
             }
-            //Logger.WriteToTimestampedFile($"[DEBUG-0081]OptionObjectMaintenance.FinalizeRecommendedFields()", $"{finalizedOptionObject.EpisodeNumber} - {finalizedOptionObject.OptionStaffId} - {finalizedOptionObject.OptionUserId} - {finalizedOptionObject.ErrorCode} - {finalizedOptionObject.ErrorMesg}");
+
+            var finalizeRecommendedFieldsMessage = $"FinalizeRequiredFields values:{Environment.NewLine}" +
+                                                   $"finalizedOptionObject.EpisodeNumber={finalizedOptionObject.EpisodeNumber}{Environment.NewLine}" +
+                                                   $"finalizedOptionObject.OptionStaffId={finalizedOptionObject.OptionStaffId}{Environment.NewLine}" +
+                                                   $"finalizedOptionObject.OptionUserId={finalizedOptionObject.OptionUserId}{Environment.NewLine}" +
+                                                   $"finalizedOptionObject.ErrorCode={finalizedOptionObject.ErrorCode}{Environment.NewLine}" +
+                                                   $"finalizedOptionObject.ErrorMesg={finalizedOptionObject.ErrorMesg}";
+
+            Logger.Timestamped.LogEvent(theOptionObjectSetting["Logging"].ToLower(), "TRACE", Assembly.GetExecutingAssembly().GetName().Name, finalizeRecommendedFieldsMessage);
         }
 
         /// Confirms the non-recommended fields for a valid OptionObject2015 object are populated.
@@ -84,8 +115,7 @@ namespace TheOptionObject
         {
             //Logger.WriteToTimestampedFile($"[DEBUG-0090]OptionObjectMaintenance.FinalizeNonRecommendedFields()", $"This shouldn't happen!");
             completedOptionObject2.Forms = sentOptionObject.Forms;
+            Logger.Timestamped.LogEvent(theOptionObjectSetting["Logging"].ToLower(), "TRACE", Assembly.GetExecutingAssembly().GetName().Name, "Uh oh! This shouldn't have happened!");
         }
-
-
     }
 }

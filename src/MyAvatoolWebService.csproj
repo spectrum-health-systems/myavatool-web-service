@@ -115,6 +115,10 @@
       <Project>{b891c735-82a1-4914-995e-748bc9879b74}</Project>
       <Name>Logger</Name>
     </ProjectReference>
+    <ProjectReference Include="NewDevelopment\NewDevelopment.csproj">
+      <Project>{f1b45ad4-e6ea-47cb-9ad7-242f8d49a2f1}</Project>
+      <Name>NewDevelopment</Name>
+    </ProjectReference>
     <ProjectReference Include="NTST.ScriptLinkService.Objects\NTST.ScriptLinkService.Objects.vbproj">
       <Project>{8a8a6089-3286-42e6-9f76-b61784709654}</Project>
       <Name>NTST.ScriptLinkService.Objects</Name>
@@ -122,10 +126,6 @@
     <ProjectReference Include="RequestSyntaxEngine\RequestSyntaxEngine.csproj">
       <Project>{524fca57-dbc4-4b88-ab6f-a04eb0927554}</Project>
       <Name>RequestSyntaxEngine</Name>
-    </ProjectReference>
-    <ProjectReference Include="Test\Test.csproj">
-      <Project>{2109bb39-0493-48e3-96ad-8ed4a50131b8}</Project>
-      <Name>Test</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

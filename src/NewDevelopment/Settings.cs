@@ -1,34 +1,29 @@
-﻿/* PROJECT: MyAvatoolWebService (https://github.com/aprettycoolprogram/MyAvatoolWebService)
- *    FILE: MyAvatoolWebService.Settings.cs
+﻿/* PROJECT: NewDevelopment (https://github.com/aprettycoolprogram/NewDevelopment)
+ *    FILE: NewDevelopment.Settings.cs
  * UPDATED: 7-1-2021-8:46 PM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2021 A Pretty Cool Program All rights reserved
  */
 
-/* Gets the MAWS settings from the MAWS.settings file.
- *
- * Development notes/comments can be found at the end of this class.
- */
-
 using System.Collections.Generic;
 using System.IO;
 
-namespace MyAvatoolWebService
+namespace NewDevelopment
 {
     public class Settings
     {
         /// <summary>
-        /// Gets the settings information from MAWS.settings.
+        /// Gets the settings information from NewDevelopment.settings.
         /// </summary>
-        /// <returns>The MAWS settings dictionary.</returns>
+        /// <returns>The NewDevelopment settings dictionary.</returns>
         public static Dictionary<string, string> GetSettings()
         {
-            var mawsSettings     = new Dictionary<string, string>();
-            var mawsSettingsPath = @"C:/MAWS/MAWS.settings";
+            var newDevelopmentSettings     = new Dictionary<string, string>();
+            var newDevelopmentSettingsPath = @"C:/MAWS/NewDevelopment.settings";
 
-            if(File.Exists(mawsSettingsPath))
+            if(File.Exists(newDevelopmentSettingsPath))
             {
-                var    settingsFileStream = new StreamReader(mawsSettingsPath);
+                var    settingsFileStream = new StreamReader(newDevelopmentSettingsPath);
                 var    settingsAsList     = new List<string>();
                 string settingLine;
 
@@ -47,12 +42,12 @@ namespace MyAvatoolWebService
                     if(!item.StartsWith("#"))
                     {
                         keyValuePair = item.Split('=');
-                        mawsSettings.Add(keyValuePair[0], keyValuePair[1]);
+                        newDevelopmentSettings.Add(keyValuePair[0], keyValuePair[1]);
                     }
                 }
             }
 
-            return mawsSettings;
+            return newDevelopmentSettings;
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿/* PROJECT: InptAdmitDate (https://github.com/aprettycoolprogram/InptAdmitDate)
  *    FILE: InptAdmitDate.Settings.cs
- * UPDATED: 7-1-2021-6:57 PM
+ * UPDATED: 7-1-2021-8:45 PM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2021 A Pretty Cool Program All rights reserved
  */
@@ -12,38 +12,42 @@ namespace InptAdmitDate
 {
     public class Settings
     {
+        /// <summary>
+        /// Gets the settings information from InptAdmitDate.settings.
+        /// </summary>
+        /// <returns>The InptAdmitDate settings dictionary.</returns>
         public static Dictionary<string, string> GetSettings()
         {
-            var settings = new Dictionary<string, string>();
+            var inptAdmitDateSettings     = new Dictionary<string, string>();
+            var inptAdmitDateSettingsPath = @"C:/MAWS/InptAdmitDate.settings";
 
-            if(File.Exists(@"C:/MAWS/InptAdmitDate.settings"))
+            if(File.Exists(inptAdmitDateSettingsPath))
             {
-                var settingsFileStream = new System.IO.StreamReader(@"C:/MAWS/InptAdmitDate.settings");
-
-                var settingsAsList = new List<string>();
-                var line = "";
+                var    settingsFileStream = new StreamReader(inptAdmitDateSettingsPath);
+                var    settingsAsList     = new List<string>();
+                string settingLine;
 
                 using(settingsFileStream)
                 {
-                    while((line = settingsFileStream.ReadLine()) != null)
+                    while((settingLine = settingsFileStream.ReadLine()) != null)
                     {
-                        settingsAsList.Add(line.Trim());
+                        settingsAsList.Add(settingLine.Trim());
                     }
                 }
 
-                var keyValuePair  = new string[2];
+                string[] keyValuePair;
 
                 foreach(var item in settingsAsList)
                 {
                     if(!item.StartsWith("#"))
                     {
                         keyValuePair = item.Split('=');
-                        settings.Add(keyValuePair[0], keyValuePair[1]);
+                        inptAdmitDateSettings.Add(keyValuePair[0], keyValuePair[1]);
                     }
                 }
             }
 
-            return settings;
+            return inptAdmitDateSettings;
         }
     }
 }

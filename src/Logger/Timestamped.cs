@@ -1,8 +1,13 @@
 ﻿/* PROJECT: Logger (https://github.com/aprettycoolprogram/Logger)
  *    FILE: Logger.Timestamped.cs
- * UPDATED: 7-1-2021-2:41 PM
+ * UPDATED: 7-1-2021-8:45 PM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2021 A Pretty Cool Program All rights reserved
+ */
+
+/* Writes log files.
+ *
+ * Development notes/comments can be found at the end of this class.
  */
 
 using System;
@@ -14,6 +19,16 @@ namespace Logger
 {
     public class Timestamped
     {
+        /// <summary>
+        ///
+        /// </summary>
+        /// <param name="logSetting">      The logging setting in the .settings file.</param>
+        /// <param name="logType">         The type of log (e.g., "DEBUG", "ERROR"). This value will be enclosed in brackets, and prepended to the file name.</param>
+        /// <param name="assemblyName">    The executing assembly name (e.g., "MyProgram"). This value will be included in the filename, as well as the log message.</param>
+        /// <param name="logMessage">      The optional message that is written to the logfile ["No log message defined"]</param>
+        /// <param name="callerfilePath">  The filename where the error occured (e.g., "MyFile.cs").</param>
+        /// <param name="callerMemberName">The method where the error occured (e.g., "MyMethod()")</param>
+        /// <param name="callerLineNumber">The line where the error occured (e.g., "100")</param>
         public static void LogEvent(string logSetting, string logType, string assemblyName, string logMessage = "No log message defined.",
                                     [CallerFilePath] string callerfilePath = "", [CallerMemberName] string callerMemberName = "",
                                     [CallerLineNumber] int callerLineNumber = 0)
@@ -37,7 +52,7 @@ namespace Logger
         /// <param name="callerMemberName">The method where the error occured (e.g., "MyMethod()")</param>
         /// <param name="callerLineNumber">The line where the error occured (e.g., "100")</param>
         public static void WriteToFile(string logType, string assemblyName, string logMessage, string callerfilePath,
-                                      string callerMemberName, int callerLineNumber)
+                                       string callerMemberName, int callerLineNumber)
         {
             var dateStamp        = DateTime.Now.ToString("yyMMdd");
             var logDirectoryPath = $"C:/MAWS/Logs/{dateStamp}";

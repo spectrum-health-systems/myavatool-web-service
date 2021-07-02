@@ -1,13 +1,9 @@
 ﻿/* PROJECT: MyAvatoolWebService (https://github.com/aprettycoolprogram/MyAvatoolWebService)
  *    FILE: MyAvatoolWebService.MyAvatoolWebService.asmx.cs
- * UPDATED: 7-1-2021-2:33 PM
+ * UPDATED: 7-1-2021-8:45 PM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2021 A Pretty Cool Program All rights reserved
  */
-
-/******************************************************************************
- *             >>> WARNING: THIS IS THE MAWS DEVELOPMENT BRANCH <<<           *
- ******************************************************************************/
 
 /* MyAvatoolWebService main class.
  *
@@ -59,9 +55,10 @@ namespace MyAvatoolWebService
         {
             Logger.Timestamped.LogEvent(MawsSetting["Logging"].ToLower(), "TRACE", Assembly.GetExecutingAssembly().GetName().Name, $"Initial MAWS Request: {mawsRequest}");
 
-            var completedOptionObject = new OptionObject2015();
-            var mawsCommand           = RequestSyntaxEngine.RequestComponent.GetCommand(mawsRequest);
+            var mawsCommand = RequestSyntaxEngine.RequestComponent.GetCommand(mawsRequest);
             Logger.Timestamped.LogEvent(MawsSetting["Logging"].ToLower(), "TRACE", Assembly.GetExecutingAssembly().GetName().Name, $"Initial MAWS Command to be executed: {mawsCommand}");
+
+            OptionObject2015 completedOptionObject;
 
             switch(mawsCommand)
             {
@@ -75,6 +72,11 @@ namespace MyAvatoolWebService
                     completedOptionObject = Dose.Execute.Action(sentOptionObject, mawsRequest);
                     break;
 
+                case "newdevelopment":
+                    Logger.Timestamped.LogEvent(MawsSetting["Logging"].ToLower(), "TRACE", Assembly.GetExecutingAssembly().GetName().Name, "case: newdevelopemnt");
+                    completedOptionObject = NewDevelopment.Execute.Action(sentOptionObject, mawsRequest);
+                    break;
+
                 default:
                     Logger.Timestamped.LogEvent(MawsSetting["Logging"].ToLower(), "ERROR", Assembly.GetExecutingAssembly().GetName().Name, $"Invalid MAWS Command: \"{mawsCommand}\".");
                     completedOptionObject = sentOptionObject;
@@ -84,45 +86,50 @@ namespace MyAvatoolWebService
             return completedOptionObject;
         }
 
+        /// <summary>
+        /// Force a bunch of tests (if testing is enabled in MAWS.settings
+        /// </summary>
+        /// <param name="mawsSettings">The MAWS settings.</param>
         public void ForceTest(Dictionary<string, string> mawsSettings)
         {
             if(mawsSettings["TestMaws"] == "true")
             {
                 {
+                    // Test against an empty OptionObject.
                     var emptyOptionObject = new OptionObject2015();
-
                     _ = RunScript(emptyOptionObject, "InptAdmitDate-action-option");
                     _ = RunScript(emptyOptionObject, "Dose-action-option");
+                    _ = RunScript(emptyOptionObject, "NewDevelopment-action-option");
                     _ = RunScript(emptyOptionObject, "Fake-action-option");
 
+                    // Test against an initialized OptionObject.
                     var testInptAdmitDateOptionObject= new OptionObject2015
                     {
                         ErrorCode = 0,
                         ErrorMesg = "",
                     };
-
                     _ = RunScript(testInptAdmitDateOptionObject, "InptAdmitDate-ComparePreAdmitToAdmit");
-
                 }
 
                 if(mawsSettings["TestRequestSyntaxEngine"] == "true")
                 {
                     RequestSyntaxEngine.TestFunctionality.Force();
                 }
-
             }
         }
-
     }
 }
 
 /* =================
  * DEVELOPMENT NOTES
  * =================
- * - The goal with this class is to just have the "GetVersion()" and "RunScript()" methods, all other logic will be in a
- *   class that corresponds to the requstedCommand (e.g., "InptAdmitDate")
+ * - The goal with this class is to keep it simple, with only the "GetVersion()", "RunScript()", and ForceTest()
+ *   methods. All other logic will be in a class that corresponds to the MAWS Command (e.g., "InptAdmitDate")
  *
  * - Both GetVersion() and RunScript() are required by myAvatar, so don't remove them.
+ *
+ * - ForceTest() is here because otherwise it's a pain to get working, but eventually I would like to move it into its
+ *   own class.
  *
  * - I'm leaving the "VERSION" as "1.0" throughout development of v1.0.
  *
@@ -137,10 +144,4 @@ namespace MyAvatoolWebService
  *      2. Run MAWS
  *      3. Click "GetVersion"
  *      4. Click the "Invoke" button
- *
- * -----------
- * RunScript()
- * -----------
- * - RunScript passes everything off to the RequestSyntaxEngine, so (hopefully) this class will never really change, and
- *   updates/addtional functionality can be added via DLL and making minor modifications to RequestSyntaxEngine.csproj.
  */

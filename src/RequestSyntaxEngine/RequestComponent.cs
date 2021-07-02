@@ -1,8 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿/* PROJECT: RequestSyntaxEngine (https://github.com/aprettycoolprogram/RequestSyntaxEngine)
+ *    FILE: RequestSyntaxEngine.RequestComponent.cs
+ * UPDATED: 7-1-2021-8:46 PM
+ * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
+ *          Copyright 2021 A Pretty Cool Program All rights reserved
+ */
+
+using System.Reflection;
 
 namespace RequestSyntaxEngine
 {
@@ -15,10 +18,12 @@ namespace RequestSyntaxEngine
         /// <returns>The command component of the MAWS Request (e.g., "InptAdmitDate").</returns>
         public static string GetCommand(string mawsRequest)
         {
-            var requestCommand = mawsRequest.Split('-')[0].ToLower();
-            //Logger.WriteToTimestampedFile($"[DEBUG-TRACE]RequestSyntaxEngine.GetRequestCommand()", $"[0025] MAWS Request: {mawsRequest} MAWS Command: {requestCommand}");
+            var mawsCommand = mawsRequest.Split('-')[0].ToLower();
 
-            return requestCommand;
+            // The RequestSyntaxEngine doesn't have it's own settings file, so we hardcode the logSetting parameter.
+            Logger.Timestamped.LogEvent("trace", "TRACE", Assembly.GetExecutingAssembly().GetName().Name, $"mawsCommand: {mawsCommand}");
+
+            return mawsCommand;
         }
 
         /// <summary>
@@ -28,10 +33,12 @@ namespace RequestSyntaxEngine
         /// <returns>The command component of the MAWS Request (e.g., "ComparePreAdmitToAdmit").</returns>
         public static string GetAction(string mawsRequest)
         {
-            var requestAction = mawsRequest.Split('-')[1].ToLower();
-            //Logger.WriteToTimestampedFile($"[DEBUG-TRACE]RequestSyntaxEngine.GetRequestAction()", $"[0038] MAWS Request: {mawsRequest} MAWS Action: {requestAction}");
+            var mawsAction = mawsRequest.Split('-')[1].ToLower();
 
-            return mawsRequest.Split('-')[1].ToLower();
+            // The RequestSyntaxEngine doesn't have it's own settings file, so we hardcode the logSetting parameter.
+            Logger.Timestamped.LogEvent("trace", "TRACE", Assembly.GetExecutingAssembly().GetName().Name, $"mawsCommand: {mawsAction}");
+
+            return mawsAction;
         }
 
         /// <summary>
@@ -41,12 +48,14 @@ namespace RequestSyntaxEngine
         /// <returns>The command component of the MAWS Request (e.g., "Testing") ["none"].</returns>
         public static string GetOption(string mawsRequest)
         {
-            var requestOption = mawsRequest.Split('-').Length >= 3
+            var mawsOption = mawsRequest.Split('-').Length >= 3
                 ? mawsRequest.Split('-')[2].ToLower()
                 : "none";
-            //Logger.WriteToTimestampedFile($"[DEBUG-TRACE]RequestSyntaxEngine.GetRequestOption()", $"[0053] MAWS Request: {mawsRequest} MAWS Option: {requestOption}");
 
-            return requestOption;
+            // The RequestSyntaxEngine doesn't have it's own settings file, so we hardcode the logSetting parameter.
+            Logger.Timestamped.LogEvent("trace", "TRACE", Assembly.GetExecutingAssembly().GetName().Name, $"mawsCommand: {mawsOption}");
+
+            return mawsOption;
         }
     }
 }

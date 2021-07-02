@@ -18,28 +18,49 @@ Version 1.0
 * Each MAWS command (e.g., "InptAdmitDate", "Dose") has it's own settings file, which makes it easier to customize various functionality (e.g., logging) for a specific command.
 * Logfiles are now more detailed, better organized, and you can specify which types of events you want to log (or disable logging completely).
 
+#### v0.12.21183.0048 (2021-07-01)
+* `INFO` Code/comment/documentation updates/cleanup
+* `ADDED` Test case to the switch statement in RunScript()
+##### RequestSyntaxEngine
+* `MODIFIED` Logging functionality brought up to other project levels
+* `REMOVED` ParseRequest.cs
+##### NewDevelopment (previously TestFunctionality)
+* `ADDED` Execute.cs
+* `ADDED` Execute.Action()
+* `ADDED` Settings.cs
+* `ADDED` Settings.GetSettings()
+* `REMOVED` Existing.cs
+* `REMOVED` New.cs
+
 #### v0.12.21182.2257 (2021-07-01)
 * `INFO` Code/comment/documentation updates/cleanup
+##### Dose
+* `ADDED` .licenseheader file
 ##### InptAdmitDate
 * `ADDED` .licenseheader file
-##### Dose
+##### TestFunctionality
 * `ADDED` .licenseheader file
 
 #### v0.12.21182.1839 (2021-07-01)
 * `REMOVED` Command project
 * `REMOVED` MyAvatoolWebService.Dose.cs
 ##### InptAdmitDate
-* `ADDED` InptAdmitDate.Compare.cs
-* `ADDED` InptAdmitDate.Compare.PreAdmitToAdmit()
-* `ADDED` InptAdmitDate.Execute.cs
-* `ADDED` InptAdmitDate.Execute.Action()
+* `ADDED` Compare.cs
+* `ADDED` Compare.PreAdmitToAdmit()
+* `ADDED` Execute.cs
+* `ADDED` Execute.Action()
+* `ADDED` Settings.cs
+* `ADDED` Settings.GetSettings()
 ##### Logger
 * `ADDED` Logfiles now have the .mawslog extension
 ##### Dose
-* `ADDED` Dose.Verify.cs
-* `ADDED` Dose.Verify.Percentage()
-* `ADDED` Dose.Verify.Percentage_Testing()
-* `ADDED` Dose.Exectute.cs
+* `ADDED` Exectute.cs
+* `ADDED` Exectute.Action()
+* `ADDED` Settings.cs
+* `ADDED` Settings.GetSettings()
+* `ADDED` Verify.cs
+* `ADDED` Verify.Percentage()
+* `ADDED` Verify.Percentage_Testing()
 
 #### v0.12.21182.1554 (2021-07-01)
 * `ADDED` Dose project.

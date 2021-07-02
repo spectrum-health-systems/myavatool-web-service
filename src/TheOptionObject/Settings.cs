@@ -1,34 +1,29 @@
-﻿/* PROJECT: MyAvatoolWebService (https://github.com/aprettycoolprogram/MyAvatoolWebService)
- *    FILE: MyAvatoolWebService.Settings.cs
- * UPDATED: 7-1-2021-8:46 PM
+﻿/* PROJECT: TheOptionObject (https://github.com/aprettycoolprogram/TheOptionObject)
+ *    FILE: TheOptionObject.Settings.cs
+ * UPDATED: 7-1-2021-8:48 PM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2021 A Pretty Cool Program All rights reserved
- */
-
-/* Gets the MAWS settings from the MAWS.settings file.
- *
- * Development notes/comments can be found at the end of this class.
  */
 
 using System.Collections.Generic;
 using System.IO;
 
-namespace MyAvatoolWebService
+namespace TheOptionObject
 {
     public class Settings
     {
         /// <summary>
-        /// Gets the settings information from MAWS.settings.
+        /// Gets the settings information from TheOptionObject.settings file.
         /// </summary>
-        /// <returns>The MAWS settings dictionary.</returns>
+        /// <returns>The TheOptionObject settings dictionary.</returns>
         public static Dictionary<string, string> GetSettings()
         {
-            var mawsSettings     = new Dictionary<string, string>();
-            var mawsSettingsPath = @"C:/MAWS/MAWS.settings";
+            var theOptionObjectSettings     = new Dictionary<string, string>();
+            var theOptionObjectSettingsPath = @"C:/MAWS/TheOptionObject.settings";
 
-            if(File.Exists(mawsSettingsPath))
+            if(File.Exists(theOptionObjectSettingsPath))
             {
-                var    settingsFileStream = new StreamReader(mawsSettingsPath);
+                var    settingsFileStream = new StreamReader(theOptionObjectSettingsPath);
                 var    settingsAsList     = new List<string>();
                 string settingLine;
 
@@ -47,12 +42,12 @@ namespace MyAvatoolWebService
                     if(!item.StartsWith("#"))
                     {
                         keyValuePair = item.Split('=');
-                        mawsSettings.Add(keyValuePair[0], keyValuePair[1]);
+                        theOptionObjectSettings.Add(keyValuePair[0], keyValuePair[1]);
                     }
                 }
             }
 
-            return mawsSettings;
+            return theOptionObjectSettings;
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿/* PROJECT: InptAdmitDate (https://github.com/aprettycoolprogram/InptAdmitDate)
  *    FILE: InptAdmitDate.Compare.cs
- * UPDATED: 7-1-2021-6:57 PM
+ * UPDATED: 7-1-2021-8:45 PM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2021 A Pretty Cool Program All rights reserved
  */
@@ -14,8 +14,6 @@ namespace InptAdmitDate
 {
     public class Compare
     {
-
-
         /// <summary>
         /// Verifies that client's Pre-Admission date is the same as the system date.
         /// </summary>
@@ -137,7 +135,6 @@ namespace InptAdmitDate
 
                 Logger.Timestamped.LogEvent(inptAdmitDateSetting["Logging"].ToLower(), "DEBUG", Assembly.GetExecutingAssembly().GetName().Name, errorDetailsMessage);
 
-
                 /* When this block of code is uncommented, a pop-up with detailed information will be displayed when the
                  * errMsgCode is "0", meaning no issues were found, and the form will being submitted normally.
                  *
@@ -154,6 +151,7 @@ namespace InptAdmitDate
             }
 
             Logger.Timestamped.LogEvent(inptAdmitDateSetting["Logging"].ToLower(), "TRACE", Assembly.GetExecutingAssembly().GetName().Name, "Returning OptionObject.");
+
             return completedAdmitDateOptionObject;
         }
 

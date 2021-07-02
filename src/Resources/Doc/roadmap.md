@@ -96,7 +96,7 @@
             return verifyAdmitDateOptionObject2015;
         }
 
-
+* RequestSyntaxEngine always logs
 
 * maws.settings file
     * allows blank lines
