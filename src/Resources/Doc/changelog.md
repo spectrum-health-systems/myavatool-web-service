@@ -7,11 +7,21 @@ Version 1.0
 * New MAWS Requests:
     * InptAdmitDate-ComparePreAdmitToAdmit
     * Dose-VerifyPercentage
+    * Dose-VerifyMilligrams
+    * Dose-VerifyTotal
 * New MAWS functionality:
     * Logging
     * External settings
 
 </summary>
+
+## Version 0.13
+* Foundational work on Dose functionality.
+
+#### v0.13.21183.1419 (2021-07-02)
+* `INFO` Initial v0.13 version
+
+***
 
 ## Version 0.12
 * Moved `InptAdmitDate.cs` and `Dose.cs` functionality out of the Command project. Don't know why I put them there in the first place, it goes against the whole compartmentalizing concept. Each MAWS command (e.g., "InptAdmitDate", "Dose") will now have it's own project.
@@ -152,6 +162,8 @@ Version 1.0
 #### v0.11.21176.1652 (2021-06-28)
 * `INFO` Initial v0.11 release.
 
+***
+
 ## Version 0.10
 > Focus on logging functionality and external settings
 
@@ -170,6 +182,8 @@ Version 1.0
 
 #### v0.10.21176.0200 (2021-06-25)
 * `INFO` Initial v0.10 release
+
+***
 
 ## Version 0.9
 > Implementing OptionObject2015
@@ -265,6 +279,8 @@ Version 1.0
 #### v0.9.21161.1749 (2021-06-10)
 * `INFO` Framework commit
 
+***
+
 ## Version 0.8
 > Finalizing documentation/comments.
 
@@ -275,20 +291,32 @@ Version 1.0
 #### v0.8.21111.1434 (2021-04-21)
 * `ADDED` /Resources/Dev/current-versions.md
 
+***
+
 ## Version 0.7
 > Updating documentation/comments.
+
+***
 
 ## Version 0.6
 > Updating documentation/comments.
 
+***
+
 ## Version 0.5
 > Updating documentation/comments.
  
+***
+
 ## Version 0.4
 > Updating documentation/comments.
 
+***
+
 ## Version 0.3
 > Updating documentation/comments.
+
+***
 
 ## Version 0.2
 > Moving functionality from the Avatar Web Service.
@@ -323,6 +351,8 @@ Version 1.0
 #### v0.2.0.0 (2021-01-13)
 * `INFO` Initial commit of v0.2 branch.
 
+***
+
 ## Version 0.1
 > Updated blank template for MAWS, building on v0.0. It includes:
 
@@ -334,6 +364,8 @@ Version 1.0
 * `ADDED` MAWS.licenseheader file for use with the [License Header Manager](https://marketplace.visualstudio.com/items?itemName=StefanWenig.LicenseHeaderManager) extension.
 * `MODIFIED` AssemblyInfo.cs with...uh...assembly information.
 * `MODIFIED` Renamed *sentOptionObject* to *sentOptionObject2* so it's more inline with Netsmart's (wierd) naming conventions.
+
+***
 
 ## Version 0.0 (2021-01-12)
 > Blank MAWS template which was built following the steps in the MAWS [manual](doc/man/manual-custom-myavatar-web-services.)

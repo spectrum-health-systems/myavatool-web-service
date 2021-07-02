@@ -1,6 +1,6 @@
 ﻿/* PROJECT: InptAdmitDate (https://github.com/aprettycoolprogram/InptAdmitDate)
  *    FILE: InptAdmitDate.Compare.cs
- * UPDATED: 7-2-2021-10:11 AM
+ * UPDATED: 7-2-2021-10:19 AM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2021 A Pretty Cool Program All rights reserved
  */
