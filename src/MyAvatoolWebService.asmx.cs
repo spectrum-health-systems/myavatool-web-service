@@ -1,6 +1,6 @@
 ﻿/* PROJECT: MyAvatoolWebService (https://github.com/aprettycoolprogram/MyAvatoolWebService)
  *    FILE: MyAvatoolWebService.MyAvatoolWebService.asmx.cs
- * UPDATED: 7-1-2021-8:45 PM
+ * UPDATED: 7-6-2021-4:12 PM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2021 A Pretty Cool Program All rights reserved
  */
@@ -34,12 +34,12 @@ namespace MyAvatoolWebService
         [WebMethod]
         public string GetVersion()
         {
-            MawsSetting = Settings.GetSettings();
+            //MawsSetting = Settings.GetSettings();
 
-            if(MawsSetting["TestFunctionality"] == "true")
-            {
-                ForceTest(MawsSetting);
-            }
+            //if(MawsSetting["TestFunctionality"] == "true")
+            //{
+            //    ForceTest(MawsSetting);
+            //}
 
             return "VERSION 1.0";
         }
@@ -53,6 +53,8 @@ namespace MyAvatoolWebService
         [WebMethod]
         public OptionObject2015 RunScript(OptionObject2015 sentOptionObject, string mawsRequest)
         {
+            MawsSetting = Settings.GetSettings();
+
             Logger.Timestamped.LogEvent(MawsSetting["Logging"].ToLower(), "TRACE", Assembly.GetExecutingAssembly().GetName().Name, $"Initial MAWS Request: {mawsRequest}");
 
             var mawsCommand = RequestSyntaxEngine.RequestComponent.GetCommand(mawsRequest);

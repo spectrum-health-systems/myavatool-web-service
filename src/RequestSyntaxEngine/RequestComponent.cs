@@ -1,6 +1,6 @@
 ﻿/* PROJECT: RequestSyntaxEngine (https://github.com/aprettycoolprogram/RequestSyntaxEngine)
  *    FILE: RequestSyntaxEngine.RequestComponent.cs
- * UPDATED: 7-1-2021-8:46 PM
+ * UPDATED: 7-6-2021-4:34 PM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2021 A Pretty Cool Program All rights reserved
  */
@@ -36,7 +36,7 @@ namespace RequestSyntaxEngine
             var mawsAction = mawsRequest.Split('-')[1].ToLower();
 
             // The RequestSyntaxEngine doesn't have it's own settings file, so we hardcode the logSetting parameter.
-            Logger.Timestamped.LogEvent("trace", "TRACE", Assembly.GetExecutingAssembly().GetName().Name, $"mawsCommand: {mawsAction}");
+            Logger.Timestamped.LogEvent("trace", "TRACE", Assembly.GetExecutingAssembly().GetName().Name, $"mawsAction: {mawsAction}");
 
             return mawsAction;
         }
@@ -53,7 +53,7 @@ namespace RequestSyntaxEngine
                 : "none";
 
             // The RequestSyntaxEngine doesn't have it's own settings file, so we hardcode the logSetting parameter.
-            Logger.Timestamped.LogEvent("trace", "TRACE", Assembly.GetExecutingAssembly().GetName().Name, $"mawsCommand: {mawsOption}");
+            Logger.Timestamped.LogEvent("trace", "TRACE", Assembly.GetExecutingAssembly().GetName().Name, $"mawsOption: {mawsOption}");
 
             return mawsOption;
         }

@@ -18,8 +18,13 @@ Version 1.0
 ## Version 0.13
 * Foundational work on Dose functionality.
 
+#### v0.13.21187.2038 (2021-07-06)
+* `INFO` Clean build for testing.
+* `MODIFIED` Removed custom lines in GetVersion().
+* `MODIFIED` Fixed a few log comments.
+
 #### v0.13.21183.1419 (2021-07-02)
-* `INFO` Initial v0.13 version
+* `INFO` Initial v0.13 version.
 
 ***
 
@@ -29,7 +34,7 @@ Version 1.0
 * Logfiles are now more detailed, better organized, and you can specify which types of events you want to log (or disable logging completely).
 
 #### v0.12.21183.1411 (2021-07-02)
-* `INFO` Final 0.12 version deployed to production for testing
+* `INFO` Final 0.12 version deployed to production for testing.
 * `MODIFIED` Confirmed all projects are set to v0.12.21183.1411 
 
 #### v0.12.21183.0048 (2021-07-01)

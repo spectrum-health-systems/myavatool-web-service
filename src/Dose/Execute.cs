@@ -1,6 +1,6 @@
 ﻿/* PROJECT: Dose (https://github.com/aprettycoolprogram/Dose)
  *    FILE: Dose.Execute.cs
- * UPDATED: 7-1-2021-8:40 PM
+ * UPDATED: 7-6-2021-4:30 PM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2021 A Pretty Cool Program All rights reserved
  */
@@ -34,10 +34,12 @@ namespace Dose
             switch(mawsAction)
             {
                 case "verifypercentage":
-                    Logger.Timestamped.LogEvent(DoseSetting["Logging"].ToLower(), "TRACE", Assembly.GetExecutingAssembly().GetName().Name, $"Executing Dose Action: comparepreadmittoadmit [Option={mawsOption}]");
-                    doseOptionObject = mawsOption == "testing"
-                        ? Verify.Percentage_Testing(sentOptionObject2015, DoseSetting)
-                        : Verify.Percentage(sentOptionObject2015, DoseSetting);
+                    Logger.Timestamped.LogEvent(DoseSetting["Logging"].ToLower(), "TRACE", Assembly.GetExecutingAssembly().GetName().Name, $"Executing Dose Action: verifypercentage [Option={mawsOption}]");
+                    Verify.Percentage(sentOptionObject2015, DoseSetting);
+
+                    //doseOptionObject = mawsOption == "testing"
+                    //    ? Verify.Percentage_Testing(sentOptionObject2015, DoseSetting)
+                    //    : Verify.Percentage(sentOptionObject2015, DoseSetting);
                     break;
 
                 default:
