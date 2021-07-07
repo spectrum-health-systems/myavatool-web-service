@@ -1,23 +1,9 @@
 ﻿# MAWS Roadmap
 
 ## v1.0
-* ~~test~~
-* super^script
-    preformatted
-*   preformatted
-    * preformatted
-
-```
-This
-is
-\*a
-test \*
-ok?
-
-```
-
->!hidden!<
-
+* Dose.VerifyPercentageDifference functionality
+* ~~Dose.VerifyMilligramsDifference functionality~~ v0.15
+* Dose.VerifyMilligramsTotal functionality
 
 ## v1.1
 
