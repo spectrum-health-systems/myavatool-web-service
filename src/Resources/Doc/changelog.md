@@ -5,7 +5,6 @@
 Version 1.0
 
 * New MAWS Requests:
-    * InptAdmitDate-ComparePreAdmitToAdmit
     * Dose-VerifyPercentage
     * Dose-VerifyMilligrams
     * Dose-VerifyTotal
@@ -15,8 +14,29 @@ Version 1.0
 
 </summary>
 
-## Version 0.13
+## Version 0.15
 * Foundational work on Dose functionality.
+
+#### v0.15 (2021-07-07)
+* `INFO` Initial v0.14 version.
+
+***
+
+## Version 0.14
+* Code/comment/documentation cleanup in preparation for Dose command testing.
+
+#### v0.14.21188.1355 (2021-07-07)
+* `INFO` Initial v0.14 version.
+* `INFO` Archived v0.13.
+* `INFO` Archived v0.12.
+* `INFO` Archived v0.11.
+* `INFO` Archived v0.10.
+* `INFO` Cleaned up dev/ archives.
+
+***
+
+## Version 0.13
+* This version was used to test for connectivity.
 
 #### v0.13.21187.2038 (2021-07-06)
 * `INFO` Clean build for testing.
