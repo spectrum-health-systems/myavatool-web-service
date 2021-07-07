@@ -1,5 +1,27 @@
 ﻿# MAWS Roadmap
 
+## v1.0
+* ~~test~~
+
+
+## v1.1
+
+
+
+## Queue
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## Version 0.xx
 > Compartmentalized DLLs
 

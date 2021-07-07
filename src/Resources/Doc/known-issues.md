@@ -1,3 +1,4 @@
 ﻿# MAWS Known Issues
 
-* maws.settings cannot have blank lines
+#### v0.14
+* `.settings` files cannot have blank lines

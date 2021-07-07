@@ -25,6 +25,9 @@ Version 1.0
 ## Version 0.14
 * Code/comment/documentation cleanup in preparation for Dose command testing.
 
+#### v0.14. (2021-07-07)
+* `INFO` Code/comment/documentation cleanup.
+
 #### v0.14.21188.1355 (2021-07-07)
 * `INFO` Initial v0.14 version.
 * `INFO` Archived v0.13.
