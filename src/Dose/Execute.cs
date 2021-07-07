@@ -1,12 +1,16 @@
 ﻿/* PROJECT: Dose (https://github.com/aprettycoolprogram/Dose)
  *    FILE: Dose.Execute.cs
- * UPDATED: 7-6-2021-4:30 PM
+ * UPDATED: 7-7-2021-11:57 AM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2021 A Pretty Cool Program All rights reserved
  */
 
+/* Determines which MAWS Action to execute for the Dose Command.
+ */
+
 using System.Collections.Generic;
 using System.Reflection;
+using Logger;
 using NTST.ScriptLinkService.Objects;
 
 namespace Dose
@@ -18,32 +22,30 @@ namespace Dose
         /// <summary>
         /// Executes a MAWS action for the Dose command.
         /// </summary>
-        /// <param name="sentOptionObject2015">The original OptionObject2015 sent from myAvatar.</param>
-        /// <param name="mawsRequest">         The MAWS Request string.</param>
+        /// <param name="sentOptionObject">The original OptionObject2015 sent from myAvatar.</param>
+        /// <param name="mawsRequest">     The MAWS Request string.</param>
         /// <returns>A completed OptionObject2015.</returns>
-        public static OptionObject2015 Action(OptionObject2015 sentOptionObject2015, string mawsRequest)
+        public static OptionObject2015 Action(OptionObject2015 sentOptionObject, string mawsRequest)
         {
-            DoseSetting = Settings.GetSettings();
+            Dictionary<string, string>  doseSetting = Settings.GetSettings();
 
-            var mawsAction = RequestSyntaxEngine.RequestComponent.GetAction(mawsRequest);
-            var mawsOption = RequestSyntaxEngine.RequestComponent.GetOption(mawsRequest);
-            Logger.Timestamped.LogEvent(DoseSetting["Logging"].ToLower(), "TRACE", Assembly.GetExecutingAssembly().GetName().Name, $"Execute Dose Action: {mawsAction} [Option={mawsOption}]");
+            var logSetting   = doseSetting["Logging"].ToLower();
+            var assemblyName = Assembly.GetExecutingAssembly().GetName().Name;
+            var mawsAction   = RequestSyntaxEngine.RequestComponent.GetAction(mawsRequest);
+            var mawsOption   = RequestSyntaxEngine.RequestComponent.GetOption(mawsRequest);
+            LogEvent.Timestamped(logSetting, "TRACE", assemblyName, $"Execute Dose Action: {mawsAction} Option: {mawsOption}]");
 
             var doseOptionObject = new OptionObject2015();
 
             switch(mawsAction)
             {
                 case "verifypercentage":
-                    Logger.Timestamped.LogEvent(DoseSetting["Logging"].ToLower(), "TRACE", Assembly.GetExecutingAssembly().GetName().Name, $"Executing Dose Action: verifypercentage [Option={mawsOption}]");
-                    Verify.Percentage(sentOptionObject2015, DoseSetting);
-
-                    //doseOptionObject = mawsOption == "testing"
-                    //    ? Verify.Percentage_Testing(sentOptionObject2015, DoseSetting)
-                    //    : Verify.Percentage(sentOptionObject2015, DoseSetting);
+                    LogEvent.Timestamped(logSetting, "TRACE", assemblyName, $"Executing Dose Action: VerifyPercentage [{mawsAction}] [Option: {mawsOption}]");
+                    Verify.Percentage(sentOptionObject, doseSetting);
                     break;
 
                 default:
-                    Logger.Timestamped.LogEvent(DoseSetting["Logging"].ToLower(), "ERROR", Assembly.GetExecutingAssembly().GetName().Name, $"Invalid Dose Action: \"{mawsAction}\"");
+                    LogEvent.Timestamped(logSetting, "ERROR", assemblyName, $"Invalid Dose Action: \"{mawsAction}\"");
                     break;
             }
 
@@ -51,3 +53,8 @@ namespace Dose
         }
     }
 }
+
+/* =================
+ * DEVELOPMENT NOTES
+ * =================
+ */

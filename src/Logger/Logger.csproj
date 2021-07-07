@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LogEvent.cs" />
     <Compile Include="Maintenance.cs" />
     <Compile Include="Timestamped.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

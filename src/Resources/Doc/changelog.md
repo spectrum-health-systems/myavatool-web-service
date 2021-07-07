@@ -25,8 +25,15 @@ Version 1.0
 ## Version 0.14
 * Code/comment/documentation cleanup in preparation for Dose command testing.
 
-#### v0.14. (2021-07-07)
+#### v0.14.21188.1607 (2021-07-07)
+* `WARN` This version doesn't work, I'm halfway through updating the logging functionality.
 * `INFO` Code/comment/documentation cleanup.
+* `MODIFIED` Moved the stand-alone testing logic out of GetVersion(), and put it in it's own method. Now there is a single `//TestFunctionality()' line that is commented out by default, since it actually breaks MAWS in production.
+##### Logger
+* `ADDED` LogEvent.cs
+* `ADDED` LogEvent.Timestamped()
+* `REMOVED` Timestamped.cs, functionality moved to Logger.LogEvent.cs
+* `MODIFIED` Started migrating LogEvent code
 
 #### v0.14.21188.1355 (2021-07-07)
 * `INFO` Initial v0.14 version.

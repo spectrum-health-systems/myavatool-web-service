@@ -8,6 +8,7 @@
 using System.Collections.Generic;
 using System.Reflection;
 using NTST.ScriptLinkService.Objects;
+using Logger;
 
 namespace Dose
 {
@@ -15,7 +16,10 @@ namespace Dose
     {
         public static OptionObject2015 Percentage(OptionObject2015 sentOptionObject, Dictionary<string, string> doseSetting)
         {
-            Logger.Timestamped.LogEvent("trace", "TRACE", Assembly.GetExecutingAssembly().GetName().Name, $"1");
+            var logSetting   = doseSetting["Logging"].ToLower();
+            var assemblyName = Assembly.GetExecutingAssembly().GetName().Name;
+            LogEvent.Timestamped(logSetting, "TRACE", assemblyName, $"1");
+
             const string dosageOneFieldId           = "107";
             const string lastOrderScheduledFieldId  = "142";
 
@@ -34,20 +38,16 @@ namespace Dose
              */
             foreach(FormObject form in sentOptionObject.Forms)
             {
-                Logger.Timestamped.LogEvent("trace", "TRACE", Assembly.GetExecutingAssembly().GetName().Name, $"2");
                 foreach(FieldObject field in form.CurrentRow.Fields)
                 {
-                    Logger.Timestamped.LogEvent("trace", "TRACE", Assembly.GetExecutingAssembly().GetName().Name, $"3");
                     switch(field.FieldNumber)
                     {
                         case dosageOneFieldId:
-                            Logger.Timestamped.LogEvent("trace", "TRACE", Assembly.GetExecutingAssembly().GetName().Name, $"4");
                             currentDose = int.Parse(field.FieldValue);                                              // TODO Convert.ToInt()?
                             foundDosageOneFieldId = true;
                             break;
 
                         case lastOrderScheduledFieldId:
-                            Logger.Timestamped.LogEvent("trace", "TRACE", Assembly.GetExecutingAssembly().GetName().Name, $"5");
                             lastOrderScheduledText = field.FieldValue;
                             foundLastOrderScheduledFieldId = true;
                             break;
@@ -60,13 +60,11 @@ namespace Dose
                      */
                     if(foundDosageOneFieldId && foundLastOrderScheduledFieldId)
                     {
-                        Logger.Timestamped.LogEvent("trace", "TRACE", Assembly.GetExecutingAssembly().GetName().Name, $"6");
                         break;
                     }
                 }
             }
 
-            Logger.Timestamped.LogEvent("trace", "TRACE", Assembly.GetExecutingAssembly().GetName().Name, $"7");
             var errMsgBody = string.Empty;
             var errMsgCode = 0;
 
@@ -105,7 +103,6 @@ namespace Dose
 
             // Log this event
 
-            Logger.Timestamped.LogEvent(doseSetting["Logging"].ToLower(), "TRACE", Assembly.GetExecutingAssembly().GetName().Name, "At end");
 
             return doseOptionObject2015;
         }
