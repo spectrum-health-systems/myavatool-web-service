@@ -2,6 +2,21 @@
 
 ## v1.0
 * ~~test~~
+* super^script
+    preformatted
+*   preformatted
+    * preformatted
+
+```
+This
+is
+\*a
+test \*
+ok?
+
+```
+
+>!hidden!<
 
 
 ## v1.1
