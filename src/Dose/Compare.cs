@@ -1,6 +1,6 @@
 ﻿/* PROJECT: Dose (https://github.com/aprettycoolprogram/Dose)
- *    FILE: Dose.Verify.cs
- * UPDATED: 7-8-2021-2:09 PM
+ *    FILE: Dose.Compare.cs
+ * UPDATED: 7-8-2021-2:22 PM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2021 A Pretty Cool Program All rights reserved
  */
@@ -12,7 +12,7 @@ using Utility;
 
 namespace Dose
 {
-    internal class Verify
+    internal class Compare
     {
         public static OptionObject2015 Percentage(OptionObject2015 sentOptionObject, Dictionary<string, string> doseSetting)
         {
@@ -87,7 +87,7 @@ namespace Dose
 
             if(percentageDifference >= maxPercentIncrease)
             {
-                errMsgBody = "WARNING\nThe percentage increas is too high! (X%)";
+                errMsgBody = $"WARNING\nThe percentage increas is too high! (X%)";
                 errMsgCode = 1;
             }
 

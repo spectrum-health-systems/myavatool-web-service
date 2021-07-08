@@ -40,7 +40,7 @@ namespace Dose
             {
                 case "verifypercentage":
                     LogEvent.Timestamped(logSetting, "TRACE", assemblyName, $"Executing Dose Action: VerifyPercentage [{mawsAction}] [Option: {mawsOption}]");
-                    Verify.Percentage(sentOptionObject, doseSetting);
+                    Compare.Percentage(sentOptionObject, doseSetting);
                     break;
 
                 default:
