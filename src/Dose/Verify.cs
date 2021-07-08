@@ -1,6 +1,6 @@
 ﻿/* PROJECT: Dose (https://github.com/aprettycoolprogram/Dose)
  *    FILE: Dose.Verify.cs
- * UPDATED: 7-7-2021-9:55 AM
+ * UPDATED: 7-8-2021-1:58 PM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2021 A Pretty Cool Program All rights reserved
  */
@@ -18,7 +18,7 @@ namespace Dose
         {
             var logSetting   = doseSetting["Logging"].ToLower();
             var assemblyName = Assembly.GetExecutingAssembly().GetName().Name;
-            //LogEvent.Timestamped(logSetting, "TRACE", assemblyName, $"1");
+            LogEvent.Timestamped(logSetting, "TRACE", assemblyName, "Location: Dose.Verify.Percentage()");
 
             const string dosageOneFieldId           = "107";
             const string lastOrderScheduledFieldId  = "142";
@@ -32,27 +32,33 @@ namespace Dose
 
             var foundDosageOneFieldId          = false;
             var foundLastOrderScheduledFieldId = false;
+            LogEvent.Timestamped(logSetting, "TRACE", assemblyName, "Finished setting up variables");
 
             /* We will loop through each field of every form in sentOptionObject2, and do something special if we land
              * on the "dosageOneFieldId" or "lastOrderScheduledFieldId".
              */
             foreach(FormObject form in sentOptionObject.Forms)
             {
+                LogEvent.Timestamped(logSetting, "TRACE", assemblyName, "In form loop.");
                 foreach(FieldObject field in form.CurrentRow.Fields)
                 {
+                    LogEvent.Timestamped(logSetting, "TRACE", assemblyName, "In field loop.");
                     switch(field.FieldNumber)
                     {
                         case dosageOneFieldId:
                             currentDose = int.Parse(field.FieldValue);                                              // TODO Convert.ToInt()?
                             foundDosageOneFieldId = true;
+                            LogEvent.Timestamped(logSetting, "TRACE", assemblyName, "Found dosage field.");
                             break;
 
                         case lastOrderScheduledFieldId:
                             lastOrderScheduledText = field.FieldValue;
                             foundLastOrderScheduledFieldId = true;
+                            LogEvent.Timestamped(logSetting, "TRACE", assemblyName, "Found last order field.");
                             break;
 
                         default:
+                            LogEvent.Timestamped(logSetting, "ERROR", assemblyName, "Required fields not found.");
                             break;
                     }
 
@@ -60,8 +66,14 @@ namespace Dose
                      */
                     if(foundDosageOneFieldId && foundLastOrderScheduledFieldId)
                     {
+                        LogEvent.Timestamped(logSetting, "TRACE", assemblyName, "Found both fields, but not done.");
                         break;
                     }
+                }
+                if(foundDosageOneFieldId && foundLastOrderScheduledFieldId)
+                {
+                    LogEvent.Timestamped(logSetting, "TRACE", assemblyName, "Found both fields, exiting loops.");
+                    break;
                 }
             }
 
@@ -70,6 +82,11 @@ namespace Dose
 
             // 1. Parse the lastOrderScheduledText and get the milligrams
             // 2. Check what the percentage difference between the current does and the last dose
+
+            
+
+
+            LogEvent.Timestamped(logSetting, "TRACE", assemblyName, "Faking percentage.");
 
             if(percentageDifference >= maxPercentIncrease)
             {

@@ -61,27 +61,29 @@ namespace MyAvatoolWebService
             switch(mawsCommand)
             {
                 case "inptadmitdate":
-                    LogEvent.Timestamped(logSetting, "TRACE", assemblyName, "switch(mawsCommand) case: InptAdmitDate [{mawsCommand}]");
+                    LogEvent.Timestamped(logSetting, "TRACE", assemblyName, $"switch(mawsCommand) case: InptAdmitDate [{mawsCommand}]");
+                    completedOptionObject = sentOptionObject;
                     //completedOptionObject = InptAdmitDate.Execute.Action(sentOptionObject, mawsRequest);
                     break;
 
                 case "dose":
-                    LogEvent.Timestamped(logSetting, "TRACE", assemblyName, "switch(mawsCommand) case: Dose [{mawsCommand}]");
-                    //completedOptionObject = Dose.Execute.Action(sentOptionObject, mawsRequest);
+                    LogEvent.Timestamped(logSetting, "TRACE", assemblyName, $"switch(mawsCommand) case: Dose [{mawsCommand}]");
+                    completedOptionObject = Dose.Execute.Action(sentOptionObject, mawsRequest);
                     break;
 
                 case "newdevelopment":
-                    LogEvent.Timestamped(logSetting, "TRACE", assemblyName, "switch(mawsCommand) case: NewDevelopment [{mawsCommand}]");
+                    LogEvent.Timestamped(logSetting, "TRACE", assemblyName, $"switch(mawsCommand) case: NewDevelopment [{mawsCommand}]");
+                    completedOptionObject = sentOptionObject;
                     //completedOptionObject = NewDevelopment.Execute.Action(sentOptionObject, mawsRequest);
                     break;
 
                 default:
                     LogEvent.Timestamped(logSetting, "ERROR", assemblyName, $"Invalid MAWS Command: \"{mawsCommand}\".");
-                    //completedOptionObject = sentOptionObject;
+                    completedOptionObject = sentOptionObject;
                     break;
             }
 
-            completedOptionObject = new OptionObject2015(); // TEMP TESTING
+            //completedOptionObject = new OptionObject2015(); // TEMP TESTING
 
             return completedOptionObject;
         }
