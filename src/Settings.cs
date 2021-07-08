@@ -17,42 +17,42 @@ namespace MyAvatoolWebService
 {
     public class Settings
     {
-        /// <summary>
-        /// Gets the settings information from MAWS.settings.
-        /// </summary>
-        /// <returns>The MAWS settings dictionary.</returns>
-        public static Dictionary<string, string> GetSettings()
-        {
-            var mawsSettings     = new Dictionary<string, string>();
-            var mawsSettingsPath = @"C:/MAWS/MAWS.settings";
+        ///// <summary>
+        ///// Gets the settings information from MAWS.settings.
+        ///// </summary>
+        ///// <returns>The MAWS settings dictionary.</returns>
+        //public static Dictionary<string, string> GetSettings()
+        //{
+        //    var mawsSettings     = new Dictionary<string, string>();
+        //    var mawsSettingsPath = @"C:/MAWS/MAWS.settings";
 
-            if(File.Exists(mawsSettingsPath))
-            {
-                var    settingsFileStream = new StreamReader(mawsSettingsPath);
-                var    settingsAsList     = new List<string>();
-                string settingLine;
+        //    if(File.Exists(mawsSettingsPath))
+        //    {
+        //        var    settingsFileStream = new StreamReader(mawsSettingsPath);
+        //        var    settingsAsList     = new List<string>();
+        //        string settingLine;
 
-                using(settingsFileStream)
-                {
-                    while((settingLine = settingsFileStream.ReadLine()) != null)
-                    {
-                        settingsAsList.Add(settingLine.Trim());
-                    }
-                }
+        //        using(settingsFileStream)
+        //        {
+        //            while((settingLine = settingsFileStream.ReadLine()) != null)
+        //            {
+        //                settingsAsList.Add(settingLine.Trim());
+        //            }
+        //        }
 
-                string[] keyValuePair;
+        //        string[] keyValuePair;
 
-                foreach(var item in settingsAsList)
-                {
-                    if(!item.StartsWith("#"))
-                    {
-                        keyValuePair = item.Split('=');
-                        mawsSettings.Add(keyValuePair[0], keyValuePair[1]);
-                    }
-                }
-            }
+        //        foreach(var item in settingsAsList)
+        //        {
+        //            if(!item.StartsWith("#"))
+        //            {
+        //                keyValuePair = item.Split('=');
+        //                mawsSettings.Add(keyValuePair[0], keyValuePair[1]);
+        //            }
+        //        }
+        //    }
 
-            return mawsSettings;
-        }
+        //    return mawsSettings;
+        //}
     }
 }

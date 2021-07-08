@@ -1,19 +1,11 @@
-﻿/* PROJECT: Logger (https://github.com/aprettycoolprogram/Logger)
+﻿/* PROJECT: Utility (https://github.com/aprettycoolprogram/Utility)
  *    FILE: Logger.Timestamped.cs
- * UPDATED: 7-1-2021-8:45 PM
+ * UPDATED: 7-8-2021-9:34 AM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2021 A Pretty Cool Program All rights reserved
  */
 
-/* Writes log files.
- *
- * Development notes/comments can be found at the end of this class.
- */
-
-using System;
-using System.IO;
-using System.Runtime.CompilerServices;
-using System.Threading;
+/* DEPRECIATED */
 
 namespace Logger
 {
@@ -81,15 +73,3 @@ namespace Logger
         //}
     }
 }
-
-/* =================
- * DEVELOPMENT NOTES
- * =================
- *
- * -------------
- * WriteToFile()
- * -------------
- * - The totally cool logic that determines the filepath/method/line number of the message that is being logged came
- *   from this article:
- *      https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/attributes/caller-information
- */

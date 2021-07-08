@@ -1,6 +1,6 @@
 ﻿/* PROJECT: Utility (https://github.com/aprettycoolprogram/Utility)
  *    FILE: Utility.LogEvent.cs
- * UPDATED: 7-8-2021-9:33 AM
+ * UPDATED: 7-8-2021-9:39 AM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2021 A Pretty Cool Program All rights reserved
  */
@@ -57,7 +57,7 @@ namespace Utility
             var dateStamp        = DateTime.Now.ToString("yyMMdd");
             var logDirectoryPath = $"C:/MAWS/Logs/{dateStamp}";
 
-            Maintenance.ConfirmLogDirectoryExists(logDirectoryPath);
+            Maintenance.ConfirmDirectoryExists(logDirectoryPath);
 
             var hourStamp         = DateTime.Now.ToString($"HH");
             var minuteSecondStamp = DateTime.Now.ToString($"mmss");

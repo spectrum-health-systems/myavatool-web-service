@@ -10,8 +10,8 @@
 
 using System.Collections.Generic;
 using System.Reflection;
-using Logger;
 using NTST.ScriptLinkService.Objects;
+using Utility;
 
 namespace Dose
 {
@@ -27,12 +27,11 @@ namespace Dose
         /// <returns>A completed OptionObject2015.</returns>
         public static OptionObject2015 Action(OptionObject2015 sentOptionObject, string mawsRequest)
         {
-            Dictionary<string, string>  doseSetting = Settings.GetSettings();
-
-            var logSetting   = doseSetting["Logging"].ToLower();
-            var assemblyName = Assembly.GetExecutingAssembly().GetName().Name;
-            var mawsAction   = RequestSyntaxEngine.RequestComponent.GetAction(mawsRequest);
-            var mawsOption   = RequestSyntaxEngine.RequestComponent.GetOption(mawsRequest);
+            Dictionary<string, string>  doseSetting = AppSettings.LoadFromKeyValuePairFile(@"C:\MAWS\Dose.settings");
+            var logSetting                          = doseSetting["Logging"].ToLower();
+            var assemblyName                        = Assembly.GetExecutingAssembly().GetName().Name;
+            var mawsAction                          = RequestSyntaxEngine.RequestComponent.GetAction(mawsRequest);
+            var mawsOption                          = RequestSyntaxEngine.RequestComponent.GetOption(mawsRequest);
             LogEvent.Timestamped(logSetting, "TRACE", assemblyName, $"Execute Dose Action: {mawsAction} Option: {mawsOption}]");
 
             var doseOptionObject = new OptionObject2015();

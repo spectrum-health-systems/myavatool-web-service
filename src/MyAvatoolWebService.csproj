@@ -111,10 +111,6 @@
       <Project>{566c8ed3-5fef-4dcc-8b33-b2090e7727f7}</Project>
       <Name>InptAdmitDate</Name>
     </ProjectReference>
-    <ProjectReference Include="Logger\Logger.csproj">
-      <Project>{b891c735-82a1-4914-995e-748bc9879b74}</Project>
-      <Name>Logger</Name>
-    </ProjectReference>
     <ProjectReference Include="NewDevelopment\NewDevelopment.csproj">
       <Project>{f1b45ad4-e6ea-47cb-9ad7-242f8d49a2f1}</Project>
       <Name>NewDevelopment</Name>
@@ -126,6 +122,10 @@
     <ProjectReference Include="RequestSyntaxEngine\RequestSyntaxEngine.csproj">
       <Project>{524fca57-dbc4-4b88-ab6f-a04eb0927554}</Project>
       <Name>RequestSyntaxEngine</Name>
+    </ProjectReference>
+    <ProjectReference Include="Utility\Utility.csproj">
+      <Project>{b0191275-7279-4cb7-a183-6fccec05a176}</Project>
+      <Name>Utility</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

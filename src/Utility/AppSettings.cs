@@ -1,6 +1,6 @@
-﻿/* PROJECT: InptAdmitDate (https://github.com/aprettycoolprogram/InptAdmitDate)
- *    FILE: InptAdmitDate.Settings.cs
- * UPDATED: 7-1-2021-8:45 PM
+﻿/* PROJECT: Utility (https://github.com/aprettycoolprogram/Utility)
+ *    FILE: Utility.Settings.cs
+ * UPDATED: 7-8-2021-9:48 AM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2021 A Pretty Cool Program All rights reserved
  */
@@ -8,22 +8,21 @@
 using System.Collections.Generic;
 using System.IO;
 
-namespace InptAdmitDate
+namespace Utility
 {
-    public class Settings
+    public class AppSettings
     {
         /// <summary>
-        /// Gets the settings information from InptAdmitDate.settings.
+        /// Gets the settings information from Dose.settings.
         /// </summary>
-        /// <returns>The InptAdmitDate settings dictionary.</returns>
-        public static Dictionary<string, string> GetSettings()
+        /// <returns>The MAWS settings dictionary.</returns>
+        public static Dictionary<string, string> LoadFromKeyValuePairFile(string settingsFilePath)
         {
-            var inptAdmitDateSettings     = new Dictionary<string, string>();
-            var inptAdmitDateSettingsPath = @"C:/MAWS/InptAdmitDate.settings";
+            var settings = new Dictionary<string, string>();
 
-            if(File.Exists(inptAdmitDateSettingsPath))
+            if(File.Exists(settingsFilePath))
             {
-                var    settingsFileStream = new StreamReader(inptAdmitDateSettingsPath);
+                var    settingsFileStream = new StreamReader(settingsFilePath);
                 var    settingsAsList     = new List<string>();
                 string settingLine;
 
@@ -42,12 +41,19 @@ namespace InptAdmitDate
                     if(!item.StartsWith("#"))
                     {
                         keyValuePair = item.Split('=');
-                        inptAdmitDateSettings.Add(keyValuePair[0], keyValuePair[1]);
+                        settings.Add(keyValuePair[0], keyValuePair[1]);
                     }
                 }
             }
 
-            return inptAdmitDateSettings;
+            //TODO Should have a error message here/log.
+
+            return settings;
         }
     }
 }
+
+/* =================
+ * DEVELOPMENT NOTES
+ * =================
+ */

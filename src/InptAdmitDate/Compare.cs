@@ -5,10 +5,14 @@
  *          Copyright 2021 A Pretty Cool Program All rights reserved
  */
 
+/* Logic for the Compare action of the InptAdmitDate command.
+ */
+
 using System;
 using System.Collections.Generic;
 using System.Reflection;
 using NTST.ScriptLinkService.Objects;
+using Utility;
 
 namespace InptAdmitDate
 {
@@ -22,6 +26,9 @@ namespace InptAdmitDate
         /// <remarks>This method is called by the "InptAdmitDate-ComparePreAdmitToAdmit" mawsRequest.</remarks>
         public static OptionObject2015 PreAdmitToAdmit(OptionObject2015 sentOptionObject, Dictionary<string, string> inptAdmitDateSetting)
         {
+            var logSetting                                   = inptAdmitDateSetting["Logging"].ToLower();
+            var assemblyName                                 = Assembly.GetExecutingAssembly().GetName().Name;
+
             // You may need to modify these values to match the fieldIDs for your organization.
             const int    preAdmissionHardcodedValue        = 3;
             const string typeOfAdmissionFieldId            = "44";
@@ -39,13 +46,13 @@ namespace InptAdmitDate
                                            $"preAdmitToAdmissionDate={preAdmitToAdmissionDate}{Environment.NewLine}" +
                                            $"foundTypeOfAdmissionField={foundTypeOfAdmissionField}{Environment.NewLine}" +
                                            $"foundPreAdmitToAdmissionDateField={foundPreAdmitToAdmissionDateField}";
-            Logger.Timestamped.LogEvent(inptAdmitDateSetting["Logging"].ToLower(), "DEBUG", Assembly.GetExecutingAssembly().GetName().Name, initializedValuesMessage);
+            LogEvent.Timestamped(logSetting, "TRACE", assemblyName, initializedValuesMessage);
 
             var completedAdmitDateOptionObject = new OptionObject2015();
 
             if(sentOptionObject.Forms == null)
             {
-                Logger.Timestamped.LogEvent(inptAdmitDateSetting["Logging"].ToLower(), "ERROR", Assembly.GetExecutingAssembly().GetName().Name, "sentOptionObject is null");
+                LogEvent.Timestamped(logSetting, "TRACE", assemblyName, "sentOptionObject is null");
             }
             else
             {
@@ -59,30 +66,30 @@ namespace InptAdmitDate
                             case typeOfAdmissionFieldId:
                                 typeOfAdmission = int.Parse(field.FieldValue);
                                 foundPreAdmitToAdmissionDateField = true;
-                                Logger.Timestamped.LogEvent(inptAdmitDateSetting["Logging"].ToLower(), "TRACE", Assembly.GetExecutingAssembly().GetName().Name, "Found PreAdmitToAdmissionDateField.");
+                                LogEvent.Timestamped(logSetting, "TRACE", assemblyName, "Found PreAdmitToAdmissionDateField.");
                                 break;
 
                             case preAdmitToAdmissionDateFieldId:
                                 preAdmitToAdmissionDate = Convert.ToDateTime(field.FieldValue);
                                 foundTypeOfAdmissionField = true;
-                                Logger.Timestamped.LogEvent(inptAdmitDateSetting["Logging"].ToLower(), "TRACE", Assembly.GetExecutingAssembly().GetName().Name, "Found TypeOfAdmissionField.");
+                                LogEvent.Timestamped(logSetting, "TRACE", assemblyName, "Found TypeOfAdmissionField.");
                                 break;
 
                             default:
-                                Logger.Timestamped.LogEvent(inptAdmitDateSetting["Logging"].ToLower(), "ERROR", Assembly.GetExecutingAssembly().GetName().Name, "Required fields not found.");
+                                LogEvent.Timestamped(logSetting, "ERROR", assemblyName, "Required fields not found.");
                                 break;
                         }
 
                         if(foundPreAdmitToAdmissionDateField && foundTypeOfAdmissionField)
                         {
-                            Logger.Timestamped.LogEvent(inptAdmitDateSetting["Logging"].ToLower(), "TRACE", Assembly.GetExecutingAssembly().GetName().Name, "PreAdmitToAdmissionDateField and TypeOfAdmissionField fields found.");
+                            LogEvent.Timestamped(logSetting, "TRACE", assemblyName, "PreAdmitToAdmissionDateField and TypeOfAdmissionField fields found.");
                             break;
                         }
                     }
 
                     if(foundPreAdmitToAdmissionDateField && foundTypeOfAdmissionField)
                     {
-                        Logger.Timestamped.LogEvent(inptAdmitDateSetting["Logging"].ToLower(), "TRACE", Assembly.GetExecutingAssembly().GetName().Name, "PreAdmitToAdmissionDateField and TypeOfAdmissionField fields found.");
+                        LogEvent.Timestamped(logSetting, "TRACE", assemblyName, "PreAdmitToAdmissionDateField and TypeOfAdmissionField fields found.");
                         break;
                     }
                 }
@@ -95,7 +102,7 @@ namespace InptAdmitDate
                     ErrorCode = 0,
                     ErrorMesg = ""
                 };
-                Logger.Timestamped.LogEvent(inptAdmitDateSetting["Logging"].ToLower(), "TRACE", Assembly.GetExecutingAssembly().GetName().Name, "Initialized verifyAdmitDateOptionObject.");
+                LogEvent.Timestamped(logSetting, "TRACE", assemblyName, "Initialized verifyAdmitDateOptionObject.");
 
                 //var errMsgBody      = "";
                 //var errMsgCode      = 0;
@@ -103,16 +110,16 @@ namespace InptAdmitDate
                 /* 02 */
                 if(typeOfAdmission == preAdmissionHardcodedValue)
                 {
-                    Logger.Timestamped.LogEvent(inptAdmitDateSetting["Logging"].ToLower(), "TRACE", Assembly.GetExecutingAssembly().GetName().Name, "Client admission type is \"PreAdmit\".");
+                    LogEvent.Timestamped(logSetting, "TRACE", assemblyName, "Client admission type is \"PreAdmit\".");
                     if(preAdmitToAdmissionDate != systemDate)
                     {
                         verifyAdmitDateOptionObject.ErrorCode = 1;
                         verifyAdmitDateOptionObject.ErrorMesg = "WARNING\nThe client's pre-admission date does not match today's date!";
-                        Logger.Timestamped.LogEvent(inptAdmitDateSetting["Logging"].ToLower(), "TRACE", Assembly.GetExecutingAssembly().GetName().Name, "Client pre-admission date does not match today's date.");
+                        LogEvent.Timestamped(logSetting, "TRACE", assemblyName, "Client pre-admission date does not match today's date.");
                     }
-                    Logger.Timestamped.LogEvent(inptAdmitDateSetting["Logging"].ToLower(), "TRACE", Assembly.GetExecutingAssembly().GetName().Name, "Client pre-admission date does match today's date.");
+                    LogEvent.Timestamped(logSetting, "TRACE", assemblyName, "Client pre-admission date does match today's date.");
                 }
-                Logger.Timestamped.LogEvent(inptAdmitDateSetting["Logging"].ToLower(), "TRACE", Assembly.GetExecutingAssembly().GetName().Name, "Client admission type is not \"PreAdmit\".");
+                LogEvent.Timestamped(logSetting, "TRACE", assemblyName, "Client admission type is not \"PreAdmit\".");
 
                 //var verifyAdmitDateOptionObject = new OptionObject2015
                 //{
@@ -125,15 +132,14 @@ namespace InptAdmitDate
                 {
                     //verifyAdmitDateOptionObject.ErrorCode = errMsgCode;
                     //verifyAdmitDateOptionObject.ErrorMesg = errMsgBody;
-                    Logger.Timestamped.LogEvent(inptAdmitDateSetting["Logging"].ToLower(), "TRACE", Assembly.GetExecutingAssembly().GetName().Name, "errMsg code is not \"0\" ({errMsgCode})");
+                    LogEvent.Timestamped(logSetting, "TRACE", assemblyName, "errMsg code is not \"0\" ({errMsgCode})");
                 }
-                Logger.Timestamped.LogEvent(inptAdmitDateSetting["Logging"].ToLower(), "TRACE", Assembly.GetExecutingAssembly().GetName().Name, "errMsg code is \"0\"");
+                LogEvent.Timestamped(logSetting, "TRACE", assemblyName, "errMsg code is \"0\"");
 
                 var errorDetailsMessage = $"InptAdmitDate.Compare.PreAdmitToAdmit() errMsg details:{Environment.NewLine}" +
                                           $"ErrorCode={verifyAdmitDateOptionObject.ErrorCode}{Environment.NewLine}" +
                                           $"ErrorMesg={verifyAdmitDateOptionObject.ErrorMesg}";
-
-                Logger.Timestamped.LogEvent(inptAdmitDateSetting["Logging"].ToLower(), "DEBUG", Assembly.GetExecutingAssembly().GetName().Name, errorDetailsMessage);
+                LogEvent.Timestamped(logSetting, "TRACE", assemblyName, errorDetailsMessage);
 
                 /* When this block of code is uncommented, a pop-up with detailed information will be displayed when the
                  * errMsgCode is "0", meaning no issues were found, and the form will being submitted normally.
@@ -147,23 +153,11 @@ namespace InptAdmitDate
                 //}
 
                 completedAdmitDateOptionObject = TheOptionObject.Finalize.WhichComponents(sentOptionObject, verifyAdmitDateOptionObject, true, false);
-                Logger.Timestamped.LogEvent(inptAdmitDateSetting["Logging"].ToLower(), "TRACE", Assembly.GetExecutingAssembly().GetName().Name, "Finalized OptionObject.");
+                LogEvent.Timestamped(logSetting, "TRACE", assemblyName, "Finalized OptionObject.");
             }
-
-            Logger.Timestamped.LogEvent(inptAdmitDateSetting["Logging"].ToLower(), "TRACE", Assembly.GetExecutingAssembly().GetName().Name, "Returning OptionObject.");
+            LogEvent.Timestamped(logSetting, "TRACE", assemblyName, "Returning OptionObject.");
 
             return completedAdmitDateOptionObject;
-        }
-
-        /// <summary>
-        /// Verifies that client's Pre-Admission date is the same as the system date (TESTING VERSION)
-        /// </summary>
-        /// <param name="sentOptionObject2">The OptionObject2 object sent from myAvatar.</param>
-        /// <returns>An OptionObject2 object with the data.</returns>
-        /// <remarks>This method is used to test ComparePreAdmitToAdmit functionality.</remarks>
-        public static OptionObject2015 PreAdmitToAdmit_Testing(OptionObject2015 sentOptionObject2015, Dictionary<string, string> inptAdmitDateSetting)
-        {
-            return sentOptionObject2015;
         }
     }
 }

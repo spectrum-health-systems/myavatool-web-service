@@ -1,11 +1,15 @@
 ﻿/* PROJECT: RequestSyntaxEngine (https://github.com/aprettycoolprogram/RequestSyntaxEngine)
  *    FILE: RequestSyntaxEngine.RequestComponent.cs
- * UPDATED: 7-6-2021-4:34 PM
+ * UPDATED: 7-8-2021-10:22 AM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2021 A Pretty Cool Program All rights reserved
  */
 
+/*
+ */
+
 using System.Reflection;
+using Utility;
 
 namespace RequestSyntaxEngine
 {
@@ -19,9 +23,7 @@ namespace RequestSyntaxEngine
         public static string GetCommand(string mawsRequest)
         {
             var mawsCommand = mawsRequest.Split('-')[0].ToLower();
-
-            // The RequestSyntaxEngine doesn't have it's own settings file, so we hardcode the logSetting parameter.
-            Logger.Timestamped.LogEvent("trace", "TRACE", Assembly.GetExecutingAssembly().GetName().Name, $"mawsCommand: {mawsCommand}");
+            LogEvent.Timestamped("trace", "TRACE", Assembly.GetExecutingAssembly().GetName().Name, $"The MAWS command is: {mawsCommand}");
 
             return mawsCommand;
         }
@@ -34,9 +36,7 @@ namespace RequestSyntaxEngine
         public static string GetAction(string mawsRequest)
         {
             var mawsAction = mawsRequest.Split('-')[1].ToLower();
-
-            // The RequestSyntaxEngine doesn't have it's own settings file, so we hardcode the logSetting parameter.
-            Logger.Timestamped.LogEvent("trace", "TRACE", Assembly.GetExecutingAssembly().GetName().Name, $"mawsAction: {mawsAction}");
+            LogEvent.Timestamped("trace", "TRACE", Assembly.GetExecutingAssembly().GetName().Name, $"The MAWS action is: {mawsAction}");
 
             return mawsAction;
         }
@@ -51,11 +51,33 @@ namespace RequestSyntaxEngine
             var mawsOption = mawsRequest.Split('-').Length >= 3
                 ? mawsRequest.Split('-')[2].ToLower()
                 : "none";
-
-            // The RequestSyntaxEngine doesn't have it's own settings file, so we hardcode the logSetting parameter.
-            Logger.Timestamped.LogEvent("trace", "TRACE", Assembly.GetExecutingAssembly().GetName().Name, $"mawsOption: {mawsOption}");
+            LogEvent.Timestamped("trace", "TRACE", Assembly.GetExecutingAssembly().GetName().Name, $"The MAWS option is: {mawsOption}");
 
             return mawsOption;
         }
     }
 }
+
+/* =================
+ * DEVELOPMENT NOTES
+ * =================
+ *
+ * -------------
+ * GetCommand()
+ * -------------
+ * - The paramaters for the LogEvent command are hardcoded here because it's a single line, and it's easier/cleaner to
+ *   do it this way.
+ *
+ * -------------
+ * GetAction()
+ * -------------
+ * - The paramaters for the LogEvent command are hardcoded here because it's a single line, and it's easier/cleaner to
+ *   do it this way.
+ *
+ * -------------
+ * GetOption()
+ * -------------
+ * - The paramaters for the LogEvent command are hardcoded here because it's a single line, and it's easier/cleaner to
+ *   do it this way.
+ *
+ */

@@ -13,7 +13,7 @@
 using System.IO;
 using System.Reflection;
 
-namespace Logger
+namespace Utility
 {
     public class Maintenance
     {

@@ -5,15 +5,19 @@
  *          Copyright 2021 A Pretty Cool Program All rights reserved
  */
 
+/* Determines which MAWS Action to execute for the InptAdmitDate Command.
+ */
+
 using System.Collections.Generic;
 using System.Reflection;
 using NTST.ScriptLinkService.Objects;
+using Utility;
 
 namespace InptAdmitDate
 {
     public class Execute
     {
-        public static Dictionary<string, string> InptAdmitDateSetting;
+        //public static Dictionary<string, string> InptAdmitDateSetting;
 
         /// <summary>
         /// Executes a MAWS action for the InptAdmitDate command.
@@ -23,25 +27,30 @@ namespace InptAdmitDate
         /// <returns>A completed OptionObject2015.</returns>
         public static OptionObject2015 Action(OptionObject2015 sentOptionObject2015, string mawsRequest)
         {
-            InptAdmitDateSetting = Settings.GetSettings();
+            Dictionary<string, string>  inptAdmitDateSetting = AppSettings.LoadFromKeyValuePairFile(@"C:\MAWS\InptAdmitDate.settings");
+            var logSetting                                   = inptAdmitDateSetting["Logging"].ToLower();
+            var assemblyName                                 = Assembly.GetExecutingAssembly().GetName().Name;
+            var mawsAction                                   = RequestSyntaxEngine.RequestComponent.GetAction(mawsRequest);
+            var mawsOption                                   = RequestSyntaxEngine.RequestComponent.GetOption(mawsRequest);
+            LogEvent.Timestamped(logSetting, "TRACE", assemblyName, $"Execute InptAdmitDate Action: {mawsAction} Option: {mawsOption}]");
 
-            var mawsAction                = RequestSyntaxEngine.RequestComponent.GetAction(mawsRequest);
-            var mawsOption                = RequestSyntaxEngine.RequestComponent.GetOption(mawsRequest);
-            Logger.Timestamped.LogEvent(InptAdmitDateSetting["Logging"].ToLower(), "TRACE", Assembly.GetExecutingAssembly().GetName().Name, $"Execute InptAdmitDate Action: {mawsAction} [Option={mawsOption}]");
+            // DEPRECIATED
+            //InptAdmitDateSetting = Settings.GetSettings();
+            //var mawsAction                = RequestSyntaxEngine.RequestComponent.GetAction(mawsRequest);
+            //var mawsOption                = RequestSyntaxEngine.RequestComponent.GetOption(mawsRequest);
+            //Logger.Timestamped.LogEvent(InptAdmitDateSetting["Logging"].ToLower(), "TRACE", Assembly.GetExecutingAssembly().GetName().Name, $"Execute InptAdmitDate Action: {mawsAction} [Option={mawsOption}]");
 
             var inptAdmitDateOptionObject = new OptionObject2015();
 
             switch(mawsAction)
             {
                 case "comparepreadmittoadmit":
-                    Logger.Timestamped.LogEvent(InptAdmitDateSetting["Logging"].ToLower(), "TRACE", Assembly.GetExecutingAssembly().GetName().Name, $"Executing InptAdmitDate Action: comparepreadmittoadmit [Option={mawsOption}]");
-                    inptAdmitDateOptionObject = mawsOption == "testing"
-                        ? Compare.PreAdmitToAdmit_Testing(sentOptionObject2015, InptAdmitDateSetting)
-                        : Compare.PreAdmitToAdmit(sentOptionObject2015, InptAdmitDateSetting);
+                    LogEvent.Timestamped(logSetting, "TRACE", assemblyName, $"Executing InptAdmitDate Action: ComparePreAdmitToAdmit [{mawsAction}] [Option: {mawsOption}]");
+                    Compare.PreAdmitToAdmit(sentOptionObject2015, InptAdmitDateSetting);
                     break;
 
                 default:
-                    Logger.Timestamped.LogEvent(InptAdmitDateSetting["Logging"].ToLower(), "TRACE", Assembly.GetExecutingAssembly().GetName().Name, $"Invalid InptAdmitDate Action: \"{mawsAction}\"");
+                    LogEvent.Timestamped(logSetting, "ERROR", assemblyName, $"Invalid InptAdmitDate Action: \"{mawsAction}\"");
                     break;
             }
 
@@ -49,3 +58,8 @@ namespace InptAdmitDate
         }
     }
 }
+
+/* =================
+ * DEVELOPMENT NOTES
+ * =================
+ */

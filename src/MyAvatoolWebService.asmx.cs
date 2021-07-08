@@ -1,6 +1,6 @@
 ﻿/* PROJECT: MyAvatoolWebService (https://github.com/aprettycoolprogram/MyAvatoolWebService)
  *    FILE: MyAvatoolWebService.MyAvatoolWebService.asmx.cs
- * UPDATED: 7-7-2021-11:55 AM
+ * UPDATED: 7-8-2021-9:32 AM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2021 A Pretty Cool Program All rights reserved
  */
@@ -12,7 +12,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using System.Web.Services;
 using NTST.ScriptLinkService.Objects;
-using Logger;
+using Utility;
 
 namespace MyAvatoolWebService
 {
@@ -24,7 +24,7 @@ namespace MyAvatoolWebService
     [System.ComponentModel.ToolboxItem(false)]
     public class MyAvatoolWebService : WebService
     {
-        //public Dictionary<string, string> MawsSetting;
+        //public Dictionary<string, string> MawsSetting; // Depreciated: moved closer.
 
         /// <summary>
         /// Returns the MAWS version.
@@ -48,7 +48,7 @@ namespace MyAvatoolWebService
         [WebMethod]
         public OptionObject2015 RunScript(OptionObject2015 sentOptionObject, string mawsRequest)
         {
-            Dictionary<string, string> MawsSetting = Settings.GetSettings();
+            Dictionary<string, string> MawsSetting = AppSettings.LoadFromKeyValuePairFile(@"C:\MAWS\MAWS.settings");
             var logSetting                         = MawsSetting["Logging"].ToLower();
             var assemblyName                       = Assembly.GetExecutingAssembly().GetName().Name;
             LogEvent.Timestamped(logSetting, "TRACE", assemblyName, $"Initial MAWS Request: {mawsRequest}");

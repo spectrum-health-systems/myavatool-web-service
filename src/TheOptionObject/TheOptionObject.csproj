@@ -46,10 +46,6 @@
     <Compile Include="Settings.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Logger\Logger.csproj">
-      <Project>{b891c735-82a1-4914-995e-748bc9879b74}</Project>
-      <Name>Logger</Name>
-    </ProjectReference>
     <ProjectReference Include="..\NTST.ScriptLinkService.Objects\NTST.ScriptLinkService.Objects.vbproj">
       <Project>{8a8a6089-3286-42e6-9f76-b61784709654}</Project>
       <Name>NTST.ScriptLinkService.Objects</Name>
@@ -57,6 +53,10 @@
     <ProjectReference Include="..\RequestSyntaxEngine\RequestSyntaxEngine.csproj">
       <Project>{8175dce4-73b5-45ea-ae68-1333663b8632}</Project>
       <Name>RequestSyntaxEngine</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utility\Utility.csproj">
+      <Project>{b0191275-7279-4cb7-a183-6fccec05a176}</Project>
+      <Name>Utility</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -1,6 +1,6 @@
 ﻿/* PROJECT: TheOptionObject (https://github.com/aprettycoolprogram/TheOptionObject)
  *    FILE: TheOptionObject.Finalize.cs
- * UPDATED: 7-1-2021-8:46 PM
+ * UPDATED: 7-8-2021-10:30 AM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2021 A Pretty Cool Program All rights reserved
  */
@@ -9,12 +9,13 @@ using System;
 using System.Collections.Generic;
 using System.Reflection;
 using NTST.ScriptLinkService.Objects;
+using Utility;
 
 namespace TheOptionObject
 {
     public class Finalize
     {
-        public static Dictionary<string, string> theOptionObjectSetting;
+        //public static Dictionary<string, string> theOptionObjectSetting;
 
         /// <summary>
         /// Confirms various fields in an OptionObject2015 object are populated.
@@ -26,22 +27,24 @@ namespace TheOptionObject
              * all of the fields of an OptionObject2015 object that are not explicitly set are populated with the
              * original values in "sentOptionObject".
              */
-            theOptionObjectSetting = Settings.GetSettings();
 
-            Logger.Timestamped.LogEvent(theOptionObjectSetting["Logging"].ToLower(), "TRACE", Assembly.GetExecutingAssembly().GetName().Name, "In WhichComponents.");
+            Dictionary<string, string>  theOptionObjectSetting = AppSettings.LoadFromKeyValuePairFile(@"C:\MAWS\TheOptionObject.settings");
+            var logSetting                                     = theOptionObjectSetting["Logging"].ToLower();
+            var assemblyName                                   = Assembly.GetExecutingAssembly().GetName().Name;
+            LogEvent.Timestamped(logSetting, "TRACE", assemblyName, "Finalizing OptionObject.");
 
             var finalizedOptionObject = new OptionObject2015();
 
-            FinalizeRequiredFields(sentOptionObject, finalizedOptionObject);
+            FinalizeRequiredFields(sentOptionObject, finalizedOptionObject, logSetting, assemblyName);
 
             if(finalizeRecommended)
             {
-                FinalizeRecommendedFields(sentOptionObject, workingOptionObject, finalizedOptionObject);
+                FinalizeRecommendedFields(sentOptionObject, workingOptionObject, finalizedOptionObject, logSetting, assemblyName);
             }
 
             if(finalizeNotRecommended)
             {
-                FinalizeNonRecommendedFields(sentOptionObject, finalizedOptionObject);
+                FinalizeNonRecommendedFields(sentOptionObject, finalizedOptionObject, logSetting, assemblyName);
             }
 
             return finalizedOptionObject;
@@ -51,7 +54,7 @@ namespace TheOptionObject
         /// Confirms the required fields for a valid OptionObject2015 object are populated.
         /// </summary>
         /// <returns>An OptionObject2015 object with all required fields populated.</returns>
-        private static void FinalizeRequiredFields(OptionObject2015 sentOptionObject, OptionObject2015 finalizedOptionObject)
+        private static void FinalizeRequiredFields(OptionObject2015 sentOptionObject, OptionObject2015 finalizedOptionObject, string logSetting, string assemblyName)
         {
             finalizedOptionObject.EntityID = sentOptionObject.EntityID;
             finalizedOptionObject.Facility = sentOptionObject.Facility;
@@ -69,15 +72,14 @@ namespace TheOptionObject
                                                 $"finalizedOptionObject.ParentNamespace={finalizedOptionObject.ParentNamespace}{Environment.NewLine}" +
                                                 $"finalizedOptionObject.ServerName={finalizedOptionObject.ServerName}{Environment.NewLine}" +
                                                 $"finalizedOptionObject.SystemCode={finalizedOptionObject.SystemCode}";
-
-            Logger.Timestamped.LogEvent(theOptionObjectSetting["Logging"].ToLower(), "TRACE", Assembly.GetExecutingAssembly().GetName().Name, finalizeRequiredFieldsMessage);
+            LogEvent.Timestamped(logSetting, "TRACE", assemblyName, finalizeRequiredFieldsMessage);
         }
 
         /// <summary>
         /// Confirms the recommended fields for a valid OptionObject2015 object are populated.
         /// </summary>
         /// <returns>An OptionObject2015 object with all recommended fields populated.</returns>
-        private static void FinalizeRecommendedFields(OptionObject2015 sentOptionObject, OptionObject2015 workingOptionObject, OptionObject2015 finalizedOptionObject)
+        private static void FinalizeRecommendedFields(OptionObject2015 sentOptionObject, OptionObject2015 workingOptionObject, OptionObject2015 finalizedOptionObject, string logSetting, string assemblyName)
         {
             finalizedOptionObject.EpisodeNumber = sentOptionObject.EpisodeNumber;
             finalizedOptionObject.OptionStaffId = sentOptionObject.OptionStaffId;
@@ -89,13 +91,13 @@ namespace TheOptionObject
             {
                 finalizedOptionObject.ErrorCode = workingOptionObject.ErrorCode;
                 finalizedOptionObject.ErrorMesg = workingOptionObject.ErrorMesg;
-                Logger.Timestamped.LogEvent(theOptionObjectSetting["Logging"].ToLower(), "TRACE", Assembly.GetExecutingAssembly().GetName().Name, "ErrorCode >= 1");
+                LogEvent.Timestamped(logSetting, "TRACE", assemblyName, "ErrorCode >= 1");
             }
             else
             {
                 finalizedOptionObject.ErrorCode = sentOptionObject.ErrorCode;
                 finalizedOptionObject.ErrorMesg = sentOptionObject.ErrorMesg;
-                Logger.Timestamped.LogEvent(theOptionObjectSetting["Logging"].ToLower(), "TRACE", Assembly.GetExecutingAssembly().GetName().Name, "ErrorCode = 1");
+                LogEvent.Timestamped(logSetting, "TRACE", assemblyName, "ErrorCode = 1");
             }
 
             var finalizeRecommendedFieldsMessage = $"FinalizeRequiredFields values:{Environment.NewLine}" +
@@ -105,17 +107,17 @@ namespace TheOptionObject
                                                    $"finalizedOptionObject.ErrorCode={finalizedOptionObject.ErrorCode}{Environment.NewLine}" +
                                                    $"finalizedOptionObject.ErrorMesg={finalizedOptionObject.ErrorMesg}";
 
-            Logger.Timestamped.LogEvent(theOptionObjectSetting["Logging"].ToLower(), "TRACE", Assembly.GetExecutingAssembly().GetName().Name, finalizeRecommendedFieldsMessage);
+            LogEvent.Timestamped(logSetting, "TRACE", assemblyName, finalizeRecommendedFieldsMessage);
         }
 
         /// Confirms the non-recommended fields for a valid OptionObject2015 object are populated.
         /// </summary>
         /// <returns>An OptionObject2015 object with all required fields populated.</returns>
-        private static void FinalizeNonRecommendedFields(OptionObject2015 sentOptionObject, OptionObject2015 completedOptionObject2)
+        private static void FinalizeNonRecommendedFields(OptionObject2015 sentOptionObject, OptionObject2015 completedOptionObject2, , string logSetting, string assemblyName)
         {
             //Logger.WriteToTimestampedFile($"[DEBUG-0090]OptionObjectMaintenance.FinalizeNonRecommendedFields()", $"This shouldn't happen!");
             completedOptionObject2.Forms = sentOptionObject.Forms;
-            Logger.Timestamped.LogEvent(theOptionObjectSetting["Logging"].ToLower(), "TRACE", Assembly.GetExecutingAssembly().GetName().Name, "Uh oh! This shouldn't have happened!");
+            LogEvent.Timestamped(logSetting, "TRACE", assemblyName, "Uh oh! This shouldn't have happened!");
         }
     }
 }

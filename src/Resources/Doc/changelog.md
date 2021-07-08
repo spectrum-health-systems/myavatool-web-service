@@ -25,6 +25,19 @@ Version 1.0
 ## Version 0.14
 * Code/comment/documentation cleanup in preparation for Dose command testing.
 
+#### v0.14.21189.1423 (2021-07-08)
+* `INFO` Code/comment/documentation cleanup.
+* `MODIFIED` Logger.cs -> Utility.cs
+##### Dose
+* `REMOVED` Verify.Percentage_Testing.cs
+* `REMOVED` Setting.cs (funcationality moved to Utility.AppSettings.cs)
+##### InptAdmtDate
+* `REMOVED` Compare.PreAdmitToAdmit_Testing.cs
+* `REMOVED` Setting.cs (funcationality moved to Utility.AppSettings.cs)
+##### Utility (previously Logger)
+* `ADDED` Setting.cs
+* `MODIFIED` Started migrating LogEvent code
+
 #### v0.14.21188.1607 (2021-07-07)
 * `WARN` This version doesn't work, I'm halfway through updating the logging functionality.
 * `INFO` Code/comment/documentation cleanup.
