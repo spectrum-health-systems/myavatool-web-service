@@ -1,6 +1,6 @@
 ﻿/* PROJECT: Dose (https://github.com/aprettycoolprogram/Dose)
  *    FILE: Dose.Verify.cs
- * UPDATED: 7-8-2021-1:58 PM
+ * UPDATED: 7-8-2021-2:09 PM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2021 A Pretty Cool Program All rights reserved
  */
@@ -83,10 +83,7 @@ namespace Dose
             // 1. Parse the lastOrderScheduledText and get the milligrams
             // 2. Check what the percentage difference between the current does and the last dose
 
-            
-
-
-            LogEvent.Timestamped(logSetting, "TRACE", assemblyName, "Faking percentage.");
+            LogEvent.Timestamped(logSetting, "TRACE", assemblyName, $"Current doseage: {currentDose}, Last Order: {lastOrderScheduledText}");
 
             if(percentageDifference >= maxPercentIncrease)
             {
