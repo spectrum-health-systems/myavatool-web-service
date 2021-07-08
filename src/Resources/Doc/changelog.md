@@ -17,6 +17,9 @@ Version 1.0
 ## Version 0.15
 * Foundational work on Dose functionality.
 
+#### v0.15.21189.2018 (2021-07-08)
+* `INFO` Clean build for testing.
+
 #### v0.15.21189.1853 (2021-07-08)
 * `INFO` Clean build for testing.
 * `ADDED` Basic Dose command functionality

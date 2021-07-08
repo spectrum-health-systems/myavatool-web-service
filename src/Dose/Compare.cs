@@ -1,6 +1,6 @@
 ﻿/* PROJECT: Dose (https://github.com/aprettycoolprogram/Dose)
  *    FILE: Dose.Compare.cs
- * UPDATED: 7-8-2021-2:53 PM
+ * UPDATED: 7-8-2021-4:18 PM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2021 A Pretty Cool Program All rights reserved
  */
@@ -41,7 +41,7 @@ namespace Dose
                 LogEvent.Timestamped(logSetting, "TRACE", assemblyName, "In form loop.");
                 foreach(FieldObject field in form.CurrentRow.Fields)
                 {
-                    LogEvent.Timestamped(logSetting, "TRACE", assemblyName, "In field loop.");
+                    LogEvent.Timestamped(logSetting, "TRACE", assemblyName, $"In field loop. {foundDosageOneFieldId},{foundLastOrderScheduledFieldId}");
                     switch(field.FieldNumber)
                     {
                         case dosageOneFieldId:
@@ -78,20 +78,29 @@ namespace Dose
 
             var errMsgBody = string.Empty;
             var errMsgCode = 0;
+            LogEvent.Timestamped(logSetting, "TRACE", assemblyName, "1");
 
             // 1. Parse the lastOrderScheduledText and get the milligrams
             // 2. Check what the percentage difference between the current does and the last dose
 
-            var previousDosagePrefix = doseSetting["PreviousDosagPrefix"];
-            var previousDosageSuffix = doseSetting["PreviousDosagPrefix"];
+            var previousDosagePrefix = doseSetting["PreviousDosagePrefix"];
+            var previousDosageSuffix = doseSetting["PreviousDosageSuffix"];
+            LogEvent.Timestamped(logSetting, "TRACE", assemblyName, "2");
 
-            var previousDosage = lastOrderScheduledText.Replace($"{previousDosagePrefix}", "");
-            previousDosage = previousDosage .Replace($"{previousDosageSuffix}", "");
+            var liners = lastOrderScheduledText.Split('\n');
 
-            LogEvent.Timestamped(logSetting, "TRACE", assemblyName, $"Current doseage: {currentDose}, Last Order: {lastOrderScheduledText}, Previous dosage: {previousDosage}");
+            var needLine = liners[1];
+
+            var test = needLine.Replace("Recurring Dosage: ", "");
+            LogEvent.Timestamped(logSetting, "TRACE", assemblyName, $"3: {needLine}, {test}");
+
+            var test2 = test.Replace(" mgs", "");
+            LogEvent.Timestamped(logSetting, "TRACE", assemblyName, $"4: {test2}");
+
+            LogEvent.Timestamped(logSetting, "TRACE", assemblyName, $"Current doseage: {currentDose}, Last Order: {lastOrderScheduledText}, Previous dosage! {test2}");
 
             var currDose = Convert.ToInt32(currentDose);
-            var prevDose = Convert.ToInt32(previousDosage);
+            var prevDose = Convert.ToInt32(test);
 
             var percentDifference = currDose/prevDose;
 
