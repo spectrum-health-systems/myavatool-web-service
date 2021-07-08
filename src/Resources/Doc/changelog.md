@@ -17,7 +17,13 @@ Version 1.0
 ## Version 0.15
 * Foundational work on Dose functionality.
 
-#### v0.15.21189.1822 (2021-07-07)
+#### v0.15.21189.1853 (2021-07-08)
+* `INFO` Clean build for testing.
+* `ADDED` Basic Dose command functionality
+* `MODIFIED` Renamed Dose.Verify.cs -> Dose.Compare.cs
+* `ADDED` Settings for verifying dose information
+
+#### v0.15.21189.1822 (2021-07-08)
 * `INFO` Initial v0.15 version.
 * `INFO` Archived v0.14.
 

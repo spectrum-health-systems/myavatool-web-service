@@ -47,3 +47,18 @@
 * InptAdmitDate-ComparePreAdmitToAdmit functionality
 
 ## Queue
+
+
+
+
+
+
+
+
+
+* Last dose always the same verbage? Always the same spacing?
+* What if we just look at what was before "mg"
+* Different verbage/text for other medications?
+* Do we need to compartmentalize Methadone -vs- Bup -vs- whatever?
+* Force single dose for now?
+* int enough, or do we need double?
