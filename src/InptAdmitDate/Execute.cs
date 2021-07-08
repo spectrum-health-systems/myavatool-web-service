@@ -1,6 +1,6 @@
 ﻿/* PROJECT: InptAdmitDate (https://github.com/aprettycoolprogram/InptAdmitDate)
  *    FILE: InptAdmitDate.Execute.cs
- * UPDATED: 7-1-2021-8:45 PM
+ * UPDATED: 7-8-2021-10:42 AM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2021 A Pretty Cool Program All rights reserved
  */
@@ -27,7 +27,7 @@ namespace InptAdmitDate
         /// <returns>A completed OptionObject2015.</returns>
         public static OptionObject2015 Action(OptionObject2015 sentOptionObject2015, string mawsRequest)
         {
-            Dictionary<string, string>  inptAdmitDateSetting = AppSettings.LoadFromKeyValuePairFile(@"C:\MAWS\InptAdmitDate.settings");
+            Dictionary<string, string>  inptAdmitDateSetting = AppSettings.FromKeyValuePairFile(@"C:\MAWS\InptAdmitDate.settings");
             var logSetting                                   = inptAdmitDateSetting["Logging"].ToLower();
             var assemblyName                                 = Assembly.GetExecutingAssembly().GetName().Name;
             var mawsAction                                   = RequestSyntaxEngine.RequestComponent.GetAction(mawsRequest);
@@ -46,7 +46,7 @@ namespace InptAdmitDate
             {
                 case "comparepreadmittoadmit":
                     LogEvent.Timestamped(logSetting, "TRACE", assemblyName, $"Executing InptAdmitDate Action: ComparePreAdmitToAdmit [{mawsAction}] [Option: {mawsOption}]");
-                    Compare.PreAdmitToAdmit(sentOptionObject2015, InptAdmitDateSetting);
+                    Compare.PreAdmitToAdmit(sentOptionObject2015, inptAdmitDateSetting);
                     break;
 
                 default:

@@ -28,7 +28,7 @@ namespace TheOptionObject
              * original values in "sentOptionObject".
              */
 
-            Dictionary<string, string>  theOptionObjectSetting = AppSettings.LoadFromKeyValuePairFile(@"C:\MAWS\TheOptionObject.settings");
+            Dictionary<string, string>  theOptionObjectSetting = AppSettings.FromKeyValuePairFile(@"C:\MAWS\TheOptionObject.settings");
             var logSetting                                     = theOptionObjectSetting["Logging"].ToLower();
             var assemblyName                                   = Assembly.GetExecutingAssembly().GetName().Name;
             LogEvent.Timestamped(logSetting, "TRACE", assemblyName, "Finalizing OptionObject.");
@@ -113,7 +113,7 @@ namespace TheOptionObject
         /// Confirms the non-recommended fields for a valid OptionObject2015 object are populated.
         /// </summary>
         /// <returns>An OptionObject2015 object with all required fields populated.</returns>
-        private static void FinalizeNonRecommendedFields(OptionObject2015 sentOptionObject, OptionObject2015 completedOptionObject2, , string logSetting, string assemblyName)
+        private static void FinalizeNonRecommendedFields(OptionObject2015 sentOptionObject, OptionObject2015 completedOptionObject2, string logSetting, string assemblyName)
         {
             //Logger.WriteToTimestampedFile($"[DEBUG-0090]OptionObjectMaintenance.FinalizeNonRecommendedFields()", $"This shouldn't happen!");
             completedOptionObject2.Forms = sentOptionObject.Forms;

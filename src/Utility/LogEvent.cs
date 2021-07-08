@@ -1,6 +1,6 @@
 ﻿/* PROJECT: Utility (https://github.com/aprettycoolprogram/Utility)
  *    FILE: Utility.LogEvent.cs
- * UPDATED: 7-8-2021-9:39 AM
+ * UPDATED: 7-8-2021-12:22 PM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2021 A Pretty Cool Program All rights reserved
  */
@@ -61,9 +61,9 @@ namespace Utility
 
             var hourStamp         = DateTime.Now.ToString($"HH");
             var minuteSecondStamp = DateTime.Now.ToString($"mmss");
-            var millisecondStamp  = DateTime.Now.ToString($"FFFFFFF");
+            var millisecondStamp  = DateTime.Now.ToString($"fffffff");
 
-            var logFilePath = $"{logDirectoryPath}/{minuteSecondStamp}{millisecondStamp}_{logType}-{assemblyName}-{Path.GetFileName(callerfilePath)}-{callerMemberName}.mawslog";
+            var logFilePath = $"{logDirectoryPath}/{minuteSecondStamp}-{millisecondStamp}_{logType}_{assemblyName}-{Path.GetFileName(callerfilePath)}-{callerMemberName}.mawslog";
             var logContents = $"Message{Environment.NewLine}" +
                               $"======={Environment.NewLine}" +
                               $"{logMessage}{Environment.NewLine}" +

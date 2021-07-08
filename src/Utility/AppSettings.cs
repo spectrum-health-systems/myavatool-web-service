@@ -1,8 +1,11 @@
 ﻿/* PROJECT: Utility (https://github.com/aprettycoolprogram/Utility)
- *    FILE: Utility.Settings.cs
- * UPDATED: 7-8-2021-9:48 AM
+ *    FILE: Utility.AppSettings.cs
+ * UPDATED: 7-8-2021-12:14 PM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2021 A Pretty Cool Program All rights reserved
+ */
+
+/* Loads settings from an external file.
  */
 
 using System.Collections.Generic;
@@ -13,42 +16,69 @@ namespace Utility
     public class AppSettings
     {
         /// <summary>
-        /// Gets the settings information from Dose.settings.
+        /// Loads setting values from a file with key/value pairs.
         /// </summary>
-        /// <returns>The MAWS settings dictionary.</returns>
-        public static Dictionary<string, string> LoadFromKeyValuePairFile(string settingsFilePath)
+        /// <param name="filePath">Path to the settings file.</param>
+        /// <returns>A dictionary with the setting values.</returns>
+        public static Dictionary<string, string> FromKeyValuePairFile(string filePath)
         {
-            var settings = new Dictionary<string, string>();
+            List<string> settingsAsList = SettingsAsList(filePath);
 
-            if(File.Exists(settingsFilePath))
+            return SettingsAsDictionary(settingsAsList);
+        }
+
+        /// <summary>
+        /// Put valid setting lines from the a .settings file into a list.
+        /// </summary>
+        /// <param name="filePath">Path to the settings file.</param>
+        /// <returns>A list with valid key/value pair setting lines.</returns>
+        public static List<string> SettingsAsList(string filePath)
+        {
+            var fileAsList = new List<string>();
+
+            if(File.Exists(filePath))
             {
-                var    settingsFileStream = new StreamReader(settingsFilePath);
-                var    settingsAsList     = new List<string>();
-                string settingLine;
+                var fileStream = new StreamReader(filePath);
+                var fileLine   = "";
 
-                using(settingsFileStream)
+                using(fileStream)
                 {
-                    while((settingLine = settingsFileStream.ReadLine()) != null)
+                    while((fileLine = fileStream.ReadLine()) != null)
                     {
-                        settingsAsList.Add(settingLine.Trim());
-                    }
-                }
+                        fileLine = fileLine.Trim();
 
-                string[] keyValuePair;
+                        var lineContainsData   = !string.IsNullOrWhiteSpace(fileLine);
+                        var lineIsNotComment   = !fileLine.StartsWith("#");
+                        var lineIsKeyValuePair = fileLine.Contains("=");
 
-                foreach(var item in settingsAsList)
-                {
-                    if(!item.StartsWith("#"))
-                    {
-                        keyValuePair = item.Split('=');
-                        settings.Add(keyValuePair[0], keyValuePair[1]);
+                        if(lineContainsData && lineIsNotComment && lineIsKeyValuePair)
+                        {
+                            fileAsList.Add(fileLine);
+                        }
                     }
                 }
             }
 
-            //TODO Should have a error message here/log.
+            return fileAsList;
+        }
 
-            return settings;
+        /// <summary>
+        ///
+        /// </summary>
+        /// <param name="fileAsList"></param>
+        /// <returns></returns>
+        public static Dictionary<string, string> SettingsAsDictionary(List<string> fileAsList)
+        {
+            string[] keyValuePair;
+            var settingPairs = new Dictionary<string, string>();
+
+            foreach(var item in fileAsList)
+            {
+                keyValuePair = item.Split('=');
+                settingPairs.Add(keyValuePair[0], keyValuePair[1]);
+            }
+
+            return settingPairs;
         }
     }
 }

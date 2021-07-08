@@ -48,7 +48,7 @@ namespace MyAvatoolWebService
         [WebMethod]
         public OptionObject2015 RunScript(OptionObject2015 sentOptionObject, string mawsRequest)
         {
-            Dictionary<string, string> MawsSetting = AppSettings.LoadFromKeyValuePairFile(@"C:\MAWS\MAWS.settings");
+            Dictionary<string, string> MawsSetting = AppSettings.FromKeyValuePairFile(@"C:\MAWS\MAWS.settings");
             var logSetting                         = MawsSetting["Logging"].ToLower();
             var assemblyName                       = Assembly.GetExecutingAssembly().GetName().Name;
             LogEvent.Timestamped(logSetting, "TRACE", assemblyName, $"Initial MAWS Request: {mawsRequest}");
