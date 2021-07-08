@@ -1,6 +1,6 @@
 ﻿/* PROJECT: Dose (https://github.com/aprettycoolprogram/Dose)
  *    FILE: Dose.Compare.cs
- * UPDATED: 7-8-2021-2:24 PM
+ * UPDATED: 7-8-2021-2:22 PM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2021 A Pretty Cool Program All rights reserved
  */

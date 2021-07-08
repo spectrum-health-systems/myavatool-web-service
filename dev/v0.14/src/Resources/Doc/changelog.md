@@ -17,9 +17,8 @@ Version 1.0
 ## Version 0.15
 * Foundational work on Dose functionality.
 
-#### v0.15.21189.1822 (2021-07-07)
-* `INFO` Initial v0.15 version.
-* `INFO` Archived v0.14.
+#### v0.15 (2021-07-07)
+* `INFO` Initial v0.14 version.
 
 ***
 
