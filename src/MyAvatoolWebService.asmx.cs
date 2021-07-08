@@ -1,6 +1,6 @@
 ﻿/* PROJECT: MyAvatoolWebService (https://github.com/aprettycoolprogram/MyAvatoolWebService)
  *    FILE: MyAvatoolWebService.MyAvatoolWebService.asmx.cs
- * UPDATED: 7-8-2021-9:32 AM
+ * UPDATED: 7-8-2021-12:23 PM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2021 A Pretty Cool Program All rights reserved
  */
@@ -34,7 +34,7 @@ namespace MyAvatoolWebService
         public string GetVersion()
         {
             // This line has to be commented out in production, otherwise MAWS will not work!
-            ForceTest();
+            //ForceTest();
 
             return "VERSION 1.0";
         }

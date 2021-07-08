@@ -25,6 +25,9 @@ Version 1.0
 ## Version 0.14
 * Code/comment/documentation cleanup in preparation for Dose command testing.
 
+#### v0.14.21189.1623 (2021-07-08)
+* `INFO` Clean build for testing.
+
 #### v0.14.21189.1622 (2021-07-08)
 * `INFO` Code/comment/documentation cleanup.
 ##### Utility (previously Logger)
