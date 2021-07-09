@@ -27,7 +27,7 @@ namespace Dose
         /// <returns>A completed OptionObject2015.</returns>
         public static OptionObject2015 Action(OptionObject2015 sentOptionObject, string mawsRequest)
         {
-            Dictionary<string, string>  doseSetting = AppSettings.FromKeyValuePairFile(@"C:\MAWS\Dose.settings");
+            Dictionary<string, string>  doseSetting = AppSettings.FromKeyValuePairFile("Dose.settings");
             var logSetting                          = doseSetting["Logging"].ToLower();
             var assemblyName                        = Assembly.GetExecutingAssembly().GetName().Name;
             var mawsAction                          = RequestSyntaxEngine.RequestComponent.GetAction(mawsRequest);

@@ -28,7 +28,7 @@ namespace TheOptionObject
              * original values in "sentOptionObject".
              */
 
-            Dictionary<string, string>  theOptionObjectSetting = AppSettings.FromKeyValuePairFile(@"C:\MAWS\TheOptionObject.settings");
+            Dictionary<string, string>  theOptionObjectSetting = AppSettings.FromKeyValuePairFile("TheOptionObject.settings");
             var logSetting                                     = theOptionObjectSetting["Logging"].ToLower();
             var assemblyName                                   = Assembly.GetExecutingAssembly().GetName().Name;
             LogEvent.Timestamped(logSetting, "TRACE", assemblyName, "Finalizing OptionObject.");

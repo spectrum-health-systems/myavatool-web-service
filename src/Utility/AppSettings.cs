@@ -20,8 +20,12 @@ namespace Utility
         /// </summary>
         /// <param name="filePath">Path to the settings file.</param>
         /// <returns>A dictionary with the setting values.</returns>
-        public static Dictionary<string, string> FromKeyValuePairFile(string filePath)
+        public static Dictionary<string, string> FromKeyValuePairFile(string fileName)
         {
+            // Production or staging
+            var filePath = $@"C:\MAWS\Staging\{fileName}";
+            //var filePath = $@"C:\MAWS\{fileName}";
+
             List<string> settingsAsList = SettingsAsList(filePath);
 
             return SettingsAsDictionary(settingsAsList);

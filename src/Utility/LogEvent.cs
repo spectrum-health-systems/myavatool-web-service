@@ -55,7 +55,10 @@ namespace Utility
                                        string callerMemberName, int callerLineNumber)
         {
             var dateStamp        = DateTime.Now.ToString("yyMMdd");
-            var logDirectoryPath = $"C:/MAWS/Logs/{dateStamp}";
+
+            // Production or staging.
+            var logDirectoryPath = $"C:/MAWS/Staging/Logs/{dateStamp}";
+            //var logDirectoryPath = $"C:/MAWS/Logs/{dateStamp}";
 
             Maintenance.ConfirmDirectoryExists(logDirectoryPath);
 

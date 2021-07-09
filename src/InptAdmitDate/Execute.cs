@@ -27,7 +27,7 @@ namespace InptAdmitDate
         /// <returns>A completed OptionObject2015.</returns>
         public static OptionObject2015 Action(OptionObject2015 sentOptionObject2015, string mawsRequest)
         {
-            Dictionary<string, string>  inptAdmitDateSetting = AppSettings.FromKeyValuePairFile(@"C:\MAWS\InptAdmitDate.settings");
+            Dictionary<string, string>  inptAdmitDateSetting = AppSettings.FromKeyValuePairFile("InptAdmitDate.settings");
             var logSetting                                   = inptAdmitDateSetting["Logging"].ToLower();
             var assemblyName                                 = Assembly.GetExecutingAssembly().GetName().Name;
             var mawsAction                                   = RequestSyntaxEngine.RequestComponent.GetAction(mawsRequest);

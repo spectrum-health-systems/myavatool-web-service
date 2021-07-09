@@ -1,6 +1,6 @@
 ﻿/* PROJECT: Dose (https://github.com/aprettycoolprogram/Dose)
  *    FILE: Dose.Compare.cs
- * UPDATED: 7-8-2021-4:18 PM
+ * UPDATED: 7-9-2021-8:57 AM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2021 A Pretty Cool Program All rights reserved
  */
@@ -24,10 +24,10 @@ namespace Dose
             const string dosageOneFieldId           = "107";
             const string lastOrderScheduledFieldId  = "142";
 
-            var currentDose = 0;
+            var currentDose = 0.0;
             var lastOrderScheduledText = "";
 
-            var percentageDifference = 0;
+            //var percentDifference = 0.0;
 
             var foundDosageOneFieldId          = false;
             var foundLastOrderScheduledFieldId = false;
@@ -91,32 +91,31 @@ namespace Dose
 
             var needLine = liners[1];
 
-            var test = needLine.Replace("Recurring Dosage: ", "");
+            var test = needLine.Replace($"{previousDosagePrefix}", "");
             LogEvent.Timestamped(logSetting, "TRACE", assemblyName, $"3: {needLine}, {test}");
 
-            var test2 = test.Replace(" mgs", "");
+            var test2 = test.Replace(previousDosageSuffix, "");
             LogEvent.Timestamped(logSetting, "TRACE", assemblyName, $"4: {test2}");
 
             LogEvent.Timestamped(logSetting, "TRACE", assemblyName, $"Current doseage: {currentDose}, Last Order: {lastOrderScheduledText}, Previous dosage! {test2}");
 
-            var currDose = Convert.ToInt32(currentDose);
-            var prevDose = Convert.ToInt32(test);
+            var previousDose = Convert.ToDouble(test2);
 
-            var percentDifference = currDose/prevDose;
+            var percentDifference = currentDose/previousDose;
 
-            LogEvent.Timestamped(logSetting, "TRACE", assemblyName, $"currDose: {currDose}, prevDose: {prevDose}, percentDifference: {percentDifference}");
+            LogEvent.Timestamped(logSetting, "TRACE", assemblyName, $"currDose: {currentDose}, prevDose: {previousDose}, percentDifference: {percentDifference}");
 
-            var maxPercentIncrease = Convert.ToInt32(doseSetting["PercentageMax"]);
+            var maxPercentIncrease = Convert.ToDouble(doseSetting["PercentageMax"]);
 
-            if(percentageDifference >= maxPercentIncrease)
+            if(percentDifference >= maxPercentIncrease)
             {
-                errMsgBody = $"WARNING\nThe percentage increas is too high! ({percentageDifference}%)";
+                errMsgBody = $"WARNING\nThe percentage increas is too high! ({percentDifference}%)";
                 errMsgCode = 1;
-                LogEvent.Timestamped(logSetting, "TRACE", assemblyName, $"Too high! ({percentageDifference}%)");
+                LogEvent.Timestamped(logSetting, "TRACE", assemblyName, $"Too high! ({percentDifference}%/{maxPercentIncrease}%)");
             }
             else
             {
-                LogEvent.Timestamped(logSetting, "TRACE", assemblyName, $"Just fine! ({percentageDifference}%)");
+                LogEvent.Timestamped(logSetting, "TRACE", assemblyName, $"Just fine! ({percentDifference}%/{maxPercentIncrease}%)");
             }
 
             var doseOptionObject2015 = new OptionObject2015();

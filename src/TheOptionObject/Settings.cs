@@ -16,38 +16,38 @@ namespace TheOptionObject
         /// Gets the settings information from TheOptionObject.settings file.
         /// </summary>
         /// <returns>The TheOptionObject settings dictionary.</returns>
-        public static Dictionary<string, string> GetSettings()
-        {
-            var theOptionObjectSettings     = new Dictionary<string, string>();
-            var theOptionObjectSettingsPath = @"C:/MAWS/TheOptionObject.settings";
+        //public static Dictionary<string, string> GetSettings()
+        //{
+        //    var theOptionObjectSettings     = new Dictionary<string, string>();
+        //    var theOptionObjectSettingsPath = @"C:/MAWS/TheOptionObject.settings";
 
-            if(File.Exists(theOptionObjectSettingsPath))
-            {
-                var    settingsFileStream = new StreamReader(theOptionObjectSettingsPath);
-                var    settingsAsList     = new List<string>();
-                string settingLine;
+        //    if(File.Exists(theOptionObjectSettingsPath))
+        //    {
+        //        var    settingsFileStream = new StreamReader(theOptionObjectSettingsPath);
+        //        var    settingsAsList     = new List<string>();
+        //        string settingLine;
 
-                using(settingsFileStream)
-                {
-                    while((settingLine = settingsFileStream.ReadLine()) != null)
-                    {
-                        settingsAsList.Add(settingLine.Trim());
-                    }
-                }
+        //        using(settingsFileStream)
+        //        {
+        //            while((settingLine = settingsFileStream.ReadLine()) != null)
+        //            {
+        //                settingsAsList.Add(settingLine.Trim());
+        //            }
+        //        }
 
-                string[] keyValuePair;
+        //        string[] keyValuePair;
 
-                foreach(var item in settingsAsList)
-                {
-                    if(!item.StartsWith("#"))
-                    {
-                        keyValuePair = item.Split('=');
-                        theOptionObjectSettings.Add(keyValuePair[0], keyValuePair[1]);
-                    }
-                }
-            }
+        //        foreach(var item in settingsAsList)
+        //        {
+        //            if(!item.StartsWith("#"))
+        //            {
+        //                keyValuePair = item.Split('=');
+        //                theOptionObjectSettings.Add(keyValuePair[0], keyValuePair[1]);
+        //            }
+        //        }
+        //    }
 
-            return theOptionObjectSettings;
-        }
+        //    return theOptionObjectSettings;
+        //}
     }
 }

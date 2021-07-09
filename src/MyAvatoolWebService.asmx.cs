@@ -1,6 +1,6 @@
 ﻿/* PROJECT: MyAvatoolWebService (https://github.com/aprettycoolprogram/MyAvatoolWebService)
  *    FILE: MyAvatoolWebService.MyAvatoolWebService.asmx.cs
- * UPDATED: 7-8-2021-12:23 PM
+ * UPDATED: 7-9-2021-9:09 AM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2021 A Pretty Cool Program All rights reserved
  */
@@ -36,7 +36,7 @@ namespace MyAvatoolWebService
             // This line has to be commented out in production, otherwise MAWS will not work!
             //ForceTest();
 
-            return "VERSION 1.0";
+            return "VERSION 0.15";
         }
 
         /// <summary>
@@ -48,7 +48,7 @@ namespace MyAvatoolWebService
         [WebMethod]
         public OptionObject2015 RunScript(OptionObject2015 sentOptionObject, string mawsRequest)
         {
-            Dictionary<string, string> MawsSetting = AppSettings.FromKeyValuePairFile(@"C:\MAWS\MAWS.settings");
+            Dictionary<string, string> MawsSetting = AppSettings.FromKeyValuePairFile("MAWS.settings");
             var logSetting                         = MawsSetting["Logging"].ToLower();
             var assemblyName                       = Assembly.GetExecutingAssembly().GetName().Name;
             LogEvent.Timestamped(logSetting, "TRACE", assemblyName, $"Initial MAWS Request: {mawsRequest}");

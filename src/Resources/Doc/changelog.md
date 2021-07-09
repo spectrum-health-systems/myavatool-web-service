@@ -17,6 +17,16 @@ Version 1.0
 ## Version 0.15
 * Foundational work on Dose functionality.
 
+#### v0.15.21190.1333 (2021-07-09)
+* `INFO` Clean build for testing.
+* `REMOVED` Logger project
+* `REMOVED` Test project
+* `REMOVED` MyAvatoolWebService.Settings.cs
+##### Dose
+* `MODIFIED` Percentages are now calculated as doubles.
+##### Utility
+* `MODIFIED` AppSettings.FromKeyValuePair() paramater changed to fileName, this way we can force the path to be either the production or staging folder. 
+
 #### v0.15.21189.2018 (2021-07-08)
 * `INFO` Clean build for testing.
 
