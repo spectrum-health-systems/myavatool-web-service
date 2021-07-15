@@ -1,8 +1,11 @@
 ﻿/* PROJECT: RequestSyntaxEngine (https://github.com/aprettycoolprogram/RequestSyntaxEngine)
  *    FILE: RequestSyntaxEngine.TestFunctionality.cs
- * UPDATED: 7-8-2021-10:23 AM
+ * UPDATED: 7-15-2021-9:13 AM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2021 A Pretty Cool Program All rights reserved
+ */
+
+/* Tests RequestSyntaxEngine functionality.
  */
 
 using System;
@@ -18,8 +21,8 @@ namespace RequestSyntaxEngine
         /// </summary>
         public static void Force()
         {
-            var mawsRequest = "ThisIsACommand-ThisIsAnAction-Testing-ShouldNotAppear";
-            var logMessage  = $"MAWS Request: {mawsRequest}{Environment.NewLine}" +
+            string mawsRequest = "ThisIsACommand-ThisIsAnAction-Testing-ShouldNotAppear";
+            string logMessage = $"MAWS Request: {mawsRequest}{Environment.NewLine}" +
                               $"MAWS Command: {RequestComponent.GetCommand(mawsRequest)}{Environment.NewLine}" +
                               $" MAWS Action: {RequestComponent.GetAction(mawsRequest)}{Environment.NewLine}" +
                               $" MAWS Option: {RequestComponent.GetOption(mawsRequest)}";

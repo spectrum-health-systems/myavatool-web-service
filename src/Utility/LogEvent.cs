@@ -1,19 +1,18 @@
 ﻿/* PROJECT: Utility (https://github.com/aprettycoolprogram/Utility)
  *    FILE: Utility.LogEvent.cs
- * UPDATED: 7-8-2021-12:22 PM
+ * UPDATED: 7-15-2021-9:08 AM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2021 A Pretty Cool Program All rights reserved
  */
 
 /* Writes log files.
- *
- * Development notes/comments can be found at the end of this class.
  */
 
 using System;
 using System.IO;
 using System.Runtime.CompilerServices;
 using System.Threading;
+using System.Reflection;
 
 namespace Utility
 {
@@ -57,30 +56,63 @@ namespace Utility
             var dateStamp        = DateTime.Now.ToString("yyMMdd");
 
             // Production or staging.
-            var logDirectoryPath = $"C:/MAWS/Staging/Logs/{dateStamp}";
-            //var logDirectoryPath = $"C:/MAWS/Logs/{dateStamp}";
+            //var logDirectoryPath =$@"./AppData/Logs/{dateStamp}";
+            //var logDirectoryPath = $"C:/MAWS/Staging/Logs/{dateStamp}";
+            var logDirectory = $"C:/MAWS/Logs/{dateStamp}";
+            Maintenance.ConfirmDirectoryExists(logDirectory);
 
-            Maintenance.ConfirmDirectoryExists(logDirectoryPath);
+            //var hourStamp         = DateTime.Now.ToString($"HH");      // Depreciate
+            //var minuteSecondStamp = DateTime.Now.ToString($"mmss");    // Depreciate
+            //var millisecondStamp  = DateTime.Now.ToString($"fffffff"); // Depreciate
+            //var timestamp = DateTime.Now.ToString($"HHmmssfffffff");
 
-            var hourStamp         = DateTime.Now.ToString($"HH");
-            var minuteSecondStamp = DateTime.Now.ToString($"mmss");
-            var millisecondStamp  = DateTime.Now.ToString($"fffffff");
 
-            var logFilePath = $"{logDirectoryPath}/{minuteSecondStamp}-{millisecondStamp}_{logType}_{assemblyName}-{Path.GetFileName(callerfilePath)}-{callerMemberName}.mawslog";
+            //var logFilePath = $"{logDirectoryPath}/{minuteSecondStamp}-{millisecondStamp}_{logType}_{assemblyName}-{Path.GetFileName(callerfilePath)}-{callerMemberName}.mawslog"; // Depreciate
+
+            var logFileName = BuildLogFileName(logType, assemblyName, Path.GetFileName(callerfilePath), callerMemberName);
+            var logFilePath = $"{logDirectory}/{logFileName}";
+
+            if(File.Exists(logFilePath))
+            {
+                Thread.Sleep(100);
+                logFileName = BuildLogFileName(logType, assemblyName, Path.GetFileName(callerfilePath), callerMemberName);
+                logFilePath = $"{logDirectory}/{logFileName}";
+            }
+
+            var assemblyVersion = Assembly.GetEntryAssembly().GetName().Version.ToString();
+
             var logContents = $"Message{Environment.NewLine}" +
                               $"======={Environment.NewLine}" +
                               $"{logMessage}{Environment.NewLine}" +
                               $"{Environment.NewLine}" +
                               $"Details{Environment.NewLine}" +
                               $"======={Environment.NewLine}" +
+                              $"      MAWS Version: {assemblyVersion}" +
                               $"     Assembly name: {assemblyName}{Environment.NewLine}" +
                               $"  Source file path: {Path.GetFileName(callerfilePath)}{Environment.NewLine}" +
                               $"Source member name: {callerMemberName}{Environment.NewLine}" +
-                              $"Source line number: {callerLineNumber}{Environment.NewLine}" +
-                              $"[ID-{dateStamp}/{hourStamp}{minuteSecondStamp}:{millisecondStamp}]";
+                              $"Source line number: {callerLineNumber}{Environment.NewLine}";
+
+            //$"[ID-{dateStamp}/{hourStamp}{minuteSecondStamp}:{millisecondStamp}]"; // Depreciated last line.
 
             File.WriteAllText(logFilePath, logContents);
-            Thread.Sleep(10);
+        }
+
+
+        private static string BuildLogFileName(string logType, string assemblyName, string callerfilePath,
+                                       string callerMemberName)
+        {
+            var timestamp = DateTime.Now.ToString($"HHmmss.fff");
+
+            var io = callerfilePath.IndexOf('.');
+            var l = callerfilePath.Length;
+
+
+            callerfilePath = callerfilePath.Remove(io);
+
+            //return $"{timestamp}_{logType}_{assemblyName}-{Path.GetFileName(callerfilePath)}-{callerMemberName}.mawslog";
+            return $"{timestamp}-{logType}-{assemblyName}-{callerfilePath}-{callerMemberName}.mawslog";
+
         }
     }
 }

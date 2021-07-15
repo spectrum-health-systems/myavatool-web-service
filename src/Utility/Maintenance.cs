@@ -1,13 +1,11 @@
 ﻿/* PROJECT: Utility (https://github.com/aprettycoolprogram/Utility)
  *    FILE: Utility.Maintenance.cs
- * UPDATED: 7-9-2021-9:33 AM
+ * UPDATED: 7-9-2021-11:40 AM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2021 A Pretty Cool Program All rights reserved
  */
 
 /* Performs various maintenance routines.
- *
- * Development notes/comments can be found at the end of this class.
  */
 
 using System.IO;

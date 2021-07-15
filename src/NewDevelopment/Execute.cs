@@ -55,4 +55,5 @@ namespace NewDevelopment
 /* =================
  * DEVELOPMENT NOTES
  * =================
+ * I'll put some notes here soon detailing how this is used.
  */

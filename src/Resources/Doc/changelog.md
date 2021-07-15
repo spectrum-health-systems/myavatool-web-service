@@ -17,8 +17,11 @@ Version 1.0
 ## Version 0.15
 * Foundational work on Dose functionality.
 
+#### v0.15.21196.1319 (2021-07-15)
+* `INFO` Code/comment cleanup
+* `ADDED` AppData/
+
 #### v0.15.21190.1333 (2021-07-09)
-* `INFO` Clean build for testing.
 * `REMOVED` Logger project
 * `REMOVED` Test project
 * `REMOVED` MyAvatoolWebService.Settings.cs

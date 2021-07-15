@@ -1,14 +1,17 @@
 ﻿/* PROJECT: TheOptionObject (https://github.com/aprettycoolprogram/TheOptionObject)
  *    FILE: TheOptionObject.Finalize.cs
- * UPDATED: 7-8-2021-10:30 AM
+ * UPDATED: 7-15-2021-9:12 AM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2021 A Pretty Cool Program All rights reserved
  */
 
+/* Finalizes an OptionObject.
+ */
+
+using NTST.ScriptLinkService.Objects;
 using System;
 using System.Collections.Generic;
 using System.Reflection;
-using NTST.ScriptLinkService.Objects;
 using Utility;
 
 namespace TheOptionObject
@@ -28,21 +31,21 @@ namespace TheOptionObject
              * original values in "sentOptionObject".
              */
 
-            Dictionary<string, string>  theOptionObjectSetting = AppSettings.FromKeyValuePairFile("TheOptionObject.settings");
-            var logSetting                                     = theOptionObjectSetting["Logging"].ToLower();
-            var assemblyName                                   = Assembly.GetExecutingAssembly().GetName().Name;
+            Dictionary<string, string> theOptionObjectSetting = AppSettings.FromKeyValuePairFile("TheOptionObject.settings");
+            string logSetting = theOptionObjectSetting["Logging"].ToLower();
+            string assemblyName = Assembly.GetExecutingAssembly().GetName().Name;
             LogEvent.Timestamped(logSetting, "TRACE", assemblyName, "Finalizing OptionObject.");
 
-            var finalizedOptionObject = new OptionObject2015();
+            OptionObject2015 finalizedOptionObject = new OptionObject2015();
 
             FinalizeRequiredFields(sentOptionObject, finalizedOptionObject, logSetting, assemblyName);
 
-            if(finalizeRecommended)
+            if (finalizeRecommended)
             {
                 FinalizeRecommendedFields(sentOptionObject, workingOptionObject, finalizedOptionObject, logSetting, assemblyName);
             }
 
-            if(finalizeNotRecommended)
+            if (finalizeNotRecommended)
             {
                 FinalizeNonRecommendedFields(sentOptionObject, finalizedOptionObject, logSetting, assemblyName);
             }
@@ -64,7 +67,7 @@ namespace TheOptionObject
             finalizedOptionObject.ServerName = sentOptionObject.ServerName;
             finalizedOptionObject.SystemCode = sentOptionObject.SystemCode;
 
-            var finalizeRequiredFieldsMessage = $"FinalizeRequiredFields values:{Environment.NewLine}" +
+            string finalizeRequiredFieldsMessage = $"FinalizeRequiredFields values:{Environment.NewLine}" +
                                                 $"finalizedOptionObject.EntityID={finalizedOptionObject.EntityID}{Environment.NewLine}" +
                                                 $"finalizedOptionObject.Facility={finalizedOptionObject.Facility}{Environment.NewLine}" +
                                                 $"finalizedOptionObject.NamespaceName={finalizedOptionObject.NamespaceName}{Environment.NewLine}" +
@@ -87,7 +90,7 @@ namespace TheOptionObject
 
             // If the workingOptionObject has data, use that to complete the completedOptionObject. Otherwise, use the
             // data that exists in the sentOptionObject.
-            if(workingOptionObject.ErrorCode >= 1)
+            if (workingOptionObject.ErrorCode >= 1)
             {
                 finalizedOptionObject.ErrorCode = workingOptionObject.ErrorCode;
                 finalizedOptionObject.ErrorMesg = workingOptionObject.ErrorMesg;
@@ -100,7 +103,7 @@ namespace TheOptionObject
                 LogEvent.Timestamped(logSetting, "TRACE", assemblyName, "ErrorCode = 1");
             }
 
-            var finalizeRecommendedFieldsMessage = $"FinalizeRequiredFields values:{Environment.NewLine}" +
+            string finalizeRecommendedFieldsMessage = $"FinalizeRequiredFields values:{Environment.NewLine}" +
                                                    $"finalizedOptionObject.EpisodeNumber={finalizedOptionObject.EpisodeNumber}{Environment.NewLine}" +
                                                    $"finalizedOptionObject.OptionStaffId={finalizedOptionObject.OptionStaffId}{Environment.NewLine}" +
                                                    $"finalizedOptionObject.OptionUserId={finalizedOptionObject.OptionUserId}{Environment.NewLine}" +

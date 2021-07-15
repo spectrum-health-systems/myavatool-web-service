@@ -1,6 +1,6 @@
 ﻿/* PROJECT: MyAvatoolWebService (https://github.com/aprettycoolprogram/MyAvatoolWebService)
  *    FILE: MyAvatoolWebService.MyAvatoolWebService.asmx.cs
- * UPDATED: 7-9-2021-9:09 AM
+ * UPDATED: 7-9-2021-1:09 PM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2021 A Pretty Cool Program All rights reserved
  */
@@ -33,8 +33,9 @@ namespace MyAvatoolWebService
         [WebMethod]
         public string GetVersion()
         {
-            // This line has to be commented out in production, otherwise MAWS will not work!
-            //ForceTest();
+            /* This line has to be commented out in production, otherwise MAWS will not work!
+             */
+            ForceTest();
 
             return "VERSION 0.15";
         }
@@ -63,7 +64,7 @@ namespace MyAvatoolWebService
                 case "inptadmitdate":
                     LogEvent.Timestamped(logSetting, "TRACE", assemblyName, $"switch(mawsCommand) case: InptAdmitDate [{mawsCommand}]");
                     completedOptionObject = sentOptionObject;
-                    //completedOptionObject = InptAdmitDate.Execute.Action(sentOptionObject, mawsRequest);
+                    //completedOptionObject = InptAdmitDate.Execute.Action(sentOptionObject, mawsRequest); // Functionality to be released in MAWS v1.1
                     break;
 
                 case "dose":
@@ -74,7 +75,7 @@ namespace MyAvatoolWebService
                 case "newdevelopment":
                     LogEvent.Timestamped(logSetting, "TRACE", assemblyName, $"switch(mawsCommand) case: NewDevelopment [{mawsCommand}]");
                     completedOptionObject = sentOptionObject;
-                    //completedOptionObject = NewDevelopment.Execute.Action(sentOptionObject, mawsRequest);
+                    //completedOptionObject = NewDevelopment.Execute.Action(sentOptionObject, mawsRequest); // Functionality to be released in MAWS v1.1
                     break;
 
                 default:
@@ -83,22 +84,34 @@ namespace MyAvatoolWebService
                     break;
             }
 
-            //completedOptionObject = new OptionObject2015(); // TEMP TESTING
+            /* This line is used for local testing, and should be commented out in production. This can most likely be removed once all MAWS Command cases have been
+             * completed.
+             */
+            //completedOptionObject = new OptionObject2015();
 
             return completedOptionObject;
         }
 
         /// <summary>
-        /// Force a bunch of MAWS functionality tests.
+        /// Force local functionality tests.
         /// </summary>
         public void ForceTest()
         {
+            Dictionary<string, string> MawsSetting = AppSettings.FromKeyValuePairFile("MAWS.settings");
+            var logSetting                         = MawsSetting["Logging"].ToLower();
+            var assemblyName                       = Assembly.GetExecutingAssembly().GetName().Name;
+            LogEvent.Timestamped(logSetting, "TEST", assemblyName, "Forcing MAWS functionality tests.");
+
             // Trace commands/actions/options.
             var emptyOptionObject = new OptionObject2015();
-            _ = RunScript(emptyOptionObject, "InptAdmitDate-action-option");
-            _ = RunScript(emptyOptionObject, "Dose-action-option");
-            _ = RunScript(emptyOptionObject, "NewDevelopment-action-option");
-            _ = RunScript(emptyOptionObject, "Fake-action-option");
+            _ = RunScript(emptyOptionObject, "InptAdmitDate-Action-Option");
+            LogEvent.Timestamped(logSetting, "TEST", assemblyName, "Force test: RunScript() using MAWS Request \"InptAdmitDate-Action-Option\"");
+            _ = RunScript(emptyOptionObject, "Dose-Action-Option");
+            LogEvent.Timestamped(logSetting, "TEST", assemblyName, "Force test: RunScript() using MAWS Request \"Dose-Action-Option\"");
+            _ = RunScript(emptyOptionObject, "NewDevelopment-Action-Option");
+            LogEvent.Timestamped(logSetting, "TEST", assemblyName, "Force test: RunScript() using MAWS Request \"NewDevelopment-Action-Option\"");
+            _ = RunScript(emptyOptionObject, "Fake-Action-Option");
+            LogEvent.Timestamped(logSetting, "TEST", assemblyName, "Force test: RunScript() using MAWS Request \"Fake-Action-Option\"");
 
             // Test against an partially initialized OptionObject.
             var testInptAdmitDateOptionObject= new OptionObject2015
@@ -107,9 +120,11 @@ namespace MyAvatoolWebService
                 ErrorMesg = "",
             };
             _ = RunScript(testInptAdmitDateOptionObject, "InptAdmitDate-ComparePreAdmitToAdmit");
+            LogEvent.Timestamped(logSetting, "TEST", assemblyName, "Force test: RunScript() using MAWS Request \"InptAdmitDate-ComparePreAdmitToAdmit\"");
 
             // Test RequestSyntaxEngine functionality.
             RequestSyntaxEngine.TestFunctionality.Force();
+            LogEvent.Timestamped(logSetting, "TEST", assemblyName, "Force test: RequestSyntaxEngine.");
         }
     }
 }

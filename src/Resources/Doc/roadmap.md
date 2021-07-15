@@ -14,6 +14,7 @@
     * Test logging with pauses, to confirm we catch all logs
     * Archive logs
     * Don't confirm Logs/ exists every time a log file is written
+    * Logs are stored in AppData/
     * Potentially put different logTypes in their own folder
 * Testing
     * Full test of MAWS Command .DLL functionality (can update command logic without affecting other functionality)
@@ -48,17 +49,11 @@
 
 ## Queue
 
+* Remove TheOptionObject.Settings.cs
+* Remove NewDevelopment.Settings.cs
 
 
-
-
-
-
-
-
-* Last dose always the same verbage? Always the same spacing?
-* What if we just look at what was before "mg"
-* Different verbage/text for other medications?
-* Do we need to compartmentalize Methadone -vs- Bup -vs- whatever?
-* Force single dose for now?
-* int enough, or do we need double?
+* Force single-dose
+* Force Methadone (liquid)
+* Force Recurring order type
+* Verify that the prefix/suffix are correct

@@ -1,8 +1,11 @@
 ﻿/* PROJECT: Dose (https://github.com/aprettycoolprogram/Dose)
  *    FILE: Dose.Compare.cs
- * UPDATED: 7-9-2021-8:57 AM
+ * UPDATED: 7-15-2021-9:19 AM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2021 A Pretty Cool Program All rights reserved
+ */
+
+/* Logic for the Compare action of the Dose command.
  */
 
 using System;

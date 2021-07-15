@@ -16,38 +16,38 @@ namespace NewDevelopment
         /// Gets the settings information from NewDevelopment.settings.
         /// </summary>
         /// <returns>The NewDevelopment settings dictionary.</returns>
-        public static Dictionary<string, string> GetSettings()
-        {
-            var newDevelopmentSettings     = new Dictionary<string, string>();
-            var newDevelopmentSettingsPath = @"C:/MAWS/NewDevelopment.settings";
+        //public static Dictionary<string, string> GetSettings()
+        //{
+        //    var newDevelopmentSettings = new Dictionary<string, string>();
+        //    var newDevelopmentSettingsPath = @"C:/MAWS/NewDevelopment.settings";
 
-            if(File.Exists(newDevelopmentSettingsPath))
-            {
-                var    settingsFileStream = new StreamReader(newDevelopmentSettingsPath);
-                var    settingsAsList     = new List<string>();
-                string settingLine;
+        //    if (File.Exists(newDevelopmentSettingsPath))
+        //    {
+        //        var settingsFileStream = new StreamReader(newDevelopmentSettingsPath);
+        //        var settingsAsList = new List<string>();
+        //        string settingLine;
 
-                using(settingsFileStream)
-                {
-                    while((settingLine = settingsFileStream.ReadLine()) != null)
-                    {
-                        settingsAsList.Add(settingLine.Trim());
-                    }
-                }
+        //        using (settingsFileStream)
+        //        {
+        //            while ((settingLine = settingsFileStream.ReadLine()) != null)
+        //            {
+        //                settingsAsList.Add(settingLine.Trim());
+        //            }
+        //        }
 
-                string[] keyValuePair;
+        //        string[] keyValuePair;
 
-                foreach(var item in settingsAsList)
-                {
-                    if(!item.StartsWith("#"))
-                    {
-                        keyValuePair = item.Split('=');
-                        newDevelopmentSettings.Add(keyValuePair[0], keyValuePair[1]);
-                    }
-                }
-            }
+        //        foreach (var item in settingsAsList)
+        //        {
+        //            if (!item.StartsWith("#"))
+        //            {
+        //                keyValuePair = item.Split('=');
+        //                newDevelopmentSettings.Add(keyValuePair[0], keyValuePair[1]);
+        //            }
+        //        }
+        //    }
 
-            return newDevelopmentSettings;
-        }
+        //    return newDevelopmentSettings;
+        //}
     }
 }
