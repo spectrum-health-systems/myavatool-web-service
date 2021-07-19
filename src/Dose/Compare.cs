@@ -1,6 +1,6 @@
 ﻿/* PROJECT: Dose (https://github.com/aprettycoolprogram/Dose)
  *    FILE: Dose.Compare.cs
- * UPDATED: 7-19-2021-12:35 PM
+ * UPDATED: 7-19-2021-1:03 PM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2021 A Pretty Cool Program All rights reserved
  */
@@ -52,7 +52,11 @@ namespace Dose
                     switch (field.FieldNumber)
                     {
                         case dosageOneFieldId:
-                            currentDose = int.Parse(field.FieldValue);                                              // TODO Convert.ToInt()?
+                            //LogEvent.Timestamped(logSetting, "TRACEA", assemblyName, "In dosage field case statement.");
+                            //LogEvent.Timestamped(logSetting, "TRACEAA", assemblyName, $"Raw value: {field.FieldValue}");
+                            //LogEvent.Timestamped(logSetting, "TRACEAAA", assemblyName, $"Raw value: {double.Parse(field.FieldValue)}");
+                            currentDose = double.Parse(field.FieldValue);
+                            //LogEvent.Timestamped(logSetting, "TRACEB", assemblyName, $"CurrentDose: {currentDose}");
                             foundDosageOneFieldId = true;
                             LogEvent.Timestamped(logSetting, "TRACE", assemblyName, "Found dosage field.");
                             break;

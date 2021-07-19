@@ -65,7 +65,7 @@
 * Remove NewDevelopment.Settings.cs
 
 * Have a universal conf file
-
+* What if currentDose (1 dose mg) = null/0?
 * Get .conf name automatically by passing class name?
 
 * Force single-dose
