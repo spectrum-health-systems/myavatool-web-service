@@ -1,6 +1,6 @@
 ﻿/* PROJECT: Utility (https://github.com/aprettycoolprogram/Utility)
  *    FILE: Utility.Maintenance.cs
- * UPDATED: 7-19-2021-9:28 AM
+ * UPDATED: 7-19-2021-9:30 AM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2021 A Pretty Cool Program All rights reserved
  */
@@ -40,9 +40,12 @@ namespace Utility
  *   do it this way.
  */
 
+    Logger.Timestamped.LogEvent(InptAdmitDateSetting["Logging"].ToLower(), "TRACE", Assembly.GetExecutingAssembly().GetName().Name, $"Execute InptAdmitDate Action: {mawsAction} [Option={mawsOption}]");
+
 // This comment is 80 characters ==============================================================|
 //
 // - File headers
+
 
 // This comment is 120 characters =====================================================================================|
 //
