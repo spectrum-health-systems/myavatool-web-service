@@ -17,6 +17,13 @@ Version 1.0
 ## Version 0.15
 * Foundational work on Dose functionality.
 
+#### v0.15.21200.1455 (2021-07-19)
+* `INFO` Clean build for testing.
+* `ADDED` AppData/Configuration/
+
+##### Utility
+* `MODIFIED` WriteToFile() -> WriteTimestampedFile()
+
 #### v0.15.21200.1324 - v0.15.21200.1344 (2021-07-19)
 * `INFO` A test for comment length (not project related)
 

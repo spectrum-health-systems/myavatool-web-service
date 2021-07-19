@@ -1,6 +1,6 @@
 ﻿/* PROJECT: Utility (https://github.com/aprettycoolprogram/Utility)
  *    FILE: Utility.LogEvent.cs
- * UPDATED: 7-15-2021-9:08 AM
+ * UPDATED: 7-19-2021-10:55 AM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2021 A Pretty Cool Program All rights reserved
  */
@@ -10,9 +10,9 @@
 
 using System;
 using System.IO;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Threading;
-using System.Reflection;
 
 namespace Utility
 {
@@ -32,12 +32,12 @@ namespace Utility
                                        [CallerFilePath] string callerfilePath = "", [CallerMemberName] string callerMemberName = "",
                                        [CallerLineNumber] int callerLineNumber = 0)
         {
-            var logEverything   = logSetting == "all";
-            var logSpecificType = logType.ToLower().Contains(logSetting);
+            bool logEverything   = logSetting == "all";
+            bool logSpecificType = logType.ToLower().Contains(logSetting);
 
-            if(logEverything || logSpecificType)
+            if (logEverything || logSpecificType)
             {
-                WriteToFile(logType, assemblyName, logMessage, callerfilePath, callerMemberName, callerLineNumber);
+                WriteTimestampedFile(logType, assemblyName, logMessage, callerfilePath, callerMemberName, callerLineNumber);
             }
         }
 
@@ -50,26 +50,26 @@ namespace Utility
         /// <param name="callerfilePath">  The filename where the error occured (e.g., "MyFile.cs").</param>
         /// <param name="callerMemberName">The method where the error occured (e.g., "MyMethod()")</param>
         /// <param name="callerLineNumber">The line where the error occured (e.g., "100")</param>
-        public static void WriteToFile(string logType, string assemblyName, string logMessage, string callerfilePath,
+        public static void WriteTimestampedFile(string logType, string assemblyName, string logMessage, string callerfilePath,
                                        string callerMemberName, int callerLineNumber)
         {
-            var dateStamp    = DateTime.Now.ToString("yyMMdd");
-            var logDirectory = $"C:/MAWS/Logs/{dateStamp}";
-            Maintenance.ConfirmDirectoryExists(logDirectory);
+            string dateStamp        = DateTime.Now.ToString("yyMMdd");
+            string logDirectoryPath = $"C:/MAWS/Logs/{dateStamp}";
+            Maintenance.ConfirmDirectoryExists(logDirectoryPath);
 
-            var logFileName = BuildLogFileName(logType, assemblyName, Path.GetFileName(callerfilePath), callerMemberName);
-            var logFilePath = $"{logDirectory}/{logFileName}";
+            string logFileName = BuildLogFileName(logType, assemblyName, Path.GetFileName(callerfilePath), callerMemberName);
+            string logFilePath = $"{logDirectoryPath}/{logFileName}";
 
-            if(File.Exists(logFilePath))
+            if (File.Exists(logFilePath))
             {
                 Thread.Sleep(100);
                 logFileName = BuildLogFileName(logType, assemblyName, Path.GetFileName(callerfilePath), callerMemberName);
-                logFilePath = $"{logDirectory}/{logFileName}";
+                logFilePath = $"{logDirectoryPath}/{logFileName}";
             }
 
-            var assemblyVersion = Assembly.GetEntryAssembly().GetName().Version.ToString();
+            string assemblyVersion = Assembly.GetEntryAssembly().GetName().Version.ToString();
 
-            var logContents = $"Message{Environment.NewLine}" +
+            string logContents = $"Message{Environment.NewLine}" +
                               $"======={Environment.NewLine}" +
                               $"{logMessage}{Environment.NewLine}" +
                               $"{Environment.NewLine}" +
@@ -81,38 +81,83 @@ namespace Utility
                               $"Source member name: {callerMemberName}{Environment.NewLine}" +
                               $"Source line number: {callerLineNumber}{Environment.NewLine}";
 
-            //$"[ID-{dateStamp}/{hourStamp}{minuteSecondStamp}:{millisecondStamp}]"; // Depreciated last line.
-
             File.WriteAllText(logFilePath, logContents);
         }
 
-
+        /// <summary>
+        /// Build a logfile name.
+        /// </summary>
+        /// <param name="logType"></param>
+        /// <param name="assemblyName"></param>
+        /// <param name="callerfilePath"></param>
+        /// <param name="callerMemberName"></param>
+        /// <returns>A logfile name string.</returns>
         private static string BuildLogFileName(string logType, string assemblyName, string callerfilePath,
-                                       string callerMemberName)
+                                               string callerMemberName)
         {
-            var timestamp = DateTime.Now.ToString($"HHmmss.fff");
+            string timeStamp = DateTime.Now.ToString($"HHmmss.fff");
 
-            var io = callerfilePath.IndexOf('.');
-            var l = callerfilePath.Length;
-
+            int io = callerfilePath.IndexOf('.');
+            int l = callerfilePath.Length;
 
             callerfilePath = callerfilePath.Remove(io);
 
             //return $"{timestamp}_{logType}_{assemblyName}-{Path.GetFileName(callerfilePath)}-{callerMemberName}.mawslog";
-            return $"{timestamp}-{logType}-{assemblyName}-{callerfilePath}-{callerMemberName}.mawslog";
 
+            var logFileName = $"{timeStamp}-{logType}-{assemblyName}-{callerfilePath}-{callerMemberName}.mawslog";
+
+            return logFileName;
         }
     }
 }
 
-/* =================
- * DEVELOPMENT NOTES
- * =================
- *
- * -------------
- * WriteToFile()
- * -------------
- * - The totally cool logic that determines the filepath/method/line number of the message that is being logged came
- *   from this article:
- *      https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/attributes/caller-information
+/*
+
+=================
+DEVELOPMENT NOTES
+=================
+
+-------------
+Timestamped()
+-------------
+When you call Utility.LogEvent.Timestamped(), you pass all the information that is need to write a logfile for a specific event,
+which includes:
+    - Whatever the current "Logging" setting is (e.g., "error"), which can vary depending on the .conf file being worked with
+    - The type of logfile being passed (e.g., "ERROR")
+    - All of the log information (messages, locations, et al.)
+
+The first thing Timestamped() does is determine if a logfile should be written at all:
+
+    -> If the "Logging" setting is "all", a logfile is written.
+    -> If the "Logging" setting is another value:
+       -> Determine what the passed logType is (e.g., "ERROR") AND if that logType is in the "Logging" setting.
+          -> If the passed logType is found, write the logfile
+          -> If the passed logType is not found, don't write the logfile.
+
+The "Logging" setting can be a string of logTypes that are delimited by a "-". For example, "Logging=error-debug" would write all
+logTypes of "ERROR" and "DEBUG", but no other logTypes. More information about how this work can be found in the .conf files.
+
+The downside to this method is that every time LogEvent.Timestamped() is called, we do all of what is described above...and in
+some cases it is determined that a logfile will not be created, which technically wastes time. The upside is that the type of logs
+that can be written are completely agnostic: all you need to do is pass a particular logType, and make sure that logType is
+defined in the "Logging" setting.
+
+
+-------------
+WriteTimestampedFile()
+-------------
+- The totally cool logic that determines the filepath/method/line number of the message that is being logged came
+  from this article:
+     https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/attributes/caller-information
+
+- Code blocks:
+
+    ```
+    if(File.Exists(logFilePath))
+    {
+        > Since logfiles are written very quickly, it's possible that two logfiles will have the same name. The logic in this
+        > block ensures filenames are unique by adding a few milliseconds to the timestamp when a duplicate filename is found.
+    }
+    ```
+
  */

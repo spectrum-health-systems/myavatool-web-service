@@ -1,6 +1,6 @@
 ﻿/* PROJECT: Utility (https://github.com/aprettycoolprogram/Utility)
  *    FILE: Utility.Maintenance.cs
- * UPDATED: 7-19-2021-9:44 AM
+ * UPDATED: 7-19-2021-10:17 AM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2021 A Pretty Cool Program All rights reserved
  */
@@ -23,38 +23,21 @@ namespace Utility
             if (!Directory.Exists(directoryPath))
             {
                 Directory.CreateDirectory(directoryPath);
-                LogEvent.Timestamped("system", "SYSTEM", Assembly.GetExecutingAssembly().GetName().Name, $"Created directory: {directoryPath}"); // Testing the length of comments for guidelines.
+                LogEvent.Timestamped("system", "SYSTEM", Assembly.GetExecutingAssembly().GetName().Name, $"Created directory: {directoryPath}");
             }
         }
     }
 }
 
-/* =================
- * DEVELOPMENT NOTES
- * =================
- *
- * ------------------------
- * ConfirmDirectoryExists()
- * ------------------------
- * - The paramaters for the LogEvent command are hardcoded here because it's a single line, and it's easier/cleaner to
- *   do it this way.
+/*
+
+=================
+DEVELOPMENT NOTES
+=================
+
+------------------------
+ConfirmDirectoryExists()
+------------------------
+The paramaters for the LogEvent command are hardcoded here because it's a single line, and it's easier/cleaner to do it this way.
+
  */
-
-    Logger.Timestamped.LogEvent(InptAdmitDateSetting["Logging"].ToLower(), "TRACE", Assembly.GetExecutingAssembly().GetName().Name, $"Execute InptAdmitDate Action: {mawsAction} [Option={mawsOption}]");
-
-// This comment is 80 characters ==============================================================|
-//
-// - File headers
-
-
-// This comment is 120 characters =====================================================================================|
-// This comment is 130 characters ===============================================================================================|
-//
-// - File footers
-// - Descriptive comments
-// - Try to keep code withing this width
-
-
-// This comment is 170 characters =======================================================================================================================================|
-//
-// - Max width for displaying on GitHub
