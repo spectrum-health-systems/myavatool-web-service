@@ -68,6 +68,12 @@
         * Dose/dosage
         * Variable/class/method names across commands
 
+* make sure strings have/don't have "$"
+* Cleanup log messages
+* Make sure 2015 isn't part of any variable names
+
+* Logfiles can be out of order, consider ffffff
+
 * Have a universal conf file
 * What if currentDose (1 dose mg) = null/0?
 * Get .conf name automatically by passing class name?
@@ -78,3 +84,5 @@
 * Verify that the prefix/suffix are correct
 
 * Add Assembly version to the logfiles
+
+* locking of users

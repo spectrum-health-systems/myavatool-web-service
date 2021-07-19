@@ -1,6 +1,6 @@
 ﻿/* PROJECT: Dose (https://github.com/aprettycoolprogram/Dose)
  *    FILE: Dose.Compare.cs
- * UPDATED: 7-19-2021-1:50 PM
+ * UPDATED: 7-19-2021-4:25 PM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2021 A Pretty Cool Program All rights reserved
  */
@@ -44,7 +44,9 @@ namespace Dose
                     switch (field.FieldNumber)
                     {
                         case dosageOneFieldId:
+                            LogEvent.Timestamped(logSetting, "TEMP", assemblyName, "TEMP");
                             currentDose           = double.Parse(field.FieldValue);
+                            LogEvent.Timestamped(logSetting, "TEMP", assemblyName, "TEMP");
                             foundDosageOneFieldId = true;
                             LogEvent.Timestamped(logSetting, "TRACE", assemblyName, "Found dosage field.");
                             break;
@@ -78,7 +80,7 @@ namespace Dose
 
             string errMsgBody = string.Empty;
             int errMsgCode    = 0;
-            LogEvent.Timestamped(logSetting, "TRACE", assemblyName, "1");
+            LogEvent.Timestamped(logSetting, "TRACE", assemblyName, "Error message/code initialized.");
 
             // 1. Parse the lastOrderScheduledText and get the milligrams
             // 2. Check what the percentage difference between the current does and the last dose
@@ -96,58 +98,57 @@ namespace Dose
                 if (line.Contains(previousDosagePrefix) && line.Contains(previousDosageSuffix))
                 {
                     lastScheduledDosage = line.Replace($"{previousDosagePrefix}", "");
-                    LogEvent.Timestamped(logSetting, "TRACE", assemblyName, $"3: {lastScheduledDosage}");
+                    LogEvent.Timestamped(logSetting, "TRACE", assemblyName, $"Removing prefix: {lastScheduledDosage}");
 
                     lastScheduledDosage = lastScheduledDosage.Replace(previousDosageSuffix, "");
-                    LogEvent.Timestamped(logSetting, "TRACE", assemblyName, $"4: {lastScheduledDosage}");
+                    LogEvent.Timestamped(logSetting, "TRACE", assemblyName, $"Removing suffix: {lastScheduledDosage}");
                 }
-
-
             }
-
-
-
-            //string needLine = lastOrderedSchedulLines[1];
-
-            //string test = needLine.Replace($"{previousDosagePrefix}", "");
-            //LogEvent.Timestamped(logSetting, "TRACE", assemblyName, $"3: {needLine}, {test}");
-
-            //string test2 = test.Replace(previousDosageSuffix, "");
-            //LogEvent.Timestamped(logSetting, "TRACE", assemblyName, $"4: {test2}");
-
-            LogEvent.Timestamped(logSetting, "TRACE", assemblyName, $"Current doseage: {currentDose}, Last Order: {lastOrderScheduleText}, Previous dosage! {lastScheduledDosage}");
+            LogEvent.Timestamped(logSetting, "TRACE", assemblyName, $"Current doseage: {currentDose}, Last Order: {lastOrderScheduleText}, Previous dosage: {lastScheduledDosage}");
 
             double previousDose = Convert.ToDouble(lastScheduledDosage);
-
-            double percentDifference = currentDose / previousDose;
-
-            LogEvent.Timestamped(logSetting, "TRACE", assemblyName, $"currDose: {currentDose}, prevDose: {previousDose}, percentDifference: {percentDifference}");
-
-            double maxPercentIncrease = Convert.ToDouble(doseSetting["PercentageMax"]);
-
-            if (percentDifference >= maxPercentIncrease)
+            OptionObject2015 doseOptionObject = new OptionObject2015
             {
-                errMsgBody = $"WARNING\nThe percentage increas is too high! ({percentDifference}%)";
-                errMsgCode = 1;
-                LogEvent.Timestamped(logSetting, "TRACE", assemblyName, $"Too high! ({percentDifference}%/{maxPercentIncrease}%)");
+                ErrorCode = 0,
+                ErrorMesg = ""
+            };
+            LogEvent.Timestamped(logSetting, "TRACE", assemblyName, $"Initialzied doseOptionObject");
+
+            if (currentDose != previousDose)
+            {
+                LogEvent.Timestamped(logSetting, "TRACE", assemblyName, $"Current dose is different than previous dose.");
+
+                double percentDifference = currentDose / previousDose;
+                LogEvent.Timestamped(logSetting, "TRACE", assemblyName, $"Current doseage: {currentDose}, Previous doseage: {previousDose}, Percentage difference: {percentDifference}");
+
+                double maxPercentIncrease = Convert.ToDouble(doseSetting["PercentageMax"]);
+
+                if (percentDifference >= maxPercentIncrease)
+                {
+                    doseOptionObject.ErrorCode = 1;
+                    doseOptionObject.ErrorMesg = $"WARNING\nThe percentage increase is too high! ({percentDifference}%)";
+                    LogEvent.Timestamped(logSetting, "TRACE", assemblyName, $"Percentage increase is too high: ({percentDifference}%/{maxPercentIncrease}%)");
+                }
+                else
+                {
+                    LogEvent.Timestamped(logSetting, "TRACE", assemblyName, $"Percentage increase within threashold: ({percentDifference}%/{maxPercentIncrease}%)");
+                }
             }
             else
             {
-                LogEvent.Timestamped(logSetting, "TRACE", assemblyName, $"Just fine! ({percentDifference}%/{maxPercentIncrease}%)");
+                LogEvent.Timestamped(logSetting, "TRACE", assemblyName, $"Current dose is same as previous dose.");
             }
 
-            OptionObject2015 doseOptionObject2015 = new OptionObject2015();
+            //if (errMsgCode != 0)
+            //{
+            //    LogEvent.Timestamped(logSetting, "TRACE", assemblyName, $"Error code {doseOptionObject.ErrorCode}: {doseOptionObject.ErrorMesg}...more info soon.");
+            //}
+            //else
+            //{
+                LogEvent.Timestamped(logSetting, "TRACE", assemblyName, $"Error code {doseOptionObject.ErrorCode}: {doseOptionObject.ErrorMesg}...more info soon.");
+           //}
 
-            if (errMsgCode != 0)
-            {
-                doseOptionObject2015.ErrorCode = errMsgCode;
-                doseOptionObject2015.ErrorMesg = errMsgBody;
-
-                /* Uncomment this line to overide the "nice" error message with detailed information users don't need to
-                 * see, which may be usefull when testing.
-                 */
-                //verifyAdmitDateOptionObject2015.ErrorMesg = $"[ERROR]\nError Code: {errMsgCode}\nType of admission: {typeOfAdmission}\nPreAdmit Date: {preAdmitToAdmissionDate}\nSystem Date: {systemDate}";
-            }
+            var doseOptionObject2 = TheOptionObject.Finalize.WhichComponents(sentOptionObject, doseOptionObject);
 
             /* When this block of code is uncommented, a pop-up with detailed information will be displayed when the
              * errMsgCode is "0", meaning no issues were found, and the form will being submitted normally.
@@ -160,10 +161,24 @@ namespace Dose
             //    verifyAdmitDateOptionObject2.ErrorMesg = "[DEBUG]\nError Code: {errMsgCode}\nType of admission: {typeOfAdmission}\nPreAdmit Date: {preAdmitToAdmissionDate}\nSystem Date: {systemDate}";
             //}
 
-            // Log this event
+            string doseOptionObject2Values = $"doseOptionObject2:{Environment.NewLine}" +
+                                                   $"sentOptiObject.EntityID = [{doseOptionObject2.EntityID}]{Environment.NewLine}" +
+                                                   $"sentOptionObject.Facility = [{doseOptionObject2.Facility}]{Environment.NewLine}" +
+                                                   $"sentOptionObject.NamespaceName = [{doseOptionObject2.NamespaceName}]{Environment.NewLine}" +
+                                                   $"sentOptionObject.OptionId = [{doseOptionObject2.OptionId}{Environment.NewLine}" +
+                                                   $"sentOptionObject.ParentNamespace = [{doseOptionObject2.ParentNamespace}]{Environment.NewLine}" +
+                                                   $"sentOptionObject.ServerName = [{doseOptionObject2.ServerName}]{Environment.NewLine}" +
+                                                   $"sentOptionObject.SystemCode = [{doseOptionObject2.SystemCode}]{Environment.NewLine}" +
+                                                   $"sentOptionObject.EpisodeNumber = [{doseOptionObject2.EpisodeNumber}]{Environment.NewLine}" +
+                                                   $"sentOptionObject.OptionStaffId = [{doseOptionObject2.OptionStaffId}]{Environment.NewLine}" +
+                                                   $"sentOptionObject.OptionUserId = [{doseOptionObject2.OptionUserId}]{Environment.NewLine}" +
+                                                   $"sentOptionObject.ErrorCode = [{doseOptionObject2.ErrorCode}]{Environment.NewLine}" +
+                                                   $"sentOptionObject.ErrorMesg = [{doseOptionObject2.ErrorMesg}]";
+            LogEvent.Timestamped(logSetting, "TRACE", assemblyName, doseOptionObject2Values);
 
 
-            return doseOptionObject2015;
+
+            return doseOptionObject2;
         }
     }
 }

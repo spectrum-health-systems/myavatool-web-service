@@ -1,6 +1,6 @@
 ﻿/* PROJECT: MyAvatoolWebService (https://github.com/aprettycoolprogram/MyAvatoolWebService)
  *    FILE: MyAvatoolWebService.MyAvatoolWebService.asmx.cs
- * UPDATED: 7-19-2021-1:33 PM
+ * UPDATED: 7-19-2021-4:31 PM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2021 A Pretty Cool Program All rights reserved
  */
@@ -9,6 +9,7 @@
  */
 
 using NTST.ScriptLinkService.Objects;
+using System;
 using System.Collections.Generic;
 using System.Reflection;
 using System.Web.Services;
@@ -37,7 +38,7 @@ namespace MyAvatoolWebService
              */
             //ForceTest();
 
-            return "VERSION 0.15";
+            return "VERSION 0.16";
         }
 
         /// <summary>
@@ -54,10 +55,25 @@ namespace MyAvatoolWebService
             string assemblyName                    = Assembly.GetExecutingAssembly().GetName().Name;
             LogEvent.Timestamped(logSetting, "TRACE", assemblyName, $"Initial MAWS Request: {mawsRequest}");
 
+            string sentOptionObjectInitialValues = $"Original sentOptionObject values:{Environment.NewLine}" +
+                                                   $"sentOptionObject.EntityID = [{sentOptionObject.EntityID}]{Environment.NewLine}" +
+                                                   $"sentOptionObject.Facility = [{sentOptionObject.Facility}]{Environment.NewLine}" +
+                                                   $"sentOptionObject.NamespaceName = [{sentOptionObject.NamespaceName}]{Environment.NewLine}" +
+                                                   $"sentOptionObject.OptionId = [{sentOptionObject.OptionId}{Environment.NewLine}" +
+                                                   $"sentOptionObject.ParentNamespace = [{sentOptionObject.ParentNamespace}]{Environment.NewLine}" +
+                                                   $"sentOptionObject.ServerName = [{sentOptionObject.ServerName}]{Environment.NewLine}" +
+                                                   $"sentOptionObject.SystemCode = [{sentOptionObject.SystemCode}]{Environment.NewLine}" +
+                                                   $"sentOptionObject.EpisodeNumber = [{sentOptionObject.EpisodeNumber}]{Environment.NewLine}" +
+                                                   $"sentOptionObject.OptionStaffId = [{sentOptionObject.OptionStaffId}]{Environment.NewLine}" +
+                                                   $"sentOptionObject.OptionUserId = [{sentOptionObject.OptionUserId}]{Environment.NewLine}" +
+                                                   $"sentOptionObject.ErrorCode = [{sentOptionObject.ErrorCode}]{Environment.NewLine}" +
+                                                   $"sentOptionObject.ErrorMesg = [{sentOptionObject.ErrorMesg}]";
+            LogEvent.Timestamped(logSetting, "TRACE", assemblyName, sentOptionObjectInitialValues);
+
             string mawsCommand = RequestSyntaxEngine.RequestComponent.GetCommand(mawsRequest);
             LogEvent.Timestamped(logSetting, "TRACE", assemblyName, $"Initial MAWS Command: {mawsCommand}");
 
-            OptionObject2015 completedOptionObject;
+            var completedOptionObject = new OptionObject2015();
 
             switch (mawsCommand)
             {
@@ -70,6 +86,22 @@ namespace MyAvatoolWebService
                 case "dose":
                     LogEvent.Timestamped(logSetting, "TRACE", assemblyName, $"switch(mawsCommand) case: Dose [{mawsCommand}]");
                     completedOptionObject = Dose.Execute.Action(sentOptionObject, mawsRequest);
+
+                    string values = $"Original sentOptionObject values:{Environment.NewLine}" +
+                                                   $"bject.EntityID = [{completedOptionObject.EntityID}]{Environment.NewLine}" +
+                                                   $"sentOptionObject.Facility = [{completedOptionObject.Facility}]{Environment.NewLine}" +
+                                                   $"sentOptionObject.NamespaceName = [{completedOptionObject.NamespaceName}]{Environment.NewLine}" +
+                                                   $"sentOptionObject.OptionId = [{completedOptionObject.OptionId}{Environment.NewLine}" +
+                                                   $"sentOptionObject.ParentNamespace = [{completedOptionObject.ParentNamespace}]{Environment.NewLine}" +
+                                                   $"sentOptionObject.ServerName = [{completedOptionObject.ServerName}]{Environment.NewLine}" +
+                                                   $"sentOptionObject.SystemCode = [{completedOptionObject.SystemCode}]{Environment.NewLine}" +
+                                                   $"sentOptionObject.EpisodeNumber = [{completedOptionObject.EpisodeNumber}]{Environment.NewLine}" +
+                                                   $"sentOptionObject.OptionStaffId = [{completedOptionObject.OptionStaffId}]{Environment.NewLine}" +
+                                                   $"sentOptionObject.OptionUserId = [{completedOptionObject.OptionUserId}]{Environment.NewLine}" +
+                                                   $"sentOptionObject.ErrorCode = [{completedOptionObject.ErrorCode}]{Environment.NewLine}" +
+                                                   $"sentOptionObject.ErrorMesg = [{completedOptionObject.ErrorMesg}]";
+                    LogEvent.Timestamped(logSetting, "TRACE", assemblyName, values);
+
                     break;
 
                 case "newdevelopment":

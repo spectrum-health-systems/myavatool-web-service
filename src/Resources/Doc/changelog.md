@@ -17,6 +17,9 @@ Version 1.0
 ## Version 0.16
 * Finalize Dose.Compare.Percentage()
 
+#### v0.16.21200.2031 (2021-07-19)
+* `INFO` Code and comment cleanup.
+
 #### v0.16.21200.1750 (2021-07-19)
 * `INFO` Code and comment cleanup.
 ##### Dose

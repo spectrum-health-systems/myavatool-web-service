@@ -34,13 +34,13 @@ namespace Dose
             string mawsOption                       = RequestSyntaxEngine.RequestComponent.GetOption(mawsRequest);
             LogEvent.Timestamped(logSetting, "TRACE", assemblyName, $"Execute Dose Action: {mawsAction} Option: {mawsOption}]");
 
-            OptionObject2015 doseOptionObject = new OptionObject2015();
+            var doseOptionObject = new OptionObject2015();
 
             switch (mawsAction)
             {
                 case "verifypercentage":
                     LogEvent.Timestamped(logSetting, "TRACE", assemblyName, $"Executing Dose Action: VerifyPercentage [{mawsAction}] [Option: {mawsOption}]");
-                    Compare.Percentage(sentOptionObject, doseSetting);
+                    doseOptionObject = Compare.Percentage(sentOptionObject, doseSetting);
                     break;
 
                 default:
