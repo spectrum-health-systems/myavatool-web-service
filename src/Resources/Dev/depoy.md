@@ -19,3 +19,5 @@
 ```
 5. Verify you can get to the WSDL. If you can't, verify that "Directory Browsing" is enabled for the folder that hosts MAWS in the IIS manager.
 6. If there were any modifications to the MAWS .conf files, copy those to the IIS server
+
+Heidi, Rebecca, Tracy, Lori, Kristin Nolan, Theresa & kristy, Any of the outpatient program leaders, Maggie
