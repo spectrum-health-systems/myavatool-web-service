@@ -1,6 +1,6 @@
 ﻿/* PROJECT: Utility (https://github.com/aprettycoolprogram/Utility)
  *    FILE: %Namespace%.AppSettings.cs
- * UPDATED: 7-9-2021-10:26 AM
+ * UPDATED: 7-19-2021-12:20 PM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2021 A Pretty Cool Program All rights reserved
  */
@@ -8,13 +8,8 @@
 /* Loads settings from an external file.
  */
 
-using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
-using System.Reflection;
-using Utility;
-using static System.Net.Mime.MediaTypeNames;
 
 public class AppSettings
 {
@@ -25,16 +20,7 @@ public class AppSettings
     /// <returns>A dictionary with the setting values.</returns>
     public static Dictionary<string, string> FromKeyValuePairFile(string fileName)
     {
-        // Production or staging
-        //var filePath = $@"C:\MAWS\Staging\{fileName}";
-        var filePath = $@"C:\MAWS\Configuration\{fileName}";
-
-        //var test = Environment.CurrentDirectory;
-        //LogEvent.Timestamped("system", "SYSTEM", Assembly.GetExecutingAssembly().GetName().Name, $"1====>{test}");
-        //var test2 = System.IO.Directory.GetCurrentDirectory();
-        //LogEvent.Timestamped("system", "SYSTEM", Assembly.GetExecutingAssembly().GetName().Name, $"2===>{test2}");
-        //string path2 =System.Reflection.Assembly.GetExecutingAssembly().CodeBase;
-        //LogEvent.Timestamped("system", "SYSTEM", Assembly.GetExecutingAssembly().GetName().Name, $"3===>{path2}");
+        string filePath = $@"C:\MAWS\Configuration\{fileName}";
         List<string> settingsAsList = SettingsAsList(filePath);
 
         return SettingsAsDictionary(settingsAsList);
@@ -47,24 +33,24 @@ public class AppSettings
     /// <returns>A list with valid key/value pair setting lines.</returns>
     public static List<string> SettingsAsList(string filePath)
     {
-        var fileAsList = new List<string>();
+        List<string> fileAsList = new List<string>();
 
-        if(File.Exists(filePath))
+        if (File.Exists(filePath))
         {
-            var fileStream = new StreamReader(filePath);
-            var fileLine   = "";
+            StreamReader fileStream = new StreamReader(filePath);
+            string fileLine = "";
 
-            using(fileStream)
+            using (fileStream)
             {
-                while((fileLine = fileStream.ReadLine()) != null)
+                while ((fileLine = fileStream.ReadLine()) != null)
                 {
                     fileLine = fileLine.Trim();
 
-                    var lineContainsData   = !string.IsNullOrWhiteSpace(fileLine);
-                    var lineIsNotComment   = !fileLine.StartsWith("#");
-                    var lineIsKeyValuePair = fileLine.Contains("=");
+                    bool lineContainsData = !string.IsNullOrWhiteSpace(fileLine);
+                    bool lineIsNotComment = !fileLine.StartsWith("#");
+                    bool lineIsKeyValuePair = fileLine.Contains("=");
 
-                    if(lineContainsData && lineIsNotComment && lineIsKeyValuePair)
+                    if (lineContainsData && lineIsNotComment && lineIsKeyValuePair)
                     {
                         fileAsList.Add(fileLine);
                     }
@@ -83,9 +69,9 @@ public class AppSettings
     public static Dictionary<string, string> SettingsAsDictionary(List<string> fileAsList)
     {
         string[] keyValuePair;
-        var settingPairs = new Dictionary<string, string>();
+        Dictionary<string, string> settingPairs = new Dictionary<string, string>();
 
-        foreach(var item in fileAsList)
+        foreach (string item in fileAsList)
         {
             keyValuePair = item.Split('=');
             settingPairs.Add(keyValuePair[0], keyValuePair[1]);

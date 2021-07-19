@@ -36,6 +36,10 @@ namespace Dose
             var foundLastOrderScheduledFieldId = false;
             LogEvent.Timestamped(logSetting, "TRACE", assemblyName, "Finished setting up variables");
 
+            // For testing.
+            var formLoopCount = 0;
+            var fieldLoopCount = 0;
+
             /* We will loop through each field of every form in sentOptionObject2, and do something special if we land
              * on the "dosageOneFieldId" or "lastOrderScheduledFieldId".
              */
@@ -71,12 +75,14 @@ namespace Dose
                         LogEvent.Timestamped(logSetting, "TRACE", assemblyName, "Found both fields, but not done.");
                         break;
                     }
+                    fieldLoopCount++;
                 }
                 if(foundDosageOneFieldId && foundLastOrderScheduledFieldId)
                 {
                     LogEvent.Timestamped(logSetting, "TRACE", assemblyName, "Found both fields, exiting loops.");
                     break;
                 }
+                formLoopCount++;
             }
 
             var errMsgBody = string.Empty;
