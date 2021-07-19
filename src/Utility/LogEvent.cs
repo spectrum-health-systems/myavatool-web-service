@@ -1,6 +1,6 @@
 ﻿/* PROJECT: Utility (https://github.com/aprettycoolprogram/Utility)
  *    FILE: Utility.LogEvent.cs
- * UPDATED: 7-19-2021-11:37 AM
+ * UPDATED: 7-19-2021-1:17 PM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2021 A Pretty Cool Program All rights reserved
  */
@@ -31,7 +31,7 @@ namespace Utility
                                        [CallerFilePath] string callerfilePath = "", [CallerMemberName] string callerMemberName = "",
                                        [CallerLineNumber] int callerLineNumber = 0)
         {
-            bool logEverything = logSetting == "all";
+            bool logEverything   = logSetting == "all";
             bool logSpecificType = logType.ToLower().Contains(logSetting);
 
             if (logEverything || logSpecificType)
@@ -52,7 +52,7 @@ namespace Utility
         public static void WriteTimestampedFile(string logType, string assemblyName, string logMessage, string callerfilePath,
                                        string callerMemberName, int callerLineNumber)
         {
-            string dateStamp = DateTime.Now.ToString("yyMMdd");
+            string dateStamp        = DateTime.Now.ToString("yyMMdd");
             string logDirectoryPath = $"C:/MAWS/Logs/{dateStamp}";
             Maintenance.ConfirmDirectoryExists(logDirectoryPath);
 
@@ -67,15 +67,15 @@ namespace Utility
             }
 
             string logContents = $"Message{Environment.NewLine}" +
-                              $"======={Environment.NewLine}" +
-                              $"{logMessage}{Environment.NewLine}" +
-                              $"{Environment.NewLine}" +
-                              $"Details{Environment.NewLine}" +
-                              $"======={Environment.NewLine}" +
-                              $"     Assembly name: {assemblyName}{Environment.NewLine}" +
-                              $"  Source file path: {Path.GetFileName(callerfilePath)}{Environment.NewLine}" +
-                              $"Source member name: {callerMemberName}{Environment.NewLine}" +
-                              $"Source line number: {callerLineNumber}{Environment.NewLine}";
+                                 $"======={Environment.NewLine}" +
+                                 $"{logMessage}{Environment.NewLine}" +
+                                 $"{Environment.NewLine}" +
+                                 $"Details{Environment.NewLine}" +
+                                 $"======={Environment.NewLine}" +
+                                 $"     Assembly name: {assemblyName}{Environment.NewLine}" +
+                                 $"  Source file path: {Path.GetFileName(callerfilePath)}{Environment.NewLine}" +
+                                 $"Source member name: {callerMemberName}{Environment.NewLine}" +
+                                 $"Source line number: {callerLineNumber}{Environment.NewLine}";
 
             File.WriteAllText(logFilePath, logContents);
         }
@@ -88,13 +88,12 @@ namespace Utility
         /// <param name="callerfilePath"></param>
         /// <param name="callerMemberName"></param>
         /// <returns>A logfile name string.</returns>
-        private static string BuildLogFileName(string logType, string assemblyName, string callerfilePath,
-                                               string callerMemberName)
+        private static string BuildLogFileName(string logType, string assemblyName, string callerfilePath, string callerMemberName)
         {
-            string timeStamp = DateTime.Now.ToString($"HHmmss.fff");
-            int fileExtensionLocation = callerfilePath.IndexOf('.');
+            string timeStamp                      = DateTime.Now.ToString($"HHmmss.fff");
+            int fileExtensionLocation             = callerfilePath.IndexOf('.');
             string callerfilePathWithoutExtension = callerfilePath.Remove(fileExtensionLocation);
-            string logFileName = $"{timeStamp}-{logType}-{assemblyName}-{callerfilePathWithoutExtension}-{callerMemberName}.mawslog";
+            string logFileName                    = $"{timeStamp}-{logType}-{assemblyName}-{callerfilePathWithoutExtension}-{callerMemberName}.mawslog";
 
             return logFileName;
         }

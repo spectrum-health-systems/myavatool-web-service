@@ -1,6 +1,6 @@
 ﻿/* PROJECT: Utility (https://github.com/aprettycoolprogram/Utility)
- *    FILE: %Namespace%.AppSettings.cs
- * UPDATED: 7-19-2021-12:20 PM
+ *    FILE: Utility.AppSettings.cs
+ * UPDATED: 7-19-2021-1:19 PM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2021 A Pretty Cool Program All rights reserved
  */
@@ -11,76 +11,78 @@
 using System.Collections.Generic;
 using System.IO;
 
-public class AppSettings
+namespace Utility
 {
-    /// <summary>
-    /// Loads setting values from a file with key/value pairs.
-    /// </summary>
-    /// <param name="filePath">Path to the settings file.</param>
-    /// <returns>A dictionary with the setting values.</returns>
-    public static Dictionary<string, string> FromKeyValuePairFile(string fileName)
+    public class AppSettings
     {
-        string filePath = $@"C:\MAWS\Configuration\{fileName}";
-        List<string> settingsAsList = SettingsAsList(filePath);
-
-        return SettingsAsDictionary(settingsAsList);
-    }
-
-    /// <summary>
-    /// Put valid setting lines from the a .settings file into a list.
-    /// </summary>
-    /// <param name="filePath">Path to the settings file.</param>
-    /// <returns>A list with valid key/value pair setting lines.</returns>
-    public static List<string> SettingsAsList(string filePath)
-    {
-        List<string> fileAsList = new List<string>();
-
-        if (File.Exists(filePath))
+        /// <summary>
+        /// Loads setting values from a file with key/value pairs.
+        /// </summary>
+        /// <param name="filePath">Path to the settings file.</param>
+        /// <returns>A dictionary with the setting values.</returns>
+        public static Dictionary<string, string> FromKeyValuePairFile(string fileName)
         {
-            StreamReader fileStream = new StreamReader(filePath);
-            string fileLine = "";
+            string filePath = $@"C:\MAWS\Configuration\{fileName}";
+            List<string> settingsAsList = SettingsAsList(filePath);
 
-            using (fileStream)
+            return SettingsAsDictionary(settingsAsList);
+        }
+
+        /// <summary>
+        /// Put valid setting lines from the a .settings file into a list.
+        /// </summary>
+        /// <param name="filePath">Path to the settings file.</param>
+        /// <returns>A list with valid key/value pair setting lines.</returns>
+        public static List<string> SettingsAsList(string filePath)
+        {
+            List<string> fileAsList = new List<string>();
+
+            if (File.Exists(filePath))
             {
-                while ((fileLine = fileStream.ReadLine()) != null)
+                StreamReader fileStream = new StreamReader(filePath);
+                string fileLine         = "";
+
+                using (fileStream)
                 {
-                    fileLine = fileLine.Trim();
-
-                    bool lineContainsData = !string.IsNullOrWhiteSpace(fileLine);
-                    bool lineIsNotComment = !fileLine.StartsWith("#");
-                    bool lineIsKeyValuePair = fileLine.Contains("=");
-
-                    if (lineContainsData && lineIsNotComment && lineIsKeyValuePair)
+                    while ((fileLine = fileStream.ReadLine()) != null)
                     {
-                        fileAsList.Add(fileLine);
+                        fileLine = fileLine.Trim();
+
+                        bool lineContainsData   = !string.IsNullOrWhiteSpace(fileLine);
+                        bool lineIsNotComment   = !fileLine.StartsWith("#");
+                        bool lineIsKeyValuePair = fileLine.Contains("=");
+
+                        if (lineContainsData && lineIsNotComment && lineIsKeyValuePair)
+                        {
+                            fileAsList.Add(fileLine);
+                        }
                     }
                 }
             }
+
+            return fileAsList;
         }
 
-        return fileAsList;
-    }
-
-    /// <summary>
-    ///
-    /// </summary>
-    /// <param name="fileAsList"></param>
-    /// <returns></returns>
-    public static Dictionary<string, string> SettingsAsDictionary(List<string> fileAsList)
-    {
-        string[] keyValuePair;
-        Dictionary<string, string> settingPairs = new Dictionary<string, string>();
-
-        foreach (string item in fileAsList)
+        /// <summary>
+        ///
+        /// </summary>
+        /// <param name="fileAsList"></param>
+        /// <returns></returns>
+        public static Dictionary<string, string> SettingsAsDictionary(List<string> fileAsList)
         {
-            keyValuePair = item.Split('=');
-            settingPairs.Add(keyValuePair[0], keyValuePair[1]);
-        }
+            string[] keyValuePair;
+            Dictionary<string, string> settingPairs = new Dictionary<string, string>();
 
-        return settingPairs;
+            foreach (string item in fileAsList)
+            {
+                keyValuePair = item.Split('=');
+                settingPairs.Add(keyValuePair[0], keyValuePair[1]);
+            }
+
+            return settingPairs;
+        }
     }
 }
-
 
 /* =================
  * DEVELOPMENT NOTES

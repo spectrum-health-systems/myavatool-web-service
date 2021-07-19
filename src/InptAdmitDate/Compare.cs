@@ -1,6 +1,6 @@
 ﻿/* PROJECT: InptAdmitDate (https://github.com/aprettycoolprogram/InptAdmitDate)
  *    FILE: InptAdmitDate.Compare.cs
- * UPDATED: 7-2-2021-10:19 AM
+ * UPDATED: 7-19-2021-1:35 PM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2021 A Pretty Cool Program All rights reserved
  */
@@ -8,10 +8,10 @@
 /* Logic for the Compare action of the InptAdmitDate command.
  */
 
+using NTST.ScriptLinkService.Objects;
 using System;
 using System.Collections.Generic;
 using System.Reflection;
-using NTST.ScriptLinkService.Objects;
 using Utility;
 
 namespace InptAdmitDate
@@ -26,51 +26,51 @@ namespace InptAdmitDate
         /// <remarks>This method is called by the "InptAdmitDate-ComparePreAdmitToAdmit" mawsRequest.</remarks>
         public static OptionObject2015 PreAdmitToAdmit(OptionObject2015 sentOptionObject, Dictionary<string, string> inptAdmitDateSetting)
         {
-            var logSetting                                   = inptAdmitDateSetting["Logging"].ToLower();
-            var assemblyName                                 = Assembly.GetExecutingAssembly().GetName().Name;
+            string logSetting   = inptAdmitDateSetting["Logging"].ToLower();
+            string assemblyName = Assembly.GetExecutingAssembly().GetName().Name;
 
             // You may need to modify these values to match the fieldIDs for your organization.
             const int    preAdmissionHardcodedValue        = 3;
             const string typeOfAdmissionFieldId            = "44";
             const string preAdmitToAdmissionDateFieldId    = "42";
-            var          typeOfAdmission                   = 0;
-            var          preAdmitToAdmissionDate           = new DateTime(1900, 1, 1);
-            var          foundTypeOfAdmissionField         = false;
-            var          foundPreAdmitToAdmissionDateField = false;
+            int          typeOfAdmission                   = 0;
+            DateTime     preAdmitToAdmissionDate           = new DateTime(1900, 1, 1);
+            bool         foundTypeOfAdmissionField         = false;
+            bool         foundPreAdmitToAdmissionDateField = false;
 
-            var initializedValuesMessage = $"InptAdmitDate.Compare.PreAdmitToAdmit() initial values:{Environment.NewLine}" +
-                                           $"preAdmissionHardcodedValue={preAdmissionHardcodedValue}{Environment.NewLine}" +
-                                           $"typeOfAdmissionFieldId={typeOfAdmissionFieldId}{Environment.NewLine}" +
-                                           $"preAdmitToAdmissionDateFieldId={preAdmitToAdmissionDateFieldId}{Environment.NewLine}" +
-                                           $"typeOfAdmission={typeOfAdmission}{Environment.NewLine}" +
-                                           $"preAdmitToAdmissionDate={preAdmitToAdmissionDate}{Environment.NewLine}" +
-                                           $"foundTypeOfAdmissionField={foundTypeOfAdmissionField}{Environment.NewLine}" +
-                                           $"foundPreAdmitToAdmissionDateField={foundPreAdmitToAdmissionDateField}";
+            string initializedValuesMessage = $"InptAdmitDate.Compare.PreAdmitToAdmit() initial values:{Environment.NewLine}" +
+                                              $"preAdmissionHardcodedValue = {preAdmissionHardcodedValue}{Environment.NewLine}" +
+                                              $"typeOfAdmissionFieldId = {typeOfAdmissionFieldId}{Environment.NewLine}" +
+                                              $"preAdmitToAdmissionDateFieldId = {preAdmitToAdmissionDateFieldId}{Environment.NewLine}" +
+                                              $"typeOfAdmission = {typeOfAdmission}{Environment.NewLine}" +
+                                              $"preAdmitToAdmissionDate = {preAdmitToAdmissionDate}{Environment.NewLine}" +
+                                              $"foundTypeOfAdmissionField = {foundTypeOfAdmissionField}{Environment.NewLine}" +
+                                              $"foundPreAdmitToAdmissionDateField = {foundPreAdmitToAdmissionDateField}";
             LogEvent.Timestamped(logSetting, "TRACE", assemblyName, initializedValuesMessage);
 
-            var completedAdmitDateOptionObject = new OptionObject2015();
+            OptionObject2015 completedAdmitDateOptionObject = new OptionObject2015();
 
-            if(sentOptionObject.Forms == null)
+            if (sentOptionObject.Forms == null)
             {
                 LogEvent.Timestamped(logSetting, "TRACE", assemblyName, "sentOptionObject is null");
             }
             else
             {
                 /* 01 */
-                foreach(FormObject form in sentOptionObject.Forms)
+                foreach (FormObject form in sentOptionObject.Forms)
                 {
-                    foreach(FieldObject field in form.CurrentRow.Fields)
+                    foreach (FieldObject field in form.CurrentRow.Fields)
                     {
-                        switch(field.FieldNumber)
+                        switch (field.FieldNumber)
                         {
                             case typeOfAdmissionFieldId:
-                                typeOfAdmission = int.Parse(field.FieldValue);
+                                typeOfAdmission                   = int.Parse(field.FieldValue);
                                 foundPreAdmitToAdmissionDateField = true;
                                 LogEvent.Timestamped(logSetting, "TRACE", assemblyName, "Found PreAdmitToAdmissionDateField.");
                                 break;
 
                             case preAdmitToAdmissionDateFieldId:
-                                preAdmitToAdmissionDate = Convert.ToDateTime(field.FieldValue);
+                                preAdmitToAdmissionDate   = Convert.ToDateTime(field.FieldValue);
                                 foundTypeOfAdmissionField = true;
                                 LogEvent.Timestamped(logSetting, "TRACE", assemblyName, "Found TypeOfAdmissionField.");
                                 break;
@@ -80,14 +80,14 @@ namespace InptAdmitDate
                                 break;
                         }
 
-                        if(foundPreAdmitToAdmissionDateField && foundTypeOfAdmissionField)
+                        if (foundPreAdmitToAdmissionDateField && foundTypeOfAdmissionField)
                         {
                             LogEvent.Timestamped(logSetting, "TRACE", assemblyName, "PreAdmitToAdmissionDateField and TypeOfAdmissionField fields found.");
                             break;
                         }
                     }
 
-                    if(foundPreAdmitToAdmissionDateField && foundTypeOfAdmissionField)
+                    if (foundPreAdmitToAdmissionDateField && foundTypeOfAdmissionField)
                     {
                         LogEvent.Timestamped(logSetting, "TRACE", assemblyName, "PreAdmitToAdmissionDateField and TypeOfAdmissionField fields found.");
                         break;
@@ -97,7 +97,7 @@ namespace InptAdmitDate
                 //_ = new DateTime(1900, 1, 1);                                                    // TODO Why not define this in the line below?
                 DateTime systemDate = DateTime.Today;
 
-                var verifyAdmitDateOptionObject = new OptionObject2015
+                OptionObject2015 verifyAdmitDateOptionObject = new OptionObject2015
                 {
                     ErrorCode = 0,
                     ErrorMesg = ""
@@ -108,10 +108,10 @@ namespace InptAdmitDate
                 //var errMsgCode      = 0;
 
                 /* 02 */
-                if(typeOfAdmission == preAdmissionHardcodedValue)
+                if (typeOfAdmission == preAdmissionHardcodedValue)
                 {
                     LogEvent.Timestamped(logSetting, "TRACE", assemblyName, "Client admission type is \"PreAdmit\".");
-                    if(preAdmitToAdmissionDate != systemDate)
+                    if (preAdmitToAdmissionDate != systemDate)
                     {
                         verifyAdmitDateOptionObject.ErrorCode = 1;
                         verifyAdmitDateOptionObject.ErrorMesg = "WARNING\nThe client's pre-admission date does not match today's date!";
@@ -128,7 +128,7 @@ namespace InptAdmitDate
                 //};
                 //Logger.Timestamped.LogEvent(inptAdmitDateSetting["Logging"].ToLower(), "TRACE", Assembly.GetExecutingAssembly().GetName().Name, "Initialized verifyAdmitDateOptionObject.");
 
-                if(verifyAdmitDateOptionObject.ErrorCode != 0)
+                if (verifyAdmitDateOptionObject.ErrorCode != 0)
                 {
                     //verifyAdmitDateOptionObject.ErrorCode = errMsgCode;
                     //verifyAdmitDateOptionObject.ErrorMesg = errMsgBody;
@@ -136,9 +136,9 @@ namespace InptAdmitDate
                 }
                 LogEvent.Timestamped(logSetting, "TRACE", assemblyName, "errMsg code is \"0\"");
 
-                var errorDetailsMessage = $"InptAdmitDate.Compare.PreAdmitToAdmit() errMsg details:{Environment.NewLine}" +
-                                          $"ErrorCode={verifyAdmitDateOptionObject.ErrorCode}{Environment.NewLine}" +
-                                          $"ErrorMesg={verifyAdmitDateOptionObject.ErrorMesg}";
+                string errorDetailsMessage = $"InptAdmitDate.Compare.PreAdmitToAdmit() errMsg details:{Environment.NewLine}" +
+                                             $"ErrorCode={verifyAdmitDateOptionObject.ErrorCode}{Environment.NewLine}" +
+                                             $"ErrorMesg={verifyAdmitDateOptionObject.ErrorMesg}";
                 LogEvent.Timestamped(logSetting, "TRACE", assemblyName, errorDetailsMessage);
 
                 /* When this block of code is uncommented, a pop-up with detailed information will be displayed when the

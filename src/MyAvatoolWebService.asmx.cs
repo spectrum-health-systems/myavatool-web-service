@@ -1,6 +1,6 @@
 ﻿/* PROJECT: MyAvatoolWebService (https://github.com/aprettycoolprogram/MyAvatoolWebService)
  *    FILE: MyAvatoolWebService.MyAvatoolWebService.asmx.cs
- * UPDATED: 7-19-2021-12:27 PM
+ * UPDATED: 7-19-2021-1:33 PM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2021 A Pretty Cool Program All rights reserved
  */
@@ -8,10 +8,10 @@
 /* Entry point for MAWS.
  */
 
+using NTST.ScriptLinkService.Objects;
 using System.Collections.Generic;
 using System.Reflection;
 using System.Web.Services;
-using NTST.ScriptLinkService.Objects;
 using Utility;
 
 namespace MyAvatoolWebService
@@ -50,16 +50,16 @@ namespace MyAvatoolWebService
         public OptionObject2015 RunScript(OptionObject2015 sentOptionObject, string mawsRequest)
         {
             Dictionary<string, string> MawsSetting = AppSettings.FromKeyValuePairFile("MAWS.conf");
-            var logSetting                         = MawsSetting["Logging"].ToLower();
-            var assemblyName                       = Assembly.GetExecutingAssembly().GetName().Name;
+            string logSetting                      = MawsSetting["Logging"].ToLower();
+            string assemblyName                    = Assembly.GetExecutingAssembly().GetName().Name;
             LogEvent.Timestamped(logSetting, "TRACE", assemblyName, $"Initial MAWS Request: {mawsRequest}");
 
-            var mawsCommand = RequestSyntaxEngine.RequestComponent.GetCommand(mawsRequest);
+            string mawsCommand = RequestSyntaxEngine.RequestComponent.GetCommand(mawsRequest);
             LogEvent.Timestamped(logSetting, "TRACE", assemblyName, $"Initial MAWS Command: {mawsCommand}");
 
             OptionObject2015 completedOptionObject;
 
-            switch(mawsCommand)
+            switch (mawsCommand)
             {
                 case "inptadmitdate":
                     LogEvent.Timestamped(logSetting, "TRACE", assemblyName, $"switch(mawsCommand) case: InptAdmitDate [{mawsCommand}]");
@@ -98,12 +98,12 @@ namespace MyAvatoolWebService
         public void ForceTest()
         {
             Dictionary<string, string> MawsSetting = AppSettings.FromKeyValuePairFile("MAWS.conf");
-            var logSetting                         = MawsSetting["Logging"].ToLower();
-            var assemblyName                       = Assembly.GetExecutingAssembly().GetName().Name;
+            string logSetting                      = MawsSetting["Logging"].ToLower();
+            string assemblyName                    = Assembly.GetExecutingAssembly().GetName().Name;
             LogEvent.Timestamped(logSetting, "TEST", assemblyName, "Forcing MAWS functionality tests.");
 
             // Trace commands/actions/options.
-            var emptyOptionObject = new OptionObject2015();
+            OptionObject2015 emptyOptionObject = new OptionObject2015();
             _ = RunScript(emptyOptionObject, "InptAdmitDate-Action-Option");
             LogEvent.Timestamped(logSetting, "TEST", assemblyName, "Force test: RunScript() using MAWS Request \"InptAdmitDate-Action-Option\"");
             _ = RunScript(emptyOptionObject, "Dose-Action-Option");
@@ -114,7 +114,7 @@ namespace MyAvatoolWebService
             LogEvent.Timestamped(logSetting, "TEST", assemblyName, "Force test: RunScript() using MAWS Request \"Fake-Action-Option\"");
 
             // Test against an partially initialized OptionObject.
-            var testInptAdmitDateOptionObject= new OptionObject2015
+            OptionObject2015 testInptAdmitDateOptionObject= new OptionObject2015
             {
                 ErrorCode = 0,
                 ErrorMesg = "",

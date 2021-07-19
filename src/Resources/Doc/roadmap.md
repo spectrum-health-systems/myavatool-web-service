@@ -61,8 +61,12 @@
 
 ## Queue
 
-* Remove TheOptionObject.Settings.cs
-* Remove NewDevelopment.Settings.cs
+0.16 - Dose.Compare.Percentage()
+0.17 - Dose.Compare.Milligrams()
+0.18 - Dose.Compare.TotalMilligrams()
+0.19 - Cleanup
+        * Dose/dosage
+        * Variable/class/method names across commands
 
 * Have a universal conf file
 * What if currentDose (1 dose mg) = null/0?

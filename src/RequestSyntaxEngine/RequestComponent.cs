@@ -1,6 +1,6 @@
 ﻿/* PROJECT: RequestSyntaxEngine (https://github.com/aprettycoolprogram/RequestSyntaxEngine)
  *    FILE: RequestSyntaxEngine.RequestComponent.cs
- * UPDATED: 7-15-2021-9:13 AM
+ * UPDATED: 7-19-2021-1:31 PM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2021 A Pretty Cool Program All rights reserved
  */

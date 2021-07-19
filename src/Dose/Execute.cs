@@ -8,9 +8,9 @@
 /* Determines which MAWS Action to execute for the Dose Command.
  */
 
+using NTST.ScriptLinkService.Objects;
 using System.Collections.Generic;
 using System.Reflection;
-using NTST.ScriptLinkService.Objects;
 using Utility;
 
 namespace Dose
@@ -28,15 +28,15 @@ namespace Dose
         public static OptionObject2015 Action(OptionObject2015 sentOptionObject, string mawsRequest)
         {
             Dictionary<string, string>  doseSetting = AppSettings.FromKeyValuePairFile("Dose.conf");
-            var logSetting                          = doseSetting["Logging"].ToLower();
-            var assemblyName                        = Assembly.GetExecutingAssembly().GetName().Name;
-            var mawsAction                          = RequestSyntaxEngine.RequestComponent.GetAction(mawsRequest);
-            var mawsOption                          = RequestSyntaxEngine.RequestComponent.GetOption(mawsRequest);
+            string logSetting                       = doseSetting["Logging"].ToLower();
+            string assemblyName                     = Assembly.GetExecutingAssembly().GetName().Name;
+            string mawsAction                       = RequestSyntaxEngine.RequestComponent.GetAction(mawsRequest);
+            string mawsOption                       = RequestSyntaxEngine.RequestComponent.GetOption(mawsRequest);
             LogEvent.Timestamped(logSetting, "TRACE", assemblyName, $"Execute Dose Action: {mawsAction} Option: {mawsOption}]");
 
-            var doseOptionObject = new OptionObject2015();
+            OptionObject2015 doseOptionObject = new OptionObject2015();
 
-            switch(mawsAction)
+            switch (mawsAction)
             {
                 case "verifypercentage":
                     LogEvent.Timestamped(logSetting, "TRACE", assemblyName, $"Executing Dose Action: VerifyPercentage [{mawsAction}] [Option: {mawsOption}]");

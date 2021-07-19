@@ -1,6 +1,6 @@
 ﻿/* PROJECT: TheOptionObject (https://github.com/aprettycoolprogram/TheOptionObject)
  *    FILE: TheOptionObject.Finalize.cs
- * UPDATED: 7-15-2021-9:12 AM
+ * UPDATED: 7-19-2021-1:30 PM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2021 A Pretty Cool Program All rights reserved
  */
@@ -32,8 +32,8 @@ namespace TheOptionObject
              */
 
             Dictionary<string, string> theOptionObjectSetting = AppSettings.FromKeyValuePairFile("TheOptionObject.conf");
-            string logSetting = theOptionObjectSetting["Logging"].ToLower();
-            string assemblyName = Assembly.GetExecutingAssembly().GetName().Name;
+            string logSetting                                 = theOptionObjectSetting["Logging"].ToLower();
+            string assemblyName                               = Assembly.GetExecutingAssembly().GetName().Name;
             LogEvent.Timestamped(logSetting, "TRACE", assemblyName, "Finalizing OptionObject.");
 
             OptionObject2015 finalizedOptionObject = new OptionObject2015();
@@ -59,22 +59,22 @@ namespace TheOptionObject
         /// <returns>An OptionObject2015 object with all required fields populated.</returns>
         private static void FinalizeRequiredFields(OptionObject2015 sentOptionObject, OptionObject2015 finalizedOptionObject, string logSetting, string assemblyName)
         {
-            finalizedOptionObject.EntityID = sentOptionObject.EntityID;
-            finalizedOptionObject.Facility = sentOptionObject.Facility;
-            finalizedOptionObject.NamespaceName = sentOptionObject.NamespaceName;
-            finalizedOptionObject.OptionId = sentOptionObject.OptionId;
+            finalizedOptionObject.EntityID        = sentOptionObject.EntityID;
+            finalizedOptionObject.Facility        = sentOptionObject.Facility;
+            finalizedOptionObject.NamespaceName   = sentOptionObject.NamespaceName;
+            finalizedOptionObject.OptionId        = sentOptionObject.OptionId;
             finalizedOptionObject.ParentNamespace = sentOptionObject.ParentNamespace;
-            finalizedOptionObject.ServerName = sentOptionObject.ServerName;
-            finalizedOptionObject.SystemCode = sentOptionObject.SystemCode;
+            finalizedOptionObject.ServerName      = sentOptionObject.ServerName;
+            finalizedOptionObject.SystemCode      = sentOptionObject.SystemCode;
 
             string finalizeRequiredFieldsMessage = $"FinalizeRequiredFields values:{Environment.NewLine}" +
-                                                $"finalizedOptionObject.EntityID={finalizedOptionObject.EntityID}{Environment.NewLine}" +
-                                                $"finalizedOptionObject.Facility={finalizedOptionObject.Facility}{Environment.NewLine}" +
-                                                $"finalizedOptionObject.NamespaceName={finalizedOptionObject.NamespaceName}{Environment.NewLine}" +
-                                                $"finalizedOptionObject.OptionId={finalizedOptionObject.OptionId}{Environment.NewLine}" +
-                                                $"finalizedOptionObject.ParentNamespace={finalizedOptionObject.ParentNamespace}{Environment.NewLine}" +
-                                                $"finalizedOptionObject.ServerName={finalizedOptionObject.ServerName}{Environment.NewLine}" +
-                                                $"finalizedOptionObject.SystemCode={finalizedOptionObject.SystemCode}";
+                                                   $"finalizedOptionObject.EntityID = {finalizedOptionObject.EntityID}{Environment.NewLine}" +
+                                                   $"finalizedOptionObject.Facility = {finalizedOptionObject.Facility}{Environment.NewLine}" +
+                                                   $"finalizedOptionObject.NamespaceName = {finalizedOptionObject.NamespaceName}{Environment.NewLine}" +
+                                                   $"finalizedOptionObject.OptionId = {finalizedOptionObject.OptionId}{Environment.NewLine}" +
+                                                   $"finalizedOptionObject.ParentNamespace = {finalizedOptionObject.ParentNamespace}{Environment.NewLine}" +
+                                                   $"finalizedOptionObject.ServerName = {finalizedOptionObject.ServerName}{Environment.NewLine}" +
+                                                   $"finalizedOptionObject.SystemCode = {finalizedOptionObject.SystemCode}";
             LogEvent.Timestamped(logSetting, "TRACE", assemblyName, finalizeRequiredFieldsMessage);
         }
 
@@ -86,7 +86,7 @@ namespace TheOptionObject
         {
             finalizedOptionObject.EpisodeNumber = sentOptionObject.EpisodeNumber;
             finalizedOptionObject.OptionStaffId = sentOptionObject.OptionStaffId;
-            finalizedOptionObject.OptionUserId = sentOptionObject.OptionUserId;
+            finalizedOptionObject.OptionUserId  = sentOptionObject.OptionUserId;
 
             // If the workingOptionObject has data, use that to complete the completedOptionObject. Otherwise, use the
             // data that exists in the sentOptionObject.
@@ -104,11 +104,11 @@ namespace TheOptionObject
             }
 
             string finalizeRecommendedFieldsMessage = $"FinalizeRequiredFields values:{Environment.NewLine}" +
-                                                   $"finalizedOptionObject.EpisodeNumber={finalizedOptionObject.EpisodeNumber}{Environment.NewLine}" +
-                                                   $"finalizedOptionObject.OptionStaffId={finalizedOptionObject.OptionStaffId}{Environment.NewLine}" +
-                                                   $"finalizedOptionObject.OptionUserId={finalizedOptionObject.OptionUserId}{Environment.NewLine}" +
-                                                   $"finalizedOptionObject.ErrorCode={finalizedOptionObject.ErrorCode}{Environment.NewLine}" +
-                                                   $"finalizedOptionObject.ErrorMesg={finalizedOptionObject.ErrorMesg}";
+                                                      $"finalizedOptionObject.EpisodeNumber = {finalizedOptionObject.EpisodeNumber}{Environment.NewLine}" +
+                                                      $"finalizedOptionObject.OptionStaffId = {finalizedOptionObject.OptionStaffId}{Environment.NewLine}" +
+                                                      $"finalizedOptionObject.OptionUserId = {finalizedOptionObject.OptionUserId}{Environment.NewLine}" +
+                                                      $"finalizedOptionObject.ErrorCode = {finalizedOptionObject.ErrorCode}{Environment.NewLine}" +
+                                                      $"finalizedOptionObject.ErrorMesg = {finalizedOptionObject.ErrorMesg}";
 
             LogEvent.Timestamped(logSetting, "TRACE", assemblyName, finalizeRecommendedFieldsMessage);
         }

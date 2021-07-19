@@ -1,6 +1,6 @@
 ﻿/* PROJECT: Dose (https://github.com/aprettycoolprogram/Dose)
  *    FILE: Dose.Compare.cs
- * UPDATED: 7-19-2021-1:03 PM
+ * UPDATED: 7-19-2021-1:50 PM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2021 A Pretty Cool Program All rights reserved
  */
@@ -24,46 +24,34 @@ namespace Dose
             string assemblyName = Assembly.GetExecutingAssembly().GetName().Name;
             LogEvent.Timestamped(logSetting, "TRACE", assemblyName, "Location: Dose.Verify.Percentage()");
 
-            const string dosageOneFieldId = "107";
-            const string lastOrderScheduledFieldId = "142";
-
-            double currentDose = 0.0;
-            string lastOrderScheduledText = "";
-
-            //var percentDifference = 0.0;
-
-            bool foundDosageOneFieldId = false;
-            bool foundLastOrderScheduledFieldId = false;
+            const string dosageOneFieldId          = "107";
+            const string lastOrderScheduleFieldId = "142";
+            double currentDose                     = 0.0;
+            string lastOrderScheduleText          = "";
+            bool foundDosageOneFieldId             = false;
+            bool foundLastOrderScheduleFieldId    = false;
             LogEvent.Timestamped(logSetting, "TRACE", assemblyName, "Finished setting up variables");
-
-            // For testing.
-            int formLoopCount = 0;
-            int fieldLoopCount = 0;
 
             /* We will loop through each field of every form in sentOptionObject2, and do something special if we land
              * on the "dosageOneFieldId" or "lastOrderScheduledFieldId".
              */
             foreach (FormObject form in sentOptionObject.Forms)
             {
-                LogEvent.Timestamped(logSetting, "TRACE", assemblyName, $"In form loop[{formLoopCount}].");
+                LogEvent.Timestamped(logSetting, "TRACE", assemblyName, $"In form loop.");
                 foreach (FieldObject field in form.CurrentRow.Fields)
                 {
-                    LogEvent.Timestamped(logSetting, "TRACE", assemblyName, $"In field loop[{fieldLoopCount}-{field.FieldNumber}]. {foundDosageOneFieldId},{foundLastOrderScheduledFieldId}");
+                    LogEvent.Timestamped(logSetting, "TRACE", assemblyName, $"In field loop [field #{field.FieldNumber}]. Dosage field found: {foundDosageOneFieldId} - Last order field found: {foundLastOrderScheduleFieldId}");
                     switch (field.FieldNumber)
                     {
                         case dosageOneFieldId:
-                            //LogEvent.Timestamped(logSetting, "TRACEA", assemblyName, "In dosage field case statement.");
-                            //LogEvent.Timestamped(logSetting, "TRACEAA", assemblyName, $"Raw value: {field.FieldValue}");
-                            //LogEvent.Timestamped(logSetting, "TRACEAAA", assemblyName, $"Raw value: {double.Parse(field.FieldValue)}");
-                            currentDose = double.Parse(field.FieldValue);
-                            //LogEvent.Timestamped(logSetting, "TRACEB", assemblyName, $"CurrentDose: {currentDose}");
+                            currentDose           = double.Parse(field.FieldValue);
                             foundDosageOneFieldId = true;
                             LogEvent.Timestamped(logSetting, "TRACE", assemblyName, "Found dosage field.");
                             break;
 
-                        case lastOrderScheduledFieldId:
-                            lastOrderScheduledText = field.FieldValue;
-                            foundLastOrderScheduledFieldId = true;
+                        case lastOrderScheduleFieldId:
+                            lastOrderScheduleText         = field.FieldValue;
+                            foundLastOrderScheduleFieldId = true;
                             LogEvent.Timestamped(logSetting, "TRACE", assemblyName, "Found last order field.");
                             break;
 
@@ -74,23 +62,22 @@ namespace Dose
 
                     /* If we've found everything we need, we'll stop searching for stuff.
                      */
-                    if (foundDosageOneFieldId && foundLastOrderScheduledFieldId)
+                    if (foundDosageOneFieldId && foundLastOrderScheduleFieldId)
                     {
                         LogEvent.Timestamped(logSetting, "TRACE", assemblyName, "Found both fields, but not done.");
                         break;
                     }
-                    fieldLoopCount++;
                 }
-                if (foundDosageOneFieldId && foundLastOrderScheduledFieldId)
+
+                if (foundDosageOneFieldId && foundLastOrderScheduleFieldId)
                 {
                     LogEvent.Timestamped(logSetting, "TRACE", assemblyName, "Found both fields, exiting loops.");
                     break;
                 }
-                formLoopCount++;
             }
 
             string errMsgBody = string.Empty;
-            int errMsgCode = 0;
+            int errMsgCode    = 0;
             LogEvent.Timestamped(logSetting, "TRACE", assemblyName, "1");
 
             // 1. Parse the lastOrderScheduledText and get the milligrams
@@ -100,19 +87,37 @@ namespace Dose
             string previousDosageSuffix = doseSetting["PreviousDosageSuffix"];
             LogEvent.Timestamped(logSetting, "TRACE", assemblyName, "2");
 
-            string[] liners = lastOrderScheduledText.Split('\n');
+            string[] lastOrderedSchedulLines = lastOrderScheduleText.Split('\n');
 
-            string needLine = liners[1];
+            string lastScheduledDosage = "";
 
-            string test = needLine.Replace($"{previousDosagePrefix}", "");
-            LogEvent.Timestamped(logSetting, "TRACE", assemblyName, $"3: {needLine}, {test}");
+            foreach (string line in lastOrderedSchedulLines)
+            {
+                if (line.Contains(previousDosagePrefix) && line.Contains(previousDosageSuffix))
+                {
+                    lastScheduledDosage = line.Replace($"{previousDosagePrefix}", "");
+                    LogEvent.Timestamped(logSetting, "TRACE", assemblyName, $"3: {lastScheduledDosage}");
 
-            string test2 = test.Replace(previousDosageSuffix, "");
-            LogEvent.Timestamped(logSetting, "TRACE", assemblyName, $"4: {test2}");
+                    lastScheduledDosage = lastScheduledDosage.Replace(previousDosageSuffix, "");
+                    LogEvent.Timestamped(logSetting, "TRACE", assemblyName, $"4: {lastScheduledDosage}");
+                }
 
-            LogEvent.Timestamped(logSetting, "TRACE", assemblyName, $"Current doseage: {currentDose}, Last Order: {lastOrderScheduledText}, Previous dosage! {test2}");
 
-            double previousDose = Convert.ToDouble(test2);
+            }
+
+
+
+            //string needLine = lastOrderedSchedulLines[1];
+
+            //string test = needLine.Replace($"{previousDosagePrefix}", "");
+            //LogEvent.Timestamped(logSetting, "TRACE", assemblyName, $"3: {needLine}, {test}");
+
+            //string test2 = test.Replace(previousDosageSuffix, "");
+            //LogEvent.Timestamped(logSetting, "TRACE", assemblyName, $"4: {test2}");
+
+            LogEvent.Timestamped(logSetting, "TRACE", assemblyName, $"Current doseage: {currentDose}, Last Order: {lastOrderScheduleText}, Previous dosage! {lastScheduledDosage}");
+
+            double previousDose = Convert.ToDouble(lastScheduledDosage);
 
             double percentDifference = currentDose / previousDose;
 

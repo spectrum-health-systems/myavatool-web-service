@@ -1,6 +1,6 @@
 ﻿/* PROJECT: RequestSyntaxEngine (https://github.com/aprettycoolprogram/RequestSyntaxEngine)
  *    FILE: RequestSyntaxEngine.TestFunctionality.cs
- * UPDATED: 7-15-2021-9:13 AM
+ * UPDATED: 7-19-2021-1:30 PM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2021 A Pretty Cool Program All rights reserved
  */
@@ -22,10 +22,10 @@ namespace RequestSyntaxEngine
         public static void Force()
         {
             string mawsRequest = "ThisIsACommand-ThisIsAnAction-Testing-ShouldNotAppear";
-            string logMessage = $"MAWS Request: {mawsRequest}{Environment.NewLine}" +
-                              $"MAWS Command: {RequestComponent.GetCommand(mawsRequest)}{Environment.NewLine}" +
-                              $" MAWS Action: {RequestComponent.GetAction(mawsRequest)}{Environment.NewLine}" +
-                              $" MAWS Option: {RequestComponent.GetOption(mawsRequest)}";
+            string logMessage  = $"MAWS Request: {mawsRequest}{Environment.NewLine}" +
+                                 $"MAWS Command: {RequestComponent.GetCommand(mawsRequest)}{Environment.NewLine}" +
+                                 $" MAWS Action: {RequestComponent.GetAction(mawsRequest)}{Environment.NewLine}" +
+                                 $" MAWS Option: {RequestComponent.GetOption(mawsRequest)}";
             LogEvent.Timestamped("trace", "TRACE", Assembly.GetExecutingAssembly().GetName().Name, logMessage);
         }
     }

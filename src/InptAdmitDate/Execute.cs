@@ -8,9 +8,9 @@
 /* Determines which MAWS Action to execute for the InptAdmitDate Command.
  */
 
+using NTST.ScriptLinkService.Objects;
 using System.Collections.Generic;
 using System.Reflection;
-using NTST.ScriptLinkService.Objects;
 using Utility;
 
 namespace InptAdmitDate
@@ -28,10 +28,10 @@ namespace InptAdmitDate
         public static OptionObject2015 Action(OptionObject2015 sentOptionObject2015, string mawsRequest)
         {
             Dictionary<string, string>  inptAdmitDateSetting = AppSettings.FromKeyValuePairFile("InptAdmitDate.conf");
-            var logSetting                                   = inptAdmitDateSetting["Logging"].ToLower();
-            var assemblyName                                 = Assembly.GetExecutingAssembly().GetName().Name;
-            var mawsAction                                   = RequestSyntaxEngine.RequestComponent.GetAction(mawsRequest);
-            var mawsOption                                   = RequestSyntaxEngine.RequestComponent.GetOption(mawsRequest);
+            string logSetting                                = inptAdmitDateSetting["Logging"].ToLower();
+            string assemblyName                              = Assembly.GetExecutingAssembly().GetName().Name;
+            string mawsAction                                = RequestSyntaxEngine.RequestComponent.GetAction(mawsRequest);
+            string mawsOption                                = RequestSyntaxEngine.RequestComponent.GetOption(mawsRequest);
             LogEvent.Timestamped(logSetting, "TRACE", assemblyName, $"Execute InptAdmitDate Action: {mawsAction} Option: {mawsOption}]");
 
             // DEPRECIATED
@@ -40,9 +40,9 @@ namespace InptAdmitDate
             //var mawsOption                = RequestSyntaxEngine.RequestComponent.GetOption(mawsRequest);
             //Logger.Timestamped.LogEvent(InptAdmitDateSetting["Logging"].ToLower(), "TRACE", Assembly.GetExecutingAssembly().GetName().Name, $"Execute InptAdmitDate Action: {mawsAction} [Option={mawsOption}]");
 
-            var inptAdmitDateOptionObject = new OptionObject2015();
+            OptionObject2015 inptAdmitDateOptionObject = new OptionObject2015();
 
-            switch(mawsAction)
+            switch (mawsAction)
             {
                 case "comparepreadmittoadmit":
                     LogEvent.Timestamped(logSetting, "TRACE", assemblyName, $"Executing InptAdmitDate Action: ComparePreAdmitToAdmit [{mawsAction}] [Option: {mawsOption}]");

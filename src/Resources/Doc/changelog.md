@@ -14,6 +14,23 @@ Version 1.0
 
 </summary>
 
+## Version 0.16
+* Finalize Dose.Compare.Percentage()
+
+#### v0.16.21200.1750 (2021-07-19)
+* `INFO` Code and comment cleanup.
+##### Dose
+* `MODIFIED` The entire lastOrderScheduled text is parsed, instead of a specific line.
+* `MODIFIED` Renamed lastOrderScheduled* -> lastOrderSchedule*
+##### NewDevelopment
+* `REMOVED` Settings.cs
+##### TheOptionObject
+* `REMOVED` Settings.cs
+##### Utility
+* `FIXED` The AppSettings class wasn't wrapped in a namespace.
+
+***
+
 ## Version 0.15
 * Foundational work on Dose functionality.
 
