@@ -79,6 +79,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="MyAvatarWebService.licenseheader" />
+    <Content Include="AppData\Configuration\Dose.conf" />
+    <None Include="AppData\Configuration\InptAdmitDate.conf" />
+    <Content Include="AppData\Configuration\MAWS.conf" />
+    <Content Include="AppData\Configuration\NewDevelopment.conf" />
+    <Content Include="AppData\Configuration\TheOptionObject.conf" />
+    <Content Include="AppData\Logs\README.md" />
+    <Content Include="AppData\Configuration\README.md" />
+    <Content Include="AppData\README.md" />
     <None Include="packages.config" />
     <Content Include="Resources\Doc\changelog.md" />
     <Content Include="Resources\Dev\development-information.md" />
@@ -128,7 +136,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="AppData\" />
     <Folder Include="Resources\Log\" />
   </ItemGroup>
   <PropertyGroup>

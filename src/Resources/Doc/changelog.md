@@ -17,9 +17,15 @@ Version 1.0
 ## Version 0.15
 * Foundational work on Dose functionality.
 
+#### v0.15.21200.1316 (2021-07-19)
+* `INFO` Code/comment cleanup
+* `MODIFIED` Setting file extension is now *.conf*, since *.settings* was causing an issue with Visual Studio thinking it was a settings file.
+* `ADDED` AppData/Configuration/
+
 #### v0.15.21196.1319 (2021-07-15)
 * `INFO` Code/comment cleanup
 * `ADDED` AppData/
+* `ADDED` AppData/Logs/
 
 #### v0.15.21190.1333 (2021-07-09)
 * `REMOVED` Logger project

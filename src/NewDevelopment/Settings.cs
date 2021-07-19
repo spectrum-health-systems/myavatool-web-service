@@ -1,6 +1,6 @@
 ﻿/* PROJECT: NewDevelopment (https://github.com/aprettycoolprogram/NewDevelopment)
  *    FILE: NewDevelopment.Settings.cs
- * UPDATED: 7-1-2021-8:46 PM
+ * UPDATED: 7-19-2021-9:03 AM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2021 A Pretty Cool Program All rights reserved
  */

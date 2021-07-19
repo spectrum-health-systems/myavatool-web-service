@@ -1,15 +1,22 @@
 ﻿# MAWS Roadmap
 
 ## **v1.0**
-* New functionality:
-    * Dose.VerifyPercentageDifference functionality
-    * Dose.VerifyMilligramsDifference functionality
-    * Dose.VerifyMilligramsTotal functionality
+* Functionality:
+    v1: New Functionality
+        * Dose
+            * Single dose only
+            * Force Methadone (liquid)
+            * Force Recurring order type
+            * Dose.VerifyPercentageDifference functionality
+            * Dose.VerifyMilligramsDifference functionality
+            * Dose.VerifyMilligramsTotal functionality
 * Settings functionality:
+    * v1: External settings
     * Settings files allow for blank lines
     * Trailing blank lines in settings files are handled correctly
-    * log directory
+    * Log directory
 * Logging
+    * v1: Logging
     * Fix RequestSyntaxEngine logging
     * Test logging with pauses, to confirm we catch all logs
     * Archive logs
@@ -43,15 +50,21 @@
         * InptAdmitDate.cs
             * Parser, DefineFieldIds, etc all under main
     * Explain why flat files are used over JSON
+* Tests
+    * Verify only specified log files are written (`Utility.LogEvent()`)
+
 
 ## **v1.1**
-* InptAdmitDate-ComparePreAdmitToAdmit functionality
+* Functionality:
+    * v1.1: New Functionality
+        * InptAdmitDate-ComparePreAdmitToAdmit functionality
 
 ## Queue
 
 * Remove TheOptionObject.Settings.cs
 * Remove NewDevelopment.Settings.cs
 
+* Have a universal conf file
 
 * Force single-dose
 * Force Methadone (liquid)

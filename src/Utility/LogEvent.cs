@@ -19,7 +19,7 @@ namespace Utility
     public class LogEvent
     {
         /// <summary>
-        ///
+        /// Determines if a log file should be written.
         /// </summary>
         /// <param name="logSetting">      The logging setting in the .settings file.</param>
         /// <param name="logType">         The type of log (e.g., "DEBUG", "ERROR"). This value will be enclosed in brackets, and prepended to the file name.</param>
@@ -53,21 +53,9 @@ namespace Utility
         public static void WriteToFile(string logType, string assemblyName, string logMessage, string callerfilePath,
                                        string callerMemberName, int callerLineNumber)
         {
-            var dateStamp        = DateTime.Now.ToString("yyMMdd");
-
-            // Production or staging.
-            //var logDirectoryPath =$@"./AppData/Logs/{dateStamp}";
-            //var logDirectoryPath = $"C:/MAWS/Staging/Logs/{dateStamp}";
+            var dateStamp    = DateTime.Now.ToString("yyMMdd");
             var logDirectory = $"C:/MAWS/Logs/{dateStamp}";
             Maintenance.ConfirmDirectoryExists(logDirectory);
-
-            //var hourStamp         = DateTime.Now.ToString($"HH");      // Depreciate
-            //var minuteSecondStamp = DateTime.Now.ToString($"mmss");    // Depreciate
-            //var millisecondStamp  = DateTime.Now.ToString($"fffffff"); // Depreciate
-            //var timestamp = DateTime.Now.ToString($"HHmmssfffffff");
-
-
-            //var logFilePath = $"{logDirectoryPath}/{minuteSecondStamp}-{millisecondStamp}_{logType}_{assemblyName}-{Path.GetFileName(callerfilePath)}-{callerMemberName}.mawslog"; // Depreciate
 
             var logFileName = BuildLogFileName(logType, assemblyName, Path.GetFileName(callerfilePath), callerMemberName);
             var logFilePath = $"{logDirectory}/{logFileName}";
