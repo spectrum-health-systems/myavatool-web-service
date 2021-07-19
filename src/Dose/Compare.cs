@@ -1,6 +1,6 @@
 ﻿/* PROJECT: Dose (https://github.com/aprettycoolprogram/Dose)
  *    FILE: Dose.Compare.cs
- * UPDATED: 7-15-2021-9:19 AM
+ * UPDATED: 7-19-2021-12:32 PM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2021 A Pretty Cool Program All rights reserved
  */
@@ -45,10 +45,10 @@ namespace Dose
              */
             foreach(FormObject form in sentOptionObject.Forms)
             {
-                LogEvent.Timestamped(logSetting, "TRACE", assemblyName, "In form loop.");
+                LogEvent.Timestamped(logSetting, "TRACE", assemblyName, $"In form loop[{formLoopCount}].");
                 foreach(FieldObject field in form.CurrentRow.Fields)
                 {
-                    LogEvent.Timestamped(logSetting, "TRACE", assemblyName, $"In field loop. {foundDosageOneFieldId},{foundLastOrderScheduledFieldId}");
+                    LogEvent.Timestamped(logSetting, "TRACE", assemblyName, $"In field loop[{fieldLoopCount}]. {foundDosageOneFieldId},{foundLastOrderScheduledFieldId}");
                     switch(field.FieldNumber)
                     {
                         case dosageOneFieldId:
