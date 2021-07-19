@@ -17,6 +17,13 @@ Version 1.0
 ## Version 0.15
 * Foundational work on Dose functionality.
 
+#### v0.15.21200.1537 (2021-07-19)
+* `INFO` Clean build for testing.
+
+#### v0.15.21200.1526 (2021-07-19)
+* `INFO` Clean build for testing.
+* `FIXED` Putting the AssemblyVersion in the logfile contents was causing an issued. Roadmapped.
+
 #### v0.15.21200.1526 (2021-07-19)
 * `INFO` Clean build for testing.
 

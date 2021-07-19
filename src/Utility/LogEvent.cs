@@ -1,6 +1,6 @@
 ﻿/* PROJECT: Utility (https://github.com/aprettycoolprogram/Utility)
  *    FILE: Utility.LogEvent.cs
- * UPDATED: 7-19-2021-11:09 AM
+ * UPDATED: 7-19-2021-11:37 AM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2021 A Pretty Cool Program All rights reserved
  */
@@ -10,7 +10,6 @@
 
 using System;
 using System.IO;
-using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Threading;
 
@@ -32,7 +31,7 @@ namespace Utility
                                        [CallerFilePath] string callerfilePath = "", [CallerMemberName] string callerMemberName = "",
                                        [CallerLineNumber] int callerLineNumber = 0)
         {
-            bool logEverything   = logSetting == "all";
+            bool logEverything = logSetting == "all";
             bool logSpecificType = logType.ToLower().Contains(logSetting);
 
             if (logEverything || logSpecificType)
@@ -53,7 +52,7 @@ namespace Utility
         public static void WriteTimestampedFile(string logType, string assemblyName, string logMessage, string callerfilePath,
                                        string callerMemberName, int callerLineNumber)
         {
-            string dateStamp        = DateTime.Now.ToString("yyMMdd");
+            string dateStamp = DateTime.Now.ToString("yyMMdd");
             string logDirectoryPath = $"C:/MAWS/Logs/{dateStamp}";
             Maintenance.ConfirmDirectoryExists(logDirectoryPath);
 
@@ -67,15 +66,12 @@ namespace Utility
                 logFilePath = $"{logDirectoryPath}/{logFileName}";
             }
 
-            string assemblyVersion = Assembly.GetEntryAssembly().GetName().Version.ToString();
-
             string logContents = $"Message{Environment.NewLine}" +
                               $"======={Environment.NewLine}" +
                               $"{logMessage}{Environment.NewLine}" +
                               $"{Environment.NewLine}" +
                               $"Details{Environment.NewLine}" +
                               $"======={Environment.NewLine}" +
-                              $"      MAWS Version: {assemblyVersion}" +
                               $"     Assembly name: {assemblyName}{Environment.NewLine}" +
                               $"  Source file path: {Path.GetFileName(callerfilePath)}{Environment.NewLine}" +
                               $"Source member name: {callerMemberName}{Environment.NewLine}" +
@@ -96,15 +92,9 @@ namespace Utility
                                                string callerMemberName)
         {
             string timeStamp = DateTime.Now.ToString($"HHmmss.fff");
-
-            //int io = callerfilePath.IndexOf('.');
-            //int l = callerfilePath.Length;
-
-            //callerfilePath = callerfilePath.Remove(io);
-
-            //return $"{timestamp}_{logType}_{assemblyName}-{Path.GetFileName(callerfilePath)}-{callerMemberName}.mawslog";
-
-            var logFileName = $"{timeStamp}-{logType}-{assemblyName}-{callerfilePath}-{callerMemberName}.mawslog";
+            int fileExtensionLocation = callerfilePath.IndexOf('.');
+            string callerfilePathWithoutExtension = callerfilePath.Remove(fileExtensionLocation);
+            string logFileName = $"{timeStamp}-{logType}-{assemblyName}-{callerfilePathWithoutExtension}-{callerMemberName}.mawslog";
 
             return logFileName;
         }

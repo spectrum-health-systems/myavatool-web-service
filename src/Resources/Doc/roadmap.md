@@ -72,3 +72,5 @@
 * Force Methadone (liquid)
 * Force Recurring order type
 * Verify that the prefix/suffix are correct
+
+* Add Assembly version to the logfiles
