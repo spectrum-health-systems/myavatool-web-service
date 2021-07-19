@@ -1,6 +1,6 @@
 ﻿/* PROJECT: Utility (https://github.com/aprettycoolprogram/Utility)
  *    FILE: Utility.Maintenance.cs
- * UPDATED: 7-19-2021-9:24 AM
+ * UPDATED: 7-19-2021-9:28 AM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2021 A Pretty Cool Program All rights reserved
  */
@@ -49,13 +49,11 @@ namespace Utility
 // - File footers
 // - Descriptive comments
 
-
-
-// This comment is 160 characters =============================================================================================================================|
+// This comment is 140 characters =========================================================================================================|
 //
-// - Code
+// - Try to keep code withing this width
 
 
-// This comment is 200 characters ====================================================================================================================================================================|
+// This comment is 180 characters =================================================================================================================================================|
 //
 // - Max width for displaying on GitHub
