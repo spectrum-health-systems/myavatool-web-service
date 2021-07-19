@@ -66,6 +66,8 @@
 
 * Have a universal conf file
 
+* Get .conf name automatically by passing class name?
+
 * Force single-dose
 * Force Methadone (liquid)
 * Force Recurring order type

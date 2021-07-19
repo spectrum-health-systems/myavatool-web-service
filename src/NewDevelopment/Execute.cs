@@ -27,7 +27,7 @@ namespace NewDevelopment
         /// <returns>A completed OptionObject2015.</returns>
         public static OptionObject2015 Action(OptionObject2015 sentOptionObject2015, string mawsRequest)
         {
-            Dictionary<string, string>  newDevelopmentSetting = AppSettings.FromKeyValuePairFile("NewDevelopment.settings");
+            Dictionary<string, string>  newDevelopmentSetting = AppSettings.FromKeyValuePairFile("NewDevelopment.conf");
             var logSetting                                    = newDevelopmentSetting["Logging"].ToLower();
             var assemblyName                                  = Assembly.GetExecutingAssembly().GetName().Name;
             var mawsAction                                    = RequestSyntaxEngine.RequestComponent.GetAction(mawsRequest);

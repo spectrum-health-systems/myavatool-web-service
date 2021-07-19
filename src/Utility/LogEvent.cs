@@ -1,6 +1,6 @@
 ﻿/* PROJECT: Utility (https://github.com/aprettycoolprogram/Utility)
  *    FILE: Utility.LogEvent.cs
- * UPDATED: 7-19-2021-10:55 AM
+ * UPDATED: 7-19-2021-11:09 AM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2021 A Pretty Cool Program All rights reserved
  */
@@ -97,10 +97,10 @@ namespace Utility
         {
             string timeStamp = DateTime.Now.ToString($"HHmmss.fff");
 
-            int io = callerfilePath.IndexOf('.');
-            int l = callerfilePath.Length;
+            //int io = callerfilePath.IndexOf('.');
+            //int l = callerfilePath.Length;
 
-            callerfilePath = callerfilePath.Remove(io);
+            //callerfilePath = callerfilePath.Remove(io);
 
             //return $"{timestamp}_{logType}_{assemblyName}-{Path.GetFileName(callerfilePath)}-{callerMemberName}.mawslog";
 

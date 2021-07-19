@@ -17,6 +17,10 @@ Version 1.0
 ## Version 0.15
 * Foundational work on Dose functionality.
 
+#### v0.15.21200.1509 (2021-07-19)
+* `INFO` Clean build for testing.
+* `FIXED` *.settings* files were not renamed to *.conf* in the sourcecode. Duh.
+
 #### v0.15.21200.1455 (2021-07-19)
 * `INFO` Clean build for testing.
 * `ADDED` AppData/Configuration/

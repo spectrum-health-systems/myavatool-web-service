@@ -1,6 +1,6 @@
 ﻿/* PROJECT: MyAvatoolWebService (https://github.com/aprettycoolprogram/MyAvatoolWebService)
  *    FILE: MyAvatoolWebService.MyAvatoolWebService.asmx.cs
- * UPDATED: 7-9-2021-1:09 PM
+ * UPDATED: 7-19-2021-11:01 AM
  * LICENSE: Apache v2 (https://apache.org/licenses/LICENSE-2.0)
  *          Copyright 2021 A Pretty Cool Program All rights reserved
  */
@@ -49,7 +49,7 @@ namespace MyAvatoolWebService
         [WebMethod]
         public OptionObject2015 RunScript(OptionObject2015 sentOptionObject, string mawsRequest)
         {
-            Dictionary<string, string> MawsSetting = AppSettings.FromKeyValuePairFile("MAWS.settings");
+            Dictionary<string, string> MawsSetting = AppSettings.FromKeyValuePairFile("MAWS.conf");
             var logSetting                         = MawsSetting["Logging"].ToLower();
             var assemblyName                       = Assembly.GetExecutingAssembly().GetName().Name;
             LogEvent.Timestamped(logSetting, "TRACE", assemblyName, $"Initial MAWS Request: {mawsRequest}");
@@ -97,7 +97,7 @@ namespace MyAvatoolWebService
         /// </summary>
         public void ForceTest()
         {
-            Dictionary<string, string> MawsSetting = AppSettings.FromKeyValuePairFile("MAWS.settings");
+            Dictionary<string, string> MawsSetting = AppSettings.FromKeyValuePairFile("MAWS.conf");
             var logSetting                         = MawsSetting["Logging"].ToLower();
             var assemblyName                       = Assembly.GetExecutingAssembly().GetName().Name;
             LogEvent.Timestamped(logSetting, "TEST", assemblyName, "Forcing MAWS functionality tests.");
@@ -151,7 +151,7 @@ namespace MyAvatoolWebService
  *   service. This functionality will probably be depreciated further down development.
  *
  *   Here is how you can test MAWS:
- *      1. Make sure you have the proper testing settings configured in maws.settings
+ *      1. Make sure you have the proper testing settings configured in maws.conf
  *      2. Run MAWS
  *      3. Click "GetVersion"
  *      4. Click the "Invoke" button

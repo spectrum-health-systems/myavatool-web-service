@@ -27,7 +27,7 @@ public class AppSettings
     {
         // Production or staging
         //var filePath = $@"C:\MAWS\Staging\{fileName}";
-        var filePath = $@"C:\MAWS\{fileName}";
+        var filePath = $@"C:\MAWS\Configuration\{fileName}";
 
         //var test = Environment.CurrentDirectory;
         //LogEvent.Timestamped("system", "SYSTEM", Assembly.GetExecutingAssembly().GetName().Name, $"1====>{test}");
